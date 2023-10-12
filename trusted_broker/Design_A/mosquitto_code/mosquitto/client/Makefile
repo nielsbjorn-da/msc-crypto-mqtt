@@ -7,14 +7,14 @@ SHARED_DEP:=../lib/libmosquitto.so.${SOVERSION}
 endif
 
 ifeq ($(WITH_SHARED_LIBRARIES),yes)
-ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr client_own_test
+ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr client_own_test client_own_subscriber
 else
 ifeq ($(WITH_STATIC_LIBRARIES),yes)
 ALL_DEPS:= static_pub static_sub static_rr
 endif
 endif
 
-ABSO_PATH:= /home/niels/Documents/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
+ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
 
 DILITHIUM_RELA_PATH:= dilithium_and_falcon/dilithium/dilithium-master/ref
 
@@ -66,6 +66,9 @@ mosquitto_rr : rr_client.o client_shared.o client_props.o pub_shared.o sub_clien
 client_own_test : client_own_test.o pub_shared.o client_shared.o client_props.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
 	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
 
+client_own_subscriber : client_own_subscriber.o sub_client_output.o client_shared.o client_props.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
+	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
+
 pub_client.o : pub_client.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@ 
 
@@ -88,6 +91,9 @@ client_props.o : client_props.c client_shared.h
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 client_own_test.o : own_test.c ${SHARED_DEP}
+	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
+
+client_own_subscriber.o : own_sub_client.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 # The "testing" target is intended to make it easy to compile a quick client

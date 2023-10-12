@@ -34,7 +34,8 @@
 // dilithium variables
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
-static bool dilithium = false;
+uint8_t dilithium_signature[CRYPTO_BYTES];
+static bool dilithium = true;
 
 struct timeval timestamp;
 
@@ -143,9 +144,9 @@ char *b64_encode_3_byte(uint8_t *input)
 char *b64_encode(uint8_t *input, int input_size)
 {
   int i = 0;
-  char *output = (char *)malloc(input_size * 1.5);
-  output[0] = '\0';
-  while (i < input_size && i + 3 < input_size)
+  char* output = (char*)malloc(input_size*1.5);
+  memset(output, 0, sizeof(output));
+  while (i < input_size)
   {
     uint8_t current_3_bytes[3] = {input[i], input[i + 1], input[i + 2]};
     char *encoding = b64_encode_3_byte(current_3_bytes);
@@ -155,18 +156,6 @@ char *b64_encode(uint8_t *input, int input_size)
     free(encoding);
     i += 3;
   }
-  uint8_t remaining_bytes[3];
-  int j = 0;
-  while (i < input_size)
-  {
-    remaining_bytes[j] = input[i];
-    i++;
-    j++;
-  }
-  char *encoding = b64_encode_3_byte(remaining_bytes);
-  strcat(output, encoding);
-  // Free the dynamically allocated encoding
-  free(encoding);
 
   return output;
 }
@@ -200,93 +189,6 @@ void b64decode_3_bytes()
   free(output);
 }
 
-int test_dilithium()
-{
-  printf("Hello   world\n");
-  size_t i, j;
-  int ret;
-  size_t mlen, smlen;
-  uint8_t b;
-
-  char message[] = "Hello there my friend";
-  uint8_t MLEN = sizeof(message);
-
-  uint8_t m[MLEN + CRYPTO_BYTES];
-  uint8_t m2[MLEN + CRYPTO_BYTES];
-  uint8_t sm[MLEN + CRYPTO_BYTES];
-  uint8_t pk[CRYPTO_PUBLICKEYBYTES];
-  uint8_t sk[CRYPTO_SECRETKEYBYTES];
-
-  uint8_t pk2[CRYPTO_PUBLICKEYBYTES];
-  uint8_t sk2[CRYPTO_SECRETKEYBYTES];
-
-  randombytes(m, MLEN);
-  clock_t start_time, end_time;
-  double cpu_time_used;
-  start_time = clock();
-  crypto_sign_keypair(pk, sk);
-  end_time = clock();
-  cpu_time_used = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
-  printf("Key gen time: %f\n", cpu_time_used);
-  crypto_sign_keypair(pk2, sk2);
-  printf("pk: %p \n", pk);
-  crypto_sign(sm, &smlen, message, MLEN, sk);
-  printf("signature: %p \n", sm);
-  ret = crypto_sign_open(m2, &mlen, sm, smlen, pk);
-
-  if (ret)
-  {
-    fprintf(stderr, "Verification failed\n");
-    return -1;
-  }
-  if (smlen != MLEN + CRYPTO_BYTES)
-  {
-    fprintf(stderr, "Signed message lengths wrong\n");
-    return -1;
-  }
-  if (mlen != MLEN)
-  {
-    fprintf(stderr, "Message lengths wrong\n");
-    return -1;
-  }
-  for (j = 0; j < MLEN; ++j)
-  {
-    if (m2[j] != message[j])
-    {
-      fprintf(stderr, "Messages don't match\n");
-      return -1;
-    }
-  }
-  printf("verify successfull \n");
-  printf("CRYPTO_PUBLICKEYBYTES = %d\n", CRYPTO_PUBLICKEYBYTES);
-  printf("CRYPTO_SECRETKEYBYTES = %d\n", CRYPTO_SECRETKEYBYTES);
-  printf("CRYPTO_BYTES = %d\n", CRYPTO_BYTES);
-
-  printf("printing message\n");
-  for (j = 0; j < MLEN; ++j)
-  {
-    printf("%u ", message[j]);
-    printf("%u ", m2[j]);
-  }
-  printf(m2);
-  printf("\nmessage length: %lu \n", j);
-
-  printf("printing public key\n");
-  for (j = 0; j < CRYPTO_PUBLICKEYBYTES; ++j)
-  {
-    printf("%u ", pk[j]);
-  }
-  printf("\nPK length: %lu \n", j);
-
-  printf("printing private key\n");
-  for (j = 0; j < CRYPTO_SECRETKEYBYTES; ++j)
-  {
-    printf("%u ", sk[j]);
-  }
-  printf("\nSK length: %lu \n", j);
-
-  return 0;
-}
 
 void pub_shared_cleanup(void)
 {
@@ -346,60 +248,33 @@ int my_publish(struct mosquitto *mosq, int *mid, const char *topic, int payloadl
 /*
   Dilithium signing funciton
 */
-int dilithium_sign_message(uint8_t *sm, const char *payload, int payloadlen)
+int dilithium_sign_message(uint8_t *signature, const char *message, int message_length)
 {
-  size_t mlen, smlen;
-  uint8_t MLEN = payloadlen;
-  uint8_t m[MLEN + CRYPTO_BYTES];
-  uint8_t m2[MLEN + CRYPTO_BYTES];
+  size_t sig_length;
 
-  memcpy(m, &payload, MLEN);
-
-  crypto_sign(sm, &smlen, m, MLEN, dilithium_pub_sk);
-
-  return 0;
+  int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
+  
+  if (ret) {
+    fprintf(stderr, "Signature generation failed\n");
+    return -1;
+  }
+  return ret;
 }
 
 /*
   Dilithium verification funciton
 */
-int dilithium_verify(uint8_t *sig, size_t smlen, char *message, int message_len)
+int dilithium_verify(uint8_t *signature, char *message, int message_length, uint8_t *public_key)
 {
-  int ret;
-  size_t mlen;
-  uint8_t MLEN = message_len;
-  uint8_t m[MLEN + CRYPTO_BYTES];
-  uint8_t m2[MLEN + CRYPTO_BYTES];
+  size_t sig_length = CRYPTO_BYTES;
 
-  memcpy(m, &message, MLEN);
-  ret = crypto_sign_open(m2, &mlen, sig, smlen, dilithium_pub_pk);
+  int ret = crypto_sign_verify(signature, sig_length, message, message_length, public_key);
 
-  if (ret)
-  {
+  if(ret) {
     fprintf(stderr, "Verification failed\n");
     return -1;
   }
-  if (smlen != MLEN + CRYPTO_BYTES)
-  {
-    fprintf(stderr, "Signed message lengths wrong\n");
-    return -1;
-  }
-  if (mlen != MLEN)
-  {
-    fprintf(stderr, "Message lengths wrong\n");
-    return -1;
-  }
-  for (int j = 0; j < MLEN; ++j)
-  {
-    if (m2[j] != m[j])
-    {
-      fprintf(stderr, "Messages don't match\n");
-      // Don't forget to free the allocated memory
-      return -1;
-    }
-  }
-  printf("verify successfull \n");
-  return 0;
+  return ret;
 }
 
 /*
@@ -472,42 +347,6 @@ int falcon_verify_message(FalconContext *fc, char *payload, int payload_len)
       payload, payload_len, fc->tmp, fc->tmp_len);
   printf("end verify with result: %d\n", result);
   return result;
-}
-
-char *encode(const char *input, size_t size)
-{
-
-  /* set up a destination buffer large enough to hold the encoded data */
-  // char* output = (char*)malloc(size);
-  /* keep track of our encoded position */
-  // char* c = output;
-  /* store the number of bytes encoded by a single call */
-  int cnt = 0;
-  /* we need an encoder state */
-  base64_encodestate s;
-  base64_init_encodestate(&s);
-  size_t si = base64_encode_length(size, &s);
-  // printf("Encode lenght %u", (int)si);
-  // printf(sizeof(input));
-  char *output = (char *)malloc(si);
-  /* keep track of our encoded position */
-  char *c = output;
-
-  /*---------- START ENCODING ----------*/
-  /* initialise the encoder state */
-  /* gather data from the input and send it to the output */
-  cnt = base64_encode_block(input, strlen(input), c, &s);
-  c += cnt;
-  /* since we have encoded the entire input string, we know that
-     there is no more input data; finalise the encoding */
-  cnt = base64_encode_blockend(c, &s);
-  c += cnt;
-  /*---------- STOP ENCODING  ----------*/
-
-  /* we want to print the encoded data, so null-terminate it: */
-  *c = 0;
-
-  return output;
 }
 
 char *decode(const char *input, size_t size)
@@ -671,12 +510,10 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, current_time_str);
   strcat(concatenated_message_to_sign, clientID);
 
-  sig_length = message_len + CRYPTO_BYTES;
-
   if (dilithium == true)
   {
-    dilithium_sign_message(signature, concatenated_message_to_sign, message_len);
-    dilithium_verify(signature, sig_length, concatenated_message_to_sign, message_len);
+    dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
+    dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
   }
   else if (dilithium == false)
   {
@@ -706,7 +543,7 @@ int main(int argc, char *argv[])
   if (dilithium == true)
   {
     // signature
-    encoded_sig = b64_encode(signature, CRYPTO_BYTES);
+    encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
 
     printf("\nb64encoded length %u\n", strlen(encoded_sig));
     cJSON_AddStringToObject(root, "sig", encoded_sig);
