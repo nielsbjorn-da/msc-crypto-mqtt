@@ -1,5 +1,11 @@
 {
+    "c-cpp-flylint.cflags": ["-Wall", "-Wextra"],
+    "c-cpp-flylint.cppflags": ["-Wall", "-Wextra"],
+
     "files.associations": {
-        "falcon.h": "c"
-    }
-}
+        "falcon.h": "c",
+        "sign.h": "c",
+        "randombytes.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}   
