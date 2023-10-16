@@ -293,6 +293,10 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		mosquitto_publish(mosq, &last_mid, message->topic, 0, NULL, 1, true);
 	}
 
+	//#####################################################################################
+	// Retrieve the content from the MQTT payload package.
+	//#####################################################################################
+
 	print_message(&cfg, message, properties);
 
 	// parse message as cJSON. fetch sig and pk, verify signature
@@ -300,8 +304,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "data");
 	char *message_data_string = message_data->valuestring;
-	printf("data: %s\n", message_data_string);
-
+	
 	size_t messagelen = strlen(message_data_string);
 
 	char *publisher_id = cJSON_GetObjectItem(message_as_json, "id")->valuestring;
@@ -313,67 +316,82 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	int qos = cJSON_GetObjectItem(message_as_json, "qos")->valueint;
 
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "sig")->valuestring;
-	printf("Signature length from encoded signature: %d\n", strlen(encoded_signature));
-
+	
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
 
 	int sig_len = cJSON_GetObjectItem(message_as_json, "sig_len")->valueint;
-	printf("Signature length from cjson: %d\n", sig_len);
 
-	char *decoded_sig = decode(encoded_signature, CRYPTO_BYTES);
+	printf("Retrieving message successful\n");
 
-	char *decoded_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
+	//#####################################################################################
+	// Creating the message that were signed
+	//#####################################################################################
+	// Calculate the length of the converted strings
 
+	int qos_length = snprintf(NULL, 0, "%d", qos);
+	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
+
+	// Allocate memory for the strings dynamically, including space for the null terminator
+	char *qos_str = (char *)malloc(qos_length + 1);
+	qos_str[0] = '\0';
+
+	char *current_time_str = (char *)malloc(timestamp_length + 1);
+	current_time_str[0] = '\0';
+
+	// Check if memory allocation was successful
+	if (qos_str == NULL || current_time_str == NULL)
+	{
+		// Handle memory allocation failure
+		fprintf(stderr, "Error: Memory allocation failed.\n");
+		// Clean up and return or exit
+		free(qos_str);
+		free(current_time_str);
+		return -1; // or handle the error appropriately
+	}
+
+	// Convert int qos to string
+	snprintf(qos_str, qos_length + 1, "%d", qos);
+
+	// Convert int timestamp to string
+	snprintf(current_time_str, timestamp_length + 1, "%d", timestamp);
+
+	int message_len = strlen(message_data_string) + strlen(publisher_topic) + strlen(qos_str) + strlen(current_time_str) + strlen(publisher_id);
+
+	char concatenated_message_to_verify[message_len + 1]; // +1 for the null terminator
+	concatenated_message_to_verify[0] = '\0';
+
+	strncat(concatenated_message_to_verify, message_data_string, message_len);
+	strncat(concatenated_message_to_verify, publisher_topic, message_len);
+	strncat(concatenated_message_to_verify, qos_str, message_len);
+	strncat(concatenated_message_to_verify, current_time_str, message_len);
+	strncat(concatenated_message_to_verify, publisher_id, message_len);
+
+	// Ensure null termination
+	concatenated_message_to_verify[message_len] = '\0';
+	free(qos_str);
+	free(current_time_str);
+
+	//#####################################################################################
+	// Run the verifications algorithms
+	//#####################################################################################
+	
 	int verify = 1;
+	char *version = "";
 	if (strlen(encoded_signature) > 3000)
 	{
-		verify = verify_dilithium_signature(decoded_sig, message_data_string, messagelen, decoded_pk);
+		printf("Dilithium verification\n");
+		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
+		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
+	
+		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
+
+		free(dilithium_decode_sig);
+		free(dilithium_decode_pk);
+		version = "Dilithium";
 	}
 	else
 	{
-		printf("Falcon sig\n");
-
-		// Calculate the length of the converted strings
-		int qos_length = snprintf(NULL, 0, "%d", qos);
-		int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
-
-		// Allocate memory for the strings dynamically, including space for the null terminator
-		char *qos_str = (char *)malloc(qos_length + 1);
-		qos_str[0] = '\0';
-
-		char *current_time_str = (char *)malloc(timestamp_length + 1);
-		current_time_str[0] = '\0';
-
-		// Check if memory allocation was successful
-		if (qos_str == NULL || current_time_str == NULL)
-		{
-			// Handle memory allocation failure
-			fprintf(stderr, "Error: Memory allocation failed.\n");
-			// Clean up and return or exit
-			free(qos_str);
-			free(current_time_str);
-			return -1; // or handle the error appropriately
-		}
-
-		// Convert int qos to string
-		snprintf(qos_str, qos_length + 1, "%d", qos);
-
-		// Convert int timestamp to string
-		snprintf(current_time_str, timestamp_length + 1, "%d", timestamp);
-
-		int message_len = strlen(message_data_string) + strlen(publisher_topic) + strlen(qos_str) + strlen(current_time_str) + strlen(publisher_id);
-
-		char concatenated_message_to_verify[message_len + 1]; // +1 for the null terminator
-		concatenated_message_to_verify[0] = '\0';
-
-		strncat(concatenated_message_to_verify, message_data_string, message_len);
-		strncat(concatenated_message_to_verify, publisher_topic, message_len);
-		strncat(concatenated_message_to_verify, qos_str, message_len);
-		strncat(concatenated_message_to_verify, current_time_str, message_len);
-		strncat(concatenated_message_to_verify, publisher_id, message_len);
-
-		// Ensure null termination
-		concatenated_message_to_verify[message_len] = '\0';
+		printf("Falcon verification\n");
 
 		//  Falcon variables
 		unsigned logn = 9;
@@ -391,17 +409,15 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
 		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
 
-		
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
-		free(qos_str);
-		free(current_time_str);
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
+		version = "Falcon";
 	}
 	if (!verify)
 	{
-		printf("Signature verification success\n");
+		printf("%s signature verification success with result %d...\n", version, verify);
 	}
 	cJSON_Delete(message_as_json);
 

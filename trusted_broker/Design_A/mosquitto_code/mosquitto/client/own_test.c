@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = false;
+static bool dilithium = true;
 
 struct timeval timestamp;
 
@@ -624,7 +624,7 @@ int main(int argc, char *argv[])
     //printf(jsonString);
     
 
-    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
+    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,true);
 
     cJSON_Delete(root);
     free(jsonString);
