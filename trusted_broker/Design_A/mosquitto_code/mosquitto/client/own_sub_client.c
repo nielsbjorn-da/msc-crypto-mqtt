@@ -214,7 +214,8 @@ char *decode(const char *input, size_t size)
 	base64_decodestate s;
 	base64_init_decodestate(&s);
 	size_t si = base64_encode_length(size, &s);
-	char *output = (char *)malloc(si);
+	char *output = (char *)calloc(si, sizeof(char));
+	//memset(output, 0, sizeof(output));
 	char *c = output;
 
 	/*---------- START DECODING ----------*/
@@ -248,7 +249,7 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 {
 	printf("start verify\n");
 	int result = falcon_verify(
-		sig, sig_len, FALCON_SIG_COMPRESSED,
+		sig, sig_len, FALCON_SIG_PADDED,
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
 	printf("end verify with result: %d\n", result);
@@ -298,28 +299,26 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	//#####################################################################################
 
 	print_message(&cfg, message, properties);
-
+	
 	// parse message as cJSON. fetch sig and pk, verify signature
 	cJSON *message_as_json = cJSON_Parse(message->payload);
-
-	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "data");
+	
+	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "m");
 	char *message_data_string = message_data->valuestring;
 	
 	size_t messagelen = strlen(message_data_string);
 
 	char *publisher_id = cJSON_GetObjectItem(message_as_json, "id")->valuestring;
+	
+	char *publisher_topic = message->topic;
+	
+	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
-	char *publisher_topic = cJSON_GetObjectItem(message_as_json, "topic")->valuestring;
+	int qos = message->qos;
 
-	int timestamp = cJSON_GetObjectItem(message_as_json, "time")->valueint;
-
-	int qos = cJSON_GetObjectItem(message_as_json, "qos")->valueint;
-
-	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "sig")->valuestring;
+	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 	
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
-
-	int sig_len = cJSON_GetObjectItem(message_as_json, "sig_len")->valueint;
 
 	printf("Retrieving message successful\n");
 
@@ -365,6 +364,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	strncat(concatenated_message_to_verify, qos_str, message_len);
 	strncat(concatenated_message_to_verify, current_time_str, message_len);
 	strncat(concatenated_message_to_verify, publisher_id, message_len);
+	
+  	printf("concat string 5: %s\n", concatenated_message_to_verify);
 
 	// Ensure null termination
 	concatenated_message_to_verify[message_len] = '\0';
@@ -397,6 +398,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		unsigned logn = 9;
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
+		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		uint8_t *tmp;
 		size_t tmp_len;
 		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));

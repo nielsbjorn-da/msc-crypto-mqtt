@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = true;
+static bool dilithium = false;
 
 struct timeval timestamp;
 
@@ -303,7 +303,7 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->pk = xmalloc(FALCON_PUBKEY_SIZE(fc->logn));
   fc->sk = xmalloc(FALCON_PRIVKEY_SIZE(fc->logn));
   fc->esk = xmalloc(FALCON_EXPANDEDKEY_SIZE(fc->logn));
-  fc->sig = xmalloc(FALCON_SIG_COMPRESSED_MAXSIZE(fc->logn));
+  fc->sig = xmalloc(FALCON_SIG_PADDED_SIZE(fc->logn));
   fc->sig_len = 0;
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
@@ -329,9 +329,9 @@ void initialize_falcon_struct(FalconContext *fc)
 int falcon_sign_message(FalconContext *fc, char *payload, int payload_len)
 {
   printf("start sign\n");
-  fc->sig_len = FALCON_SIG_COMPRESSED_MAXSIZE(fc->logn);
+  fc->sig_len = FALCON_SIG_PADDED_SIZE(fc->logn);
   int result = falcon_sign_dyn(&fc->rng,
-                               fc->sig, &fc->sig_len, FALCON_SIG_COMPRESSED,
+                               fc->sig, &fc->sig_len, FALCON_SIG_PADDED,
                                fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                                payload, payload_len, fc->tmp, fc->tmp_len);
   printf("end sign with result: %d\n", result);
@@ -342,7 +342,7 @@ int falcon_verify_message(FalconContext *fc, char *payload, int payload_len)
 {
   printf("start verify\n");
   int result = falcon_verify(
-      fc->sig, fc->sig_len, FALCON_SIG_COMPRESSED,
+      fc->sig, fc->sig_len, FALCON_SIG_PADDED,
       fc->pk, pk_len,
       payload, payload_len, fc->tmp, fc->tmp_len);
   printf("end verify with result: %d\n", result);
@@ -381,19 +381,17 @@ int main(int argc, char *argv[])
 {
   FalconContext *fc = malloc(sizeof(FalconContext));
   size_t sig_length;
-  uint8_t signature[sig_length];
   char qos_str[10];          // Adjust the size based on your maximum expected qos value
-  char current_time_str[20]; // Adjust the size based on your maximum expected qos value
+  char current_time_str[20]; // Adjust the size based on your maximum expected time value
   int message_len;
-  
 
-  if (dilithium == true)
+  if (dilithium)
   {
     printf("Signature algorithm: Dilithium\n");
     crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
     int i;
   }
-  else if (dilithium == false)
+  else
   {
     printf("Signature algorithm: Falcon\n");
     if (fc == NULL)
@@ -525,12 +523,12 @@ int main(int argc, char *argv[])
   printf("To be added: %s\n", clientID);
   printf("concat string 5: %s\n", concatenated_message_to_sign);
 
-  if (dilithium == true)
+  if (dilithium)
   {
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
     dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
   }
-  else if (dilithium == false)
+  else
   {
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
@@ -543,28 +541,25 @@ int main(int argc, char *argv[])
       fprintf(stderr, "verifying message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
+    printf("Sig len: %zu \n", fc->sig_len);
   }
   // create json to publish
   cJSON *root = cJSON_CreateObject();
-  cJSON_AddStringToObject(root, "data", cfg.message);
-  
-  cJSON_AddStringToObject(root, "topic", cfg.topic);
+  cJSON_AddStringToObject(root, "m", cfg.message);
   cJSON_AddStringToObject(root, "id", clientID);
-  cJSON_AddNumberToObject(root, "time", current_time);
-  cJSON_AddNumberToObject(root, "qos", cfg.qos);
-  cJSON_AddNumberToObject(root, "sig_len", fc->sig_len);
+  cJSON_AddNumberToObject(root, "t", current_time);
   
   char *encoded_sig;
   char *b64_encoded_pk;
   char *decoded;
 
-  if (dilithium == true)
+  if (dilithium)
   {
     // signature
     encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
 
     printf("\nb64encoded length %u\n", strlen(encoded_sig));
-    cJSON_AddStringToObject(root, "sig", encoded_sig);
+    cJSON_AddStringToObject(root, "s", encoded_sig);
 
     // public key
     b64_encoded_pk = b64_encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
@@ -572,19 +567,21 @@ int main(int argc, char *argv[])
 
     cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
   }
-  else if (dilithium == false)
+  else
   {
+    
     // signature
     encoded_sig = b64_encode(fc->sig, fc->sig_len);
 
     printf("\nb64encoded length %u\n", strlen(encoded_sig));
-    cJSON_AddStringToObject(root, "sig", encoded_sig);
+    cJSON_AddStringToObject(root, "s", encoded_sig);
 
     // public key
     b64_encoded_pk = b64_encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
 
     printf("\nb64encoded length %u\n", strlen(b64_encoded_pk));
     cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
+    
 
     char* decode_sig = decode(encoded_sig, fc->sig_len);
     char* decode_pk = decode(b64_encoded_pk, pk_len);
