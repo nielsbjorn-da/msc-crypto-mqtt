@@ -255,6 +255,14 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 	return result;
 }
 
+long getCurrentTimeInNanoseconds()
+{
+	struct timespec currentTime;
+	gettimeofday(&currentTime, NULL);
+	//clock_gettime(&currentTime);
+	return currentTime.tv_sec * 1000000000L + currentTime.tv_nsec;
+}
+
 static void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *message, const mosquitto_property *properties)
 {
 	int i;
@@ -293,10 +301,11 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		mosquitto_publish(mosq, &last_mid, message->topic, 0, NULL, 1, true);
 	}
 
-	//#####################################################################################
-	// Retrieve the content from the MQTT payload package.
-	//#####################################################################################
-
+	// #####################################################################################
+	//  Retrieve the content from the MQTT payload package.
+	// #####################################################################################
+	long start_time, end_time;
+	long elapsed_time;
 	print_message(&cfg, message, properties);
 
 	// parse message as cJSON. fetch sig and pk, verify signature
@@ -304,7 +313,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "data");
 	char *message_data_string = message_data->valuestring;
-	
+
 	size_t messagelen = strlen(message_data_string);
 
 	char *publisher_id = cJSON_GetObjectItem(message_as_json, "id")->valuestring;
@@ -313,20 +322,22 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	int timestamp = cJSON_GetObjectItem(message_as_json, "time")->valueint;
 
+	start_time = ((long)cJSON_GetObjectItem(message_as_json, "measure_time")->valueint);
+
 	int qos = cJSON_GetObjectItem(message_as_json, "qos")->valueint;
 
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "sig")->valuestring;
-	
+
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
 
 	int sig_len = cJSON_GetObjectItem(message_as_json, "sig_len")->valueint;
 
 	printf("Retrieving message successful\n");
 
-	//#####################################################################################
-	// Creating the message that were signed
-	//#####################################################################################
-	// Calculate the length of the converted strings
+	// #####################################################################################
+	//  Creating the message that were signed
+	// #####################################################################################
+	//  Calculate the length of the converted strings
 
 	int qos_length = snprintf(NULL, 0, "%d", qos);
 	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
@@ -371,10 +382,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	free(qos_str);
 	free(current_time_str);
 
-	//#####################################################################################
-	// Run the verifications algorithms
-	//#####################################################################################
-	
+	// #####################################################################################
+	//  Run the verifications algorithms
+	// #####################################################################################
 	int verify = 1;
 	char *version = "";
 	if (strlen(encoded_signature) > 3000)
@@ -382,11 +392,12 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		printf("Dilithium verification\n");
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
 		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
-	
+
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
+
 		version = "Dilithium";
 	}
 	else
@@ -413,10 +424,33 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
+		// Record the end time
+		end_time = getCurrentTimeInNanoseconds();
 		version = "Falcon";
 	}
 	if (!verify)
 	{
+		// Calculate the elapsed time in seconds
+		printf("end_time is: %d and start_time is: %d\n", end_time, start_time);
+
+		// Calculate the elapsed time in nanoseconds
+		long elapsed_time_ns = end_time - start_time;
+
+		// Print the elapsed time in nanoseconds
+		printf("Elapsed time: %ld nanoseconds\n", elapsed_time_ns);
+
+		// Convert elapsed time from nanoseconds to milliseconds
+		double elapsed_time_ms = (double)elapsed_time_ns / 1000000.0;
+
+		// Print the elapsed time in milliseconds
+		printf("Elapsed time: %f milliseconds\n", elapsed_time_ms);
+
+		// Convert elapsed time from nanoseconds to seconds
+		double elapsed_time_seconds = (double)elapsed_time_ns / 1000000000.0;
+
+		// Print the elapsed time in seconds
+		printf("Elapsed time: %f seconds\n", elapsed_time_seconds);
+
 		printf("%s signature verification success with result %d...\n", version, verify);
 	}
 	cJSON_Delete(message_as_json);

@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = true;
+static bool dilithium = false;
 
 struct timeval timestamp;
 
@@ -144,7 +144,7 @@ char *b64_encode_3_byte(uint8_t *input)
 char *b64_encode(uint8_t *input, int input_size)
 {
   int i = 0;
-  char* output = (char*)malloc(input_size*1.5);
+  char *output = (char *)malloc(input_size * 1.5);
   memset(output, 0, sizeof(output));
   while (i < input_size)
   {
@@ -188,7 +188,6 @@ void b64decode_3_bytes()
   printf("\n");
   free(output);
 }
-
 
 void pub_shared_cleanup(void)
 {
@@ -253,8 +252,9 @@ int dilithium_sign_message(uint8_t *signature, const char *message, int message_
   size_t sig_length;
 
   int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
-  
-  if (ret) {
+
+  if (ret)
+  {
     fprintf(stderr, "Signature generation failed\n");
     return -1;
   }
@@ -270,7 +270,8 @@ int dilithium_verify(uint8_t *signature, char *message, int message_length, uint
 
   int ret = crypto_sign_verify(signature, sig_length, message, message_length, public_key);
 
-  if(ret) {
+  if (ret)
+  {
     fprintf(stderr, "Verification failed\n");
     return -1;
   }
@@ -377,15 +378,27 @@ char *decode(const char *input, size_t size)
   return output;
 }
 
+long getCurrentTimeInNanoseconds()
+{
+  struct timespec currentTime;
+  gettimeofday(&currentTime, NULL);
+  //clock_gettime(&currentTime);
+  return currentTime.tv_sec * 1000000000L + currentTime.tv_nsec;
+}
+
 int main(int argc, char *argv[])
 {
+  // Record the start time
+  long start_time;
   FalconContext *fc = malloc(sizeof(FalconContext));
   size_t sig_length;
   uint8_t signature[sig_length];
   char qos_str[10];          // Adjust the size based on your maximum expected qos value
   char current_time_str[20]; // Adjust the size based on your maximum expected qos value
   int message_len;
-  
+
+  // Record the start time
+  start_time = getCurrentTimeInNanoseconds();
 
   if (dilithium == true)
   {
@@ -498,6 +511,10 @@ int main(int argc, char *argv[])
   }
   printf("after connect\n");
 
+  // #####################################################################################
+  //  Creating the message to sign
+  // #####################################################################################
+
   // Convert int qos to string
   snprintf(qos_str, sizeof(qos_str), "%d", cfg.qos);
 
@@ -508,27 +525,19 @@ int main(int argc, char *argv[])
   char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator
   concatenated_message_to_sign[0] = '\0';
 
-  printf("concat string 0: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, cfg.message);
-  printf("To be added: %s\n", cfg.message);
-  printf("concat string 1: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, cfg.topic);
-  printf("To be added: %s\n", cfg.topic);
-  printf("concat string 2: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, qos_str);
-  printf("To be added: %s\n", qos_str);
-  printf("concat string 3: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, current_time_str);
-  printf("To be added: %s\n", current_time_str);
-  printf("concat string 4: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, clientID);
-  printf("To be added: %s\n", clientID);
-  printf("concat string 5: %s\n", concatenated_message_to_sign);
+
+  // #####################################################################################
+  //  Run the signing algorithms
+  // #####################################################################################
 
   if (dilithium == true)
   {
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
-    dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
   }
   else if (dilithium == false)
   {
@@ -537,23 +546,21 @@ int main(int argc, char *argv[])
       fprintf(stderr, "Signing message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-
-    if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
-    {
-      fprintf(stderr, "verifying message for Falcon failed\n");
-      exit(EXIT_FAILURE);
-    }
   }
-  // create json to publish
+
+  // #####################################################################################
+  //  Create cJSON
+  // #####################################################################################
   cJSON *root = cJSON_CreateObject();
   cJSON_AddStringToObject(root, "data", cfg.message);
-  
+
   cJSON_AddStringToObject(root, "topic", cfg.topic);
   cJSON_AddStringToObject(root, "id", clientID);
   cJSON_AddNumberToObject(root, "time", current_time);
+  cJSON_AddNumberToObject(root, "measure_time", (long)start_time);
   cJSON_AddNumberToObject(root, "qos", cfg.qos);
   cJSON_AddNumberToObject(root, "sig_len", fc->sig_len);
-  
+
   char *encoded_sig;
   char *b64_encoded_pk;
   char *decoded;
@@ -586,13 +593,13 @@ int main(int argc, char *argv[])
     printf("\nb64encoded length %u\n", strlen(b64_encoded_pk));
     cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
 
-    char* decode_sig = decode(encoded_sig, fc->sig_len);
-    char* decode_pk = decode(b64_encoded_pk, pk_len);
+    char *decode_sig = decode(encoded_sig, fc->sig_len);
+    char *decode_pk = decode(b64_encoded_pk, pk_len);
 
     fc->pk = decode_pk;
     fc->sig = decode_sig;
     printf("Length of encoded signature %d\n", strlen(encoded_sig));
-		printf("Length of decoded signature %d\n", strlen(decode_sig));
+    printf("Length of decoded signature %d\n", strlen(decode_sig));
     printf("Length of message %d\n", strlen(&concatenated_message_to_sign));
 
     if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
@@ -601,42 +608,39 @@ int main(int argc, char *argv[])
       exit(EXIT_FAILURE);
     }
 
-    //printf("Encode pk: %s\n", b64_encoded_pk);
-		//printf("Decode pk: %s\n", decode_pk);
-		//printf("Encode sig: %s\n", encoded_sig);
+    // printf("Encode pk: %s\n", b64_encoded_pk);
+    // printf("Decode pk: %s\n", decode_pk);
+    // printf("Encode sig: %s\n", encoded_sig);
 
-		//printf("Decode sig: %s\n", decode_sig);
+    // printf("Decode sig: %s\n", decode_sig);
     printf("Length of decoded signature variable %d", strlen(decode_sig));
     printf("Length of signature %d\n", strlen(fc->sig));
-		printf("Max length of signature in bytes: %d\n", fc->sig_len);
-		printf("Concatinated message %s\n", concatenated_message_to_sign);
-		printf("Length of concatinated message %d\n", strlen(concatenated_message_to_sign));
-		printf("Length of message len %d\n", message_len);
+    printf("Max length of signature in bytes: %d\n", fc->sig_len);
+    printf("Concatinated message %s\n", concatenated_message_to_sign);
+    printf("Length of concatinated message %d\n", strlen(concatenated_message_to_sign));
+    printf("Length of message len %d\n", message_len);
 
-    //printf("IT WORKED, hahaha simon\n");
-    
-
+    // printf("IT WORKED, hahaha simon\n");
   }
 
-    char *jsonString = cJSON_PrintUnformatted(root);
-    size_t allocatedSize = strlen(jsonString) + 1;
-    //printf("Allocated size: %zu bytes\n", allocatedSize);
-    //printf(jsonString);
-    
+  char *jsonString = cJSON_PrintUnformatted(root);
+  size_t allocatedSize = strlen(jsonString) + 1;
+  // printf("Allocated size: %zu bytes\n", allocatedSize);
+  // printf(jsonString);
 
-    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,true);
+  rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, true);
 
-    cJSON_Delete(root);
-    free(jsonString);
-    free(b64_encoded_pk);
-    free(encoded_sig);
-    printf("after publish\n");
+  cJSON_Delete(root);
+  free(jsonString);
+  free(b64_encoded_pk);
+  free(encoded_sig);
+  printf("after publish\n");
 
-    mosquitto_destroy(mosq);
+  mosquitto_destroy(mosq);
 
-  cleanup:
-    mosquitto_lib_cleanup();
-    client_config_cleanup(&cfg);
-    pub_shared_cleanup();
-    return 1;
-  }
+cleanup:
+  mosquitto_lib_cleanup();
+  client_config_cleanup(&cfg);
+  pub_shared_cleanup();
+  return 1;
+}
