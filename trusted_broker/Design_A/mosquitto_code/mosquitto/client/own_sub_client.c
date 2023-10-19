@@ -255,14 +255,6 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 	return result;
 }
 
-long getCurrentTimeInNanoseconds()
-{
-	struct timespec currentTime;
-	gettimeofday(&currentTime, NULL);
-	//clock_gettime(&currentTime);
-	return currentTime.tv_sec * 1000000000L + currentTime.tv_nsec;
-}
-
 static void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *message, const mosquitto_property *properties)
 {
 	int i;
@@ -304,8 +296,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// #####################################################################################
 	//  Retrieve the content from the MQTT payload package.
 	// #####################################################################################
-	long start_time, end_time;
-	long elapsed_time;
 	print_message(&cfg, message, properties);
 
 	// parse message as cJSON. fetch sig and pk, verify signature
@@ -320,9 +310,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	char *publisher_topic = cJSON_GetObjectItem(message_as_json, "topic")->valuestring;
 
-	int timestamp = cJSON_GetObjectItem(message_as_json, "time")->valueint;
+	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
-	start_time = ((long)cJSON_GetObjectItem(message_as_json, "measure_time")->valueint);
+	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
 
 	int qos = cJSON_GetObjectItem(message_as_json, "qos")->valueint;
 
@@ -381,12 +371,12 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	concatenated_message_to_verify[message_len] = '\0';
 	free(qos_str);
 	free(current_time_str);
-
 	// #####################################################################################
 	//  Run the verifications algorithms
 	// #####################################################################################
 	int verify = 1;
 	char *version = "";
+	struct timeval receive_time;
 	if (strlen(encoded_signature) > 3000)
 	{
 		printf("Dilithium verification\n");
@@ -403,7 +393,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	else
 	{
 		printf("Falcon verification\n");
-
 		//  Falcon variables
 		unsigned logn = 9;
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
@@ -424,34 +413,19 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
-		// Record the end time
-		end_time = getCurrentTimeInNanoseconds();
 		version = "Falcon";
 	}
 	if (!verify)
 	{
-		// Calculate the elapsed time in seconds
-		printf("end_time is: %d and start_time is: %d\n", end_time, start_time);
+		// Record the end time
+		gettimeofday(&receive_time, NULL);
 
-		// Calculate the elapsed time in nanoseconds
-		long elapsed_time_ns = end_time - start_time;
-
-		// Print the elapsed time in nanoseconds
-		printf("Elapsed time: %ld nanoseconds\n", elapsed_time_ns);
-
-		// Convert elapsed time from nanoseconds to milliseconds
-		double elapsed_time_ms = (double)elapsed_time_ns / 1000000.0;
-
-		// Print the elapsed time in milliseconds
-		printf("Elapsed time: %f milliseconds\n", elapsed_time_ms);
-
-		// Convert elapsed time from nanoseconds to seconds
-		double elapsed_time_seconds = (double)elapsed_time_ns / 1000000000.0;
-
-		// Print the elapsed time in seconds
-		printf("Elapsed time: %f seconds\n", elapsed_time_seconds);
+		// Calculate and print the time taken for message delivery
+		double time_taken = (receive_time.tv_sec - timestamp) + (receive_time.tv_usec - time_micro) / 1e9;
+		printf("Message delivered in %.9f seconds.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
+
 	}
 	cJSON_Delete(message_as_json);
 
