@@ -214,7 +214,7 @@ char *decode(const char *input, size_t size)
 	base64_decodestate s;
 	base64_init_decodestate(&s);
 	size_t si = base64_encode_length(size, &s);
-	char *output = (char *)malloc(si);
+	char *output = (char *)calloc(si, sizeof(char));
 	char *c = output;
 
 	/*---------- START DECODING ----------*/
@@ -246,12 +246,10 @@ int verify_dilithium_signature(uint8_t *signature, const char *message, size_t m
 
 int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int payload_len, uint8_t *pk, size_t pk_len, uint8_t *tmp, size_t tmp_len)
 {
-	printf("start verify\n");
 	int result = falcon_verify(
-		sig, sig_len, FALCON_SIG_COMPRESSED,
+		sig, sig_len, FALCON_SIG_PADDED,
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
-	printf("end verify with result: %d\n", result);
 	return result;
 }
 
@@ -259,7 +257,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 {
 	int i;
 	bool res;
-	printf("Message received \n");
 	UNUSED(obj);
 	UNUSED(properties);
 
@@ -296,81 +293,64 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// #####################################################################################
 	//  Retrieve the content from the MQTT payload package.
 	// #####################################################################################
-	print_message(&cfg, message, properties);
+	//print_message(&cfg, message, properties);
 
-	// parse message as cJSON. fetch sig and pk, verify signature
 	cJSON *message_as_json = cJSON_Parse(message->payload);
 
-	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "data");
+	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "m");
 	char *message_data_string = message_data->valuestring;
 
 	size_t messagelen = strlen(message_data_string);
 
 	char *publisher_id = cJSON_GetObjectItem(message_as_json, "id")->valuestring;
 
-	char *publisher_topic = cJSON_GetObjectItem(message_as_json, "topic")->valuestring;
+	char *publisher_topic = message->topic;
 
 	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
 	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
 
-	int qos = cJSON_GetObjectItem(message_as_json, "qos")->valueint;
-
-	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "sig")->valuestring;
+	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
-
-	int sig_len = cJSON_GetObjectItem(message_as_json, "sig_len")->valueint;
-
-	printf("Retrieving message successful\n");
 
 	// #####################################################################################
 	//  Creating the message that were signed
 	// #####################################################################################
+	
 	//  Calculate the length of the converted strings
-
-	int qos_length = snprintf(NULL, 0, "%d", qos);
 	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
 
 	// Allocate memory for the strings dynamically, including space for the null terminator
-	char *qos_str = (char *)malloc(qos_length + 1);
-	qos_str[0] = '\0';
-
 	char *current_time_str = (char *)malloc(timestamp_length + 1);
 	current_time_str[0] = '\0';
 
 	// Check if memory allocation was successful
-	if (qos_str == NULL || current_time_str == NULL)
+	if (current_time_str == NULL)
 	{
 		// Handle memory allocation failure
 		fprintf(stderr, "Error: Memory allocation failed.\n");
 		// Clean up and return or exit
-		free(qos_str);
 		free(current_time_str);
 		return -1; // or handle the error appropriately
 	}
-
-	// Convert int qos to string
-	snprintf(qos_str, qos_length + 1, "%d", qos);
-
 	// Convert int timestamp to string
 	snprintf(current_time_str, timestamp_length + 1, "%d", timestamp);
 
-	int message_len = strlen(message_data_string) + strlen(publisher_topic) + strlen(qos_str) + strlen(current_time_str) + strlen(publisher_id);
+	int message_len = strlen(message_data_string) + strlen(publisher_topic) + strlen(current_time_str) + strlen(publisher_id);
 
 	char concatenated_message_to_verify[message_len + 1]; // +1 for the null terminator
 	concatenated_message_to_verify[0] = '\0';
 
 	strncat(concatenated_message_to_verify, message_data_string, message_len);
 	strncat(concatenated_message_to_verify, publisher_topic, message_len);
-	strncat(concatenated_message_to_verify, qos_str, message_len);
 	strncat(concatenated_message_to_verify, current_time_str, message_len);
 	strncat(concatenated_message_to_verify, publisher_id, message_len);
 
 	// Ensure null termination
 	concatenated_message_to_verify[message_len] = '\0';
-	free(qos_str);
 	free(current_time_str);
+
 	// #####################################################################################
 	//  Run the verifications algorithms
 	// #####################################################################################
@@ -379,7 +359,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	struct timeval receive_time;
 	if (strlen(encoded_signature) > 3000)
 	{
-		printf("Dilithium verification\n");
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
 		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
 
@@ -387,12 +366,10 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
-
 		version = "Dilithium";
 	}
 	else
 	{
-		printf("Falcon verification\n");
 		//  Falcon variables
 		unsigned logn = 9;
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
@@ -403,6 +380,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(logn));
 		len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(logn));
 		len = maxsz(len, FALCON_TMPSIZE_VERIFY(logn));
+		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		tmp = xmalloc(len);
 		tmp_len = len;
 
@@ -455,7 +433,6 @@ static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, i
 	UNUSED(obj);
 	UNUSED(flags);
 	UNUSED(properties);
-	printf("Connected\n");
 	connack_received = true;
 
 	connack_result = result;

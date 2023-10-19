@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = true;
+static bool dilithium = false;
 
 
 
@@ -283,7 +283,7 @@ int dilithium_verify(uint8_t *signature, char *message, int message_length, uint
 */
 void initialize_falcon_struct(FalconContext *fc)
 {
-  printf("Security: %4u bytes\n", 1u << logn);
+  //printf("Security: %4u bytes\n", 1u << logn);
   fflush(stdout);
 
   // Creating SHAKE256 context.
@@ -304,12 +304,11 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->pk = xmalloc(FALCON_PUBKEY_SIZE(fc->logn));
   fc->sk = xmalloc(FALCON_PRIVKEY_SIZE(fc->logn));
   fc->esk = xmalloc(FALCON_EXPANDEDKEY_SIZE(fc->logn));
-  fc->sig = xmalloc(FALCON_SIG_COMPRESSED_MAXSIZE(fc->logn));
+  fc->sig = xmalloc(FALCON_SIG_PADDED_SIZE(fc->logn));
   fc->sig_len = 0;
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
 
-  // printf("Start key gen\n");
   if (falcon_keygen_make(&fc->rng, fc->logn,
                          fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                          fc->pk, FALCON_PUBKEY_SIZE(fc->logn),
@@ -319,9 +318,6 @@ void initialize_falcon_struct(FalconContext *fc)
     exit(EXIT_FAILURE);
   }
   // printf("end key gen\n");
-
-  int r = falcon_get_logn(fc->pk, pk_len);
-  printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
 }
 
 /*
@@ -329,20 +325,18 @@ void initialize_falcon_struct(FalconContext *fc)
 */
 int falcon_sign_message(FalconContext *fc, char *payload, int payload_len)
 {
-  printf("start sign\n");
-  fc->sig_len = FALCON_SIG_COMPRESSED_MAXSIZE(fc->logn);
+  fc->sig_len = FALCON_SIG_PADDED_SIZE(fc->logn);
   int result = falcon_sign_dyn(&fc->rng,
-                               fc->sig, &fc->sig_len, FALCON_SIG_COMPRESSED,
+                               fc->sig, &fc->sig_len, FALCON_SIG_PADDED,
                                fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                                payload, payload_len, fc->tmp, fc->tmp_len);
-  printf("end sign with result: %d\n", result);
   return result;
 }
 
 int falcon_verify_message(FalconContext *fc, char *payload, int payload_len)
 {
   int result = falcon_verify(
-      fc->sig, fc->sig_len, FALCON_SIG_COMPRESSED,
+      fc->sig, fc->sig_len, FALCON_SIG_PADDED,
       fc->pk, pk_len,
       payload, payload_len, fc->tmp, fc->tmp_len);
   return result;
@@ -381,21 +375,19 @@ int main(int argc, char *argv[])
 
   FalconContext *fc = malloc(sizeof(FalconContext));
   size_t sig_length;
-  uint8_t signature[sig_length];
-  char qos_str[10];          // Adjust the size based on your maximum expected qos value
-  char current_time_str[20]; // Adjust the size based on your maximum expected qos value
+  char current_time_str[20]; // Adjust the size based on your maximum expected time value
   int message_len;
   struct timeval timestamp;
   char clientID[23] = "publisher_client";
   struct mosquitto *mosq = NULL;
   int rc;
 
-  if (dilithium == true)
+  if (dilithium)
   {
     crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
     int i;
   }
-  else if (dilithium == false)
+  else
   {
     if (fc == NULL)
     {
@@ -492,20 +484,15 @@ int main(int argc, char *argv[])
   // #####################################################################################
   //  Creating the message to sign
   // #####################################################################################
-
-  // Convert int qos to string
-  snprintf(qos_str, sizeof(qos_str), "%d", cfg.qos);
-
   // Convert int qos to string
   snprintf(current_time_str, sizeof(current_time_str), "%ld", timestamp.tv_sec);
 
-  message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(qos_str) + strlen(current_time_str) + strlen(clientID);
+  message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(current_time_str) + strlen(clientID);
   char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator
   concatenated_message_to_sign[0] = '\0';
 
   strcat(concatenated_message_to_sign, cfg.message);
   strcat(concatenated_message_to_sign, cfg.topic);
-  strcat(concatenated_message_to_sign, qos_str);
   strcat(concatenated_message_to_sign, current_time_str);
   strcat(concatenated_message_to_sign, clientID);
 
@@ -513,11 +500,11 @@ int main(int argc, char *argv[])
   //  Run the signing algorithms
   // #####################################################################################
 
-  if (dilithium == true)
+  if (dilithium)
   {
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
   }
-  else if (dilithium == false)
+  else
   {
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
@@ -529,70 +516,46 @@ int main(int argc, char *argv[])
   // #####################################################################################
   //  Create cJSON
   // #####################################################################################
-  cJSON *root = cJSON_CreateObject();
-  cJSON_AddStringToObject(root, "data", cfg.message);
-
-  cJSON_AddStringToObject(root, "topic", cfg.topic);
-  cJSON_AddStringToObject(root, "id", clientID);
-  cJSON_AddNumberToObject(root, "t", timestamp.tv_sec);
-   printf("current time in seconds: %d, and current time in microseconds %d\n", timestamp.tv_sec, timestamp.tv_usec);  
-  cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
-  cJSON_AddNumberToObject(root, "qos", cfg.qos);
-  cJSON_AddNumberToObject(root, "sig_len", fc->sig_len);
-
   char *encoded_sig;
   char *b64_encoded_pk;
-  char *decoded;
 
-  if (dilithium == true)
+  if (dilithium)
   {
     // signature
     encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
 
-    cJSON_AddStringToObject(root, "sig", encoded_sig);
-
     // public key
     b64_encoded_pk = b64_encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
-
-    cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
   }
-  else if (dilithium == false)
+  else
   {
     // signature
     encoded_sig = b64_encode(fc->sig, fc->sig_len);
 
-    cJSON_AddStringToObject(root, "sig", encoded_sig);
-
     // public key
     b64_encoded_pk = b64_encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
 
-    cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
-
-    char *decode_sig = decode(encoded_sig, fc->sig_len);
-    char *decode_pk = decode(b64_encoded_pk, pk_len);
-
-    fc->pk = decode_pk;
-    fc->sig = decode_sig;
-
-    if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
-    {
-      fprintf(stderr, "verifying message for Falcon failed\n");
-      exit(EXIT_FAILURE);
-    }
   }
-
+  
+  cJSON *root = cJSON_CreateObject();
+  cJSON_AddStringToObject(root, "m", cfg.message);
+  cJSON_AddStringToObject(root, "id", clientID);
+  cJSON_AddNumberToObject(root, "t", timestamp.tv_sec);
+  cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
+  cJSON_AddStringToObject(root, "s", encoded_sig);
+  cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
+  
   char *jsonString = cJSON_PrintUnformatted(root);
   size_t allocatedSize = strlen(jsonString) + 1;
 
-  rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, true);
+  rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
 
+  mosquitto_destroy(mosq);
   cJSON_Delete(root);
   free(jsonString);
   free(b64_encoded_pk);
   free(encoded_sig);
-  printf("after publish\n");
-
-  mosquitto_destroy(mosq);
+ 
 
 cleanup:
   mosquitto_lib_cleanup();
