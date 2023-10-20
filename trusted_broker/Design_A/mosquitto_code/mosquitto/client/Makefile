@@ -14,7 +14,7 @@ ALL_DEPS:= static_pub static_sub static_rr
 endif
 endif
 
-ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
+ABSO_PATH:= /home/pi/Documents/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
 
 DILITHIUM_RELA_PATH:= dilithium_and_falcon/dilithium/dilithium-master/ref
 

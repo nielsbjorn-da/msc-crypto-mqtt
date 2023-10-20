@@ -388,7 +388,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	else
 	{
 		//  Falcon variables
-		unsigned logn = 9;
+		unsigned logn = 10;
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
