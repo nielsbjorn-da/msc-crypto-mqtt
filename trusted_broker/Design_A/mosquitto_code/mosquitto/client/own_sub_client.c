@@ -146,6 +146,9 @@ static bool timed_out = false;
 static int connack_result = 0;
 bool connack_received = false;
 
+// Time variables
+clock_t start, end;
+
 #ifndef WIN32
 static void my_signal_handler(int signum)
 {
@@ -294,7 +297,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	//  Retrieve the content from the MQTT payload package.
 	// #####################################################################################
 	//print_message(&cfg, message, properties);
-
+	start = clock();
 	cJSON *message_as_json = cJSON_Parse(message->payload);
 
 	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "m");
@@ -313,11 +316,13 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
+	end = clock();
+  printf("Extracting payload from cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
 	// #####################################################################################
 	//  Creating the message that were signed
 	// #####################################################################################
-	
+	start = clock();
 	//  Calculate the length of the converted strings
 	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
 
@@ -350,19 +355,31 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// Ensure null termination
 	concatenated_message_to_verify[message_len] = '\0';
 	free(current_time_str);
-
+	end = clock();
+  printf("Generating concat message execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	// #####################################################################################
 	//  Run the verifications algorithms
 	// #####################################################################################
+	
 	int verify = 1;
 	char *version = "";
 	struct timeval receive_time;
 	if (strlen(encoded_signature) > 3000)
 	{
+		start = clock();
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
-		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
+		end = clock();
+  		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
+		start = clock();
+		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
+		end = clock();
+  		printf("Decode PK Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		
+		start = clock();
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
+		end = clock();
+  		printf("Verification Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
@@ -371,7 +388,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	else
 	{
 		//  Falcon variables
-		unsigned logn = 9;
+		unsigned logn = 10;
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
@@ -384,11 +401,22 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		tmp = xmalloc(len);
 		tmp_len = len;
 
+		start = clock();
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
+		end = clock();
+		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		
+		start = clock();
 		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
+		end = clock();
+  		printf("Decode PK Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
+		start = clock();
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
+		end = clock();
+  		printf("Verification Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
 		version = "Falcon";
@@ -400,7 +428,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		// Calculate and print the time taken for message delivery
 		double time_taken = (receive_time.tv_sec - timestamp) + (receive_time.tv_usec - time_micro) / 1e9;
-		printf("Message delivered in %.9f seconds.\n", time_taken);
+		printf("Time result: %.9f seconds.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
 
