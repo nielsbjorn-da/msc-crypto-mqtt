@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Number of rounds (for testing purposes)
-rounds=1000
+rounds=10
 
-# Start subscriber and capture its output in time_results.txt
-./client_own_subscriber -t "TestTopic" > time_results.txt &
+ #Start subscriber and capture its output in time_results.txt
+./client_own_subscriber -t "TestTopic" > time_results_subscriber.txt &
 
 # Store subscriber's process ID
 subscriber_pid=$!
@@ -19,11 +19,14 @@ do
     message="Round $i: this is test message number $i"
 
     # Start publisher for this round
-    ./client_own_test -t "TestTopic" -m "$message"
+    ./client_own_test -t "TestTopic" -m "$message" >> time_results_publisher.txt
+
+    # Add separator to indicate start of a new round in both files
+    echo "---------------------------------------------------------" >> time_results_publisher.txt
 
     # Wait for a few seconds to allow subscriber to process and write the time result
+    sleep 0.5
 done
-sleep 2
 # Terminate the subscriber after rounds finish
 kill $subscriber_pid
 

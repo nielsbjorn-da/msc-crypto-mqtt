@@ -431,6 +431,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		printf("Time result: %.9f seconds.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
+		printf("---------------------------------------------------------\n");
 
 	}
 	cJSON_Delete(message_as_json);
@@ -505,7 +506,7 @@ static void my_subscribe_callback(struct mosquitto *mosq, void *obj, int mid, in
 	UNUSED(obj);
 
 	if (should_print)
-		printf("Subscribed (mid: %d): %d", mid, granted_qos[0]);
+		//printf("Subscribed (mid: %d): %d", mid, granted_qos[0]);
 	for (i = 1; i < qos_count; i++)
 	{
 		if (should_print)
@@ -588,7 +589,7 @@ int main(int argc, char *argv[])
 	}
 
 	char clientID[23] = "subscriber_client";
-	printf("Ready to connect\n");
+	//printf("Ready to connect\n");
 	g_mosq = mosquitto_new(clientID, cfg.clean_session, &cfg);
 	if (!g_mosq)
 	{
