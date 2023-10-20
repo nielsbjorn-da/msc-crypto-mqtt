@@ -36,7 +36,7 @@ uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
 static bool dilithium = true;
-
+//
 // Falcon struct
 typedef struct
 {
@@ -54,9 +54,9 @@ typedef struct
 } FalconContext;
 
 // Falcon variables
-unsigned logn = 10;
-size_t pk_len = FALCON_PUBKEY_SIZE(10);
-size_t len = FALCON_TMPSIZE_KEYGEN(10);
+unsigned logn = 9;
+size_t pk_len = FALCON_PUBKEY_SIZE(9);
+size_t len = FALCON_TMPSIZE_KEYGEN(9);
 
 // Time variables
 clock_t start, end;
@@ -389,7 +389,7 @@ int main(int argc, char *argv[])
     start = clock();
     crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
     end = clock();
-    printf("Dilithium initialization execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    printf("%s initialization execution time: %f seconds\n", CRYPTO_ALGNAME, ((double)(end - start)) / CLOCKS_PER_SEC);
     int i;
   }
   else
