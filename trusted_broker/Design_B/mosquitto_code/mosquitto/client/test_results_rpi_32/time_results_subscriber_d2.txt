@@ -1,11 +1,8 @@
-Ready to connect
-Connected
-Subscribed (mid: 1): 0
-Extracting payload from cJSON execution time: 0.000113 seconds
-Generating concat message execution time: 0.000023 seconds
-Decode sig Dilithium execution time: 0.000077 seconds
-Verification Dilithium execution time: 0.001809 seconds
-Time result: 0.000027200 seconds.
+Extracting payload from cJSON execution time: 0.000046 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Dilithium execution time: 0.000024 seconds
+Verification Dilithium execution time: 0.000738 seconds
+Time result: 0.000009015 seconds.
 Dilithium signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000046 seconds
