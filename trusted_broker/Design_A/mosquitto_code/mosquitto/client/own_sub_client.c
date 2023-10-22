@@ -383,7 +383,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
-		version = "Dilithium";
+		version = CRYPTO_ALGNAME;
 	}
 	else
 	{
@@ -404,7 +404,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		start = clock();
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
 		end = clock();
-		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		printf("Decode sig Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 		
 		start = clock();
 		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);

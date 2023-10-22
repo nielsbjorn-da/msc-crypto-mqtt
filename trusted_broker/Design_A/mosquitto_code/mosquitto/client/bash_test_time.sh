@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Number of rounds (for testing purposes)
-rounds=10
+rounds=100
 
  #Start subscriber and capture its output in time_results.txt
 ./client_own_subscriber -t "TestTopic" > time_results_subscriber.txt &
@@ -10,7 +10,7 @@ rounds=10
 subscriber_pid=$!
 
 # Wait for subscriber to be ready (you might need to adjust the sleep duration)
-sleep 2
+sleep 1
 
 # Loop over 10 rounds for testing purposes
 for ((i=1; i<=$rounds; i++))
