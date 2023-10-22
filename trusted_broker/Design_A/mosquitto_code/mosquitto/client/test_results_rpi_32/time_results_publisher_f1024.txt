@@ -1,700 +1,700 @@
-Falcon initialization execution time: 0.050756 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002376 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000540 seconds
-Generating cJSON execution time: 0.000267 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.067785 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002339 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000284 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.101942 seconds
-Generating message concat execution time: 0.000019 seconds
-Signing message Falcon execution time: 0.005304 seconds
-Encode signature Falcon execution time: 0.000658 seconds
-Encode PK Falcon execution time: 0.001192 seconds
-Generating cJSON execution time: 0.000509 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.047033 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002365 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000553 seconds
-Generating cJSON execution time: 0.000270 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.045910 seconds
+Falcon initialization execution time: 0.150170 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002358 seconds
+Signing message Falcon execution time: 0.030792 seconds
 Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000260 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000286 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.116060 seconds
+Falcon initialization execution time: 0.184463 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002354 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000252 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.056287 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002340 seconds
+Signing message Falcon execution time: 0.030598 seconds
 Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000426 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.044775 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002370 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000555 seconds
-Generating cJSON execution time: 0.000284 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.115025 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002360 seconds
-Encode signature Falcon execution time: 0.000327 seconds
-Encode PK Falcon execution time: 0.000529 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.055312 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002335 seconds
-Encode signature Falcon execution time: 0.000298 seconds
-Encode PK Falcon execution time: 0.000565 seconds
-Generating cJSON execution time: 0.000258 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.067348 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002363 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000529 seconds
-Generating cJSON execution time: 0.000244 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.097474 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002379 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059828 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002380 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000540 seconds
-Generating cJSON execution time: 0.000263 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059746 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.004266 seconds
-Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000540 seconds
-Generating cJSON execution time: 0.000263 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.099325 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002384 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000539 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.052799 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002356 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000554 seconds
-Generating cJSON execution time: 0.000264 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.063268 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002384 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000250 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049458 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002369 seconds
-Encode signature Falcon execution time: 0.000298 seconds
 Encode PK Falcon execution time: 0.000538 seconds
-Generating cJSON execution time: 0.000275 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059839 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002396 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.112613 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002344 seconds
-Encode signature Falcon execution time: 0.000322 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000290 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.209390 seconds
-Generating message concat execution time: 0.000011 seconds
-Signing message Falcon execution time: 0.002332 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000556 seconds
-Generating cJSON execution time: 0.000264 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.075142 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002344 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000552 seconds
-Generating cJSON execution time: 0.000281 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.088830 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002368 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.105166 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002343 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000253 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.099375 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002325 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000530 seconds
 Generating cJSON execution time: 0.000251 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.053944 seconds
-Generating message concat execution time: 0.000017 seconds
-Signing message Falcon execution time: 0.002386 seconds
+Falcon initialization execution time: 0.112370 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030637 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000262 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.092752 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030800 seconds
 Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000538 seconds
-Generating cJSON execution time: 0.000265 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049267 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002400 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000263 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.050648 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002390 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000258 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.058625 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002349 seconds
-Encode signature Falcon execution time: 0.000319 seconds
 Encode PK Falcon execution time: 0.000533 seconds
-Generating cJSON execution time: 0.000261 seconds
+Generating cJSON execution time: 0.000371 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.121574 seconds
+Falcon initialization execution time: 0.103022 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002349 seconds
-Encode signature Falcon execution time: 0.000298 seconds
-Encode PK Falcon execution time: 0.000566 seconds
-Generating cJSON execution time: 0.000263 seconds
+Signing message Falcon execution time: 0.030808 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000359 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.051805 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002362 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000559 seconds
-Generating cJSON execution time: 0.000253 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.077540 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002391 seconds
-Encode signature Falcon execution time: 0.000300 seconds
-Encode PK Falcon execution time: 0.000540 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.092619 seconds
+Falcon initialization execution time: 0.113979 seconds
 Generating message concat execution time: 0.000011 seconds
-Signing message Falcon execution time: 0.002389 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.065453 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002345 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.056196 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002391 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000537 seconds
-Generating cJSON execution time: 0.000266 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049471 seconds
-Generating message concat execution time: 0.000012 seconds
-Signing message Falcon execution time: 0.002322 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000554 seconds
-Generating cJSON execution time: 0.000258 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.065390 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002395 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000538 seconds
-Generating cJSON execution time: 0.000259 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059263 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002335 seconds
-Encode signature Falcon execution time: 0.000321 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000256 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.086866 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002352 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000265 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.048160 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002377 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000264 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.044797 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002354 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000278 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.064574 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002393 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.081066 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002382 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000539 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.067829 seconds
-Generating message concat execution time: 0.000012 seconds
-Signing message Falcon execution time: 0.002348 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000250 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.055353 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002388 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000264 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.055045 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002357 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000537 seconds
-Generating cJSON execution time: 0.000254 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.056463 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002419 seconds
-Encode signature Falcon execution time: 0.000303 seconds
-Encode PK Falcon execution time: 0.000540 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.111268 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002377 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000248 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.055115 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002371 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000258 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.050363 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002364 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000257 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.051798 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002331 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000564 seconds
-Generating cJSON execution time: 0.000258 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.051757 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002355 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000557 seconds
-Generating cJSON execution time: 0.000265 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.104198 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002395 seconds
-Encode signature Falcon execution time: 0.000298 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.051681 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002342 seconds
+Signing message Falcon execution time: 0.030717 seconds
 Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000567 seconds
-Generating cJSON execution time: 0.000259 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000323 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.117917 seconds
+Falcon initialization execution time: 0.084594 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030730 seconds
+Encode signature Falcon execution time: 0.000295 seconds
+Encode PK Falcon execution time: 0.000533 seconds
+Generating cJSON execution time: 0.000298 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.095189 seconds
 Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002321 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000538 seconds
-Generating cJSON execution time: 0.000244 seconds
+Signing message Falcon execution time: 0.030702 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000526 seconds
+Generating cJSON execution time: 0.000273 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.055187 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002354 seconds
+Falcon initialization execution time: 0.124313 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030608 seconds
+Encode signature Falcon execution time: 0.000305 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000267 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.236622 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030569 seconds
 Encode signature Falcon execution time: 0.000300 seconds
-Encode PK Falcon execution time: 0.000540 seconds
+Encode PK Falcon execution time: 0.000536 seconds
+Generating cJSON execution time: 0.000234 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.235745 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030697 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000251 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.083622 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030733 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000339 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.177533 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030631 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000277 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.160759 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.031122 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000536 seconds
+Generating cJSON execution time: 0.000357 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.097177 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030680 seconds
+Encode signature Falcon execution time: 0.000300 seconds
+Encode PK Falcon execution time: 0.000538 seconds
+Generating cJSON execution time: 0.000301 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.138007 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030914 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000375 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.144680 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030796 seconds
+Encode signature Falcon execution time: 0.000301 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000352 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.130808 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.031006 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000362 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.223814 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030769 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000541 seconds
+Generating cJSON execution time: 0.000341 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.177725 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030682 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000317 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.145589 seconds
+Generating message concat execution time: 0.000008 seconds
+Signing message Falcon execution time: 0.030882 seconds
+Encode signature Falcon execution time: 0.000315 seconds
+Encode PK Falcon execution time: 0.000526 seconds
+Generating cJSON execution time: 0.000343 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.155636 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030826 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000352 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.121803 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030700 seconds
+Encode signature Falcon execution time: 0.000295 seconds
+Encode PK Falcon execution time: 0.000535 seconds
+Generating cJSON execution time: 0.000288 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.131417 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030636 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000527 seconds
 Generating cJSON execution time: 0.000258 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.150591 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002382 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000529 seconds
-Generating cJSON execution time: 0.000259 seconds
+Falcon initialization execution time: 0.120526 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030575 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000260 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.044802 seconds
+Falcon initialization execution time: 0.333063 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002373 seconds
-Encode signature Falcon execution time: 0.000302 seconds
-Encode PK Falcon execution time: 0.000537 seconds
-Generating cJSON execution time: 0.000253 seconds
+Signing message Falcon execution time: 0.030704 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000313 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.053957 seconds
+Falcon initialization execution time: 0.099595 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030643 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000262 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.188155 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.056712 seconds
+Encode signature Falcon execution time: 0.000656 seconds
+Encode PK Falcon execution time: 0.001186 seconds
+Generating cJSON execution time: 0.000510 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.245772 seconds
 Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002389 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000531 seconds
+Signing message Falcon execution time: 0.030659 seconds
+Encode signature Falcon execution time: 0.000295 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000255 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.148013 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030672 seconds
+Encode signature Falcon execution time: 0.000294 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000366 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.096276 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030665 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000529 seconds
 Generating cJSON execution time: 0.000282 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.062125 seconds
+Falcon initialization execution time: 0.109863 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030610 seconds
+Encode signature Falcon execution time: 0.000291 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000272 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.098186 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002362 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000529 seconds
+Signing message Falcon execution time: 0.030660 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000526 seconds
+Generating cJSON execution time: 0.000270 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.083432 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030616 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000247 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.124128 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030615 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000527 seconds
 Generating cJSON execution time: 0.000260 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.102192 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002399 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.074907 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002374 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.060739 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002391 seconds
-Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000539 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049326 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002355 seconds
-Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000539 seconds
-Generating cJSON execution time: 0.000279 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.048268 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002336 seconds
+Falcon initialization execution time: 0.179843 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030664 seconds
 Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000281 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000295 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.151519 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002370 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.139584 seconds
+Falcon initialization execution time: 0.218111 seconds
 Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002374 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000255 seconds
+Signing message Falcon execution time: 0.030658 seconds
+Encode signature Falcon execution time: 0.000291 seconds
+Encode PK Falcon execution time: 0.000526 seconds
+Generating cJSON execution time: 0.000273 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.142892 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002375 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000538 seconds
+Falcon initialization execution time: 0.091566 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030605 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000262 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.336307 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030630 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000271 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.246937 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030723 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000261 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.159917 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030831 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000551 seconds
+Generating cJSON execution time: 0.000351 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.179661 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.031045 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000358 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.141298 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030610 seconds
+Encode signature Falcon execution time: 0.000291 seconds
+Encode PK Falcon execution time: 0.000528 seconds
 Generating cJSON execution time: 0.000258 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.050529 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002344 seconds
-Encode signature Falcon execution time: 0.000319 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000266 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.063149 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002356 seconds
-Encode signature Falcon execution time: 0.000328 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000255 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.057813 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002371 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000263 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.081185 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002390 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000259 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.161890 seconds
+Falcon initialization execution time: 0.239516 seconds
 Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002364 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000556 seconds
-Generating cJSON execution time: 0.000287 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059593 seconds
-Generating message concat execution time: 0.000024 seconds
-Signing message Falcon execution time: 0.002376 seconds
-Encode signature Falcon execution time: 0.000291 seconds
-Encode PK Falcon execution time: 0.000555 seconds
-Generating cJSON execution time: 0.000264 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.099649 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002351 seconds
-Encode signature Falcon execution time: 0.000303 seconds
-Encode PK Falcon execution time: 0.000561 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049365 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002400 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.052873 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002411 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000268 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.062643 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002398 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000270 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.059186 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002359 seconds
-Encode signature Falcon execution time: 0.000297 seconds
-Encode PK Falcon execution time: 0.000558 seconds
-Generating cJSON execution time: 0.000276 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.049216 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002378 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000268 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.065718 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002388 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000265 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.084341 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002346 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.055064 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002390 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000252 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.103153 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002387 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000529 seconds
-Generating cJSON execution time: 0.000256 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.067053 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002358 seconds
-Encode signature Falcon execution time: 0.000325 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000267 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.057517 seconds
-Generating message concat execution time: 0.000012 seconds
-Signing message Falcon execution time: 0.002346 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000260 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.110948 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002364 seconds
-Encode signature Falcon execution time: 0.000294 seconds
-Encode PK Falcon execution time: 0.000558 seconds
-Generating cJSON execution time: 0.000261 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.045981 seconds
-Generating message concat execution time: 0.000007 seconds
-Signing message Falcon execution time: 0.002359 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000555 seconds
-Generating cJSON execution time: 0.000265 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.132045 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002331 seconds
-Encode signature Falcon execution time: 0.000293 seconds
-Encode PK Falcon execution time: 0.000556 seconds
-Generating cJSON execution time: 0.000262 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.060817 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002336 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000245 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.048160 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002401 seconds
-Encode signature Falcon execution time: 0.000296 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000256 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.106847 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002385 seconds
-Encode signature Falcon execution time: 0.000300 seconds
-Encode PK Falcon execution time: 0.000539 seconds
-Generating cJSON execution time: 0.000256 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.099075 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002338 seconds
+Signing message Falcon execution time: 0.030580 seconds
 Encode signature Falcon execution time: 0.000292 seconds
-Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000246 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000258 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.059223 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002333 seconds
-Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000539 seconds
+Falcon initialization execution time: 0.116013 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030708 seconds
+Encode signature Falcon execution time: 0.000306 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000292 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.144731 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030718 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000537 seconds
 Generating cJSON execution time: 0.000269 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.045973 seconds
+Falcon initialization execution time: 0.262794 seconds
 Generating message concat execution time: 0.000011 seconds
-Signing message Falcon execution time: 0.002386 seconds
-Encode signature Falcon execution time: 0.000301 seconds
-Encode PK Falcon execution time: 0.000538 seconds
-Generating cJSON execution time: 0.000281 seconds
+Signing message Falcon execution time: 0.030618 seconds
+Encode signature Falcon execution time: 0.000292 seconds
+Encode PK Falcon execution time: 0.000526 seconds
+Generating cJSON execution time: 0.000262 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.075151 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002388 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000279 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.078706 seconds
-Generating message concat execution time: 0.000010 seconds
-Signing message Falcon execution time: 0.002366 seconds
-Encode signature Falcon execution time: 0.000299 seconds
-Encode PK Falcon execution time: 0.000560 seconds
-Generating cJSON execution time: 0.000244 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.044777 seconds
-Generating message concat execution time: 0.000008 seconds
-Signing message Falcon execution time: 0.002373 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000532 seconds
-Generating cJSON execution time: 0.000252 seconds
----------------------------------------------------------
-Falcon initialization execution time: 0.047129 seconds
+Falcon initialization execution time: 0.112639 seconds
 Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002387 seconds
-Encode signature Falcon execution time: 0.000295 seconds
-Encode PK Falcon execution time: 0.000530 seconds
-Generating cJSON execution time: 0.000267 seconds
+Signing message Falcon execution time: 0.030681 seconds
+Encode signature Falcon execution time: 0.000302 seconds
+Encode PK Falcon execution time: 0.000545 seconds
+Generating cJSON execution time: 0.000299 seconds
 ---------------------------------------------------------
-Falcon initialization execution time: 0.044768 seconds
-Generating message concat execution time: 0.000009 seconds
-Signing message Falcon execution time: 0.002395 seconds
-Encode signature Falcon execution time: 0.000296 seconds
+Falcon initialization execution time: 0.098071 seconds
+Generating message concat execution time: 0.000016 seconds
+Signing message Falcon execution time: 0.031412 seconds
+Encode signature Falcon execution time: 0.000343 seconds
 Encode PK Falcon execution time: 0.000531 seconds
-Generating cJSON execution time: 0.000270 seconds
+Generating cJSON execution time: 0.000969 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.268594 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030780 seconds
+Encode signature Falcon execution time: 0.000305 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000396 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.162712 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030800 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000359 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.083513 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030703 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000363 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.108150 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030855 seconds
+Encode signature Falcon execution time: 0.000310 seconds
+Encode PK Falcon execution time: 0.000533 seconds
+Generating cJSON execution time: 0.000432 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.083493 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030667 seconds
+Encode signature Falcon execution time: 0.000300 seconds
+Encode PK Falcon execution time: 0.000534 seconds
+Generating cJSON execution time: 0.000254 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.133788 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030635 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000302 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.161670 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030575 seconds
+Encode signature Falcon execution time: 0.000294 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000314 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.240119 seconds
+Generating message concat execution time: 0.000008 seconds
+Signing message Falcon execution time: 0.030885 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000354 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.180254 seconds
+Generating message concat execution time: 0.000019 seconds
+Signing message Falcon execution time: 0.030847 seconds
+Encode signature Falcon execution time: 0.000312 seconds
+Encode PK Falcon execution time: 0.000531 seconds
+Generating cJSON execution time: 0.000345 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.208576 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030961 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000352 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.103635 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030704 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000347 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.140781 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030719 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000336 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.153577 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030686 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000536 seconds
+Generating cJSON execution time: 0.000309 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.104294 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030818 seconds
+Encode signature Falcon execution time: 0.000301 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000378 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.284161 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030773 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000531 seconds
+Generating cJSON execution time: 0.000344 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.192096 seconds
+Generating message concat execution time: 0.000029 seconds
+Signing message Falcon execution time: 0.049886 seconds
+Encode signature Falcon execution time: 0.000301 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000527 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.084743 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030751 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000349 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.098696 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030823 seconds
+Encode signature Falcon execution time: 0.000300 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000351 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.190446 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030690 seconds
+Encode signature Falcon execution time: 0.000321 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000371 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.160463 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030837 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000352 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.096476 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030754 seconds
+Encode signature Falcon execution time: 0.000304 seconds
+Encode PK Falcon execution time: 0.000539 seconds
+Generating cJSON execution time: 0.000342 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.168687 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030720 seconds
+Encode signature Falcon execution time: 0.000302 seconds
+Encode PK Falcon execution time: 0.000538 seconds
+Generating cJSON execution time: 0.000309 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.098727 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030862 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000539 seconds
+Generating cJSON execution time: 0.000345 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.148217 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030740 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000311 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.307030 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030717 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000341 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.148656 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030745 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000363 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.111556 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030782 seconds
+Encode signature Falcon execution time: 0.000309 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000351 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.103420 seconds
+Generating message concat execution time: 0.000009 seconds
+Signing message Falcon execution time: 0.030785 seconds
+Encode signature Falcon execution time: 0.000321 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000563 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.291227 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030942 seconds
+Encode signature Falcon execution time: 0.000303 seconds
+Encode PK Falcon execution time: 0.000548 seconds
+Generating cJSON execution time: 0.000354 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.096675 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030960 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000368 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.116070 seconds
+Generating message concat execution time: 0.000018 seconds
+Signing message Falcon execution time: 0.048606 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000356 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.099756 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030789 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000357 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.099332 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030840 seconds
+Encode signature Falcon execution time: 0.000304 seconds
+Encode PK Falcon execution time: 0.000536 seconds
+Generating cJSON execution time: 0.000349 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.199617 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.031063 seconds
+Encode signature Falcon execution time: 0.000304 seconds
+Encode PK Falcon execution time: 0.000536 seconds
+Generating cJSON execution time: 0.000356 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.125256 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030798 seconds
+Encode signature Falcon execution time: 0.000318 seconds
+Encode PK Falcon execution time: 0.000564 seconds
+Generating cJSON execution time: 0.000393 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.135103 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030737 seconds
+Encode signature Falcon execution time: 0.000294 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000289 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.176236 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.031076 seconds
+Encode signature Falcon execution time: 0.000294 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000371 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.115205 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030769 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000325 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.158645 seconds
+Generating message concat execution time: 0.000014 seconds
+Signing message Falcon execution time: 0.030780 seconds
+Encode signature Falcon execution time: 0.000299 seconds
+Encode PK Falcon execution time: 0.000529 seconds
+Generating cJSON execution time: 0.000362 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.221855 seconds
+Generating message concat execution time: 0.000015 seconds
+Signing message Falcon execution time: 0.030879 seconds
+Encode signature Falcon execution time: 0.000298 seconds
+Encode PK Falcon execution time: 0.000527 seconds
+Generating cJSON execution time: 0.000357 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.104679 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030701 seconds
+Encode signature Falcon execution time: 0.000293 seconds
+Encode PK Falcon execution time: 0.000530 seconds
+Generating cJSON execution time: 0.000277 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.117476 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030817 seconds
+Encode signature Falcon execution time: 0.000308 seconds
+Encode PK Falcon execution time: 0.000531 seconds
+Generating cJSON execution time: 0.000366 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.091291 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030832 seconds
+Encode signature Falcon execution time: 0.000297 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000359 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.090568 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030818 seconds
+Encode signature Falcon execution time: 0.000296 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000365 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.169548 seconds
+Generating message concat execution time: 0.000013 seconds
+Signing message Falcon execution time: 0.031810 seconds
+Encode signature Falcon execution time: 0.000348 seconds
+Encode PK Falcon execution time: 0.000543 seconds
+Generating cJSON execution time: 0.001068 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.121048 seconds
+Generating message concat execution time: 0.000012 seconds
+Signing message Falcon execution time: 0.030875 seconds
+Encode signature Falcon execution time: 0.000300 seconds
+Encode PK Falcon execution time: 0.000537 seconds
+Generating cJSON execution time: 0.001022 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.121699 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030610 seconds
+Encode signature Falcon execution time: 0.000294 seconds
+Encode PK Falcon execution time: 0.000528 seconds
+Generating cJSON execution time: 0.000264 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.103411 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030676 seconds
+Encode signature Falcon execution time: 0.000300 seconds
+Encode PK Falcon execution time: 0.000545 seconds
+Generating cJSON execution time: 0.000266 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.329191 seconds
+Generating message concat execution time: 0.000013 seconds
+Signing message Falcon execution time: 0.030990 seconds
+Encode signature Falcon execution time: 0.000303 seconds
+Encode PK Falcon execution time: 0.000546 seconds
+Generating cJSON execution time: 0.000391 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.134615 seconds
+Generating message concat execution time: 0.000011 seconds
+Signing message Falcon execution time: 0.030836 seconds
+Encode signature Falcon execution time: 0.000303 seconds
+Encode PK Falcon execution time: 0.000532 seconds
+Generating cJSON execution time: 0.000452 seconds
+---------------------------------------------------------
+Falcon initialization execution time: 0.125974 seconds
+Generating message concat execution time: 0.000010 seconds
+Signing message Falcon execution time: 0.030902 seconds
+Encode signature Falcon execution time: 0.000302 seconds
+Encode PK Falcon execution time: 0.000531 seconds
+Generating cJSON execution time: 0.001010 seconds
 ---------------------------------------------------------

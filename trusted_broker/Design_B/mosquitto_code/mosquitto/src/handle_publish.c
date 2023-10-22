@@ -734,7 +734,7 @@ int handle__publish(struct mosquitto *context)
 	// design B start
 	//log__printf(NULL, MOSQ_LOG_NOTICE, "Received PUBLISH from %s (d%d, q%d, r%d, m%d, '%s', ... (%ld bytes))", context->id, dup, msg->qos, msg->retain, msg->source_mid, msg->topic, (long)msg->payloadlen);
 	
-	printf("%s \n ", msg->payload);
+	//printf("%s \n ", msg->payload);
 	cJSON *message_as_json = cJSON_Parse(msg->payload);
 	
 	char *payload_message = cJSON_GetObjectItem(message_as_json, "m")->valuestring;
@@ -773,9 +773,6 @@ int handle__publish(struct mosquitto *context)
 		version = "Dilithium";
 	} else {
 		//  Falcon variables
-		unsigned logn = 9;
-		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
-		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		uint8_t *tmp;
 		size_t tmp_len;

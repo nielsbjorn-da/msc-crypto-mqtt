@@ -1,800 +1,801 @@
+
 Extracting payload from cJSON execution time: 0.000045 seconds
 Generating concat message execution time: 0.000011 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000161 seconds
-Time result: 0.000002370 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000012 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002203 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000080 seconds
-Generating concat message execution time: 0.000019 seconds
-Decode sig Dilithium execution time: 0.000030 seconds
-Decode PK Falcon execution time: 0.000031 seconds
-Verification Falcon execution time: 0.000399 seconds
-Time result: 0.000006612 seconds.
+Decode sig Falcon execution time: 0.000013 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000172 seconds
+Time result: 0.000015555 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000033 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002079 seconds.
+Decode sig Falcon execution time: 0.000013 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015023 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Extracting payload from cJSON execution time: 0.000044 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002246 seconds.
+Verification Falcon execution time: 0.000272 seconds
+Time result: 0.000017064 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
+Extracting payload from cJSON execution time: 0.000034 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000169 seconds
+Time result: 0.000015579 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002023 seconds.
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000153 seconds
+Time result: 0.000014917 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000002094 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
+Extracting payload from cJSON execution time: 0.000029 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000020 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000139 seconds
-Time result: 0.000002018 seconds.
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014938 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000039 seconds
+Generating concat message execution time: 0.000040 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000217 seconds
+Time result: 0.000015412 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000035 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000163 seconds
+Time result: 0.000015632 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.999014941 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000032 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000149 seconds
-Time result: 0.000002013 seconds.
+Verification Falcon execution time: 0.000164 seconds
+Time result: 0.000014985 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000148 seconds
-Time result: 0.000002129 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
+Extracting payload from cJSON execution time: 0.000032 seconds
 Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002088 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002064 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000078 seconds
-Generating concat message execution time: 0.000020 seconds
-Decode sig Dilithium execution time: 0.000029 seconds
-Decode PK Falcon execution time: 0.000031 seconds
-Verification Falcon execution time: 0.000477 seconds
-Time result: 0.000005834 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000167 seconds
-Time result: 0.000002026 seconds.
+Verification Falcon execution time: 0.000189 seconds
+Time result: 0.000014965 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000035 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000161 seconds
+Time result: 0.000015067 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000031 seconds
 Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000139 seconds
-Time result: 0.000002062 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000002006 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002007 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000021 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002050 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000140 seconds
-Time result: 0.000002035 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000012 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000140 seconds
-Time result: 0.000002114 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000157 seconds
-Time result: 0.000002050 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
 Verification Falcon execution time: 0.000156 seconds
-Time result: 0.000002055 seconds.
+Time result: 0.000014968 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
+Extracting payload from cJSON execution time: 0.000035 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000012 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002086 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002018 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002022 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002047 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002073 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000015 seconds
-Verification Falcon execution time: 0.000135 seconds
-Time result: 0.000002185 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002010 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000001994 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002039 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000136 seconds
-Time result: 0.000001984 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002035 seconds.
+Verification Falcon execution time: 0.000196 seconds
+Time result: 0.000014997 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000012 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002146 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000153 seconds
-Time result: 0.000002070 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000019 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000136 seconds
-Time result: 0.000002055 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
+Extracting payload from cJSON execution time: 0.000034 seconds
 Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
-Decode PK Falcon execution time: 0.000012 seconds
-Verification Falcon execution time: 0.000139 seconds
-Time result: 0.000002139 seconds.
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000200 seconds
+Time result: 0.000015010 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000182 seconds
+Time result: 0.000014939 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000029 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000145 seconds
-Time result: 0.000002009 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
 Verification Falcon execution time: 0.000158 seconds
-Time result: 0.000002140 seconds.
+Time result: 0.000014904 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000029 seconds
 Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000002037 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000020 seconds
-Decode PK Falcon execution time: 0.000012 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002143 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000019 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000148 seconds
-Time result: 0.000002019 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000028 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002086 seconds.
+Verification Falcon execution time: 0.000159 seconds
+Time result: 0.000014963 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000181 seconds
+Time result: 0.000014910 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000012 seconds
+Verification Falcon execution time: 0.000164 seconds
+Time result: 0.000014991 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015073 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000138 seconds
-Time result: 0.000001990 seconds.
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000154 seconds
+Time result: 0.000014864 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000187 seconds
+Time result: 0.000014949 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014833 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000154 seconds
+Time result: 0.000015089 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000031 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000155 seconds
+Time result: 0.000014911 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000031 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000184 seconds
+Time result: 0.000015011 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014889 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000072 seconds
+Generating concat message execution time: 0.000025 seconds
+Decode sig Falcon execution time: 0.000014 seconds
+Decode PK Falcon execution time: 0.000013 seconds
+Verification Falcon execution time: 0.000260 seconds
+Time result: 0.000016682 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000163 seconds
+Time result: 0.000015178 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000030 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Decode sig Falcon execution time: 0.000012 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002019 seconds.
+Verification Falcon execution time: 0.000188 seconds
+Time result: 0.000014983 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002009 seconds.
+Extracting payload from cJSON execution time: 0.000080 seconds
+Generating concat message execution time: 0.000031 seconds
+Decode sig Falcon execution time: 0.000014 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000211 seconds
+Time result: 0.000019250 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000010 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000157 seconds
+Time result: 0.000015883 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000155 seconds
+Time result: 0.000015775 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000190 seconds
+Time result: 0.000015204 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000154 seconds
+Time result: 0.000014931 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014919 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
 Verification Falcon execution time: 0.000191 seconds
-Time result: 0.000002112 seconds.
+Time result: 0.000015019 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000190 seconds
+Time result: 0.000015043 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000159 seconds
+Time result: 0.000014978 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.000014924 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000175 seconds
+Time result: 0.000014877 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000180 seconds
+Time result: 0.000015122 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014963 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000030 seconds
 Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002031 seconds.
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000014905 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000009 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000174 seconds
+Time result: 0.000014926 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002107 seconds.
+Verification Falcon execution time: 0.000182 seconds
+Time result: 0.000014968 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000161 seconds
+Time result: 0.000015056 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000162 seconds
+Time result: 0.000014942 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000034 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015040 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000186 seconds
+Time result: 0.000014936 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000169 seconds
+Time result: 0.000015049 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000028 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002109 seconds.
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000153 seconds
+Time result: 0.000014875 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
+Extracting payload from cJSON execution time: 0.000038 seconds
 Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002108 seconds.
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000165 seconds
+Time result: 0.000015018 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
+Extracting payload from cJSON execution time: 0.000033 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000138 seconds
-Time result: 0.000002088 seconds.
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000182 seconds
+Time result: 0.000015092 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000078 seconds
-Generating concat message execution time: 0.000061 seconds
-Decode sig Dilithium execution time: 0.000029 seconds
-Decode PK Falcon execution time: 0.000031 seconds
-Verification Falcon execution time: 0.000400 seconds
-Time result: 0.000005839 seconds.
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000155 seconds
+Time result: 0.000015074 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000030 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000160 seconds
+Time result: 0.000014920 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000154 seconds
+Time result: 0.000014948 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002000 seconds.
+Verification Falcon execution time: 0.000176 seconds
+Time result: 0.000015140 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000150 seconds
+Time result: 0.000014911 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000157 seconds
+Time result: 0.000015073 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000009 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000155 seconds
+Time result: 0.000014945 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000187 seconds
+Time result: 0.000014975 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000157 seconds
+Time result: 0.000014956 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.000014838 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.000014974 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000181 seconds
+Time result: 0.000015008 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000157 seconds
+Time result: 0.000014962 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000030 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000154 seconds
+Time result: 0.000015084 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000028 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000151 seconds
+Time result: 0.000015097 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000178 seconds
+Time result: 0.000014973 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000035 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000175 seconds
+Time result: 0.000015018 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000157 seconds
+Time result: 0.000014956 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000029 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.000014933 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000200 seconds
+Time result: 0.000015040 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000035 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000163 seconds
+Time result: 0.000015065 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000035 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015058 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000038 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015098 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000200 seconds
+Time result: 0.000015194 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000036 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000163 seconds
+Time result: 0.000014972 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000036 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000177 seconds
+Time result: 0.000015050 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000036 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000148 seconds
-Time result: 0.000002082 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000012 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000145 seconds
-Time result: 0.000002030 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000149 seconds
-Time result: 0.000002014 seconds.
+Verification Falcon execution time: 0.000158 seconds
+Time result: 0.000015037 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Extracting payload from cJSON execution time: 0.000034 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000012 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000001986 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000147 seconds
-Time result: 0.000002075 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000019 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002016 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000149 seconds
-Time result: 0.000002023 seconds.
+Verification Falcon execution time: 0.000196 seconds
+Time result: 0.000015069 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000037 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000153 seconds
-Time result: 0.000002090 seconds.
+Verification Falcon execution time: 0.000161 seconds
+Time result: 0.000015081 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000078 seconds
-Generating concat message execution time: 0.000020 seconds
-Decode sig Dilithium execution time: 0.000052 seconds
-Decode PK Falcon execution time: 0.000032 seconds
-Verification Falcon execution time: 0.000413 seconds
-Time result: 0.000005844 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000148 seconds
-Time result: 0.000002042 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
+Extracting payload from cJSON execution time: 0.000036 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000153 seconds
-Time result: 0.000002059 seconds.
+Verification Falcon execution time: 0.000165 seconds
+Time result: 0.000014969 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Extracting payload from cJSON execution time: 0.000037 seconds
+Generating concat message execution time: 0.000009 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000149 seconds
-Time result: 0.000002057 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002073 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000018 seconds
-Verification Falcon execution time: 0.000138 seconds
-Time result: 0.000002102 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000002014 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000019 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000001988 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000033 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000018 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002060 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000019 seconds
-Decode PK Falcon execution time: 0.000018 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002076 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000141 seconds
-Time result: 0.000002000 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000036 seconds
-Verification Falcon execution time: 0.000152 seconds
-Time result: 0.000002023 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000149 seconds
-Time result: 0.000002087 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000150 seconds
-Time result: 0.000002089 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000014 seconds
-Verification Falcon execution time: 0.000140 seconds
-Time result: 0.000002017 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000012 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000001987 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002088 seconds.
+Verification Falcon execution time: 0.000160 seconds
+Time result: 0.000015112 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000035 seconds
-Generating concat message execution time: 0.000012 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000146 seconds
-Time result: 0.000002552 seconds.
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000210 seconds
+Time result: 0.000015104 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
+Extracting payload from cJSON execution time: 0.000028 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000018 seconds
-Verification Falcon execution time: 0.000171 seconds
-Time result: 0.000002021 seconds.
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000156 seconds
+Time result: 0.000015183 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000033 seconds
+Extracting payload from cJSON execution time: 0.000034 seconds
 Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000160 seconds
+Time result: 0.000015110 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000151 seconds
-Time result: 0.000002047 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000151 seconds
-Time result: 0.000002102 seconds.
+Verification Falcon execution time: 0.000177 seconds
+Time result: 0.000015026 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000033 seconds
 Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000018 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002084 seconds.
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000195 seconds
+Time result: 0.000015061 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000032 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000012 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000175 seconds
+Time result: 0.000015072 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000034 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015046 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000033 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000011 seconds
+Verification Falcon execution time: 0.000162 seconds
+Time result: 0.000015020 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000036 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000203 seconds
+Time result: 0.000015062 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000031 seconds
 Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000138 seconds
-Time result: 0.000001994 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000145 seconds
-Time result: 0.000002101 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000017 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000151 seconds
-Time result: 0.000002155 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000009 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000145 seconds
-Time result: 0.000002085 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000138 seconds
-Time result: 0.000002036 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000031 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000001980 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000010 seconds
 Verification Falcon execution time: 0.000158 seconds
-Time result: 0.000002070 seconds.
+Time result: 0.000015041 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000151 seconds
-Time result: 0.000002028 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002000 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Extracting payload from cJSON execution time: 0.000031 seconds
+Generating concat message execution time: 0.000008 seconds
+Decode sig Falcon execution time: 0.000011 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000143 seconds
-Time result: 0.000002026 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000142 seconds
-Time result: 0.000002071 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000029 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000016 seconds
-Verification Falcon execution time: 0.000144 seconds
-Time result: 0.000002007 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000032 seconds
-Generating concat message execution time: 0.000006 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
-Decode PK Falcon execution time: 0.000017 seconds
-Verification Falcon execution time: 0.000140 seconds
-Time result: 0.000002115 seconds.
+Verification Falcon execution time: 0.000159 seconds
+Time result: 0.000015026 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000032 seconds
 Generating concat message execution time: 0.000008 seconds
-Decode sig Dilithium execution time: 0.000011 seconds
+Decode sig Falcon execution time: 0.000011 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000159 seconds
+Time result: 0.000015038 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000034 seconds
+Generating concat message execution time: 0.000006 seconds
+Decode sig Falcon execution time: 0.000010 seconds
+Decode PK Falcon execution time: 0.000010 seconds
+Verification Falcon execution time: 0.000185 seconds
+Time result: 0.000015050 seconds.
+Falcon signature verification success with result 0...
+---------------------------------------------------------
+Extracting payload from cJSON execution time: 0.000031 seconds
+Generating concat message execution time: 0.000007 seconds
+Decode sig Falcon execution time: 0.000010 seconds
 Decode PK Falcon execution time: 0.000011 seconds
-Verification Falcon execution time: 0.000136 seconds
-Time result: 0.000002041 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000010 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000169 seconds
-Time result: 0.000002086 seconds.
-Falcon signature verification success with result 0...
----------------------------------------------------------
-Extracting payload from cJSON execution time: 0.000030 seconds
-Generating concat message execution time: 0.000007 seconds
-Decode sig Dilithium execution time: 0.000016 seconds
-Decode PK Falcon execution time: 0.000010 seconds
-Verification Falcon execution time: 0.000157 seconds
-Time result: 0.000002004 seconds.
+Verification Falcon execution time: 0.000166 seconds
+Time result: 0.000015037 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
