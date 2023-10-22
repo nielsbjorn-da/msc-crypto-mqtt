@@ -146,6 +146,9 @@ static bool timed_out = false;
 static int connack_result = 0;
 bool connack_received = false;
 
+// Time variables
+clock_t start, end;
+
 uint8_t dilithium_broker_pk[CRYPTO_PUBLICKEYBYTES];
 unsigned logn = 9;
 uint8_t falcon_broker_pk[FALCON_PUBKEY_SIZE(9)];
@@ -338,9 +341,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// Retrieve the content from the MQTT payload package.
 	//#####################################################################################
 
-	print_message(&cfg, message, properties);
-	
-	// parse message as cJSON. fetch sig and pk, verify signature
+	//print_message(&cfg, message, properties);
+	start = clock();
+
 	cJSON *message_as_json = cJSON_Parse(message->payload);
 	
 	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "m");
@@ -354,17 +357,17 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	
 	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
-	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
-	
-	//char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
+	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
 
-	//printf("Retrieving message successful\n");
+	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
+
+	end = clock();
+  	printf("Extracting payload from cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
 	//#####################################################################################
 	// Creating the message that were signed
 	//#####################################################################################
-	// Calculate the length of the converted strings
-
+	start = clock();
 	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
 
 	// Allocate memory for the strings dynamically, including space for the null terminator
@@ -401,6 +404,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	concatenated_message_to_verify[message_len] = '\0';
 	free(current_time_str);
 
+	end = clock();
+  	printf("Generating concat message execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	//#####################################################################################
 	// Run the verifications algorithms
 	//#####################################################################################
@@ -409,26 +414,32 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	char *version = "";
 	if (strlen(encoded_signature) > 3000)
 	{
-		//printf("Dilithium verification\n");
-		load_broker_pk("dilithium");
+		start = clock();
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
-		//char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
-	
-		//verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
+		end = clock();
+  		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+
+		start = clock();
+		load_broker_pk("dilithium");
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_broker_pk);
 		free(dilithium_decode_sig);
-		//free(dilithium_decode_pk);
 		version = "Dilithium";
+		end = clock();
+		printf("Verification Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	}
 	else
 	{
-		//printf("Falcon verification\n");
 
 		//  Falcon variables
-		unsigned logn = 9;
+		start = clock();
+		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
+		char *falcon_decode_sig = decode(encoded_signature, sig_len);
+		end = clock();
+		printf("Decode sig Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+
+		start = clock();
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
-		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		uint8_t *tmp;
 		size_t tmp_len;
 		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));
@@ -438,8 +449,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		tmp = xmalloc(len);
 		tmp_len = len;
 
-		char *falcon_decode_sig = decode(encoded_signature, sig_len);
-
 		load_broker_pk("falcon");
 
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
@@ -447,10 +456,21 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		
 		free(falcon_decode_sig);
 		version = "Falcon";
+		end = clock();
+		printf("Verification Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	}
 	if (!verify)
 	{
+		// Record the end time
+		struct timeval receive_time;
+		gettimeofday(&receive_time, NULL);
+
+		// Calculate and print the time taken for message delivery
+		double time_taken = (receive_time.tv_sec - timestamp) + (receive_time.tv_usec - time_micro) / 1e9;
+		printf("Time result: %.9f seconds.\n", time_taken);
+
 		printf("%s signature verification success with result %d...\n", version, verify);
+		printf("---------------------------------------------------------\n");
 	}
 	cJSON_Delete(message_as_json);
 

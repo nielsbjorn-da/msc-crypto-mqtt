@@ -732,7 +732,7 @@ int handle__publish(struct mosquitto *context)
 		return rc;
 	}
 	// design B start
-	log__printf(NULL, MOSQ_LOG_NOTICE, "Received PUBLISH from %s (d%d, q%d, r%d, m%d, '%s', ... (%ld bytes))", context->id, dup, msg->qos, msg->retain, msg->source_mid, msg->topic, (long)msg->payloadlen);
+	//log__printf(NULL, MOSQ_LOG_NOTICE, "Received PUBLISH from %s (d%d, q%d, r%d, m%d, '%s', ... (%ld bytes))", context->id, dup, msg->qos, msg->retain, msg->source_mid, msg->topic, (long)msg->payloadlen);
 	
 	printf("%s \n ", msg->payload);
 	cJSON *message_as_json = cJSON_Parse(msg->payload);

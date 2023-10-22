@@ -363,7 +363,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	
 	int verify = 1;
 	char *version = "";
-	struct timeval receive_time;
 	if (strlen(encoded_signature) > 3000)
 	{
 		start = clock();
@@ -378,18 +377,32 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		
 		start = clock();
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
-		end = clock();
-  		printf("Verification Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
 		version = CRYPTO_ALGNAME;
+		end = clock();
+  		printf("Verification Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	}
 	else
 	{
 		//  Falcon variables
 		unsigned logn = 10;
+
+		start = clock();
+		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
+		char *falcon_decode_sig = decode(encoded_signature, sig_len);
+		end = clock();
+		printf("Decode sig Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		
+		start = clock();
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
+		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
+		end = clock();
+  		printf("Decode PK Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+
+		start = clock();
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
 		size_t tmp_len;
@@ -397,33 +410,21 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(logn));
 		len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(logn));
 		len = maxsz(len, FALCON_TMPSIZE_VERIFY(logn));
-		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		tmp = xmalloc(len);
 		tmp_len = len;
-
-		start = clock();
-		char *falcon_decode_sig = decode(encoded_signature, sig_len);
-		end = clock();
-		printf("Decode sig Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-		
-		start = clock();
-		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
-		end = clock();
-  		printf("Decode PK Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-
-		start = clock();
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
-		end = clock();
-  		printf("Verification Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
 		version = "Falcon";
+		end = clock();
+  		printf("Verification Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	}
 	if (!verify)
 	{
 		// Record the end time
+		struct timeval receive_time;
 		gettimeofday(&receive_time, NULL);
 
 		// Calculate and print the time taken for message delivery

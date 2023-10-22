@@ -37,7 +37,8 @@ uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
 static bool dilithium = true;
 
-struct timeval timestamp;
+// Time variables
+clock_t start, end;
 
 char clientID[23] = "publisher_client";
 
@@ -324,17 +325,17 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->sigct_len = 0;
 
   // printf("Start key gen\n");
-  if (falcon_keygen_make(&fc->rng, fc->logn,
+  /*if (falcon_keygen_make(&fc->rng, fc->logn,
                          fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                          fc->pk, FALCON_PUBKEY_SIZE(fc->logn),
                          fc->tmp, fc->tmp_len) != 0)
   {
     fprintf(stderr, "Key generation failed\n");
     exit(EXIT_FAILURE);
-  }
+  }*/
   // printf("end key gen\n");
 
-  int r = falcon_get_logn(fc->pk, pk_len);
+  //int r = falcon_get_logn(fc->pk, pk_len);
   //printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
 }
 
@@ -399,6 +400,7 @@ int main(int argc, char *argv[])
   char qos_str[10];          // Adjust the size based on your maximum expected qos value
   char current_time_str[20]; // Adjust the size based on your maximum expected time value
   int message_len;
+  struct timeval timestamp;
 
   if (dilithium)
   {
@@ -417,10 +419,6 @@ int main(int argc, char *argv[])
     //printf("initialzing Falcon \n");
     initialize_falcon_struct(fc);
   }
-
-  // timestamp
-  gettimeofday(&timestamp, NULL);
-  time_t current_time = timestamp.tv_sec;
 
   struct mosquitto *mosq = NULL;
   int rc;
@@ -506,7 +504,14 @@ int main(int argc, char *argv[])
     printf("RC client connect");
     goto cleanup;
   }
+  // #####################################################################################
+  //  Creating the message to sign
+  // #####################################################################################
+  // timestamp
+  gettimeofday(&timestamp, NULL);
+  time_t current_time = timestamp.tv_sec;
 
+  start = clock();
   // Convert int qos to string
   snprintf(current_time_str, sizeof(current_time_str), "%d", current_time);
 
@@ -528,82 +533,83 @@ int main(int argc, char *argv[])
   //printf("To be added: %s\n", clientID);
   //printf("concat string 5: %s\n", concatenated_message_to_sign);
 
+  end = clock();
+  printf("Generating message concat execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+
+  // #####################################################################################
+  //  Run the signing algorithms
+  // #####################################################################################
+  char *sig_scheme;
+  start = clock();
   if (dilithium)
   {
+    sig_scheme = "Dilithium";
     load_client_key(dilithium_pub_sk, clientID, "sk");
-    load_client_key(dilithium_pub_pk, clientID, "pk");
+    //load_client_key(dilithium_pub_pk, clientID, "pk");
 
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
-    dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
+    //dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
   }
   else
   {
+    sig_scheme = "Falcon";
     load_client_key(fc->sk, clientID, "sk");
-    load_client_key(fc->pk, clientID, "pk");
+    //load_client_key(fc->pk, clientID, "pk");
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
       fprintf(stderr, "Signing message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
 
-    if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
+    /*if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
       fprintf(stderr, "verifying message for Falcon failed\n");
       exit(EXIT_FAILURE);
-    }
-    //printf("Sig len: %zu \n", fc->sig_len);
+    }*/
   }
-  // create json to publish
-  cJSON *root = cJSON_CreateObject();
-  cJSON_AddStringToObject(root, "m", cfg.message);
-  //cJSON_AddStringToObject(root, "id", clientID);
-  cJSON_AddNumberToObject(root, "t", current_time);
+  end = clock();
+  printf("Signing message %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
+
+ // #####################################################################################
+  //  Create cJSON
+  // #####################################################################################
   
   char *encoded_sig;
   char *b64_encoded_pk;
   char *decoded;
 
+  start = clock();
   if (dilithium)
   {
-    // signature
     encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
-
-    //printf("\nb64encoded length %u\n", strlen(encoded_sig));
-    cJSON_AddStringToObject(root, "s", encoded_sig);
-
-    // public key
-    //b64_encoded_pk = b64_encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
-    //printf("\nb64encoded length %u\n", strlen(b64_encoded_pk));
-
-    //cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
-    
   }
   else
     {
-      
-      // signature
       encoded_sig = b64_encode(fc->sig, fc->sig_len);
-
-      //printf("\nb64encoded length %u\n", strlen(encoded_sig));
-      cJSON_AddStringToObject(root, "s", encoded_sig);    
-
     }
+    end = clock();
+    printf("Encode signature %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
+
+    start = clock();
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "m", cfg.message);
+    cJSON_AddNumberToObject(root, "t", current_time);
+    cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
+    cJSON_AddStringToObject(root, "s", encoded_sig); 
 
     char *jsonString = cJSON_PrintUnformatted(root);
     size_t allocatedSize = strlen(jsonString) + 1;
-    //printf("Allocated size: %zu bytes\n", allocatedSize);
-    //printf(jsonString);
     
-
     rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,true);
 
     cJSON_Delete(root);
     free(jsonString);
     free(b64_encoded_pk);
     free(encoded_sig);
-    printf("Message published: %s\n", cfg.message);
-
     mosquitto_destroy(mosq);
+    end = clock();
+    printf("Generating cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    printf("Message published: %s\n", cfg.message);
 
   cleanup:
     mosquitto_lib_cleanup();

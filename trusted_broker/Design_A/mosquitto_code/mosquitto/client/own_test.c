@@ -511,25 +511,24 @@ int main(int argc, char *argv[])
   // #####################################################################################
   //  Run the signing algorithms
   // #####################################################################################
-
+  start = clock();
+  char *sig_scheme;
   if (dilithium)
   {
-    start = clock();
+    sig_scheme = "Dilithium";
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
-    end = clock();
-    printf("Signing message Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
   }
   else
   {
-    start = clock();
+    sig_scheme = "Falcon";
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
       fprintf(stderr, "Signing message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-    end = clock();
-    printf("Signing message Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
   }
+  end = clock();
+  printf("Signing message %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
 
   // #####################################################################################
   //  Create cJSON
