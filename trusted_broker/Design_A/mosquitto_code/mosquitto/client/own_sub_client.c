@@ -313,6 +313,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
 
+	char *signature_algorithm = cJSON_GetObjectItem(message_as_json, "a")->valuestring;
+
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
@@ -363,7 +365,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	
 	int verify = 1;
 	char *version = "";
-	if (strlen(encoded_signature) > 3000)
+	if (strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0)
 	{
 		start = clock();
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
@@ -389,6 +391,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	{
 		//  Falcon variables
 		unsigned logn = 9;
+		if (strcmp(signature_algorithm, "F1024") == 0) logn = 10;
 
 		start = clock();
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);

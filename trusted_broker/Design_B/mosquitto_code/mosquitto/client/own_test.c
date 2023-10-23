@@ -154,58 +154,6 @@ maxsz(size_t a, size_t b)
   return a > b ? a : b;
 }
 
-char *b64_encode_3_byte(uint8_t *input)
-{
-  int SIZE = 4;
-  /* set up a destination buffer large enough to hold the encoded data */
-  char *output = (char *)malloc(SIZE);
-  /* keep track of our encoded position */
-  char *c = output;
-  /* store the number of bytes encoded by a single call */
-  int cnt = 0;
-  /* we need an encoder state */
-  base64_encodestate s;
-
-  /*---------- START ENCODING ----------*/
-  /* initialise the encoder state */
-  base64_init_encodestate(&s);
-  /* gather data from the input and send it to the output */
-  cnt = base64_encode_block(input, 3, c, &s);
-  c += cnt;
-  /* since we have encoded the entire input string, we know that
-     there is no more input data; finalise the encoding */
-  cnt = base64_encode_blockend(c, &s);
-  c += cnt;
-  /*---------- STOP ENCODING  ----------*/
-
-  /* we want to print the encoded data, so null-terminate it: */
-  *c = 0;
-
-  // printf("test:");
-  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
-  // printf("\n");
-  return output;
-}
-
-char *b64_encode(uint8_t *input, int input_size)
-{
-  int i = 0;
-  char* output = (char*)malloc(input_size*1.5);
-  memset(output, 0, sizeof(output));
-  while (i < input_size)
-  {
-    uint8_t current_3_bytes[3] = {input[i], input[i + 1], input[i + 2]};
-    char *encoding = b64_encode_3_byte(current_3_bytes);
-    strcat(output, encoding);
-
-    // Free the dynamically allocated encoding
-    free(encoding);
-    i += 3;
-  }
-
-  return output;
-}
-
 void pub_shared_cleanup(void)
 {
   free(line_buf);
@@ -393,6 +341,39 @@ char *decode(const char *input, size_t size)
   return output;
 }
 
+char* encode(uint8_t *input, size_t input_size)
+{
+  //int SIZE = 4;
+  /* set up a destination buffer large enough to hold the encoded data */
+  char *output = (char *)malloc(input_size*2);
+  /* keep track of our encoded position */
+  char *c = output;
+  /* store the number of bytes encoded by a single call */
+  int cnt = 0;
+  /* we need an encoder state */
+  base64_encodestate s;
+
+  /*---------- START ENCODING ----------*/
+  /* initialise the encoder state */
+  base64_init_encodestate(&s);
+  /* gather data from the input and send it to the output */
+  cnt = base64_encode_block(input, input_size, c, &s);
+  c += cnt;
+  /* since we have encoded the entire input string, we know that
+     there is no more input data; finalise the encoding */
+  cnt = base64_encode_blockend(c, &s);
+  c += cnt;
+  /*---------- STOP ENCODING  ----------*/
+
+  /* we want to print the encoded data, so null-terminate it: */
+  *c = 0;
+
+  // printf("test:");
+  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
+  // printf("\n");
+  return output;
+}
+
 int main(int argc, char *argv[])
 {
   FalconContext *fc = malloc(sizeof(FalconContext));
@@ -404,13 +385,13 @@ int main(int argc, char *argv[])
 
   if (dilithium)
   {
-    printf("Signature algorithm: Dilithium\n");
+    //printf("Signature algorithm: Dilithium\n");
     //crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
     int i;
   }
   else
   {
-    printf("Signature algorithm: Falcon\n");
+    //printf("Signature algorithm: Falcon\n");
     if (fc == NULL)
     {
       fprintf(stderr, "Memory allocation for Falcon failed\n");
@@ -581,26 +562,44 @@ int main(int argc, char *argv[])
   start = clock();
   if (dilithium)
   {
-    encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
+    encoded_sig = encode(dilithium_signature, CRYPTO_BYTES);
   }
   else
     {
-      encoded_sig = b64_encode(fc->sig, fc->sig_len);
+      encoded_sig = encode(fc->sig, fc->sig_len);
     }
     end = clock();
     printf("Encode signature %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
 
     start = clock();
+    char *alg_id;
+    if (dilithium) {
+      if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0) {
+      alg_id = "D2";
+    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium3") == 0) {
+      alg_id = "D3";
+    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium5") == 0){
+      alg_id = "D5";
+    }
+    } else {
+      if (logn == 9) {
+      alg_id = "F512";
+    }
+      else if (logn == 10) {
+      alg_id = "F1024";
+    }
+    }
     cJSON *root = cJSON_CreateObject();
     cJSON_AddStringToObject(root, "m", cfg.message);
     cJSON_AddNumberToObject(root, "t", current_time);
     cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
+    cJSON_AddStringToObject(root, "a", alg_id); 
     cJSON_AddStringToObject(root, "s", encoded_sig); 
 
     char *jsonString = cJSON_PrintUnformatted(root);
     size_t allocatedSize = strlen(jsonString) + 1;
     
-    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,true);
+    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,cfg.retain);
 
     cJSON_Delete(root);
     free(jsonString);
@@ -609,7 +608,7 @@ int main(int argc, char *argv[])
     mosquitto_destroy(mosq);
     end = clock();
     printf("Generating cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-    printf("Message published: %s\n", cfg.message);
+    //printf("Message published: %s\n", cfg.message);
 
   cleanup:
     mosquitto_lib_cleanup();

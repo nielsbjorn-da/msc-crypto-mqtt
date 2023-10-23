@@ -500,7 +500,6 @@ static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, i
 	UNUSED(obj);
 	UNUSED(flags);
 	UNUSED(properties);
-	printf("Connected\n");
 	connack_received = true;
 
 	connack_result = result;
@@ -541,7 +540,7 @@ static void my_subscribe_callback(struct mosquitto *mosq, void *obj, int mid, in
 {
 	int i;
 	bool some_sub_allowed = (granted_qos[0] < 128);
-	bool should_print = true; // cfg.debug && !cfg.quiet;
+	bool should_print = cfg.debug && !cfg.quiet;
 	UNUSED(obj);
 
 	if (should_print)
@@ -627,7 +626,6 @@ int main(int argc, char *argv[])
 	}
 
 	char clientID[23] = "subscriber_client";
-	printf("Ready to connect\n");
 	g_mosq = mosquitto_new(clientID, cfg.clean_session, &cfg);
 	if (!g_mosq)
 	{

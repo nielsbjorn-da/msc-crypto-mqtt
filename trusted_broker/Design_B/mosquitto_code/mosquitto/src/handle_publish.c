@@ -62,63 +62,11 @@ typedef struct
 } FalconContext;
 
 // Falcon variables
-unsigned logn = 9;
-size_t pk_len = FALCON_PUBKEY_SIZE(9);
-size_t sk_len = FALCON_PRIVKEY_SIZE(9);
-size_t len = FALCON_TMPSIZE_KEYGEN(9);
+unsigned logn;
+size_t pk_len;
+size_t sk_len;
+size_t len;
 FalconContext *fc;
-
-char *b64_encode_3_byte(uint8_t *input)
-{
-  int SIZE = 4;
-  /* set up a destination buffer large enough to hold the encoded data */
-  char *output = (char *)malloc(SIZE);
-  /* keep track of our encoded position */
-  char *c = output;
-  /* store the number of bytes encoded by a single call */
-  int cnt = 0;
-  /* we need an encoder state */
-  base64_encodestate s;
-
-  /*---------- START ENCODING ----------*/
-  /* initialise the encoder state */
-  base64_init_encodestate(&s);
-  /* gather data from the input and send it to the output */
-  cnt = base64_encode_block(input, 3, c, &s);
-  c += cnt;
-  /* since we have encoded the entire input string, we know that
-     there is no more input data; finalise the encoding */
-  cnt = base64_encode_blockend(c, &s);
-  c += cnt;
-  /*---------- STOP ENCODING  ----------*/
-
-  /* we want to print the encoded data, so null-terminate it: */
-  *c = 0;
-
-  // printf("test:");
-  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
-  // printf("\n");
-  return output;
-}
-
-char *b64_encode(uint8_t *input, int input_size)
-{
-  int i = 0;
-  char* output = (char*)malloc(input_size*1.5);
-  memset(output, 0, sizeof(output));
-  while (i < input_size)
-  {
-    uint8_t current_3_bytes[3] = {input[i], input[i + 1], input[i + 2]};
-    char *encoding = b64_encode_3_byte(current_3_bytes);
-    strcat(output, encoding);
-
-    // Free the dynamically allocated encoding
-    free(encoding);
-    i += 3;
-  }
-
-  return output;
-}
 
 char *decode(const char *input, size_t size)
 {
@@ -146,6 +94,39 @@ char *decode(const char *input, size_t size)
 	/* we want to print the decoded data, so null-terminate it: */
 	*c = 0;
 	return output;
+}
+
+char* encode(uint8_t *input, size_t input_size)
+{
+  //int SIZE = 4;
+  /* set up a destination buffer large enough to hold the encoded data */
+  char *output = (char *)malloc(input_size*2);
+  /* keep track of our encoded position */
+  char *c = output;
+  /* store the number of bytes encoded by a single call */
+  int cnt = 0;
+  /* we need an encoder state */
+  base64_encodestate s;
+
+  /*---------- START ENCODING ----------*/
+  /* initialise the encoder state */
+  base64_init_encodestate(&s);
+  /* gather data from the input and send it to the output */
+  cnt = base64_encode_block(input, input_size, c, &s);
+  c += cnt;
+  /* since we have encoded the entire input string, we know that
+     there is no more input data; finalise the encoding */
+  cnt = base64_encode_blockend(c, &s);
+  c += cnt;
+  /*---------- STOP ENCODING  ----------*/
+
+  /* we want to print the encoded data, so null-terminate it: */
+  *c = 0;
+
+  // printf("test:");
+  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
+  // printf("\n");
+  return output;
 }
 
 
@@ -508,7 +489,6 @@ int handle__publish(struct mosquitto *context)
       fprintf(stderr, "Memory allocation for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-	initialize_falcon_struct(fc);
 
 	uint8_t dup;
 	int rc = 0;
@@ -739,12 +719,23 @@ int handle__publish(struct mosquitto *context)
 	
 	char *payload_message = cJSON_GetObjectItem(message_as_json, "m")->valuestring;
 
+	char *signature_algorithm = cJSON_GetObjectItem(message_as_json, "a")->valuestring;
+
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 
 	size_t sig_len = CRYPTO_BYTES;
-	dilithium = strlen(encoded_signature) > 2300;
-	if (!dilithium) sig_len = FALCON_SIG_PADDED_SIZE(logn);
-
+	logn = 9;
+	dilithium = strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0;
+	if (!dilithium) {
+		if (strcmp(signature_algorithm, "F1024") == 0) {		
+			logn = 10;
+		}
+		
+		initialize_falcon_struct(fc);
+		sig_len = FALCON_SIG_PADDED_SIZE(logn);
+		pk_len = FALCON_PUBKEY_SIZE(logn);
+		sk_len = FALCON_PRIVKEY_SIZE(logn);
+	}
 	char *decoded_signature = decode(encoded_signature, sig_len);
 
 	time_t timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
@@ -757,7 +748,6 @@ int handle__publish(struct mosquitto *context)
 	char *encoded_broker_sig;
 	int verify = 1;
 	char *version = "";
-	load_broker_key("pk");
 	load_broker_key("sk");
 	if (dilithium) {
 		uint8_t publisher_pk[CRYPTO_PUBLICKEYBYTES];
@@ -767,13 +757,11 @@ int handle__publish(struct mosquitto *context)
 
 		uint8_t broker_signature[CRYPTO_BYTES];
     	dilithium_sign_message(broker_signature, message_to_verify, message_len);
-		verify_dilithium_signature(broker_signature, message_to_verify, message_len, dilithium_broker_pk);
 
-		encoded_broker_sig = b64_encode(broker_signature, CRYPTO_BYTES);
+		encoded_broker_sig = encode(broker_signature, CRYPTO_BYTES);
 		version = "Dilithium";
 	} else {
 		//  Falcon variables
-		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		uint8_t *tmp;
 		size_t tmp_len;
 		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));
@@ -789,17 +777,14 @@ int handle__publish(struct mosquitto *context)
 		
 		verify = falcon_verify_message(decoded_signature, sig_len, message_to_verify,
 									   message_len, publisher_pk, pk_len, tmp, tmp_len);
-
+		
     	if (falcon_sign_message(fc, message_to_verify, message_len) != 0)
 		{
 			fprintf(stderr, "Signing message for Falcon failed\n");
 			exit(EXIT_FAILURE);
 		}
 		
-		falcon_verify_message(fc->sig, sig_len, message_to_verify,
-											message_len, fc->pk, pk_len, tmp, tmp_len);
-		
-		encoded_broker_sig = b64_encode(fc->sig, sig_len);
+		encoded_broker_sig = encode(fc->sig, sig_len);
 
 		version = "Falcon";
 	}

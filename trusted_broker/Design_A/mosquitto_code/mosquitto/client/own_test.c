@@ -109,87 +109,6 @@ maxsz(size_t a, size_t b)
   return a > b ? a : b;
 }
 
-char *b64_encode_3_byte(uint8_t *input)
-{
-  int SIZE = 4;
-  /* set up a destination buffer large enough to hold the encoded data */
-  char *output = (char *)malloc(SIZE);
-  /* keep track of our encoded position */
-  char *c = output;
-  /* store the number of bytes encoded by a single call */
-  int cnt = 0;
-  /* we need an encoder state */
-  base64_encodestate s;
-
-  /*---------- START ENCODING ----------*/
-  /* initialise the encoder state */
-  base64_init_encodestate(&s);
-  /* gather data from the input and send it to the output */
-  cnt = base64_encode_block(input, 3, c, &s);
-  c += cnt;
-  /* since we have encoded the entire input string, we know that
-     there is no more input data; finalise the encoding */
-  cnt = base64_encode_blockend(c, &s);
-  c += cnt;
-  /*---------- STOP ENCODING  ----------*/
-
-  /* we want to print the encoded data, so null-terminate it: */
-  *c = 0;
-
-  // printf("test:");
-  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
-  // printf("\n");
-  return output;
-}
-
-char *b64_encode(uint8_t *input, int input_size)
-{
-  int i = 0;
-  char *output = (char *)malloc(input_size * 1.5);
-  memset(output, 0, sizeof(output));
-  while (i < input_size)
-  {
-    uint8_t current_3_bytes[3] = {input[i], input[i + 1], input[i + 2]};
-    char *encoding = b64_encode_3_byte(current_3_bytes);
-    strcat(output, encoding);
-
-    // Free the dynamically allocated encoding
-    free(encoding);
-    i += 3;
-  }
-
-  return output;
-}
-
-void b64decode_3_bytes()
-{
-  /* set up a destination buffer large enough to hold the encoded data */
-  char *input = "qgun";
-  int SIZE = 4;
-  char *output = (char *)malloc(SIZE);
-  /* keep track of our decoded position */
-  char *c = output;
-  /* store the number of bytes decoded by a single call */
-  int cnt = 0;
-  /* we need a decoder state */
-  base64_decodestate s;
-
-  /*---------- START DECODING ----------*/
-  /* initialise the decoder state */
-  base64_init_decodestate(&s);
-  /* decode the input data */
-  cnt = base64_decode_block(input, strlen(input), c, &s);
-  c += cnt;
-  /* note: there is no base64_decode_blockend! */
-  /*---------- STOP DECODING  ----------*/
-
-  /* we want to print the decoded data, so null-terminate it: */
-  *c = 0;
-  printf("output: %u, %u, %u, input: %s", (uint8_t)output[0], output[1], output[2], input);
-  printf("\n");
-  free(output);
-}
-
 void pub_shared_cleanup(void)
 {
   free(line_buf);
@@ -371,6 +290,39 @@ char *decode(const char *input, size_t size)
   return output;
 }
 
+char* encode(uint8_t *input, size_t input_size)
+{
+  //int SIZE = 4;
+  /* set up a destination buffer large enough to hold the encoded data */
+  char *output = (char *)malloc(input_size*2);
+  /* keep track of our encoded position */
+  char *c = output;
+  /* store the number of bytes encoded by a single call */
+  int cnt = 0;
+  /* we need an encoder state */
+  base64_encodestate s;
+
+  /*---------- START ENCODING ----------*/
+  /* initialise the encoder state */
+  base64_init_encodestate(&s);
+  /* gather data from the input and send it to the output */
+  cnt = base64_encode_block(input, input_size, c, &s);
+  c += cnt;
+  /* since we have encoded the entire input string, we know that
+     there is no more input data; finalise the encoding */
+  cnt = base64_encode_blockend(c, &s);
+  c += cnt;
+  /*---------- STOP ENCODING  ----------*/
+
+  /* we want to print the encoded data, so null-terminate it: */
+  *c = 0;
+
+  // printf("test:");
+  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
+  // printf("\n");
+  return output;
+}
+
 int main(int argc, char *argv[])
 {
 
@@ -535,49 +487,66 @@ int main(int argc, char *argv[])
   // #####################################################################################
   char *encoded_sig;
   char *b64_encoded_pk;
-
+  char* alg_id;
   if (dilithium)
   {
     start = clock();
     // signature
-    encoded_sig = b64_encode(dilithium_signature, CRYPTO_BYTES);
+    encoded_sig = encode(dilithium_signature, CRYPTO_BYTES);
     end = clock();
     printf("Encode signature Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
     // public key
     start = clock();
-    b64_encoded_pk = b64_encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
+    b64_encoded_pk = encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
     end = clock();
     printf("Encode PK Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
+    
+    start = clock();
+    if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0) {
+      alg_id = "D2";
+    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium3") == 0) {
+      alg_id = "D3";
+    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium5") == 0){
+      alg_id = "D5";
+    }
   }
   else
   {
     start = clock();
     // signature
-    encoded_sig = b64_encode(fc->sig, fc->sig_len);
+    encoded_sig = encode(fc->sig, fc->sig_len);
     end = clock();
     printf("Encode signature Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
     // public key
     start = clock();
-    b64_encoded_pk = b64_encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
+    b64_encoded_pk = encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
     end = clock();
     printf("Encode PK Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    
+    start = clock();
+    if (logn == 9) {
+      alg_id = "F512";
+    }
+    else if (logn == 10) {
+      alg_id = "F1024";
+    }
   }
 
-  start = clock();
   cJSON *root = cJSON_CreateObject();
   cJSON_AddStringToObject(root, "m", cfg.message);
   cJSON_AddStringToObject(root, "id", clientID);
   cJSON_AddNumberToObject(root, "t", timestamp.tv_sec);
   cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
+  cJSON_AddStringToObject(root, "a", alg_id);
   cJSON_AddStringToObject(root, "s", encoded_sig);
   cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
 
   char *jsonString = cJSON_PrintUnformatted(root);
   size_t allocatedSize = strlen(jsonString) + 1;
-
+  
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
 
   mosquitto_destroy(mosq);
