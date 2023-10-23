@@ -296,7 +296,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// #####################################################################################
 	//  Retrieve the content from the MQTT payload package.
 	// #####################################################################################
-	//print_message(&cfg, message, properties);
+	print_message(&cfg, message, properties);
 	start = clock();
 	cJSON *message_as_json = cJSON_Parse(message->payload);
 
@@ -358,7 +358,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	concatenated_message_to_verify[message_len] = '\0';
 	free(current_time_str);
 	end = clock();
-  printf("Generating concat message execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+  	printf("Generating concat message execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 	// #####################################################################################
 	//  Run the verifications algorithms
 	// #####################################################################################

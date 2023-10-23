@@ -58,7 +58,7 @@ typedef struct
   size_t sigct_len;
 } FalconContext;
 
-// Falcon variables
+// Falcon variables //
 unsigned logn = 9;
 size_t pk_len = FALCON_PUBKEY_SIZE(9);
 size_t len = FALCON_TMPSIZE_KEYGEN(9);
@@ -83,7 +83,8 @@ int load_client_key(uint8_t *key_array, char *client_id, char *key_type)
   char path[100];
   strcpy(path, "../src/keys/");
   if (dilithium) {
-    strcat(path, "dilithium_");
+    strcat(path, CRYPTO_ALGNAME);
+    strcat(path, "_");
     if (strcmp("pk", key_type) == 0) {
       key_length = CRYPTO_PUBLICKEYBYTES;
     } else {
@@ -91,7 +92,12 @@ int load_client_key(uint8_t *key_array, char *client_id, char *key_type)
     }
   
   } else {
-    strcat(path, "falcon_");
+    if (logn == 9) {
+      strcat(path, "falcon512_");
+    } else if (logn == 10) {
+      strcat(path, "falcon1024_");
+    }
+
     if (strcmp("pk", key_type) == 0) {
       key_length = FALCON_PUBKEY_SIZE(logn);
     } else {
