@@ -4,15 +4,17 @@ include ../config.mk
 
 all : mosquitto
 
-ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_B/mosquitto_code/mosquitto/client/
+ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_B/mosquitto_code/mosquitto/
 
-DILITHIUM_RELA_PATH:= dilithium_and_falcon/dilithium/dilithium-master/ref
+DILITHIUM_RELA_PATH:= /client/dilithium_and_falcon/dilithium/dilithium-master/ref
 
-FALCON_RELA_PATH:= dilithium_and_falcon/falcon/Falcon-impl-20211101/
+FALCON_RELA_PATH:= /src/Falcon-impl-20211101/
 
 DILITHIUM_DEPS:= ${ABSO_PATH}${DILITHIUM_RELA_PATH}/randombytes.c \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_aes256ctr_ref.so \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium2_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium3_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium5_ref.so \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_fips202_ref.so 
 
 FALCON_DEPS:= ${ABSO_PATH}${FALCON_RELA_PATH}codec.o \
@@ -26,7 +28,7 @@ ${ABSO_PATH}${FALCON_RELA_PATH}shake.o \
 ${ABSO_PATH}${FALCON_RELA_PATH}sign.o \
 ${ABSO_PATH}${FALCON_RELA_PATH}vrfy.o
 
-LIBB64_DEPS:= ${ABSO_PATH}libb64/src/cencode.o ${ABSO_PATH}libb64/src/cdecode.o
+LIBB64_DEPS:= ${ABSO_PATH}/client/libb64/src/cencode.o ${ABSO_PATH}/client/libb64/src/cdecode.o
 
 OBJS=	mosquitto.o \
 		alias_mosq.o \

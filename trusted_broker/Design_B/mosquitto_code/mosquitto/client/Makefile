@@ -21,6 +21,8 @@ DILITHIUM_RELA_PATH:= dilithium_and_falcon/dilithium/dilithium-master/ref
 DILITHIUM_DEPS:= ${ABSO_PATH}${DILITHIUM_RELA_PATH}/randombytes.c \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_aes256ctr_ref.so \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium2_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium3_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium5_ref.so \
 ${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_fips202_ref.so 
 
 FALCON_RELA_PATH:= dilithium_and_falcon/falcon/Falcon-impl-20211101/

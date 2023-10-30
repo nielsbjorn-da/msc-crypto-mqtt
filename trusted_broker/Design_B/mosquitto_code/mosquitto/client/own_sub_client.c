@@ -181,21 +181,25 @@ int load_broker_pk(char *signature_scheme)
 	uint8_t *key_array;
 	char path[100];
 	strcpy(path, "../src/keys/");
-	strcat(path, signature_scheme);
-	strcat(path, "_broker_pk.bin");
+	if (strcmp("D2", signature_scheme) == 0 || strcmp("D3", signature_scheme) == 0 || strcmp("D5", signature_scheme) == 0) {
+		key_length = CRYPTO_PUBLICKEYBYTES;
+		key_array = dilithium_broker_pk;
+		strcat(path, CRYPTO_ALGNAME);
+	} else {
+		key_length = FALCON_PUBKEY_SIZE(logn);
+		key_array = falcon_broker_pk;
+		if (logn == 9) {
+			strcat(path, "falcon512");
+		} else if (logn == 10) {
+			strcat(path, "falcon1024");
+		}
+	}
 
+	strcat(path, "_broker_pk.bin");
 	FILE *file = fopen(path, "rb");
 	if (file == NULL) {
 		perror("Failed to open file");
 		return -1;
-	}
-
-	if (strcmp("dilithium", signature_scheme) == 0) {
-		key_length = CRYPTO_PUBLICKEYBYTES;
-		key_array = dilithium_broker_pk;
-	} else {
-		key_length = FALCON_PUBKEY_SIZE(logn);
-		key_array = falcon_broker_pk;
 	}
 
 	size_t bytes_read = fread(key_array, sizeof(uint8_t), key_length, file);
@@ -204,7 +208,7 @@ int load_broker_pk(char *signature_scheme)
 		fclose(file);
 		return -1;
 	}
-
+	
 	fclose(file);
 
 	return 0;
@@ -295,6 +299,9 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 		sig, sig_len, FALCON_SIG_PADDED,
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
+	if (result) {
+		printf("Falcon verification failed\n");
+	}
 	//printf("end verify with result: %d\n", result);
 	return result;
 }
@@ -341,7 +348,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// Retrieve the content from the MQTT payload package.
 	//#####################################################################################
 
-	//print_message(&cfg, message, properties);
+	print_message(&cfg, message, properties);
 	start = clock();
 
 	cJSON *message_as_json = cJSON_Parse(message->payload);
@@ -359,8 +366,10 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
 
-	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
+	char *signature_algorithm = cJSON_GetObjectItem(message_as_json, "a")->valuestring;
 
+	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
+	//
 	end = clock();
   	printf("Extracting payload from cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
@@ -412,7 +421,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	
 	int verify = 1;
 	char *version = "";
-	if (strlen(encoded_signature) > 3000)
+	if (strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0)
 	{
 		start = clock();
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
@@ -420,7 +429,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
   		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
 		start = clock();
-		load_broker_pk("dilithium");
+		load_broker_pk(signature_algorithm);
+		
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_broker_pk);
 		free(dilithium_decode_sig);
 		version = "Dilithium";
@@ -429,8 +439,11 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	}
 	else
 	{
-
 		//  Falcon variables
+		if (strcmp(signature_algorithm, "F1024") == 0) {
+			logn = 10;
+			falcon_broker_pk[FALCON_PUBKEY_SIZE(logn)];
+		}
 		start = clock();
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
@@ -492,7 +505,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		}
 	}
 }
-
+//
 static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, int flags, const mosquitto_property *properties)
 {
 	int i;

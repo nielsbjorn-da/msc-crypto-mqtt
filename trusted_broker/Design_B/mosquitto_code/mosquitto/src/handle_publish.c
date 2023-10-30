@@ -32,10 +32,10 @@ Contributors:
 #include "send_mosq.h"
 #include "sys_tree.h"
 #include "util_mosq.h"
-
+//
 #include "../client/dilithium_and_falcon/dilithium/dilithium-master/ref/sign.h"
 #include "../client/dilithium_and_falcon/dilithium/dilithium-master/ref/randombytes.h"
-#include "../client/dilithium_and_falcon/falcon/Falcon-impl-20211101/falcon.h"
+#include "Falcon-impl-20211101/falcon.h"
 #include "../client/libb64/include/b64/cdecode.h"
 #include "../client/libb64/include/b64/cencode.h"
 #include <cjson/cJSON.h>
@@ -62,10 +62,10 @@ typedef struct
 } FalconContext;
 
 // Falcon variables
-unsigned logn;
-size_t pk_len;
-size_t sk_len;
-size_t len;
+unsigned logn = 9;
+size_t pk_len = FALCON_PUBKEY_SIZE(9);
+size_t sk_len = FALCON_PRIVKEY_SIZE(9);
+size_t len = FALCON_TMPSIZE_KEYGEN(9);
 FalconContext *fc;
 
 char *decode(const char *input, size_t size)
@@ -179,7 +179,6 @@ void initialize_falcon_struct(FalconContext *fc)
     fprintf(stderr, "random seeding failed\n");
     exit(EXIT_FAILURE);
   }
-
   fc->logn = logn;
   len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(fc->logn));
   len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(fc->logn));
@@ -192,6 +191,7 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->esk = xmalloc(FALCON_EXPANDEDKEY_SIZE(fc->logn));
   fc->sig = xmalloc(FALCON_SIG_PADDED_SIZE(fc->logn));
   fc->sig_len = 0;
+  
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
 
@@ -215,13 +215,24 @@ void falcon_keygen(FalconContext *fc)
 }
 
 int generate_and_save_broker_keys(char *signature_scheme)
-{
-	if (strcmp(signature_scheme, "dilithium") == 0) {
+{	
+
+	char path[100] = "";
+	strcpy(path, "keys/");
+	strcat(path, signature_scheme);
+	strcat(path, "_broker_pk.bin");	
+
+	char path2[100] = "";
+	strcpy(path2, "keys/");
+	strcat(path2, signature_scheme);
+	strcat(path2, "_broker_sk.bin");
+	
+	if (strcmp(signature_scheme, "dilithium2") == 0 || strcmp(signature_scheme, "dilithium3") == 0 || strcmp(signature_scheme, "dilithium5") == 0) {
 		//log__printf(NULL, MOSQ_LOG_NOTICE, "GEnerate broker dilithium keys");
 
 		crypto_sign_keypair(dilithium_broker_pk, dilithium_broker_sk);
-		
-		FILE *file = fopen("keys/dilithium_broker_pk.bin", "wb");
+
+		FILE *file = fopen(path, "wb");
 		if (file == NULL) {
 			perror("Failed to open file");
 			return 1;
@@ -238,8 +249,8 @@ int generate_and_save_broker_keys(char *signature_scheme)
 
 		
 		fclose(file);
-		
-		FILE *sk_file = fopen("keys/dilithium_broker_sk.bin", "wb");
+
+		FILE *sk_file = fopen(path2, "wb");
 		if (sk_file == NULL) {
 			perror("Failed to open file");
 			return 1;
@@ -260,7 +271,7 @@ int generate_and_save_broker_keys(char *signature_scheme)
 	} else {
 		//falcon keygen
 		falcon_keygen(fc);
-		FILE *file = fopen("keys/falcon_broker_pk.bin", "wb");
+		FILE *file = fopen(path, "wb");
 		if (file == NULL) {
 			perror("Failed to open file");
 			return 1;
@@ -278,7 +289,7 @@ int generate_and_save_broker_keys(char *signature_scheme)
 		// Close the file
 		fclose(file);
 
-		FILE *sk_file = fopen("keys/falcon_broker_sk.bin", "wb");
+		FILE *sk_file = fopen(path2, "wb");
 		if (sk_file == NULL) {
 			perror("Failed to open file");
 			return 1;
@@ -307,7 +318,8 @@ int load_broker_key(char *key_type)
 	strcpy(path, "keys/");
 
 	if (dilithium) {
-		strcat(path, "dilithium_broker_");
+		strcat(path, CRYPTO_ALGNAME);
+		strcat(path, "_broker_");
 		if (strcmp("pk", key_type) == 0) {
 			strcat(path, "pk.bin");
 			key_length = CRYPTO_PUBLICKEYBYTES;
@@ -318,7 +330,11 @@ int load_broker_key(char *key_type)
 			key_array = dilithium_broker_sk;
 		}
 	} else {
-		strcat(path, "falcon_broker_");
+		if (logn == 9) {
+			strcat(path, "falcon512_broker_");
+		} else if (logn == 10) {
+			strcat(path, "falcon1024_broker_");
+		}
 		if (strcmp("pk", key_type) == 0) {
 			strcat(path, "pk.bin");
 			key_length = pk_len;
@@ -351,11 +367,17 @@ int load_client_pk(uint8_t *key_array, char *client_id)
 	char path[100];
 	size_t key_length;
 	if (dilithium) {
-		strcpy(path, "keys/dilithium_");
 		key_length = CRYPTO_PUBLICKEYBYTES;
-	} else {
-		strcpy(path, "keys/falcon_");
+		strcpy(path, "keys/");
+		strcat(path, CRYPTO_ALGNAME);
+		strcat(path, "_");
+		
+	} else if (logn == 9) {
+		strcpy(path, "keys/falcon512_");
 		key_length = pk_len;		
+	} else if (logn == 10) {
+		strcpy(path, "keys/falcon1024_");
+		key_length = pk_len;
 	}
 
 	strcat(path, client_id);
@@ -459,6 +481,9 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
 	//printf("end verify with result: %d\n", result);
+	if (result) {
+		printf("Falcon verify failed \n");
+	}
 	return result;
 }
 
@@ -481,7 +506,7 @@ int falcon_sign_message(FalconContext *fc, char *payload, int payload_len)
 
 int handle__publish(struct mosquitto *context)
 {	
-	
+
 	fc = malloc(sizeof(FalconContext));
 
 	if (fc == NULL)
@@ -572,7 +597,7 @@ int handle__publish(struct mosquitto *context)
 	if(context->protocol == mosq_p_mqtt5){
 		rc = property__read_all(CMD_PUBLISH, &context->in_packet, &properties);
 		if(rc){
-			db__msg_store_free(msg);
+			db__msg_store_free(msg);//
 			return rc;
 		}
 
@@ -730,8 +755,8 @@ int handle__publish(struct mosquitto *context)
 		if (strcmp(signature_algorithm, "F1024") == 0) {		
 			logn = 10;
 		}
-		
 		initialize_falcon_struct(fc);
+		
 		sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		pk_len = FALCON_PUBKEY_SIZE(logn);
 		sk_len = FALCON_PRIVKEY_SIZE(logn);
@@ -749,6 +774,7 @@ int handle__publish(struct mosquitto *context)
 	int verify = 1;
 	char *version = "";
 	load_broker_key("sk");
+	
 	if (dilithium) {
 		uint8_t publisher_pk[CRYPTO_PUBLICKEYBYTES];
 		load_client_pk(publisher_pk, context->id);
@@ -757,20 +783,19 @@ int handle__publish(struct mosquitto *context)
 
 		uint8_t broker_signature[CRYPTO_BYTES];
     	dilithium_sign_message(broker_signature, message_to_verify, message_len);
-
 		encoded_broker_sig = encode(broker_signature, CRYPTO_BYTES);
 		version = "Dilithium";
 	} else {
 		//  Falcon variables
 		uint8_t *tmp;
 		size_t tmp_len;
+		len = FALCON_TMPSIZE_KEYGEN(logn);
 		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));
 		len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(logn));
 		len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(logn));
 		len = maxsz(len, FALCON_TMPSIZE_VERIFY(logn));
 		tmp = xmalloc(len);
 		tmp_len = len;
-
 		
 		uint8_t publisher_pk[pk_len];
 		load_client_pk(publisher_pk, context->id);
@@ -783,10 +808,14 @@ int handle__publish(struct mosquitto *context)
 			fprintf(stderr, "Signing message for Falcon failed\n");
 			exit(EXIT_FAILURE);
 		}
+		load_broker_key("pk");
+		falcon_verify_message(fc->sig, sig_len, message_to_verify,
+									   message_len, fc->pk, pk_len, tmp, tmp_len);
 		
 		encoded_broker_sig = encode(fc->sig, sig_len);
 
 		version = "Falcon";
+		xfree(tmp);
 	}
 	if (!verify)
 	{
