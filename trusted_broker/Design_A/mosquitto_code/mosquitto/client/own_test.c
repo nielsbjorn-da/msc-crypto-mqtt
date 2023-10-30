@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = false;
+static bool dilithium = true;
 //
 // Falcon struct
 typedef struct
@@ -54,9 +54,9 @@ typedef struct
 } FalconContext;
 
 // Falcon variables
-unsigned logn = 9;
-size_t pk_len = FALCON_PUBKEY_SIZE(9);
-size_t len = FALCON_TMPSIZE_KEYGEN(9);
+unsigned logn = 10;
+size_t pk_len = FALCON_PUBKEY_SIZE(10);
+size_t len = FALCON_TMPSIZE_KEYGEN(10);
 
 // Time variables
 clock_t start, end;
@@ -203,18 +203,9 @@ int dilithium_verify(uint8_t *signature, char *message, int message_length, uint
 */
 void initialize_falcon_struct(FalconContext *fc)
 {
-  // printf("Security: %4u bytes\n", 1u << logn);
   fflush(stdout);
-
-  // Creating SHAKE256 context.
-  // This should be done before initialization of keys.
-  if (shake256_init_prng_from_system(&fc->rng) != 0)
-  {
-    fprintf(stderr, "random seeding failed\n");
-    exit(EXIT_FAILURE);
-  }
-
   fc->logn = logn;
+  //printf("Security: %4u bytes\n", 1u << logn);
   len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(fc->logn));
   len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(fc->logn));
   len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(fc->logn));
@@ -229,15 +220,24 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
 
-  if (falcon_keygen_make(&fc->rng, fc->logn,
+  // Creating SHAKE256 context.
+  // This should be done before initialization of keys.
+  if (shake256_init_prng_from_system(&fc->rng) != 0)
+  {
+    fprintf(stderr, "random seeding failed\n");
+    exit(EXIT_FAILURE);
+  }
+  
+  int keygen = falcon_keygen_make(&fc->rng, fc->logn,
                          fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                          fc->pk, FALCON_PUBKEY_SIZE(fc->logn),
-                         fc->tmp, fc->tmp_len) != 0)
+                         fc->tmp, fc->tmp_len);
+  
+  if (keygen != 0)
   {
     fprintf(stderr, "Key generation failed\n");
     exit(EXIT_FAILURE);
   }
-  // printf("end key gen\n");
 }
 
 /*
