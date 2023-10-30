@@ -503,7 +503,8 @@ int main(int argc, char *argv[])
   snprintf(current_time_str, sizeof(current_time_str), "%d", current_time);
 
   message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(current_time_str) + strlen(clientID);
-  char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator
+  char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator 
+  // TODO Hvorfor ikke bare bruge message_len i stedet for 10000 ??
   concatenated_message_to_sign[0] = '\0';
 
   //printf("concat string 0: %s\n", concatenated_message_to_sign);
