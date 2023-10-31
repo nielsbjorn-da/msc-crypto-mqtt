@@ -214,7 +214,6 @@ int load_broker_pk(char *signature_scheme)
 	return 0;
 }
 
-
 // Falcon custom functions
 static void *
 xmalloc(size_t len)
@@ -308,6 +307,10 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 
 static void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *message, const mosquitto_property *properties)
 {
+	// Record the end time
+	struct timeval receive_time;
+	gettimeofday(&receive_time, NULL);
+
 	int i;
 	bool res;
 	//printf("Message received \n");
@@ -348,7 +351,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	// Retrieve the content from the MQTT payload package.
 	//#####################################################################################
 
-	print_message(&cfg, message, properties);
+	//print_message(&cfg, message, properties);
 	start = clock();
 
 	cJSON *message_as_json = cJSON_Parse(message->payload);
@@ -480,7 +483,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		// Calculate and print the time taken for message delivery
 		double time_taken = (receive_time.tv_sec - timestamp) + (receive_time.tv_usec - time_micro) / 1e9;
-		printf("Time result: %.9f seconds.\n", time_taken);
+		//printf("Total time result: %.9f seconds.\n", time_taken);
+		printf("Total latency result: %.9f seconds.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
 		printf("---------------------------------------------------------\n");
@@ -505,7 +509,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		}
 	}
 }
-//
+
 static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, int flags, const mosquitto_property *properties)
 {
 	int i;

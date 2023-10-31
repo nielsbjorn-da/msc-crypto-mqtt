@@ -507,19 +507,10 @@ int main(int argc, char *argv[])
   // TODO Hvorfor ikke bare bruge message_len i stedet for 10000 ??
   concatenated_message_to_sign[0] = '\0';
 
-  //printf("concat string 0: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, cfg.message);
-  //printf("To be added: %s\n", cfg.message);
-  //printf("concat string 1: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, cfg.topic);
-  //printf("To be added: %s\n", cfg.topic);
-  //printf("concat string 2: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, current_time_str);
-  //printf("To be added: %s\n", current_time_str);
-  //printf("concat string 4: %s\n", concatenated_message_to_sign);
   strcat(concatenated_message_to_sign, clientID);
-  //printf("To be added: %s\n", clientID);
-  //printf("concat string 5: %s\n", concatenated_message_to_sign);
 
   end = clock();
   printf("Generating message concat execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
@@ -533,10 +524,8 @@ int main(int argc, char *argv[])
   {
     sig_scheme = "Dilithium";
     load_client_key(dilithium_pub_sk, clientID, "sk");
-    //load_client_key(dilithium_pub_pk, clientID, "pk");
 
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
-    //dilithium_verify(dilithium_signature, concatenated_message_to_sign, message_len, dilithium_pub_pk);
   }
   else
   {
@@ -548,12 +537,6 @@ int main(int argc, char *argv[])
       fprintf(stderr, "Signing message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-
-    /*if (falcon_verify_message(fc, &concatenated_message_to_sign, message_len) != 0)
-    {
-      fprintf(stderr, "verifying message for Falcon failed\n");
-      exit(EXIT_FAILURE);
-    }*/
   }
   end = clock();
   printf("Signing message %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
@@ -596,9 +579,12 @@ int main(int argc, char *argv[])
       alg_id = "F1024";
     }
     }
+
     cJSON *root = cJSON_CreateObject();
     cJSON_AddStringToObject(root, "m", cfg.message);
-    cJSON_AddNumberToObject(root, "t", current_time);
+    gettimeofday(&timestamp, NULL);
+
+    cJSON_AddNumberToObject(root, "t", timestamp.tv_sec);
     cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
     cJSON_AddStringToObject(root, "a", alg_id); 
     cJSON_AddStringToObject(root, "s", encoded_sig); 

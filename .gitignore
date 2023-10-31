@@ -1,4 +1,16 @@
 *.o
 *.so
-*.conf
 *.1
+*man
+
+#Individual files
+trusted_broker/Design_A/mosquitto_code/mosquitto/src/mosquitto
+trusted_broker/Design_B/mosquitto_code/mosquitto/src/mosquitto
+trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_subscriber
+trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_test
+trusted_broker/Design_B/mosquitto_code/mosquitto/client/client_own_subscriber
+trusted_broker/Design_B/mosquitto_code/mosquitto/client/client_own_test
+
+# Folders
+trusted_broker/Design_B/mosquitto_code/mosquitto/man/
+trusted_broker/Design_A/mosquitto_code/mosquitto/man/
