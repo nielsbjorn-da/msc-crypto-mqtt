@@ -77,45 +77,58 @@ static bool ready_for_repeat = false;
 static volatile int status = STATUS_CONNECTING;
 static int connack_result = 0;
 
-int load_client_key(uint8_t *key_array, char *client_id, char *key_type) 
+int load_client_key(uint8_t *key_array, char *client_id, char *key_type)
 {
   size_t key_length;
   char path[100];
   strcpy(path, "../src/keys/");
-  if (dilithium) {
+  if (dilithium)
+  {
     strcat(path, CRYPTO_ALGNAME);
     strcat(path, "_");
-    if (strcmp("pk", key_type) == 0) {
+    if (strcmp("pk", key_type) == 0)
+    {
       key_length = CRYPTO_PUBLICKEYBYTES;
-    } else {
+    }
+    else
+    {
       key_length = CRYPTO_SECRETKEYBYTES;
     }
-  
-  } else {
-    if (logn == 9) {
+  }
+  else
+  {
+    if (logn == 9)
+    {
       strcat(path, "falcon512_");
-    } else if (logn == 10) {
+    }
+    else if (logn == 10)
+    {
       strcat(path, "falcon1024_");
     }
 
-    if (strcmp("pk", key_type) == 0) {
+    if (strcmp("pk", key_type) == 0)
+    {
       key_length = FALCON_PUBKEY_SIZE(logn);
-    } else {
+    }
+    else
+    {
       key_length = FALCON_PRIVKEY_SIZE(logn);
     }
   }
   strcat(path, client_id);
   strcat(path, "_");
   strcat(path, key_type);
-	strcat(path, ".bin");
-  
+  strcat(path, ".bin");
+
   FILE *file = fopen(path, "rb");
-  if (file == NULL) {
+  if (file == NULL)
+  {
     perror("Failed to open file");
     return -1;
   }
   size_t bytes_read = fread(key_array, sizeof(uint8_t), key_length, file);
-  if (bytes_read != key_length) {
+  if (bytes_read != key_length)
+  {
     perror("Failed to read key content from file");
     fclose(file);
     return -1;
@@ -124,7 +137,6 @@ int load_client_key(uint8_t *key_array, char *client_id, char *key_type)
 
   return 0;
 }
-
 
 // Falcon custom functions
 static void *
@@ -223,8 +235,9 @@ int dilithium_sign_message(uint8_t *signature, const char *message, int message_
   size_t sig_length;
 
   int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
-  
-  if (ret) {
+
+  if (ret)
+  {
     fprintf(stderr, "Signature generation failed\n");
     return -1;
   }
@@ -240,7 +253,8 @@ int dilithium_verify(uint8_t *signature, char *message, int message_length, uint
 
   int ret = crypto_sign_verify(signature, sig_length, message, message_length, public_key);
 
-  if(ret) {
+  if (ret)
+  {
     fprintf(stderr, "Verification failed\n");
     return -1;
   }
@@ -252,7 +266,7 @@ int dilithium_verify(uint8_t *signature, char *message, int message_length, uint
 */
 void initialize_falcon_struct(FalconContext *fc)
 {
-  //printf("Security: %4u bytes\n", 1u << logn);
+  // printf("Security: %4u bytes\n", 1u << logn);
   fflush(stdout);
 
   // Creating SHAKE256 context.
@@ -289,8 +303,8 @@ void initialize_falcon_struct(FalconContext *fc)
   }*/
   // printf("end key gen\n");
 
-  //int r = falcon_get_logn(fc->pk, pk_len);
-  //printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
+  // int r = falcon_get_logn(fc->pk, pk_len);
+  // printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
 }
 
 /*
@@ -298,24 +312,24 @@ void initialize_falcon_struct(FalconContext *fc)
 */
 int falcon_sign_message(FalconContext *fc, char *payload, int payload_len)
 {
-  //printf("start sign: %s \n", payload);
+  // printf("start sign: %s \n", payload);
   fc->sig_len = FALCON_SIG_PADDED_SIZE(fc->logn);
   int result = falcon_sign_dyn(&fc->rng,
                                fc->sig, &fc->sig_len, FALCON_SIG_PADDED,
                                fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                                payload, payload_len, fc->tmp, fc->tmp_len);
-  //printf("end sign with result: %d\n", result);
+  // printf("end sign with result: %d\n", result);
   return result;
 }
 
 int falcon_verify_message(FalconContext *fc, char *payload, int payload_len)
 {
-  //printf("start verify\n");
+  // printf("start verify\n");
   int result = falcon_verify(
       fc->sig, fc->sig_len, FALCON_SIG_PADDED,
       fc->pk, pk_len,
       payload, payload_len, fc->tmp, fc->tmp_len);
-  //printf("end verify with result: %d\n", result);
+  // printf("end verify with result: %d\n", result);
   return result;
 }
 
@@ -347,11 +361,11 @@ char *decode(const char *input, size_t size)
   return output;
 }
 
-char* encode(uint8_t *input, size_t input_size)
+char *encode(uint8_t *input, size_t input_size)
 {
-  //int SIZE = 4;
+  // int SIZE = 4;
   /* set up a destination buffer large enough to hold the encoded data */
-  char *output = (char *)malloc(input_size*2);
+  char *output = (char *)malloc(input_size * 2);
   /* keep track of our encoded position */
   char *c = output;
   /* store the number of bytes encoded by a single call */
@@ -382,30 +396,44 @@ char* encode(uint8_t *input, size_t input_size)
 
 int main(int argc, char *argv[])
 {
+  // Measure total time of application
+  struct timeval total_timestamp;
+  gettimeofday(&total_timestamp, NULL);
+
   FalconContext *fc = malloc(sizeof(FalconContext));
   size_t sig_length;
   char qos_str[10];          // Adjust the size based on your maximum expected qos value
   char current_time_str[20]; // Adjust the size based on your maximum expected time value
   int message_len;
-  struct timeval timestamp;
+
+  struct timeval end_time;
+  struct timeval start_time;
+  double time_taken;
+
+  // Measure time for initialization
+  gettimeofday(&start_time, NULL);
 
   if (dilithium)
   {
-    //printf("Signature algorithm: Dilithium\n");
-    //crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
+    // printf("Signature algorithm: Dilithium\n");
+    // crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
     int i;
   }
   else
   {
-    //printf("Signature algorithm: Falcon\n");
+    // printf("Signature algorithm: Falcon\n");
     if (fc == NULL)
     {
       fprintf(stderr, "Memory allocation for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-    //printf("initialzing Falcon \n");
+    // printf("initialzing Falcon \n");
     initialize_falcon_struct(fc);
   }
+
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+  printf("Initialization time: %.9f seconds.\n", time_taken);
 
   struct mosquitto *mosq = NULL;
   int rc;
@@ -495,15 +523,12 @@ int main(int argc, char *argv[])
   //  Creating the message to sign
   // #####################################################################################
   // timestamp
-  gettimeofday(&timestamp, NULL);
-  time_t current_time = timestamp.tv_sec;
-
-  start = clock();
+  gettimeofday(&start_time, NULL);
   // Convert int qos to string
-  snprintf(current_time_str, sizeof(current_time_str), "%d", current_time);
+  snprintf(current_time_str, sizeof(current_time_str), "%d", total_timestamp.tv_sec);
 
   message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(current_time_str) + strlen(clientID);
-  char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator 
+  char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator
   // TODO Hvorfor ikke bare bruge message_len i stedet for 10000 ??
   concatenated_message_to_sign[0] = '\0';
 
@@ -512,14 +537,14 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, current_time_str);
   strcat(concatenated_message_to_sign, clientID);
 
-  end = clock();
-  printf("Generating message concat execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+  printf("Generating message concat execution time: %.9f seconds.\n", time_taken);
   // #####################################################################################
   //  Run the signing algorithms
   // #####################################################################################
   char *sig_scheme;
-  start = clock();
+  gettimeofday(&start_time, NULL);
   if (dilithium)
   {
     sig_scheme = "Dilithium";
@@ -531,81 +556,96 @@ int main(int argc, char *argv[])
   {
     sig_scheme = "Falcon";
     load_client_key(fc->sk, clientID, "sk");
-    //load_client_key(fc->pk, clientID, "pk");
+    // load_client_key(fc->pk, clientID, "pk");
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
       fprintf(stderr, "Signing message for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
   }
-  end = clock();
-  printf("Signing message %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
 
- // #####################################################################################
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+  printf("Signing message %s execution time: %.9f seconds.\n", sig_scheme, time_taken);
+
+  // #####################################################################################
   //  Create cJSON
   // #####################################################################################
-  
+
   char *encoded_sig;
   char *b64_encoded_pk;
   char *decoded;
 
-  start = clock();
+  gettimeofday(&start_time, NULL);
   if (dilithium)
   {
     encoded_sig = encode(dilithium_signature, CRYPTO_BYTES);
   }
   else
-    {
-      encoded_sig = encode(fc->sig, fc->sig_len);
-    }
-    end = clock();
-    printf("Encode signature %s execution time: %f seconds\n", sig_scheme, ((double)(end - start)) / CLOCKS_PER_SEC);
+  {
+    encoded_sig = encode(fc->sig, fc->sig_len);
+  }
 
-    start = clock();
-    char *alg_id;
-    if (dilithium) {
-      if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0) {
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+  printf("Encode signature %s execution time: %.9f seconds.\n", sig_scheme, time_taken);
+
+  gettimeofday(&start_time, NULL);
+  char *alg_id;
+  if (dilithium)
+  {
+    if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0)
+    {
       alg_id = "D2";
-    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium3") == 0) {
+    }
+    else if (strcmp(CRYPTO_ALGNAME, "Dilithium3") == 0)
+    {
       alg_id = "D3";
-    } else if (strcmp(CRYPTO_ALGNAME, "Dilithium5") == 0){
+    }
+    else if (strcmp(CRYPTO_ALGNAME, "Dilithium5") == 0)
+    {
       alg_id = "D5";
     }
-    } else {
-      if (logn == 9) {
+  }
+  else
+  {
+    if (logn == 9)
+    {
       alg_id = "F512";
     }
-      else if (logn == 10) {
+    else if (logn == 10)
+    {
       alg_id = "F1024";
     }
-    }
-
-    cJSON *root = cJSON_CreateObject();
-    cJSON_AddStringToObject(root, "m", cfg.message);
-    gettimeofday(&timestamp, NULL);
-
-    cJSON_AddNumberToObject(root, "t", timestamp.tv_sec);
-    cJSON_AddNumberToObject(root, "t2", timestamp.tv_usec);
-    cJSON_AddStringToObject(root, "a", alg_id); 
-    cJSON_AddStringToObject(root, "s", encoded_sig); 
-
-    char *jsonString = cJSON_PrintUnformatted(root);
-    size_t allocatedSize = strlen(jsonString) + 1;
-    
-    rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos,cfg.retain);
-
-    cJSON_Delete(root);
-    free(jsonString);
-    free(b64_encoded_pk);
-    free(encoded_sig);
-    mosquitto_destroy(mosq);
-    end = clock();
-    printf("Generating cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-    //printf("Message published: %s\n", cfg.message);
-
-  cleanup:
-    mosquitto_lib_cleanup();
-    client_config_cleanup(&cfg);
-    pub_shared_cleanup();
-    return 1;
   }
+
+  cJSON *root = cJSON_CreateObject();
+  cJSON_AddStringToObject(root, "m", cfg.message);
+  //gettimeofday(&total_timestamp, NULL); // Un commet if latency should be measured
+
+  cJSON_AddNumberToObject(root, "t", total_timestamp.tv_sec);
+  cJSON_AddNumberToObject(root, "t2", total_timestamp.tv_usec);
+  cJSON_AddStringToObject(root, "a", alg_id);
+  cJSON_AddStringToObject(root, "s", encoded_sig);
+
+  char *jsonString = cJSON_PrintUnformatted(root);
+  size_t allocatedSize = strlen(jsonString) + 1;
+
+  rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
+
+  cJSON_Delete(root);
+  free(jsonString);
+  free(b64_encoded_pk);
+  free(encoded_sig);
+  mosquitto_destroy(mosq);
+
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+  printf("Generating cJSON execution time: %.9f seconds.\n", sig_scheme, time_taken);
+
+cleanup:
+  mosquitto_lib_cleanup();
+  client_config_cleanup(&cfg);
+  pub_shared_cleanup();
+  return 1;
+}

@@ -181,34 +181,42 @@ int load_broker_pk(char *signature_scheme)
 	uint8_t *key_array;
 	char path[100];
 	strcpy(path, "../src/keys/");
-	if (strcmp("D2", signature_scheme) == 0 || strcmp("D3", signature_scheme) == 0 || strcmp("D5", signature_scheme) == 0) {
+	if (strcmp("D2", signature_scheme) == 0 || strcmp("D3", signature_scheme) == 0 || strcmp("D5", signature_scheme) == 0)
+	{
 		key_length = CRYPTO_PUBLICKEYBYTES;
 		key_array = dilithium_broker_pk;
 		strcat(path, CRYPTO_ALGNAME);
-	} else {
+	}
+	else
+	{
 		key_length = FALCON_PUBKEY_SIZE(logn);
 		key_array = falcon_broker_pk;
-		if (logn == 9) {
+		if (logn == 9)
+		{
 			strcat(path, "falcon512");
-		} else if (logn == 10) {
+		}
+		else if (logn == 10)
+		{
 			strcat(path, "falcon1024");
 		}
 	}
 
 	strcat(path, "_broker_pk.bin");
 	FILE *file = fopen(path, "rb");
-	if (file == NULL) {
+	if (file == NULL)
+	{
 		perror("Failed to open file");
 		return -1;
 	}
 
 	size_t bytes_read = fread(key_array, sizeof(uint8_t), key_length, file);
-	if (bytes_read != key_length) {
+	if (bytes_read != key_length)
+	{
 		perror("Failed to read key content from file");
 		fclose(file);
 		return -1;
 	}
-	
+
 	fclose(file);
 
 	return 0;
@@ -261,7 +269,7 @@ char *decode(const char *input, size_t size)
 	base64_init_decodestate(&s);
 	size_t si = base64_encode_length(size, &s);
 	char *output = (char *)calloc(si, sizeof(char));
-	//memset(output, 0, sizeof(output));
+	// memset(output, 0, sizeof(output));
 	char *c = output;
 
 	/*---------- START DECODING ----------*/
@@ -293,27 +301,30 @@ int verify_dilithium_signature(uint8_t *signature, const char *message, size_t m
 
 int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int payload_len, uint8_t *pk, size_t pk_len, uint8_t *tmp, size_t tmp_len)
 {
-	//printf("start verify\n");
+	// printf("start verify\n");
 	int result = falcon_verify(
 		sig, sig_len, FALCON_SIG_PADDED,
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
-	if (result) {
+	if (result)
+	{
 		printf("Falcon verification failed\n");
 	}
-	//printf("end verify with result: %d\n", result);
+	// printf("end verify with result: %d\n", result);
 	return result;
 }
 
 static void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *message, const mosquitto_property *properties)
 {
-	// Record the end time
-	struct timeval receive_time;
-	gettimeofday(&receive_time, NULL);
+	// Uncommet this to record the latency time
+	// struct timeval receive_time;
+	// gettimeofday(&receive_time, NULL);
+
+	struct timeval end_time, start_time;
+	double time_taken;
 
 	int i;
 	bool res;
-	//printf("Message received \n");
 	UNUSED(obj);
 	UNUSED(properties);
 
@@ -347,24 +358,24 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		mosquitto_publish(mosq, &last_mid, message->topic, 0, NULL, 1, true);
 	}
 
-	//#####################################################################################
-	// Retrieve the content from the MQTT payload package.
-	//#####################################################################################
+	// #####################################################################################
+	//  Retrieve the content from the MQTT payload package.
+	// #####################################################################################
 
-	//print_message(&cfg, message, properties);
-	start = clock();
+	// print_message(&cfg, message, properties);
+	gettimeofday(&start_time, NULL);
 
 	cJSON *message_as_json = cJSON_Parse(message->payload);
-	
+
 	cJSON *message_data = cJSON_GetObjectItem(message_as_json, "m");
 	char *message_data_string = message_data->valuestring;
-	
+
 	size_t messagelen = strlen(message_data_string);
 
 	char *publisher_id = cJSON_GetObjectItem(message_as_json, "id")->valuestring;
-	
+
 	char *publisher_topic = message->topic;
-	
+
 	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
 	double time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
@@ -373,13 +384,15 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 	//
-	end = clock();
-  	printf("Extracting payload from cJSON execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
-	//#####################################################################################
-	// Creating the message that were signed
-	//#####################################################################################
-	start = clock();
+	gettimeofday(&end_time, NULL);
+	time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+	printf("Extracting payload from cJSON execution time: %.9f seconds.\n", time_taken);
+
+	// #####################################################################################
+	//  Creating the message that were signed
+	// #####################################################################################
+	gettimeofday(&start_time, NULL);
 	int timestamp_length = snprintf(NULL, 0, "%d", timestamp);
 
 	// Allocate memory for the strings dynamically, including space for the null terminator
@@ -409,51 +422,59 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	strncat(concatenated_message_to_verify, publisher_topic, message_len);
 	strncat(concatenated_message_to_verify, current_time_str, message_len);
 	strncat(concatenated_message_to_verify, publisher_id, message_len);
-	
-  	//printf("concat string 5: %s\n", concatenated_message_to_verify);
+
+	// printf("concat string 5: %s\n", concatenated_message_to_verify);
 
 	// Ensure null termination
 	concatenated_message_to_verify[message_len] = '\0';
 	free(current_time_str);
 
-	end = clock();
-  	printf("Generating concat message execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
-	//#####################################################################################
-	// Run the verifications algorithms
-	//#####################################################################################
+	gettimeofday(&end_time, NULL);
+	time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+	printf("Generating concat message execution time: %.9f seconds.\n", time_taken);
 	
+	// #####################################################################################
+	//  Run the verifications algorithms
+	// #####################################################################################
+
 	int verify = 1;
 	char *version = "";
 	if (strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0)
 	{
-		start = clock();
-		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
-		end = clock();
-  		printf("Decode sig Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		gettimeofday(&start_time, NULL);
 
-		start = clock();
+		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Decode sig Dilithium execution time: %.9f seconds.\n", time_taken);
+
+		gettimeofday(&start_time, NULL);
 		load_broker_pk(signature_algorithm);
-		
+
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_broker_pk);
 		free(dilithium_decode_sig);
 		version = "Dilithium";
-		end = clock();
-		printf("Verification Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Verification Dilithium execution time: %.9f seconds.\n", time_taken);
 	}
 	else
 	{
 		//  Falcon variables
-		if (strcmp(signature_algorithm, "F1024") == 0) {
+		if (strcmp(signature_algorithm, "F1024") == 0)
+		{
 			logn = 10;
 			falcon_broker_pk[FALCON_PUBKEY_SIZE(logn)];
 		}
-		start = clock();
+		gettimeofday(&start_time, NULL);
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
-		end = clock();
-		printf("Decode sig Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Decode sig Falcon execution time: %.9f seconds.\n", time_taken);
 
-		start = clock();
+		gettimeofday(&start_time, NULL);
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
@@ -469,22 +490,22 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_broker_pk, pk_len, tmp, tmp_len);
-		
+
 		free(falcon_decode_sig);
 		version = "Falcon";
-		end = clock();
-		printf("Verification Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Verification Falcon execution time: %.9f seconds.\n", time_taken);
 	}
 	if (!verify)
 	{
 		// Record the end time
-		struct timeval receive_time;
-		gettimeofday(&receive_time, NULL);
+		gettimeofday(&end_time, NULL);
 
 		// Calculate and print the time taken for message delivery
-		double time_taken = (receive_time.tv_sec - timestamp) + (receive_time.tv_usec - time_micro) / 1e9;
-		//printf("Total time result: %.9f seconds.\n", time_taken);
-		printf("Total latency result: %.9f seconds.\n", time_taken);
+		double time_taken = (end_time.tv_sec - timestamp) + (end_time.tv_usec - time_micro) / 1e9;
+		printf("Total time result: %.9f seconds.\n", time_taken);
+		//printf("Total latency result: %.9f seconds.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
 		printf("---------------------------------------------------------\n");
