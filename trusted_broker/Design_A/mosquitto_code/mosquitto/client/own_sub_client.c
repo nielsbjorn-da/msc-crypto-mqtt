@@ -387,10 +387,11 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
 		printf("Decode sig Dilithium execution time: %.9f seconds.\n", time_taken);
 
-		start = clock();
+		gettimeofday(&start_time, NULL);
 		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
-		end = clock();
-  		printf("Decode PK Dilithium execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Decode PK Dilithium execution time: %.9f seconds.\n", time_taken);
 		
 		gettimeofday(&start_time, NULL);
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
@@ -419,10 +420,10 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		gettimeofday(&start_time, NULL);
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
-		end = clock();
-  		printf("Decode PK Falcon execution time: %f seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+		gettimeofday(&end_time, NULL);
+		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
+		printf("Decode PK Falcon execution time: %.9f seconds.\n", time_taken);
 
-		start = clock();
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
 		size_t tmp_len;

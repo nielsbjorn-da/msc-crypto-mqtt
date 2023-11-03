@@ -457,7 +457,7 @@ Extracting payload from cJSON execution time: 0.000000027 seconds.
 Generating concat message execution time: 0.000000006 seconds.
 Decode sig Falcon execution time: 0.000000013 seconds.
 Verification Falcon execution time: 0.000000413 seconds.
-Total time result: 10.000475857 seconds.
+Total time result: 1.000475857 seconds.
 Falcon signature verification success with result 0...
 ---------------------------------------------------------
 Extracting payload from cJSON execution time: 0.000000029 seconds.
