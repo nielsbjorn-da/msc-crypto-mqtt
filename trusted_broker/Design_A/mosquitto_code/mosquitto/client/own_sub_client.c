@@ -438,7 +438,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
-		version = "Falcon";
+		version = "Falcon-1024";
+		if (logn == 9) version = "Falcon-512";
 		gettimeofday(&end_time, NULL);
 		time_taken = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1e9;
 		printf("Verification Falcon execution time: %.9f seconds.\n", time_taken);

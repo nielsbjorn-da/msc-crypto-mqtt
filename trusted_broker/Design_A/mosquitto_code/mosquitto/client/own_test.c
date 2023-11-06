@@ -469,12 +469,16 @@ int main(int argc, char *argv[])
   gettimeofday(&start_time, NULL);
   if (dilithium)
   {
-    sig_scheme = "Dilithium";
+    sig_scheme = CRYPTO_ALGNAME;
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
   }
   else
   {
-    sig_scheme = "Falcon";
+    sig_scheme = "Falcon-1024";
+    if (logn == 9) {
+      sig_scheme = "Falcon-512";
+    }
+    
     if (falcon_sign_message(fc, &concatenated_message_to_sign, message_len) != 0)
     {
       fprintf(stderr, "Signing message for Falcon failed\n");
