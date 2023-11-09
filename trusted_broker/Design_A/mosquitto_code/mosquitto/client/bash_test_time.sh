@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Number of rounds (for testing purposes)
-rounds=5000
+rounds=500
 
  #Start subscriber and capture its output in time_results.txt
 ./client_own_subscriber -t "TestTopic" -p 1884 -h 192.168.50.157 >> time_results_subscriber.txt &
@@ -26,7 +26,7 @@ do
     echo "---------------------------------------------------------" >> time_results_publisher.txt
 
     # Wait for a few seconds to allow subscriber to process and write the time result
-    sleep 0.5
+    sleep 2
 done
 # Terminate the subscriber after rounds finish
 kill $subscriber_pid
