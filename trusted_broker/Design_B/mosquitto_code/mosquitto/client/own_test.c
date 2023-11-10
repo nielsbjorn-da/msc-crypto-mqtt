@@ -460,7 +460,7 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
   printf("Initialization time: %d ms.\n", time_taken);
 
   struct mosquitto *mosq = NULL;
@@ -569,7 +569,7 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, clientID);
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
   printf("Generating message concat execution time: %d ms.\n", time_taken);
   // #####################################################################################
   //  Run the signing algorithms
@@ -599,7 +599,7 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
   printf("Signing message %s execution time: %d ms.\n", sig_scheme, time_taken);
 
   // #####################################################################################
@@ -621,7 +621,7 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
   printf("Encode signature %s execution time: %d ms.\n", sig_scheme, time_taken);
 
   gettimeofday(&start_time, NULL);
@@ -640,7 +640,7 @@ int main(int argc, char *argv[])
   size_t allocatedSize = strlen(jsonString) + 1;
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
   printf("Generating cJSON execution time: %d ms.\n", sig_scheme, time_taken);
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
