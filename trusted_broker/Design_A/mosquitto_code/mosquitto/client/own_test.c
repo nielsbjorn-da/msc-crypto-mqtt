@@ -339,7 +339,7 @@ int main(int argc, char *argv[])
 
   struct timeval end_time;
   struct timeval start_time;
-  double time_taken;
+  long time_taken;
 
   // Measure time for initialization
   gettimeofday(&start_time, NULL);
@@ -358,8 +358,8 @@ int main(int argc, char *argv[])
     initialize_falcon_struct(fc);
   }
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-  printf("Initialization time: %d ms.\n", time_taken);
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  printf("Initialization time: %ld micro seconds.\n", time_taken);
 
   mosquitto_lib_init();
 
@@ -461,8 +461,8 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, current_time_str);
   strcat(concatenated_message_to_sign, clientID);
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-  printf("Generating message concat execution time: %d ms.\n", time_taken);
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  printf("Generating message concat execution time: %ld micro seconds.\n", time_taken);
 
   // #####################################################################################
   //  Run the signing algorithms
@@ -489,8 +489,8 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-  printf("Signing message %s execution time: %d ms.\n", sig_scheme, time_taken);
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  printf("Signing message %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
   // #####################################################################################
   //  Create cJSON
@@ -504,16 +504,16 @@ int main(int argc, char *argv[])
     // signature
     encoded_sig = encode(dilithium_signature, CRYPTO_BYTES);
     gettimeofday(&end_time, NULL);
-    time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-    printf("Encode signature %s execution time: %.9f seconds.\n", sig_scheme, time_taken);
+    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
     // public key
     gettimeofday(&start_time, NULL);
     b64_encoded_pk = encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
 
     gettimeofday(&end_time, NULL);
-    time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-    printf("Encode PK %s execution time: %d ms.\n", sig_scheme, time_taken);
+    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    printf("Encode PK %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
     if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0)
     {
@@ -534,15 +534,15 @@ int main(int argc, char *argv[])
     // signature
     encoded_sig = encode(fc->sig, fc->sig_len);
     gettimeofday(&end_time, NULL);
-    time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-    printf("Encode signature %s execution time: %d ms.\n", sig_scheme, time_taken);
+    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
     // public key
     gettimeofday(&start_time, NULL);
     b64_encoded_pk = encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
     gettimeofday(&end_time, NULL);
-    time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
-    printf("Encode PK %s execution time: %d ms.\n", sig_scheme, time_taken);
+    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    printf("Encode PK %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
     start = clock();
     if (logn == 9)
@@ -561,7 +561,6 @@ int main(int argc, char *argv[])
   cJSON_AddStringToObject(root, "m", cfg.message);
   cJSON_AddStringToObject(root, "id", clientID);
 
-  
   cJSON_AddNumberToObject(root, "t", total_timestamp.tv_sec);
   cJSON_AddNumberToObject(root, "t2", total_timestamp.tv_usec);
   cJSON_AddStringToObject(root, "a", alg_id);
@@ -579,9 +578,9 @@ int main(int argc, char *argv[])
   free(b64_encoded_pk);
   free(encoded_sig);
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
-  printf("Generating cJSON execution time: %d ms.\n", sig_scheme, time_taken);
+  printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
 
 cleanup:
   mosquitto_lib_cleanup();

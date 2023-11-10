@@ -408,7 +408,7 @@ int main(int argc, char *argv[])
 
   struct timeval end_time;
   struct timeval start_time;
-  double time_taken;
+  long time_taken;
 
   char *alg_id;
   if (dilithium)
@@ -460,8 +460,8 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Initialization time: %d ms.\n", time_taken);
+  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
+  printf("Initialization time: %ld micro seconds.\n", time_taken);
 
   struct mosquitto *mosq = NULL;
   int rc;
@@ -570,7 +570,7 @@ int main(int argc, char *argv[])
 
   gettimeofday(&end_time, NULL);
   time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Generating message concat execution time: %d ms.\n", time_taken);
+  printf("Generating message concat execution time: %ld micro seconds.\n", time_taken);
   // #####################################################################################
   //  Run the signing algorithms
   // #####################################################################################
@@ -600,7 +600,7 @@ int main(int argc, char *argv[])
 
   gettimeofday(&end_time, NULL);
   time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Signing message %s execution time: %d ms.\n", sig_scheme, time_taken);
+  printf("Signing message %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
   // #####################################################################################
   //  Create cJSON
@@ -622,9 +622,10 @@ int main(int argc, char *argv[])
 
   gettimeofday(&end_time, NULL);
   time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Encode signature %s execution time: %d ms.\n", sig_scheme, time_taken);
+  printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
   gettimeofday(&start_time, NULL);
+
   
 
   cJSON *root = cJSON_CreateObject();
@@ -636,13 +637,14 @@ int main(int argc, char *argv[])
   cJSON_AddStringToObject(root, "a", alg_id);
   cJSON_AddStringToObject(root, "s", encoded_sig);
 
+
   char *jsonString = cJSON_PrintUnformatted(root);
   size_t allocatedSize = strlen(jsonString) + 1;
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
 
-  printf("Generating cJSON execution time: %d ms.\n", sig_scheme, time_taken);
+  printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
 
   cJSON_Delete(root);
