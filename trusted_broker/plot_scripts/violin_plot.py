@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-path_design_b = 'Design_B/mosquitto_code/mosquitto/client/new_test_results/'
-path_design_a = '../../../../../Design_A/mosquitto_code/mosquitto/client/new_test_results/'
+path_design_a = '../Design_A/mosquitto_code/mosquitto/client/test_results/Iteration_1/'
+path_design_b = '../Design_B/mosquitto_code/mosquitto/client/test_results/Iteration_1/' 
 
 
 def convert_sym_to_name(sym):
@@ -23,11 +23,11 @@ def convert_sym_to_name(sym):
 
 # List of file names
 design_a = [
-    path_design_b + path_design_a + "time_results_subscriber_d2.txt",
-    path_design_b + path_design_a + "time_results_subscriber_d3.txt",
-    path_design_b + path_design_a + "time_results_subscriber_d5.txt",
-    path_design_b + path_design_a + "time_results_subscriber_f512.txt",
-    path_design_b + path_design_a + "time_results_subscriber_f1024.txt"
+    path_design_a + "time_results_subscriber_d2.txt",
+    path_design_a + "time_results_subscriber_d3.txt",
+    path_design_a + "time_results_subscriber_d5.txt",
+    path_design_a + "time_results_subscriber_f512.txt",
+    path_design_a + "time_results_subscriber_f1024.txt"
 ]
 
 design_b = [
@@ -38,8 +38,8 @@ design_b = [
     path_design_b + "time_results_subscriber_f1024.txt"
 ]
 
-element_number = 3092
-upper_bound = 0.00015
+element_number = 350
+upper_bound = 90000
 
 
 # Dictionary to store total time results for each algorithm in design a
@@ -57,7 +57,7 @@ for file_name in design_a:
         #print(len(lines))
         for line in lines:
             # Extract values using regular expression
-            match = re.search(r'Total time result: (\d+\.\d+) seconds', line)
+            match = re.search(r'Total time result: (\d+) micro seconds', line)
             if match:
                 result = float(match.group(1))
                 if result < upper_bound:
@@ -85,7 +85,7 @@ for file_name in design_b:
         #print(len(lines))
         for line in lines:
             # Extract values using regular expression
-            match = re.search(r'Total time result: (\d+\.\d+) seconds', line)
+            match = re.search(r'Total time result: (\d+) micro seconds', line)
             if match:
                 result = float(match.group(1))
                 if result < upper_bound:
@@ -103,7 +103,7 @@ new_data_a = {}
 for i in data_a:
     temp = []
     for j in range(0, element_number):
-        temp.append(data_a[i][j])
+        temp.append(data_a[i][j] / 1000.)
     print(len(data_a[i]))
     new_data_a[i] = temp
 
@@ -111,8 +111,8 @@ for i in data_a:
 new_data_b = {}
 for i in data_b:
     temp = []
-    for j in range(0, 38):
-        temp.append(data_b[i][j])
+    for j in range(0, element_number):
+        temp.append(data_b[i][j] / 1000.)
     print(len(data_b[i]))
     new_data_b[i] = temp
 
@@ -135,14 +135,16 @@ print(combined_df)
 
 # Set style and color palettelevel_0'
 sns.set(style="whitegrid")
-sns.set_palette("Set2")
+sns.set_palette(["tab:blue", "tab:orange"])  # Set the color palette to blue and orange
+
 
 # Create a violin plot with variance (inner='stick')
 plt.figure(figsize=(10, 6))
 sns.violinplot(x='Variable', y='Value', data=combined_df, hue='level_0', split=True)
 #sns.violinplot(data=df_a)
-plt.ylabel("Total Time (seconds)", fontsize=14)
-plt.title("Round-trip time for Post-Quantum signature algorithms", fontsize=16)
+plt.ylabel("Time (Milliseconds)", fontsize=10)
+plt.xlabel("Algorithms", fontsize=10)
+plt.title("Publish delivery time for Post-Quantum signature algorithms", fontsize=14)
 plt.xticks(rotation=45)
 plt.yticks(fontsize=12)
 plt.grid(axis='y')

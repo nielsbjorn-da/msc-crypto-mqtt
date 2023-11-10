@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-path_design_b = '../Design_B/mosquitto_code/mosquitto/client/test_results/Iteration_3/'
-path_design_a = '../Design_B/mosquitto_code/mosquitto/client/test_results/Iteration_1/' #../../../../../Design_A/mosquitto_code/mosquitto/client/new_test_results/'
+path_design_a = '../Design_A/mosquitto_code/mosquitto/client/test_results/Iteration_1/'
+path_design_b = '../Design_B/mosquitto_code/mosquitto/client/test_results/Iteration_1/' 
 
 # List of file names
 design_a = [
@@ -24,8 +24,8 @@ design_b = [
     path_design_b + "time_results_subscriber_f1024.txt"
 ]
 
-element_number = 36
-upper_bound = 0.9
+element_number = 350
+upper_bound = 90000
 
 # Dictionary to store total time results for each algorithm in design a
 data_a = {}
@@ -43,12 +43,15 @@ for file_name in design_a:
         #print(len(lines))
         for line in lines:
             # Extract values using regular expression
-            match = re.search(r'Total time result: (\d+\.\d+) seconds', line)
+            #Total time result: 22843 micro seconds.
+            match = re.search(r'Total time result: (\d+) micro seconds.', line)
+            #print(line)
             if match:
                 result = float(match.group(1))
+                counter_a += 1
                 if result < upper_bound:
                     total_time_a.append(result)
-                    counter_a += 1
+                    
         print(counter_a, "number of elements in", algorithm_name, "in design A")
         counter_a = 0
 
@@ -60,7 +63,7 @@ new_data_a = {}
 for i in data_a:
     temp = []
     for j in range(0, element_number):
-        temp.append(data_a[i][j])
+        temp.append(data_a[i][j] / 1000.)
     #print(len(data_a[i]))
     new_data_a[i] = temp
 
@@ -83,12 +86,15 @@ for file_name in design_b:
         #print(len(lines))
         for line in lines:
             # Extract values using regular expression
-            match = re.search(r'Total time result: (\d+\.\d+) seconds', line)
+            match = re.search(r'Total time result: (\d+) micro seconds.', line)
             if match:
+                #if algorithm_name == 'f1024':
+                    #print(match)
                 result = float(match.group(1))
+                counter_b += 1
                 if result < upper_bound:
                     total_time_b.append(result)
-                    counter_b += 1
+                    
         print(counter_b, "number of elements in", algorithm_name, "in design B")
         counter_b = 0
 
@@ -106,7 +112,7 @@ new_data_b = {}
 for i in data_b:
     temp = []
     for j in range(0, element_number):
-        temp.append(data_b[i][j])
+        temp.append(data_b[i][j]/1000.)
     new_data_b[i] = temp
     # Define the width of the bars
 width = 0.35
@@ -139,8 +145,8 @@ for i, algorithm in enumerate(algorithm_names):
     plt.plot([i, i + width], [np.median(new_data_a[algorithm]), np.median(new_data_b[algorithm])], color='black', linewidth=2)
 
 plt.xlabel('Algorithms')
-plt.ylabel('Time (seconds)')
-plt.title('Difference between Design A and Design B with Data Point Overlap and Quartiles')
+plt.ylabel('Time (Milliseconds)')
+plt.title('Publish delivery time differences between Design A and Design B')
 plt.xticks(np.arange(len(algorithm_names)) + width / 2, algorithm_names, rotation='vertical')
 plt.legend()
 plt.tight_layout()
