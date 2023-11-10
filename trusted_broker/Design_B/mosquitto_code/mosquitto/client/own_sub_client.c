@@ -380,7 +380,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	//
 
 	gettimeofday(&end_time, NULL);
-	time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+	time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 	printf("Extracting payload from cJSON execution time: %d ms.\n", time_taken);
 
 	// #####################################################################################
@@ -424,7 +424,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	free(current_time_str);
 
 	gettimeofday(&end_time, NULL);
-	time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+	time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 	printf("Generating concat message execution time: %d ms.\n", time_taken);
 
 	// #####################################################################################
@@ -439,7 +439,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
 		gettimeofday(&end_time, NULL);
-		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 		printf("Decode sig %s execution time: %d ms.\n", CRYPTO_ALGNAME, time_taken);
 
 		gettimeofday(&start_time, NULL);
@@ -450,7 +450,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		version = "Dilithium";
 
 		gettimeofday(&end_time, NULL);
-		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 		printf("Verification %s execution time: %d ms.\n", CRYPTO_ALGNAME, time_taken);
 	}
 	else
@@ -467,7 +467,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
 		gettimeofday(&end_time, NULL);
-		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 		printf("Decode sig %s execution time: %d ms.\n", version, time_taken);
 
 		gettimeofday(&start_time, NULL);
@@ -490,7 +490,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		free(falcon_decode_sig);
 
 		gettimeofday(&end_time, NULL);
-		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 - start_time.tv_usec)) / 1000;
+		time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec)) / 1000.;
 		printf("Verification %s execution time: %d ms.\n", version, time_taken);
 	}
 	if (!verify)
@@ -499,7 +499,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		gettimeofday(&end_time, NULL);
 
 		// Calculate and print the time taken for message delivery
-		double time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (timestamp * 1000000 - time_micro)) / 1000;
+		double time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (timestamp * 1000000 + time_micro)) / 1000.;
 		printf("Total time result: %d ms.\n", time_taken);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
