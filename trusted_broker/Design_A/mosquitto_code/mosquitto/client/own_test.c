@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = false;
+static bool dilithium = true;
 //
 // Falcon struct
 typedef struct

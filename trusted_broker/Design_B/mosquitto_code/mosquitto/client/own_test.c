@@ -35,7 +35,7 @@
 uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
 uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
 uint8_t dilithium_signature[CRYPTO_BYTES];
-static bool dilithium = false;
+static bool dilithium = true;
 
 
 // Time variables
@@ -60,9 +60,9 @@ typedef struct
 } FalconContext;
 
 // Falcon variables //
-unsigned logn = 10;
-size_t pk_len = FALCON_PUBKEY_SIZE(10);
-size_t len = FALCON_TMPSIZE_KEYGEN(10);
+unsigned logn = 9;
+size_t pk_len = FALCON_PUBKEY_SIZE(9);
+size_t len = FALCON_TMPSIZE_KEYGEN(9);
 
 // MQTT
 /* Global variables for use in callbacks. See sub_client.c for an example of

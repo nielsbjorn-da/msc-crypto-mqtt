@@ -177,7 +177,6 @@ static void my_signal_handler(int signum)
 
 int load_broker_pk(char *signature_scheme)
 {
-	printf("into load\n");
 	size_t key_length;
 	uint8_t *key_array;
 	char path[100];
