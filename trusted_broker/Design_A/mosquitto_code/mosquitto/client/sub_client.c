@@ -47,6 +47,8 @@ static bool timed_out = false;
 static int connack_result = 0;
 bool connack_received = false;
 
+struct timeval start_time;
+
 #ifndef WIN32
 static void my_signal_handler(int signum)
 {
@@ -113,6 +115,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, int flags, const mosquitto_property *properties)
 {
+	struct timeval end_time;
+	gettimeofday(&end_time, NULL);
+	long time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	int i;
 
 	UNUSED(obj);
@@ -142,6 +147,8 @@ static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, i
 		}
 		mosquitto_disconnect_v5(mosq, 0, cfg.disconnect_props);
 	}
+	printf("Connect time: %ld microseconds.\n", time_taken);
+	mosquitto_disconnect_v5(mosq, 0, cfg.disconnect_props);
 }
 
 static void my_subscribe_callback(struct mosquitto *mosq, void *obj, int mid, int qos_count, const int *granted_qos)
@@ -317,6 +324,7 @@ static void print_usage(void)
 
 int main(int argc, char *argv[])
 {
+	gettimeofday(&start_time, NULL);
 	int rc;
 #ifndef WIN32
 		struct sigaction sigact;
