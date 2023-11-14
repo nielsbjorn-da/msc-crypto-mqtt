@@ -11,7 +11,7 @@ sig_alg_value="$1"
 conf_file="$2"
 
 # Define the list of strings
-replacement_strings=("kyber512" "p256_kyber512" "x25519_kyber512" "kyber768" "p384_kyber768" "x448_kyber768" "x25519_kyber768" "p256_kyber768" "kyber1024" "p521_kyber1024")
+replacement_strings=("kyber512" "p256_kyber512" "x25519_kyber512" "kyber768" "p384_kyber768" "x448_kyber768" "x25519_kyber768" "p256_kyber768" "kyber1024" "p521_kyber1024" "secp256r1" "secp384r1" "secp521r1" "X25519" "X448")
 
 # Number of repetitions
 num_repetitions=10
