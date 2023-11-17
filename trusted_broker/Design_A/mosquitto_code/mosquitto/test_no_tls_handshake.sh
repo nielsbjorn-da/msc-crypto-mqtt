@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Number of repetitions
-num_repetitions=1000
+num_repetitions=100
 
 # Iterate through the list of signature algorithms
 for ((i=1; i<=$num_repetitions; i++)); do
