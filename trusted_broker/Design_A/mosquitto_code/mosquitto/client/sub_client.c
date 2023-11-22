@@ -128,11 +128,12 @@ static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, i
 
 	connack_result = result;
 	if(!result){
-		mosquitto_subscribe_multiple(mosq, NULL, cfg.topic_count, cfg.topics, cfg.qos, cfg.sub_opts, cfg.subscribe_props);
+		printf("Connect time: %ld microseconds.\n", time_taken);
+		/*mosquitto_subscribe_multiple(mosq, NULL, cfg.topic_count, cfg.topics, cfg.qos, cfg.sub_opts, cfg.subscribe_props);
 
 		for(i=0; i<cfg.unsub_topic_count; i++){
 			mosquitto_unsubscribe_v5(mosq, NULL, cfg.unsub_topics[i], cfg.unsubscribe_props);
-		}
+		}*/
 	}else{
 		if(result){
 			if(cfg.protocol_version == MQTT_PROTOCOL_V5){
@@ -147,7 +148,7 @@ static void my_connect_callback(struct mosquitto *mosq, void *obj, int result, i
 		}
 		mosquitto_disconnect_v5(mosq, 0, cfg.disconnect_props);
 	}
-	printf("Connect time: %ld microseconds.\n", time_taken);
+
 	mosquitto_disconnect_v5(mosq, 0, cfg.disconnect_props);
 }
 
@@ -324,7 +325,7 @@ static void print_usage(void)
 
 int main(int argc, char *argv[])
 {
-	gettimeofday(&start_time, NULL);
+	
 	int rc;
 #ifndef WIN32
 		struct sigaction sigact;
@@ -378,7 +379,7 @@ int main(int argc, char *argv[])
 	mosquitto_subscribe_callback_set(g_mosq, my_subscribe_callback);
 	mosquitto_connect_v5_callback_set(g_mosq, my_connect_callback);
 	mosquitto_message_v5_callback_set(g_mosq, my_message_callback);
-
+	gettimeofday(&start_time, NULL);
 	rc = client_connect(g_mosq, &cfg);
 	if(rc){
 		goto cleanup;
