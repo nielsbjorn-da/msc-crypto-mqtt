@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared  -o vigenere.so CMakeFiles/vigenere.dir/vigenere.c.o CMakeFiles/vigenere.dir/v_params.c.o CMakeFiles/vigenere.dir/ascon128/aead.c.o CMakeFiles/vigenere.dir/ascon128/printstate.c.o  libprov/libprov.a 
