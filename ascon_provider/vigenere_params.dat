@@ -4,6 +4,7 @@
     # Vigenere algo params
     PARAM_blocksize       => "blocksize",
     PARAM_keylen          => "keylen",
+    PARAM_ivlen           => "ivlen",
     # Provider params
     PARAM_version         => "version",
     PARAM_buildinfo       => "buildinfo",

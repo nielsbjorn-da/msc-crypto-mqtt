@@ -29,10 +29,12 @@
 #define VIGENERE_NO_KEYLEN_SET          1
 #define VIGENERE_ONGOING_OPERATION      2
 #define VIGENERE_INCORRECT_KEYLEN       3
+#define VIGENERE_INCORRECT_IVLEN        4
 static const OSSL_ITEM reason_strings[] = {
     { VIGENERE_NO_KEYLEN_SET, "no key length has been set" },
     { VIGENERE_ONGOING_OPERATION, "an operation is underway" },
     { VIGENERE_INCORRECT_KEYLEN, "incorrect key length" },
+    { VIGENERE_INCORRECT_IVLEN, "incorrect iv length" },
     { 0, NULL }
 };
 
@@ -133,6 +135,7 @@ struct vigenere_ctx_st {
     ascon_state_t s;
     uint64_t K0;
     uint64_t K1;
+    size_t ivl;
 };
 #define ERR_HANDLE(ctx) ((ctx)->provctx->proverr_handle)
 
@@ -145,6 +148,7 @@ static void *vigenere_newctx(void *vprovctx)
         ctx->provctx = vprovctx;
         ctx->keyl = keylen();
         //ascon
+        ctx-> ivl = CRYPTO_NPUBBYTES;
     
 
     }
@@ -209,7 +213,7 @@ static int vigenere_encrypt_init(void *vctx,
                                  const OSSL_PARAM params[])
 {
     struct vigenere_ctx_st *ctx = vctx;
-    printf("encrypt init \n");
+    
     ctx->enc = 1;
     if (key != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
@@ -225,18 +229,21 @@ static int vigenere_encrypt_init(void *vctx,
     ctx->ongoing = 0;
 
     //ascon
-    if (key != NULL) {
+    if (key != NULL && iv != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
             ERR_raise(ERR_HANDLE(ctx), VIGENERE_NO_KEYLEN_SET);
             return 0;
         }
-        unsigned char n[CRYPTO_NPUBBYTES] = {0, 1, 2,  3,  4,  5,  6,  7,
-                                       8, 9, 10, 11, 12, 13, 14, 15};
+        if (ivl != ctx->ivl) {
+            ERR_raise(ERR_HANDLE(ctx), VIGENERE_INCORRECT_IVLEN);
+            return 0;
+        }
+
          /* load key and nonce */
         ctx->K0 = LOADBYTES(key, 8);
         ctx->K1 = LOADBYTES(key + 8, 8);
-        const uint64_t N0 = LOADBYTES(n, 8);
-        const uint64_t N1 = LOADBYTES(n + 8, 8);
+        const uint64_t N0 = LOADBYTES(iv, 8);
+        const uint64_t N1 = LOADBYTES(iv + 8, 8);
 
             /* initialize */
         ctx->s.x[0] = ASCON_128_IV;
@@ -256,15 +263,15 @@ static int vigenere_encrypt_init(void *vctx,
 static int vigenere_decrypt_init(void *vctx,
                                  const unsigned char *key,
                                  size_t keyl,
-                                 const unsigned char *iv_unused,
-                                 size_t ivl_unused,
+                                 const unsigned char *iv,
+                                 size_t ivl,
                                  const OSSL_PARAM params[])
 {
     struct vigenere_ctx_st *ctx = vctx;
     size_t i;
     ctx->enc = 0;
-    printf("decrypt init\n");
-    if (key != NULL) {
+
+    if (key != NULL && iv != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
             ERR_raise(ERR_HANDLE(ctx), VIGENERE_NO_KEYLEN_SET);
             return 0;
@@ -280,18 +287,22 @@ static int vigenere_decrypt_init(void *vctx,
 
     //ascon
    
-    if (key != NULL) {
+    if (key != NULL && iv != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
             ERR_raise(ERR_HANDLE(ctx), VIGENERE_NO_KEYLEN_SET);
             return 0;
         }
-        unsigned char n[CRYPTO_NPUBBYTES] = {0, 1, 2,  3,  4,  5,  6,  7,
-                                       8, 9, 10, 11, 12, 13, 14, 15};
+        if (ivl != ctx->ivl) {
+            ERR_raise(ERR_HANDLE(ctx), VIGENERE_INCORRECT_IVLEN);
+            return 0;
+        }
+
          /* load key and nonce */
+        
         ctx->K0 = LOADBYTES(key, 8);
         ctx->K1 = LOADBYTES(key + 8, 8);
-        const uint64_t N0 = LOADBYTES(n, 8);
-        const uint64_t N1 = LOADBYTES(n + 8, 8);
+        const uint64_t N0 = LOADBYTES(iv, 8);
+        const uint64_t N1 = LOADBYTES(iv + 8, 8);
 
             /* initialize */
         ctx->s.x[0] = ASCON_128_IV;
@@ -313,7 +324,6 @@ static int vigenere_update(void *vctx,
                            const unsigned char *in, size_t inl)
 {
     struct vigenere_ctx_st *ctx = vctx;
-    printf("uupdate: %d , outsz: %d\n", ctx->enc, outsz);
     assert(outsz >= inl);
     assert(out != NULL);
     assert(outl != NULL);
@@ -356,12 +366,11 @@ static int vigenere_update(void *vctx,
         out += inl;
         printstate("pad plaintext", &ctx->s);
     } else {
+       
         //decryption
         while (inl >= ASCON_128_RATE) {
             uint64_t c0 = LOADBYTES(in, 8);
-            
             STOREBYTES(out, ctx->s.x[0] ^ c0, 8);
-            
             ctx->s.x[0] = c0;
             printstate("insert ciphertext", &ctx->s);
             P6(&ctx->s);
@@ -415,10 +424,7 @@ static int vigenere_update(void *vctx,
         }
     }*/
     
-    printf("\n\n");
-    //out = c;
     *outl = clen - CRYPTO_ABYTES;
-    printf("outlength: %d\n", *outl);
     return 1;
 }
 
@@ -439,6 +445,7 @@ static const OSSL_PARAM *vigenere_gettable_params(void *provctx)
     static const OSSL_PARAM table[] = {
         { "blocksize", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { "keylen", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { "ivlen", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -458,6 +465,9 @@ static int vigenere_get_params(OSSL_PARAM params[])
         case V_PARAM_keylen:
             ok &= provnum_set_size_t(p, keylen()) >= 0;
             break;
+        case V_PARAM_ivlen:
+            ok &= provnum_set_size_t(p, CRYPTO_NPUBBYTES) >= 0;
+            break;
         }
     return ok;
 }
@@ -466,6 +476,7 @@ static const OSSL_PARAM *vigenere_gettable_ctx_params(void *cctx, void *provctx)
 {
     static const OSSL_PARAM table[] = {
         { S_PARAM_keylen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { S_PARAM_ivlen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -484,6 +495,9 @@ static int vigenere_get_ctx_params(void *vctx, OSSL_PARAM params[])
             switch (vigenere_params_parse(p->key)) {
             case V_PARAM_keylen:
                 ok &= provnum_set_size_t(p, ctx->keyl) >= 0;
+                break;
+            case V_PARAM_ivlen:
+                ok &= provnum_set_size_t(p, ctx->ivl) >= 0;
                 break;
             }
     }
