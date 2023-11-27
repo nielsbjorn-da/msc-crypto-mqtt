@@ -136,6 +136,8 @@ struct vigenere_ctx_st {
     uint64_t K0;
     uint64_t K1;
     size_t ivl;
+    size_t tagl;
+    unsigned char *tag;
 };
 #define ERR_HANDLE(ctx) ((ctx)->provctx->proverr_handle)
 
@@ -148,8 +150,9 @@ static void *vigenere_newctx(void *vprovctx)
         ctx->provctx = vprovctx;
         ctx->keyl = keylen();
         //ascon
-        ctx-> ivl = CRYPTO_NPUBBYTES;
-    
+        ctx->ivl = CRYPTO_NPUBBYTES;
+        ctx->tagl = CRYPTO_ABYTES;
+        ctx->tag = malloc(ctx->tagl);
 
     }
     return ctx;
@@ -324,10 +327,9 @@ static int vigenere_update(void *vctx,
                            const unsigned char *in, size_t inl)
 {
     struct vigenere_ctx_st *ctx = vctx;
-    assert(outsz >= inl);
-    assert(out != NULL);
-    assert(outl != NULL);
-
+    //assert(outsz >= inl);
+    //assert(out != NULL);
+    //assert(outl != NULL);
 #if 0
     if (outsz < inl || out == NULL)
         return 0;
@@ -343,6 +345,25 @@ static int vigenere_update(void *vctx,
     //ascon
         /* set ciphertext size */
     unsigned long long clen = inl + CRYPTO_ABYTES;
+
+    // check for AD
+    if (out == NULL) {
+        printf("AD data \n");
+      /* full associated data blocks */
+        while (inl >= ASCON_128_RATE) {
+            ctx->s.x[0] ^= LOADBYTES(in, 8);
+            printstate("absorb adata", &ctx->s);
+            P6(&ctx->s);
+            in += ASCON_128_RATE;
+            inl -= ASCON_128_RATE;
+        }
+      /* final associated data block */
+        ctx->s.x[0] ^= LOADBYTES(in, inl);
+        ctx->s.x[0] ^= PAD(inl);
+        printstate("pad adata", &s);
+        P6(&ctx->s);
+        return 1;
+    }
 
     /* domain separation */
     ctx->s.x[4] ^= 1;
@@ -396,33 +417,12 @@ static int vigenere_update(void *vctx,
     ctx->s.x[3] ^= ctx->K0;
     ctx->s.x[4] ^= ctx->K1;
     printstate("final 2nd key xor", &ctx->s);
-    /*
+    
     if (ctx->enc) {
-        printf("encryption set tag \n");
         // set tag 
-        STOREBYTES(out, ctx->s.x[3], 8);
-        STOREBYTES(out + 8, ctx->s.x[4], 8);
-        for (size_t i = 0; i < clen; i++) {
-        printf("%02x", originalOut[i]);  // Assuming you want to print as unsigned integers
+        STOREBYTES(ctx->tag, ctx->s.x[3], 8);
+        STOREBYTES(ctx->tag + 8, ctx->s.x[4], 8);        
     }
-    } else { //decrypt verify tag
-        // set tag 
-        printf("decrypt verify tag\n");
-        uint8_t t[16];
-        STOREBYTES(t, ctx->s.x[3], 8);
-        STOREBYTES(t + 8, ctx->s.x[4], 8);
-
-        // verify tag (should be constant time, check compiler output) 
-        int i;
-        int result = 0;
-        for (i = 0; i < CRYPTO_ABYTES; ++i) result |= out[i] ^ t[i];
-        result = (((result - 1) >> 8) & 1) - 1;
-        printf("decrypt verify tag result: %d\n", result);
-        //return result;
-        for (size_t i = 0; i < clen; i++) {
-            printf("%c", originalOut[i]);  // Assuming you want to print as unsigned integers
-        }
-    }*/
     
     *outl = clen - CRYPTO_ABYTES;
     return 1;
@@ -432,9 +432,28 @@ static int vigenere_final(void *vctx,
                           unsigned char *out, size_t *outl, size_t outsz)
 {
     struct vigenere_ctx_st *ctx = vctx;
-
     *outl = 0;
     ctx->ongoing = 0;
+
+    if (!ctx->enc) {
+        uint8_t t[16];
+        STOREBYTES(t, ctx->s.x[3], 8);
+        STOREBYTES(t + 8, ctx->s.x[4], 8);
+
+        // verify tag (should be constant time, check compiler output) 
+        int i;
+        int result = 0;
+        for (i = 0; i < CRYPTO_ABYTES; ++i) result |= ctx->tag[i] ^ t[i];
+        result = (((result - 1) >> 8) & 1) - 1;
+        
+        if (result == 0) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+    
+    
 
     return 1;
 }
@@ -446,6 +465,7 @@ static const OSSL_PARAM *vigenere_gettable_params(void *provctx)
         { "blocksize", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { "keylen", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { "ivlen", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { "aead", OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -468,6 +488,12 @@ static int vigenere_get_params(OSSL_PARAM params[])
         case V_PARAM_ivlen:
             ok &= provnum_set_size_t(p, CRYPTO_NPUBBYTES) >= 0;
             break;
+        case V_PARAM_aead:
+            ok &= provnum_set_size_t(p, 1) >= 0;
+            break;
+        case V_PARAM_taglen:
+            ok &= provnum_set_size_t(p, CRYPTO_ABYTES) >= 0;
+            break;
         }
     return ok;
 }
@@ -477,6 +503,8 @@ static const OSSL_PARAM *vigenere_gettable_ctx_params(void *cctx, void *provctx)
     static const OSSL_PARAM table[] = {
         { S_PARAM_keylen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { S_PARAM_ivlen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { S_PARAM_taglen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { S_PARAM_tag, OSSL_PARAM_OCTET_STRING, NULL, CRYPTO_ABYTES, 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -499,6 +527,21 @@ static int vigenere_get_ctx_params(void *vctx, OSSL_PARAM params[])
             case V_PARAM_ivlen:
                 ok &= provnum_set_size_t(p, ctx->ivl) >= 0;
                 break;
+            case V_PARAM_taglen:
+                ok &= provnum_set_size_t(p, ctx->tagl) >= 0;
+                break;
+            case V_PARAM_tag:
+                unsigned char *temp_array = p->data;
+                p->data = ctx->tag;
+                
+                for (size_t i = 0; i < CRYPTO_ABYTES; i++)
+                {
+                    temp_array[i] = ctx->tag[i];
+                }
+                p->return_size = CRYPTO_ABYTES;
+                
+                ok &= provnum_set_size_t(p, 1) >= 0;
+                break;
             }
     }
     return ok;
@@ -509,6 +552,7 @@ static const OSSL_PARAM *vigenere_settable_ctx_params(void *cctx, void *provctx)
 {
     static const OSSL_PARAM table[] = {
         { S_PARAM_keylen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        { S_PARAM_tag, OSSL_PARAM_OCTET_STRING, NULL, CRYPTO_ABYTES, 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -521,10 +565,10 @@ static int vigenere_set_ctx_params(void *vctx, const OSSL_PARAM params[])
     const OSSL_PARAM *p;
     int ok = 1;
 
-    if (ctx->ongoing) {
+    /*if (ctx->ongoing) {
         ERR_raise(ERR_HANDLE(ctx), VIGENERE_ONGOING_OPERATION);
         return 0;
-    }
+    }*/
 
     for (p = params; p->key != NULL; p++)
         switch (vigenere_params_parse(p->key)) {
@@ -536,6 +580,13 @@ static int vigenere_set_ctx_params(void *vctx, const OSSL_PARAM params[])
             ok &= res;
             if (res)
                 ctx->keyl = keyl;
+        }
+        case V_PARAM_tag:
+        {
+            ctx->tag = p->data;
+
+            //ok &= provnum_set_size_t(p, 1) >= 0;
+            
         }
         }
     return ok;
@@ -574,7 +625,7 @@ static const OSSL_DISPATCH vigenere_functions[] = {
 
 /* The table of ciphers this provider offers */
 static const OSSL_ALGORITHM vigenere_ciphers[] = {
-    { "vigenere:1.3.6.1.4.1.5168.4711.22087.1", "x.author='" AUTHOR "'",
+    { "ascon128:1.3.6.1.4.1.5168.4711.22087.1", "x.author='" AUTHOR "'",
       vigenere_functions },
     { NULL, NULL, NULL }
 };

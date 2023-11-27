@@ -26,28 +26,18 @@ void print(unsigned char c, unsigned char* x, unsigned long long xlen) {
   printf("%c[%d]=", c, (int)xlen);
   for (i = 0; i < xlen; ++i) printf("%02x", x[i]);
   printf("\n");
+  for (i = 0; i < xlen; ++i) printf("%u", x[i]);
+  printf("\n");
 }
 
 int main() {
-   // Initialize OpenSSL
-  /*OpenSSL_add_all_algorithms();
-
-  // Load the provider library
-  OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CONFIG, NULL);
-
-  // Set the provider name (replace "your_provider_name" with the actual provider name)
   const char* provider_name = "vigenere";
-
-  // Load the provider
-  OSSL_PROVIDER* provider = OSSL_PROVIDER_load(NULL, provider_name); */
-  const char* provider_name = "oqsprovider";
   OSSL_LIB_CTX *ossl_ctx = OSSL_LIB_CTX_new();
   OSSL_PROVIDER *ascon_provider = OSSL_PROVIDER_load(ossl_ctx, provider_name);
   OSSL_PROVIDER *default_provider = OSSL_PROVIDER_load(ossl_ctx, "default");
   int res = OSSL_PROVIDER_available(ossl_ctx, provider_name);
   printf("Provider available: %d\n",  res);
 
-  //OpenSSL_add_all_algorithms();
   //based on this example: https://github.com/openssl/openssl/blob/master/demos/cipher/aesgcm.c
 
   EVP_CIPHER_CTX *encryption_ctx;
@@ -55,7 +45,7 @@ int main() {
   if ((encryption_ctx = EVP_CIPHER_CTX_new()) == NULL)
       printf("error asdas\n");
  
-  const EVP_CIPHER *cipher = EVP_CIPHER_fetch(NULL, "vigenere", NULL);
+  const EVP_CIPHER *cipher = EVP_CIPHER_fetch(NULL, "ascon128", NULL);
   if (cipher == NULL) {
       fprintf(stderr, "cipher not available in the provider\n");
   } 
@@ -74,6 +64,10 @@ int main() {
   int result = 0;
   int outlen, tmplen;
   unsigned char outbuf[1024];
+  unsigned char *outtag = (unsigned char *)malloc(CRYPTO_ABYTES);
+  OSSL_PARAM params[3] = {
+        OSSL_PARAM_END, OSSL_PARAM_END, OSSL_PARAM_END
+    };
 
   if (!EVP_EncryptInit_ex2(encryption_ctx, cipher, k, n, NULL))
       printf("error init\n");
@@ -88,13 +82,32 @@ int main() {
 
 if (!EVP_EncryptFinal_ex(encryption_ctx, outbuf, &tmplen))
         printf("error finalize\n");
-    
+
+/* Get tag */
+  params[0] = OSSL_PARAM_construct_octet_string(OSSL_CIPHER_PARAM_AEAD_TAG,
+                                                outtag, CRYPTO_ABYTES);
+  params[1] = OSSL_PARAM_construct_end();
+
+
+  printf("Output Tag before:\n");
+  BIO_dump_fp(stdout, outtag, CRYPTO_ABYTES);
+
+if (!EVP_CIPHER_CTX_get_params(encryption_ctx, params))
+        printf("Fetch tag error \n");
+
+    /* Output tag */
+    printf("Tag:\n");
+    BIO_dump_fp(stdout, outtag, CRYPTO_ABYTES);
+
 /*** DECRYPTION ***/ 
 
 printf("OPENSSL DECRYPTION: \n");
 EVP_CIPHER_CTX *decryption_ctx;
 unsigned char outbuf_decryption[1024];
 int outlen_decryption, rv;
+OSSL_PARAM decryption_params[3] = {
+        OSSL_PARAM_END, OSSL_PARAM_END, OSSL_PARAM_END
+    };
 
 if ((decryption_ctx = EVP_CIPHER_CTX_new()) == NULL)
     printf("error ctx init\n");
@@ -115,8 +128,22 @@ if (!EVP_DecryptUpdate(decryption_ctx, outbuf_decryption, &outlen_decryption, ou
   BIO_dump_fp(stdout, outbuf_decryption, outlen_decryption);
   
   // ADD Tag verification check also
+  /* Set expected tag value. */
+  decryption_params[0] = OSSL_PARAM_construct_octet_string(OSSL_CIPHER_PARAM_AEAD_TAG,
+                                                  outtag, CRYPTO_ABYTES);
 
+  if (!EVP_CIPHER_CTX_set_params(decryption_ctx, decryption_params))
+        printf("set param error");
   
+  /* Finalise: note get no output for GCM */
+  rv = EVP_DecryptFinal_ex(decryption_ctx, outbuf_decryption, &outlen_decryption);
+    /*
+     * Print out return value. If this is not successful authentication
+     * failed and plaintext is not trustworthy.
+     */
+    printf("Tag Verify %s\n", rv > 0 ? "Successful!" : "Failed!");
+
+
 #if defined(AVR_UART)
   avr_uart_init();
   stdout = &avr_uart_output;
@@ -135,7 +162,7 @@ if (!EVP_DecryptUpdate(decryption_ctx, outbuf_decryption, &outlen_decryption, ou
   result |= crypto_aead_encrypt(c, &clen, m, mlen, NULL, 0, (void*)0, n, k);
   print('c', c, clen - CRYPTO_ABYTES);
   printf(" \n");
-  print('t', c + clen - CRYPTO_ABYTES, CRYPTO_ABYTES);
+  print('t', c + clen - CRYPTO_ABYTES, CRYPTO_ABYTES);  
   printf("hej\n");
   printf(" -> ");
   result |= crypto_aead_decrypt(m, &mlen, (void*)0, c, clen, NULL, 0, n, k);
