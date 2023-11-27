@@ -14,7 +14,7 @@ conf_file="$2"
 replacement_strings=("kyber512" "p256_kyber512" "x25519_kyber512" "kyber768" "p384_kyber768" "x448_kyber768" "x25519_kyber768" "p256_kyber768" "kyber1024" "p521_kyber1024" "secp256r1" "secp384r1" "secp521r1" "X25519" "X448")
 
 # Number of repetitions
-num_repetitions=10
+num_repetitions=100
 
 echo "Current signature algorithm: $sig_alg_value"
 # Iterate through the list and perform the replacement for each string
@@ -24,11 +24,10 @@ for replacement_value in "${replacement_strings[@]}"; do
     # Read and print the "Groups" line
     groups_line=$(grep "^Groups" "$conf_file")
     echo "$groups_line"
-
  # Iterate through the list of signature algorithms
     for ((i=1; i<=$num_repetitions; i++)); do
         # Start mosquitto_sub with the corresponding signature algorithm
-        client/mosquitto_sub -t "test/topic" --cafile "certs/$sig_alg_value/ca.crt" --cert "certs/$sig_alg_value/client.crt" --key "certs/$sig_alg_value/client.key" &
+        client/mosquitto_sub -t "test/topic" -h 192.168.50.157 -p 8883 --cafile "certs/$sig_alg_value/ca.crt" --cert "certs/$sig_alg_value/client.crt" --key "certs/$sig_alg_value/client.key" &
         mosquitto_sub_pid=$!
 	sleep 1
     done

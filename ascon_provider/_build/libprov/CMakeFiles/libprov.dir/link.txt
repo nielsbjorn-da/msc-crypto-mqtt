@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprov.a CMakeFiles/libprov.dir/err.c.o CMakeFiles/libprov.dir/num.c.o
+/usr/bin/ranlib libprov.a
