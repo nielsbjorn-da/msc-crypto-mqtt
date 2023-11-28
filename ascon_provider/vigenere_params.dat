@@ -8,6 +8,7 @@
     PARAM_aead            => "aead",
     PARAM_taglen          => "taglen",
     PARAM_tag             => "tag",
+    PARAM_tlsaadpad       => "tlsaadpad",
     # Provider params
     PARAM_version         => "version",
     PARAM_buildinfo       => "buildinfo",

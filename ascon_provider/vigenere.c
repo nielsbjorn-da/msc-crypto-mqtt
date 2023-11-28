@@ -30,11 +30,14 @@
 #define VIGENERE_ONGOING_OPERATION      2
 #define VIGENERE_INCORRECT_KEYLEN       3
 #define VIGENERE_INCORRECT_IVLEN        4
+#define VIGENERE_INCORRECT_TAGLEN       5
+#define VIGENERE_NO_DATA                6
 static const OSSL_ITEM reason_strings[] = {
     { VIGENERE_NO_KEYLEN_SET, "no key length has been set" },
     { VIGENERE_ONGOING_OPERATION, "an operation is underway" },
     { VIGENERE_INCORRECT_KEYLEN, "incorrect key length" },
     { VIGENERE_INCORRECT_IVLEN, "incorrect iv length" },
+    { VIGENERE_INCORRECT_TAGLEN, "incorrect tag length" },
     { 0, NULL }
 };
 
@@ -100,7 +103,7 @@ static OSSL_FUNC_cipher_settable_ctx_params_fn vigenere_settable_ctx_params;
 static OSSL_FUNC_cipher_gettable_ctx_params_fn vigenere_gettable_ctx_params;
 
 #define DEFAULT_KEYLENGTH 16    /* amount of bytes == 128 bits */
-#define BLOCKSIZE 1             /* amount of bytes */
+#define BLOCKSIZE 8             /* amount of bytes */
 
 /* Helper function to determine the key length */
 static size_t keylen()
@@ -169,6 +172,14 @@ static void vigenere_cleanctx(void *vctx)
     ctx->keypos = 0;
     ctx->enc = 0;
     ctx->ongoing = 0;
+
+    // ascon
+    ctx->ivl = 0;
+    ctx->tagl = 0;
+    free(ctx->tag);
+    ctx->K0 = 0;
+    ctx->K1 = 0;
+    
 }
 
 static void *vigenere_dupctx(void *vctx)
@@ -195,6 +206,12 @@ static void *vigenere_dupctx(void *vctx)
     dst->keypos = src->keypos;
     dst->enc = src->enc;
     dst->ongoing = src->ongoing;
+    
+    //ascon
+    dst->s = src->s;
+    dst->K0 = src->K0;
+    dst->K1 = src->K1;
+    memcpy(dst->tag, src->tag, src->tagl);
 
     return dst;
 }
@@ -330,14 +347,16 @@ static int vigenere_update(void *vctx,
     //assert(outsz >= inl);
     //assert(out != NULL);
     //assert(outl != NULL);
-#if 0
+/*#if 0
     if (outsz < inl || out == NULL)
         return 0;
 #else
     if (out == NULL)
         return 0;
-#endif
-
+#endif*/
+    if (out == NULL && in == NULL) {
+        ERR_raise(ERR_HANDLE(ctx), VIGENERE_NO_DATA);
+    }
     ctx->ongoing = 1;
     *outl = 0;
     unsigned char *originalOut = out;
@@ -347,8 +366,7 @@ static int vigenere_update(void *vctx,
     unsigned long long clen = inl + CRYPTO_ABYTES;
 
     // check for AD
-    if (out == NULL) {
-        printf("AD data \n");
+    if (out == NULL && inl > 0) {
       /* full associated data blocks */
         while (inl >= ASCON_128_RATE) {
             ctx->s.x[0] ^= LOADBYTES(in, 8);
@@ -505,6 +523,7 @@ static const OSSL_PARAM *vigenere_gettable_ctx_params(void *cctx, void *provctx)
         { S_PARAM_ivlen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { S_PARAM_taglen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { S_PARAM_tag, OSSL_PARAM_OCTET_STRING, NULL, CRYPTO_ABYTES, 0 },
+        { S_PARAM_tlsaadpad, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { NULL, 0, NULL, 0, 0 },
     };
 
@@ -542,6 +561,9 @@ static int vigenere_get_ctx_params(void *vctx, OSSL_PARAM params[])
                 
                 ok &= provnum_set_size_t(p, 1) >= 0;
                 break;
+            case V_PARAM_tlsaadpad:
+                ok &= provnum_set_size_t(p, ctx->tagl) >= 0;
+                break;
             }
     }
     return ok;
@@ -551,7 +573,7 @@ static int vigenere_get_ctx_params(void *vctx, OSSL_PARAM params[])
 static const OSSL_PARAM *vigenere_settable_ctx_params(void *cctx, void *provctx)
 {
     static const OSSL_PARAM table[] = {
-        { S_PARAM_keylen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
+        //{ S_PARAM_keylen, OSSL_PARAM_UNSIGNED_INTEGER, NULL, sizeof(size_t), 0 },
         { S_PARAM_tag, OSSL_PARAM_OCTET_STRING, NULL, CRYPTO_ABYTES, 0 },
         { NULL, 0, NULL, 0, 0 },
     };
@@ -572,7 +594,7 @@ static int vigenere_set_ctx_params(void *vctx, const OSSL_PARAM params[])
 
     for (p = params; p->key != NULL; p++)
         switch (vigenere_params_parse(p->key)) {
-        case V_PARAM_keylen:
+        /*case V_PARAM_keylen:
         {
             size_t keyl = 0;
             int res = provnum_get_size_t(&keyl, p) >= 0;
@@ -580,9 +602,12 @@ static int vigenere_set_ctx_params(void *vctx, const OSSL_PARAM params[])
             ok &= res;
             if (res)
                 ctx->keyl = keyl;
-        }
+        }*/
         case V_PARAM_tag:
         {
+            if (p->data_size != ctx->tagl) {
+                ERR_raise(ERR_HANDLE(ctx), VIGENERE_INCORRECT_TAGLEN);
+            }
             ctx->tag = p->data;
 
             //ok &= provnum_set_size_t(p, 1) >= 0;

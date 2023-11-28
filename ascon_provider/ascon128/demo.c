@@ -1,3 +1,5 @@
+//How to compile in cmd inside this folder: gcc demo.c aead.c printstate.c -o demo -lssl -lcrypto
+
 #include <stdio.h>
 #include <string.h>
 #include "api.h"
@@ -72,6 +74,10 @@ int main() {
   if (!EVP_EncryptInit_ex2(encryption_ctx, cipher, k, n, NULL))
       printf("error init\n");
 
+   /* AD data */
+  if (!EVP_EncryptUpdate(encryption_ctx, NULL, &outlen, a, alen))
+      printf("error AD data\n");
+
   /* Encrypt plaintext */
   if (!EVP_EncryptUpdate(encryption_ctx, outbuf, &outlen, m, mlen))
       printf("error encrypting\n");
@@ -108,6 +114,8 @@ int outlen_decryption, rv;
 OSSL_PARAM decryption_params[3] = {
         OSSL_PARAM_END, OSSL_PARAM_END, OSSL_PARAM_END
     };
+unsigned char aad_decryption[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+unsigned char aad_len_decryption = 16;
 
 if ((decryption_ctx = EVP_CIPHER_CTX_new()) == NULL)
     printf("error ctx init\n");
@@ -118,6 +126,10 @@ if ((decryption_ctx = EVP_CIPHER_CTX_new()) == NULL)
   */
 if (!EVP_DecryptInit_ex2(decryption_ctx, cipher, k, n, NULL))
     printf("decrypt init fail\n");
+
+ /* AD data */
+  if (!EVP_DecryptUpdate(decryption_ctx, NULL, &outlen_decryption, aad_decryption, aad_len_decryption))
+      printf("error AD data\n");
 
 /* Decrypt plaintext */
 if (!EVP_DecryptUpdate(decryption_ctx, outbuf_decryption, &outlen_decryption, outbuf, outlen))
@@ -159,13 +171,13 @@ if (!EVP_DecryptUpdate(decryption_ctx, outbuf_decryption, &outlen_decryption, ou
   printf(" ");
   print('m', m, mlen);
   printf(" -> ");
-  result |= crypto_aead_encrypt(c, &clen, m, mlen, NULL, 0, (void*)0, n, k);
+  result |= crypto_aead_encrypt(c, &clen, m, mlen, a, alen, (void*)0, n, k);
   print('c', c, clen - CRYPTO_ABYTES);
   printf(" \n");
   print('t', c + clen - CRYPTO_ABYTES, CRYPTO_ABYTES);  
   printf("hej\n");
   printf(" -> ");
-  result |= crypto_aead_decrypt(m, &mlen, (void*)0, c, clen, NULL, 0, n, k);
+  result |= crypto_aead_decrypt(m, &mlen, (void*)0, c, clen, a, alen, n, k);
   print('a', a, alen);
   printf(" ");
   print('m', m, mlen);
