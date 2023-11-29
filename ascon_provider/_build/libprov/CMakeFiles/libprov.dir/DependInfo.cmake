@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/simon/vigenere/libprov/err.c" "libprov/CMakeFiles/libprov.dir/err.c.o" "gcc" "libprov/CMakeFiles/libprov.dir/err.c.o.d"
-  "/home/simon/vigenere/libprov/num.c" "libprov/CMakeFiles/libprov.dir/num.c.o" "gcc" "libprov/CMakeFiles/libprov.dir/num.c.o.d"
+  "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/err.c" "libprov/CMakeFiles/libprov.dir/err.c.o" "gcc" "libprov/CMakeFiles/libprov.dir/err.c.o.d"
+  "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/num.c" "libprov/CMakeFiles/libprov.dir/num.c.o" "gcc" "libprov/CMakeFiles/libprov.dir/num.c.o.d"
   )
 
 # Targets to which this target links.

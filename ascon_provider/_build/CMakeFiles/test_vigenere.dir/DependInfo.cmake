@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/simon/vigenere/test_vigenere.c" "CMakeFiles/test_vigenere.dir/test_vigenere.c.o" "gcc" "CMakeFiles/test_vigenere.dir/test_vigenere.c.o.d"
+  "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/test_vigenere.c" "CMakeFiles/test_vigenere.dir/test_vigenere.c.o" "gcc" "CMakeFiles/test_vigenere.dir/test_vigenere.c.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/simon/vigenere/_build/CMakeFiles/test_common.dir/DependInfo.cmake"
+  "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles/test_common.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

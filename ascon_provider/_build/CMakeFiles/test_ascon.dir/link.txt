@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/test_ascon.dir/test_ascon.c.o -o test_ascon  libtest_common.a /usr/lib/x86_64-linux-gnu/libcrypto.so 

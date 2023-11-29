@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/simon/vigenere
+CMAKE_SOURCE_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/simon/vigenere/_build
+CMAKE_BINARY_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/vigenere.dir/depend.make
@@ -71,8 +71,8 @@ include CMakeFiles/vigenere.dir/flags.make
 
 ../v_params.c: ../libprov/perl/gen_param_LL.pl
 ../v_params.c: ../vigenere_params.dat
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../v_params.c, ../v_params.h"
-	perl /home/simon/vigenere/libprov/perl/gen_param_LL.pl /home/simon/vigenere/v_params.c /home/simon/vigenere/v_params.h /home/simon/vigenere/vigenere_params.dat
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../v_params.c, ../v_params.h"
+	perl /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/perl/gen_param_LL.pl /home/niels/Documents/msc-crypto-mqtt/ascon_provider/v_params.c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/v_params.h /home/niels/Documents/msc-crypto-mqtt/ascon_provider/vigenere_params.dat
 
 ../v_params.h: ../v_params.c
 	@$(CMAKE_COMMAND) -E touch_nocreate ../v_params.h
@@ -80,58 +80,58 @@ include CMakeFiles/vigenere.dir/flags.make
 CMakeFiles/vigenere.dir/vigenere.c.o: CMakeFiles/vigenere.dir/flags.make
 CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c
 CMakeFiles/vigenere.dir/vigenere.c.o: CMakeFiles/vigenere.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/vigenere.dir/vigenere.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/vigenere.c.o -MF CMakeFiles/vigenere.dir/vigenere.c.o.d -o CMakeFiles/vigenere.dir/vigenere.c.o -c /home/simon/vigenere/vigenere.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/vigenere.dir/vigenere.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/vigenere.c.o -MF CMakeFiles/vigenere.dir/vigenere.c.o.d -o CMakeFiles/vigenere.dir/vigenere.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/vigenere.c
 
 CMakeFiles/vigenere.dir/vigenere.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vigenere.dir/vigenere.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/vigenere.c > CMakeFiles/vigenere.dir/vigenere.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/vigenere.c > CMakeFiles/vigenere.dir/vigenere.c.i
 
 CMakeFiles/vigenere.dir/vigenere.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vigenere.dir/vigenere.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/vigenere.c -o CMakeFiles/vigenere.dir/vigenere.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/vigenere.c -o CMakeFiles/vigenere.dir/vigenere.c.s
 
 CMakeFiles/vigenere.dir/v_params.c.o: CMakeFiles/vigenere.dir/flags.make
 CMakeFiles/vigenere.dir/v_params.c.o: ../v_params.c
 CMakeFiles/vigenere.dir/v_params.c.o: CMakeFiles/vigenere.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/vigenere.dir/v_params.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/v_params.c.o -MF CMakeFiles/vigenere.dir/v_params.c.o.d -o CMakeFiles/vigenere.dir/v_params.c.o -c /home/simon/vigenere/v_params.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/vigenere.dir/v_params.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/v_params.c.o -MF CMakeFiles/vigenere.dir/v_params.c.o.d -o CMakeFiles/vigenere.dir/v_params.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/v_params.c
 
 CMakeFiles/vigenere.dir/v_params.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vigenere.dir/v_params.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/v_params.c > CMakeFiles/vigenere.dir/v_params.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/v_params.c > CMakeFiles/vigenere.dir/v_params.c.i
 
 CMakeFiles/vigenere.dir/v_params.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vigenere.dir/v_params.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/v_params.c -o CMakeFiles/vigenere.dir/v_params.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/v_params.c -o CMakeFiles/vigenere.dir/v_params.c.s
 
 CMakeFiles/vigenere.dir/ascon128/aead.c.o: CMakeFiles/vigenere.dir/flags.make
 CMakeFiles/vigenere.dir/ascon128/aead.c.o: ../ascon128/aead.c
 CMakeFiles/vigenere.dir/ascon128/aead.c.o: CMakeFiles/vigenere.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vigenere.dir/ascon128/aead.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/ascon128/aead.c.o -MF CMakeFiles/vigenere.dir/ascon128/aead.c.o.d -o CMakeFiles/vigenere.dir/ascon128/aead.c.o -c /home/simon/vigenere/ascon128/aead.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vigenere.dir/ascon128/aead.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/ascon128/aead.c.o -MF CMakeFiles/vigenere.dir/ascon128/aead.c.o.d -o CMakeFiles/vigenere.dir/ascon128/aead.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/aead.c
 
 CMakeFiles/vigenere.dir/ascon128/aead.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vigenere.dir/ascon128/aead.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/ascon128/aead.c > CMakeFiles/vigenere.dir/ascon128/aead.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/aead.c > CMakeFiles/vigenere.dir/ascon128/aead.c.i
 
 CMakeFiles/vigenere.dir/ascon128/aead.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vigenere.dir/ascon128/aead.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/ascon128/aead.c -o CMakeFiles/vigenere.dir/ascon128/aead.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/aead.c -o CMakeFiles/vigenere.dir/ascon128/aead.c.s
 
 CMakeFiles/vigenere.dir/ascon128/printstate.c.o: CMakeFiles/vigenere.dir/flags.make
 CMakeFiles/vigenere.dir/ascon128/printstate.c.o: ../ascon128/printstate.c
 CMakeFiles/vigenere.dir/ascon128/printstate.c.o: CMakeFiles/vigenere.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/vigenere.dir/ascon128/printstate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/ascon128/printstate.c.o -MF CMakeFiles/vigenere.dir/ascon128/printstate.c.o.d -o CMakeFiles/vigenere.dir/ascon128/printstate.c.o -c /home/simon/vigenere/ascon128/printstate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/vigenere.dir/ascon128/printstate.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vigenere.dir/ascon128/printstate.c.o -MF CMakeFiles/vigenere.dir/ascon128/printstate.c.o.d -o CMakeFiles/vigenere.dir/ascon128/printstate.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/printstate.c
 
 CMakeFiles/vigenere.dir/ascon128/printstate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vigenere.dir/ascon128/printstate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/ascon128/printstate.c > CMakeFiles/vigenere.dir/ascon128/printstate.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/printstate.c > CMakeFiles/vigenere.dir/ascon128/printstate.c.i
 
 CMakeFiles/vigenere.dir/ascon128/printstate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vigenere.dir/ascon128/printstate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/ascon128/printstate.c -o CMakeFiles/vigenere.dir/ascon128/printstate.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128/printstate.c -o CMakeFiles/vigenere.dir/ascon128/printstate.c.s
 
 # Object files for target vigenere
 vigenere_OBJECTS = \
@@ -150,7 +150,7 @@ vigenere.so: CMakeFiles/vigenere.dir/ascon128/printstate.c.o
 vigenere.so: CMakeFiles/vigenere.dir/build.make
 vigenere.so: libprov/libprov.a
 vigenere.so: CMakeFiles/vigenere.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared module vigenere.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared module vigenere.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vigenere.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/vigenere.dir/clean:
 
 CMakeFiles/vigenere.dir/depend: ../v_params.c
 CMakeFiles/vigenere.dir/depend: ../v_params.h
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/simon/vigenere /home/simon/vigenere /home/simon/vigenere/_build /home/simon/vigenere/_build /home/simon/vigenere/_build/CMakeFiles/vigenere.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/niels/Documents/msc-crypto-mqtt/ascon_provider /home/niels/Documents/msc-crypto-mqtt/ascon_provider /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles/vigenere.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/vigenere.dir/depend
 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared  -o asconprovider.so CMakeFiles/asconprovider.dir/ascon.c.o CMakeFiles/asconprovider.dir/a_params.c.o CMakeFiles/asconprovider.dir/ascon80pq/printstate.c.o CMakeFiles/asconprovider.dir/ascon128/printstate.c.o CMakeFiles/asconprovider.dir/ascon128a/printstate.c.o  libprov/libprov.a 

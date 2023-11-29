@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DAUTHOR=\"@levitte\"
 
-C_INCLUDES = -I/home/simon/vigenere/ascon128
+C_INCLUDES = -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128
 
 C_FLAGS = -std=gnu99
 

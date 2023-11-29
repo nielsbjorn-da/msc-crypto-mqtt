@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/simon/vigenere
+CMAKE_SOURCE_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/simon/vigenere/_build
+CMAKE_BINARY_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build
 
 # Include any dependencies generated for this target.
 include libprov/CMakeFiles/libprov.dir/depend.make
@@ -72,30 +72,30 @@ include libprov/CMakeFiles/libprov.dir/flags.make
 libprov/CMakeFiles/libprov.dir/err.c.o: libprov/CMakeFiles/libprov.dir/flags.make
 libprov/CMakeFiles/libprov.dir/err.c.o: ../libprov/err.c
 libprov/CMakeFiles/libprov.dir/err.c.o: libprov/CMakeFiles/libprov.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object libprov/CMakeFiles/libprov.dir/err.c.o"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libprov/CMakeFiles/libprov.dir/err.c.o -MF CMakeFiles/libprov.dir/err.c.o.d -o CMakeFiles/libprov.dir/err.c.o -c /home/simon/vigenere/libprov/err.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object libprov/CMakeFiles/libprov.dir/err.c.o"
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libprov/CMakeFiles/libprov.dir/err.c.o -MF CMakeFiles/libprov.dir/err.c.o.d -o CMakeFiles/libprov.dir/err.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/err.c
 
 libprov/CMakeFiles/libprov.dir/err.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/libprov.dir/err.c.i"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/libprov/err.c > CMakeFiles/libprov.dir/err.c.i
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/err.c > CMakeFiles/libprov.dir/err.c.i
 
 libprov/CMakeFiles/libprov.dir/err.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/libprov.dir/err.c.s"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/libprov/err.c -o CMakeFiles/libprov.dir/err.c.s
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/err.c -o CMakeFiles/libprov.dir/err.c.s
 
 libprov/CMakeFiles/libprov.dir/num.c.o: libprov/CMakeFiles/libprov.dir/flags.make
 libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c
 libprov/CMakeFiles/libprov.dir/num.c.o: libprov/CMakeFiles/libprov.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object libprov/CMakeFiles/libprov.dir/num.c.o"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libprov/CMakeFiles/libprov.dir/num.c.o -MF CMakeFiles/libprov.dir/num.c.o.d -o CMakeFiles/libprov.dir/num.c.o -c /home/simon/vigenere/libprov/num.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object libprov/CMakeFiles/libprov.dir/num.c.o"
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT libprov/CMakeFiles/libprov.dir/num.c.o -MF CMakeFiles/libprov.dir/num.c.o.d -o CMakeFiles/libprov.dir/num.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/num.c
 
 libprov/CMakeFiles/libprov.dir/num.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/libprov.dir/num.c.i"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/libprov/num.c > CMakeFiles/libprov.dir/num.c.i
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/num.c > CMakeFiles/libprov.dir/num.c.i
 
 libprov/CMakeFiles/libprov.dir/num.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/libprov.dir/num.c.s"
-	cd /home/simon/vigenere/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/libprov/num.c -o CMakeFiles/libprov.dir/num.c.s
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/num.c -o CMakeFiles/libprov.dir/num.c.s
 
 # Object files for target libprov
 libprov_OBJECTS = \
@@ -109,19 +109,19 @@ libprov/libprov.a: libprov/CMakeFiles/libprov.dir/err.c.o
 libprov/libprov.a: libprov/CMakeFiles/libprov.dir/num.c.o
 libprov/libprov.a: libprov/CMakeFiles/libprov.dir/build.make
 libprov/libprov.a: libprov/CMakeFiles/libprov.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libprov.a"
-	cd /home/simon/vigenere/_build/libprov && $(CMAKE_COMMAND) -P CMakeFiles/libprov.dir/cmake_clean_target.cmake
-	cd /home/simon/vigenere/_build/libprov && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libprov.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libprov.a"
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && $(CMAKE_COMMAND) -P CMakeFiles/libprov.dir/cmake_clean_target.cmake
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libprov.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libprov/CMakeFiles/libprov.dir/build: libprov/libprov.a
 .PHONY : libprov/CMakeFiles/libprov.dir/build
 
 libprov/CMakeFiles/libprov.dir/clean:
-	cd /home/simon/vigenere/_build/libprov && $(CMAKE_COMMAND) -P CMakeFiles/libprov.dir/cmake_clean.cmake
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov && $(CMAKE_COMMAND) -P CMakeFiles/libprov.dir/cmake_clean.cmake
 .PHONY : libprov/CMakeFiles/libprov.dir/clean
 
 libprov/CMakeFiles/libprov.dir/depend:
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/simon/vigenere /home/simon/vigenere/libprov /home/simon/vigenere/_build /home/simon/vigenere/_build/libprov /home/simon/vigenere/_build/libprov/CMakeFiles/libprov.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/niels/Documents/msc-crypto-mqtt/ascon_provider /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov/CMakeFiles/libprov.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libprov/CMakeFiles/libprov.dir/depend
 

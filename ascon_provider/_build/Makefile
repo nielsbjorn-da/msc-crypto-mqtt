@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/simon/vigenere
+CMAKE_SOURCE_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/simon/vigenere/_build
+CMAKE_BINARY_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/vigenere/_build/CMakeFiles /home/simon/vigenere/_build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/vigenere/_build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,17 +127,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named vigenere
+# Target rules for targets named asconprovider
 
 # Build rule for target.
-vigenere: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vigenere
-.PHONY : vigenere
+asconprovider: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 asconprovider
+.PHONY : asconprovider
 
 # fast build rule for target.
-vigenere/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/build
-.PHONY : vigenere/fast
+asconprovider/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/build
+.PHONY : asconprovider/fast
 
 #=============================================================================
 # Target rules for targets named test_common
@@ -153,30 +153,30 @@ test_common/fast:
 .PHONY : test_common/fast
 
 #=============================================================================
-# Target rules for targets named test_vigenere
+# Target rules for targets named test_ascon
 
 # Build rule for target.
-test_vigenere: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_vigenere
-.PHONY : test_vigenere
+test_ascon: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ascon
+.PHONY : test_ascon
 
 # fast build rule for target.
-test_vigenere/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere.dir/build.make CMakeFiles/test_vigenere.dir/build
-.PHONY : test_vigenere/fast
+test_ascon/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon.dir/build.make CMakeFiles/test_ascon.dir/build
+.PHONY : test_ascon/fast
 
 #=============================================================================
-# Target rules for targets named test_vigenere_err
+# Target rules for targets named test_ascon_err
 
 # Build rule for target.
-test_vigenere_err: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_vigenere_err
-.PHONY : test_vigenere_err
+test_ascon_err: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ascon_err
+.PHONY : test_ascon_err
 
 # fast build rule for target.
-test_vigenere_err/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere_err.dir/build.make CMakeFiles/test_vigenere_err.dir/build
-.PHONY : test_vigenere_err/fast
+test_ascon_err/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon_err.dir/build.make CMakeFiles/test_ascon_err.dir/build
+.PHONY : test_ascon_err/fast
 
 #=============================================================================
 # Target rules for targets named libprov
@@ -191,36 +191,60 @@ libprov/fast:
 	$(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/build
 .PHONY : libprov/fast
 
-ascon128/aead.o: ascon128/aead.c.o
-.PHONY : ascon128/aead.o
+a_params.o: a_params.c.o
+.PHONY : a_params.o
 
 # target to build an object file
-ascon128/aead.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/aead.c.o
-.PHONY : ascon128/aead.c.o
+a_params.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/a_params.c.o
+.PHONY : a_params.c.o
 
-ascon128/aead.i: ascon128/aead.c.i
-.PHONY : ascon128/aead.i
+a_params.i: a_params.c.i
+.PHONY : a_params.i
 
 # target to preprocess a source file
-ascon128/aead.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/aead.c.i
-.PHONY : ascon128/aead.c.i
+a_params.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/a_params.c.i
+.PHONY : a_params.c.i
 
-ascon128/aead.s: ascon128/aead.c.s
-.PHONY : ascon128/aead.s
+a_params.s: a_params.c.s
+.PHONY : a_params.s
 
 # target to generate assembly for a file
-ascon128/aead.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/aead.c.s
-.PHONY : ascon128/aead.c.s
+a_params.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/a_params.c.s
+.PHONY : a_params.c.s
+
+ascon.o: ascon.c.o
+.PHONY : ascon.o
+
+# target to build an object file
+ascon.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon.c.o
+.PHONY : ascon.c.o
+
+ascon.i: ascon.c.i
+.PHONY : ascon.i
+
+# target to preprocess a source file
+ascon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon.c.i
+.PHONY : ascon.c.i
+
+ascon.s: ascon.c.s
+.PHONY : ascon.s
+
+# target to generate assembly for a file
+ascon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon.c.s
+.PHONY : ascon.c.s
 
 ascon128/printstate.o: ascon128/printstate.c.o
 .PHONY : ascon128/printstate.o
 
 # target to build an object file
 ascon128/printstate.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/printstate.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128/printstate.c.o
 .PHONY : ascon128/printstate.c.o
 
 ascon128/printstate.i: ascon128/printstate.c.i
@@ -228,7 +252,7 @@ ascon128/printstate.i: ascon128/printstate.c.i
 
 # target to preprocess a source file
 ascon128/printstate.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/printstate.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128/printstate.c.i
 .PHONY : ascon128/printstate.c.i
 
 ascon128/printstate.s: ascon128/printstate.c.s
@@ -236,8 +260,104 @@ ascon128/printstate.s: ascon128/printstate.c.s
 
 # target to generate assembly for a file
 ascon128/printstate.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/ascon128/printstate.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128/printstate.c.s
 .PHONY : ascon128/printstate.c.s
+
+ascon128a/printstate.o: ascon128a/printstate.c.o
+.PHONY : ascon128a/printstate.o
+
+# target to build an object file
+ascon128a/printstate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128a/printstate.c.o
+.PHONY : ascon128a/printstate.c.o
+
+ascon128a/printstate.i: ascon128a/printstate.c.i
+.PHONY : ascon128a/printstate.i
+
+# target to preprocess a source file
+ascon128a/printstate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128a/printstate.c.i
+.PHONY : ascon128a/printstate.c.i
+
+ascon128a/printstate.s: ascon128a/printstate.c.s
+.PHONY : ascon128a/printstate.s
+
+# target to generate assembly for a file
+ascon128a/printstate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon128a/printstate.c.s
+.PHONY : ascon128a/printstate.c.s
+
+ascon80pq/printstate.o: ascon80pq/printstate.c.o
+.PHONY : ascon80pq/printstate.o
+
+# target to build an object file
+ascon80pq/printstate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon80pq/printstate.c.o
+.PHONY : ascon80pq/printstate.c.o
+
+ascon80pq/printstate.i: ascon80pq/printstate.c.i
+.PHONY : ascon80pq/printstate.i
+
+# target to preprocess a source file
+ascon80pq/printstate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon80pq/printstate.c.i
+.PHONY : ascon80pq/printstate.c.i
+
+ascon80pq/printstate.s: ascon80pq/printstate.c.s
+.PHONY : ascon80pq/printstate.s
+
+# target to generate assembly for a file
+ascon80pq/printstate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/asconprovider.dir/build.make CMakeFiles/asconprovider.dir/ascon80pq/printstate.c.s
+.PHONY : ascon80pq/printstate.c.s
+
+test_ascon.o: test_ascon.c.o
+.PHONY : test_ascon.o
+
+# target to build an object file
+test_ascon.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon.dir/build.make CMakeFiles/test_ascon.dir/test_ascon.c.o
+.PHONY : test_ascon.c.o
+
+test_ascon.i: test_ascon.c.i
+.PHONY : test_ascon.i
+
+# target to preprocess a source file
+test_ascon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon.dir/build.make CMakeFiles/test_ascon.dir/test_ascon.c.i
+.PHONY : test_ascon.c.i
+
+test_ascon.s: test_ascon.c.s
+.PHONY : test_ascon.s
+
+# target to generate assembly for a file
+test_ascon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon.dir/build.make CMakeFiles/test_ascon.dir/test_ascon.c.s
+.PHONY : test_ascon.c.s
+
+test_ascon_err.o: test_ascon_err.c.o
+.PHONY : test_ascon_err.o
+
+# target to build an object file
+test_ascon_err.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon_err.dir/build.make CMakeFiles/test_ascon_err.dir/test_ascon_err.c.o
+.PHONY : test_ascon_err.c.o
+
+test_ascon_err.i: test_ascon_err.c.i
+.PHONY : test_ascon_err.i
+
+# target to preprocess a source file
+test_ascon_err.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon_err.dir/build.make CMakeFiles/test_ascon_err.dir/test_ascon_err.c.i
+.PHONY : test_ascon_err.c.i
+
+test_ascon_err.s: test_ascon_err.c.s
+.PHONY : test_ascon_err.s
+
+# target to generate assembly for a file
+test_ascon_err.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ascon_err.dir/build.make CMakeFiles/test_ascon_err.dir/test_ascon_err.c.s
+.PHONY : test_ascon_err.c.s
 
 test_common.o: test_common.c.o
 .PHONY : test_common.o
@@ -263,102 +383,6 @@ test_common.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_common.dir/build.make CMakeFiles/test_common.dir/test_common.c.s
 .PHONY : test_common.c.s
 
-test_vigenere.o: test_vigenere.c.o
-.PHONY : test_vigenere.o
-
-# target to build an object file
-test_vigenere.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere.dir/build.make CMakeFiles/test_vigenere.dir/test_vigenere.c.o
-.PHONY : test_vigenere.c.o
-
-test_vigenere.i: test_vigenere.c.i
-.PHONY : test_vigenere.i
-
-# target to preprocess a source file
-test_vigenere.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere.dir/build.make CMakeFiles/test_vigenere.dir/test_vigenere.c.i
-.PHONY : test_vigenere.c.i
-
-test_vigenere.s: test_vigenere.c.s
-.PHONY : test_vigenere.s
-
-# target to generate assembly for a file
-test_vigenere.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere.dir/build.make CMakeFiles/test_vigenere.dir/test_vigenere.c.s
-.PHONY : test_vigenere.c.s
-
-test_vigenere_err.o: test_vigenere_err.c.o
-.PHONY : test_vigenere_err.o
-
-# target to build an object file
-test_vigenere_err.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere_err.dir/build.make CMakeFiles/test_vigenere_err.dir/test_vigenere_err.c.o
-.PHONY : test_vigenere_err.c.o
-
-test_vigenere_err.i: test_vigenere_err.c.i
-.PHONY : test_vigenere_err.i
-
-# target to preprocess a source file
-test_vigenere_err.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere_err.dir/build.make CMakeFiles/test_vigenere_err.dir/test_vigenere_err.c.i
-.PHONY : test_vigenere_err.c.i
-
-test_vigenere_err.s: test_vigenere_err.c.s
-.PHONY : test_vigenere_err.s
-
-# target to generate assembly for a file
-test_vigenere_err.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vigenere_err.dir/build.make CMakeFiles/test_vigenere_err.dir/test_vigenere_err.c.s
-.PHONY : test_vigenere_err.c.s
-
-v_params.o: v_params.c.o
-.PHONY : v_params.o
-
-# target to build an object file
-v_params.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/v_params.c.o
-.PHONY : v_params.c.o
-
-v_params.i: v_params.c.i
-.PHONY : v_params.i
-
-# target to preprocess a source file
-v_params.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/v_params.c.i
-.PHONY : v_params.c.i
-
-v_params.s: v_params.c.s
-.PHONY : v_params.s
-
-# target to generate assembly for a file
-v_params.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/v_params.c.s
-.PHONY : v_params.c.s
-
-vigenere.o: vigenere.c.o
-.PHONY : vigenere.o
-
-# target to build an object file
-vigenere.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/vigenere.c.o
-.PHONY : vigenere.c.o
-
-vigenere.i: vigenere.c.i
-.PHONY : vigenere.i
-
-# target to preprocess a source file
-vigenere.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/vigenere.c.i
-.PHONY : vigenere.c.i
-
-vigenere.s: vigenere.c.s
-.PHONY : vigenere.s
-
-# target to generate assembly for a file
-vigenere.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vigenere.dir/build.make CMakeFiles/vigenere.dir/vigenere.c.s
-.PHONY : vigenere.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -368,32 +392,35 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... asconprovider"
 	@echo "... libprov"
+	@echo "... test_ascon"
+	@echo "... test_ascon_err"
 	@echo "... test_common"
-	@echo "... test_vigenere"
-	@echo "... test_vigenere_err"
-	@echo "... vigenere"
-	@echo "... ascon128/aead.o"
-	@echo "... ascon128/aead.i"
-	@echo "... ascon128/aead.s"
+	@echo "... a_params.o"
+	@echo "... a_params.i"
+	@echo "... a_params.s"
+	@echo "... ascon.o"
+	@echo "... ascon.i"
+	@echo "... ascon.s"
 	@echo "... ascon128/printstate.o"
 	@echo "... ascon128/printstate.i"
 	@echo "... ascon128/printstate.s"
+	@echo "... ascon128a/printstate.o"
+	@echo "... ascon128a/printstate.i"
+	@echo "... ascon128a/printstate.s"
+	@echo "... ascon80pq/printstate.o"
+	@echo "... ascon80pq/printstate.i"
+	@echo "... ascon80pq/printstate.s"
+	@echo "... test_ascon.o"
+	@echo "... test_ascon.i"
+	@echo "... test_ascon.s"
+	@echo "... test_ascon_err.o"
+	@echo "... test_ascon_err.i"
+	@echo "... test_ascon_err.s"
 	@echo "... test_common.o"
 	@echo "... test_common.i"
 	@echo "... test_common.s"
-	@echo "... test_vigenere.o"
-	@echo "... test_vigenere.i"
-	@echo "... test_vigenere.s"
-	@echo "... test_vigenere_err.o"
-	@echo "... test_vigenere_err.i"
-	@echo "... test_vigenere_err.s"
-	@echo "... v_params.o"
-	@echo "... v_params.i"
-	@echo "... v_params.s"
-	@echo "... vigenere.o"
-	@echo "... vigenere.i"
-	@echo "... vigenere.s"
 .PHONY : help
 
 

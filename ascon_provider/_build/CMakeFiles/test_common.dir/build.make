@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/simon/vigenere
+CMAKE_SOURCE_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/simon/vigenere/_build
+CMAKE_BINARY_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test_common.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/test_common.dir/flags.make
 CMakeFiles/test_common.dir/test_common.c.o: CMakeFiles/test_common.dir/flags.make
 CMakeFiles/test_common.dir/test_common.c.o: ../test_common.c
 CMakeFiles/test_common.dir/test_common.c.o: CMakeFiles/test_common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_common.dir/test_common.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_common.dir/test_common.c.o -MF CMakeFiles/test_common.dir/test_common.c.o.d -o CMakeFiles/test_common.dir/test_common.c.o -c /home/simon/vigenere/test_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_common.dir/test_common.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_common.dir/test_common.c.o -MF CMakeFiles/test_common.dir/test_common.c.o.d -o CMakeFiles/test_common.dir/test_common.c.o -c /home/niels/Documents/msc-crypto-mqtt/ascon_provider/test_common.c
 
 CMakeFiles/test_common.dir/test_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_common.dir/test_common.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/simon/vigenere/test_common.c > CMakeFiles/test_common.dir/test_common.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/niels/Documents/msc-crypto-mqtt/ascon_provider/test_common.c > CMakeFiles/test_common.dir/test_common.c.i
 
 CMakeFiles/test_common.dir/test_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_common.dir/test_common.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/simon/vigenere/test_common.c -o CMakeFiles/test_common.dir/test_common.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/niels/Documents/msc-crypto-mqtt/ascon_provider/test_common.c -o CMakeFiles/test_common.dir/test_common.c.s
 
 # Object files for target test_common
 test_common_OBJECTS = \
@@ -93,7 +93,7 @@ test_common_EXTERNAL_OBJECTS =
 libtest_common.a: CMakeFiles/test_common.dir/test_common.c.o
 libtest_common.a: CMakeFiles/test_common.dir/build.make
 libtest_common.a: CMakeFiles/test_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/simon/vigenere/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libtest_common.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libtest_common.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/test_common.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_common.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/test_common.dir/clean:
 .PHONY : CMakeFiles/test_common.dir/clean
 
 CMakeFiles/test_common.dir/depend:
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/simon/vigenere /home/simon/vigenere /home/simon/vigenere/_build /home/simon/vigenere/_build /home/simon/vigenere/_build/CMakeFiles/test_common.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/niels/Documents/msc-crypto-mqtt/ascon_provider /home/niels/Documents/msc-crypto-mqtt/ascon_provider /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles/test_common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test_common.dir/depend
 

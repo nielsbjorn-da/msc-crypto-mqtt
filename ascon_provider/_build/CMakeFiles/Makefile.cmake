@@ -46,9 +46,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/vigenere.dir/DependInfo.cmake"
+  "CMakeFiles/asconprovider.dir/DependInfo.cmake"
   "CMakeFiles/test_common.dir/DependInfo.cmake"
-  "CMakeFiles/test_vigenere.dir/DependInfo.cmake"
-  "CMakeFiles/test_vigenere_err.dir/DependInfo.cmake"
+  "CMakeFiles/test_ascon.dir/DependInfo.cmake"
+  "CMakeFiles/test_ascon_err.dir/DependInfo.cmake"
   "libprov/CMakeFiles/libprov.dir/DependInfo.cmake"
   )

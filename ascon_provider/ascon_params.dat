@@ -1,7 +1,7 @@
 # -*- perl -*-
 [
-    "vigenere_params_parse",
-    # Vigenere algo params
+    "ascon_params_parse",
+    # Ascon algo params
     PARAM_blocksize       => "blocksize",
     PARAM_keylen          => "keylen",
     PARAM_ivlen           => "ivlen",
@@ -12,5 +12,7 @@
     # Provider params
     PARAM_version         => "version",
     PARAM_buildinfo       => "buildinfo",
-    PARAM_author          => "author"
+    PARAM_author          => "author",
+    PARAM_status          => "status",
+    PARAM_name            => "name"
 ];

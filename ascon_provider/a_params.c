@@ -1,11 +1,28 @@
-#include "/home/simon/vigenere/v_params.h"
-int vigenere_params_parse(const char *key)
+#include "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/a_params.h"
+int ascon_params_parse(const char *key)
 {
     const char *p = key;
     switch (*p++) {
     case 'a':
     case 'A':
         switch (*p++) {
+        case 'e':
+        case 'E':
+            switch (*p++) {
+            case 'a':
+            case 'A':
+                switch (*p++) {
+                case 'd':
+                case 'D':
+                    switch (*p++) {
+                    case '\0':
+                        return V_PARAM_aead;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
         case 'u':
         case 'U':
             switch (*p++) {
@@ -124,6 +141,33 @@ int vigenere_params_parse(const char *key)
             break;
         }
         break;
+    case 'i':
+    case 'I':
+        switch (*p++) {
+        case 'v':
+        case 'V':
+            switch (*p++) {
+            case 'l':
+            case 'L':
+                switch (*p++) {
+                case 'e':
+                case 'E':
+                    switch (*p++) {
+                    case 'n':
+                    case 'N':
+                        switch (*p++) {
+                        case '\0':
+                            return V_PARAM_ivlen;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+        break;
     case 'k':
     case 'K':
         switch (*p++) {
@@ -144,6 +188,136 @@ int vigenere_params_parse(const char *key)
                             switch (*p++) {
                             case '\0':
                                 return V_PARAM_keylen;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+        break;
+    case 'n':
+    case 'N':
+        switch (*p++) {
+        case 'a':
+        case 'A':
+            switch (*p++) {
+            case 'm':
+            case 'M':
+                switch (*p++) {
+                case 'e':
+                case 'E':
+                    switch (*p++) {
+                    case '\0':
+                        return V_PARAM_name;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+        break;
+    case 's':
+    case 'S':
+        switch (*p++) {
+        case 't':
+        case 'T':
+            switch (*p++) {
+            case 'a':
+            case 'A':
+                switch (*p++) {
+                case 't':
+                case 'T':
+                    switch (*p++) {
+                    case 'u':
+                    case 'U':
+                        switch (*p++) {
+                        case 's':
+                        case 'S':
+                            switch (*p++) {
+                            case '\0':
+                                return V_PARAM_status;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+        break;
+    case 't':
+    case 'T':
+        switch (*p++) {
+        case 'a':
+        case 'A':
+            switch (*p++) {
+            case 'g':
+            case 'G':
+                switch (*p++) {
+                case '\0':
+                    return V_PARAM_tag;
+                case 'l':
+                case 'L':
+                    switch (*p++) {
+                    case 'e':
+                    case 'E':
+                        switch (*p++) {
+                        case 'n':
+                        case 'N':
+                            switch (*p++) {
+                            case '\0':
+                                return V_PARAM_taglen;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+                break;
+            }
+            break;
+        case 'l':
+        case 'L':
+            switch (*p++) {
+            case 's':
+            case 'S':
+                switch (*p++) {
+                case 'a':
+                case 'A':
+                    switch (*p++) {
+                    case 'a':
+                    case 'A':
+                        switch (*p++) {
+                        case 'd':
+                        case 'D':
+                            switch (*p++) {
+                            case 'p':
+                            case 'P':
+                                switch (*p++) {
+                                case 'a':
+                                case 'A':
+                                    switch (*p++) {
+                                    case 'd':
+                                    case 'D':
+                                        switch (*p++) {
+                                        case '\0':
+                                            return V_PARAM_tlsaadpad;
+                                        }
+                                        break;
+                                    }
+                                    break;
+                                }
+                                break;
                             }
                             break;
                         }

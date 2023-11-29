@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/simon/vigenere
+CMAKE_SOURCE_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/simon/vigenere/_build
+CMAKE_BINARY_DIR = /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simon/vigenere/_build/CMakeFiles /home/simon/vigenere/_build/libprov//CMakeFiles/progress.marks
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/vigenere/_build/CMakeFiles 0
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -E cmake_progress_start /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov//CMakeFiles/progress.marks
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/clean
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,22 +113,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/preinstall
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/preinstall
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libprov/CMakeFiles/libprov.dir/rule:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/CMakeFiles/libprov.dir/rule
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libprov/CMakeFiles/libprov.dir/rule
 .PHONY : libprov/CMakeFiles/libprov.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ libprov: libprov/CMakeFiles/libprov.dir/rule
 
 # fast build rule for target.
 libprov/fast:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/build
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/build
 .PHONY : libprov/fast
 
 err.o: err.c.o
@@ -145,7 +145,7 @@ err.o: err.c.o
 
 # target to build an object file
 err.c.o:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.o
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.o
 .PHONY : err.c.o
 
 err.i: err.c.i
@@ -153,7 +153,7 @@ err.i: err.c.i
 
 # target to preprocess a source file
 err.c.i:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.i
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.i
 .PHONY : err.c.i
 
 err.s: err.c.s
@@ -161,7 +161,7 @@ err.s: err.c.s
 
 # target to generate assembly for a file
 err.c.s:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.s
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/err.c.s
 .PHONY : err.c.s
 
 num.o: num.c.o
@@ -169,7 +169,7 @@ num.o: num.c.o
 
 # target to build an object file
 num.c.o:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.o
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.o
 .PHONY : num.c.o
 
 num.i: num.c.i
@@ -177,7 +177,7 @@ num.i: num.c.i
 
 # target to preprocess a source file
 num.c.i:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.i
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.i
 .PHONY : num.c.i
 
 num.s: num.c.s
@@ -185,7 +185,7 @@ num.s: num.c.s
 
 # target to generate assembly for a file
 num.c.s:
-	cd /home/simon/vigenere/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.s
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(MAKE) $(MAKESILENT) -f libprov/CMakeFiles/libprov.dir/build.make libprov/CMakeFiles/libprov.dir/num.c.s
 .PHONY : num.c.s
 
 # Help Target
@@ -215,6 +215,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/simon/vigenere/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

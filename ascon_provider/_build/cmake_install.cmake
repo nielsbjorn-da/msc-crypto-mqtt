@@ -1,4 +1,4 @@
-# Install script for directory: /home/simon/vigenere
+# Install script for directory: /home/niels/Documents/msc-crypto-mqtt/ascon_provider
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/simon/vigenere/_build/libprov/cmake_install.cmake")
+  include("/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/libprov/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/simon/vigenere/_build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/niels/Documents/msc-crypto-mqtt/ascon_provider/_build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -52,8 +52,8 @@ libprov/CMakeFiles/libprov.dir/err.c.o: ../libprov/err.c \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/openssl/core.h \
-  /usr/include/openssl/types.h \
+  /usr/local/include/openssl/core.h \
+  /usr/local/include/openssl/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -63,15 +63,15 @@ libprov/CMakeFiles/libprov.dir/err.c.o: ../libprov/err.c \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/openssl/e_os2.h \
-  /usr/include/openssl/macros.h \
-  /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
-  /usr/include/x86_64-linux-gnu/openssl/configuration.h \
-  /usr/include/openssl/opensslv.h \
+  /usr/local/include/openssl/e_os2.h \
+  /usr/local/include/openssl/macros.h \
+  /usr/local/include/openssl/opensslconf.h \
+  /usr/local/include/openssl/configuration.h \
+  /usr/local/include/openssl/opensslv.h \
   /usr/include/inttypes.h \
-  /usr/include/openssl/safestack.h \
-  /usr/include/openssl/stack.h \
-  /usr/include/openssl/core_dispatch.h \
+  /usr/local/include/openssl/safestack.h \
+  /usr/local/include/openssl/stack.h \
+  /usr/local/include/openssl/core_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
 
 libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
@@ -91,8 +91,8 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
   ../libprov/include/prov/num.h \
-  /usr/include/openssl/core.h \
-  /usr/include/openssl/types.h \
+  /usr/local/include/openssl/core.h \
+  /usr/local/include/openssl/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -102,11 +102,11 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/openssl/e_os2.h \
-  /usr/include/openssl/macros.h \
-  /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
-  /usr/include/x86_64-linux-gnu/openssl/configuration.h \
-  /usr/include/openssl/opensslv.h \
+  /usr/local/include/openssl/e_os2.h \
+  /usr/local/include/openssl/macros.h \
+  /usr/local/include/openssl/opensslconf.h \
+  /usr/local/include/openssl/configuration.h \
+  /usr/local/include/openssl/opensslv.h \
   /usr/include/inttypes.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -116,9 +116,11 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/openssl/safestack.h \
-  /usr/include/openssl/stack.h
+  /usr/local/include/openssl/safestack.h \
+  /usr/local/include/openssl/stack.h
 
+
+../libprov/include/prov/num.h:
 
 /usr/include/strings.h:
 
@@ -130,17 +132,15 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/include/openssl/stack.h:
+/usr/local/include/openssl/stack.h:
 
-../libprov/include/prov/num.h:
+/usr/local/include/openssl/configuration.h:
 
-/usr/include/openssl/opensslv.h:
+/usr/local/include/openssl/opensslconf.h:
 
-/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
+/usr/local/include/openssl/macros.h:
 
-/usr/include/x86_64-linux-gnu/openssl/configuration.h:
-
-/usr/include/openssl/e_os2.h:
+/usr/local/include/openssl/e_os2.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -168,13 +168,11 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-
-/usr/include/openssl/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
@@ -190,9 +188,9 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/include/stdlib.h:
 
-/usr/include/openssl/safestack.h:
-
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/local/include/openssl/core_dispatch.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
@@ -200,9 +198,9 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/openssl/macros.h:
-
 /usr/include/stdint.h:
+
+/usr/local/include/openssl/safestack.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -230,7 +228,7 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/openssl/core_dispatch.h:
+/usr/local/include/openssl/core.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -258,20 +256,22 @@ libprov/CMakeFiles/libprov.dir/num.c.o: ../libprov/num.c \
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
+/usr/local/include/openssl/opensslv.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/openssl/core.h:
+../libprov/include/prov/err.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+
+/usr/local/include/openssl/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
 /usr/include/linux/limits.h:
-
-../libprov/include/prov/err.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/limits.h:

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DAUTHOR=\"@levitte\" -DBUILDTYPE=\"\" -DVERSION=\"1.2\" -Dvigenere_EXPORTS
 
-C_INCLUDES = -I/home/simon/vigenere/ascon128 -I/home/simon/vigenere/libprov/include
+C_INCLUDES = -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128 -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/include
 
 C_FLAGS = -fPIC -std=gnu99
 

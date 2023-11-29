@@ -1,4 +1,4 @@
-# Install script for directory: /home/simon/vigenere/libprov
+# Install script for directory: /home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

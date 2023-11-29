@@ -100,8 +100,8 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/openssl/core.h \
-  /usr/include/openssl/types.h \
+  /usr/local/include/openssl/core.h \
+  /usr/local/include/openssl/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -111,19 +111,19 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/openssl/e_os2.h \
-  /usr/include/openssl/macros.h \
-  /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
-  /usr/include/x86_64-linux-gnu/openssl/configuration.h \
-  /usr/include/openssl/opensslv.h \
+  /usr/local/include/openssl/e_os2.h \
+  /usr/local/include/openssl/macros.h \
+  /usr/local/include/openssl/opensslconf.h \
+  /usr/local/include/openssl/configuration.h \
+  /usr/local/include/openssl/opensslv.h \
   /usr/include/inttypes.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/openssl/safestack.h \
-  /usr/include/openssl/stack.h \
-  /usr/include/openssl/core_dispatch.h \
+  /usr/local/include/openssl/safestack.h \
+  /usr/local/include/openssl/stack.h \
+  /usr/local/include/openssl/core_dispatch.h \
   ../libprov/include/prov/err.h \
   ../libprov/include/prov/num.h \
   ../v_params.h \
@@ -139,11 +139,15 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
   ../ascon128/word.h
 
 
-/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
+/usr/local/include/openssl/stack.h:
 
-/usr/include/x86_64-linux-gnu/openssl/configuration.h:
+/usr/local/include/openssl/configuration.h:
 
-/usr/include/openssl/e_os2.h:
+/usr/local/include/openssl/opensslconf.h:
+
+/usr/local/include/openssl/macros.h:
+
+/usr/local/include/openssl/e_os2.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -155,21 +159,15 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
-/usr/include/openssl/types.h:
+/usr/local/include/openssl/core.h:
 
 ../libprov/include/prov/num.h:
 
-/usr/include/openssl/opensslv.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/openssl/stack.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/openssl/core.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -178,6 +176,8 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 /usr/include/assert.h:
 
 /usr/include/alloca.h:
+
+/usr/local/include/openssl/opensslv.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -233,8 +233,6 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/openssl/safestack.h:
-
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -263,6 +261,8 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
+/usr/local/include/openssl/safestack.h:
+
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
@@ -273,11 +273,11 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 
 /usr/include/features.h:
 
-/usr/include/openssl/macros.h:
-
 /usr/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/local/include/openssl/core_dispatch.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
@@ -307,8 +307,6 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/openssl/core_dispatch.h:
-
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
@@ -328,6 +326,8 @@ CMakeFiles/vigenere.dir/vigenere.c.o: ../vigenere.c \
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/limits.h:
+
+/usr/local/include/openssl/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
