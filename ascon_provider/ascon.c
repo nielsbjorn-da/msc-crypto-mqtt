@@ -91,13 +91,20 @@ static OSSL_FUNC_provider_get_params_fn ascon_prov_get_params;
 static OSSL_FUNC_provider_get_reason_strings_fn ascon_prov_get_reason_strings;
 
 static OSSL_FUNC_cipher_newctx_fn ascon_newctx;
+static OSSL_FUNC_cipher_newctx_fn ascon80pq_newctx;
 static OSSL_FUNC_cipher_encrypt_init_fn ascon_encrypt_init;
 static OSSL_FUNC_cipher_decrypt_init_fn ascon_decrypt_init;
-static OSSL_FUNC_cipher_update_fn ascon_update;
+static OSSL_FUNC_cipher_encrypt_init_fn ascon80pq_encrypt_init;
+static OSSL_FUNC_cipher_decrypt_init_fn ascon80pq_decrypt_init;
+static OSSL_FUNC_cipher_update_fn ascon128a_update;
+static OSSL_FUNC_cipher_update_fn ascon128_update;
+static OSSL_FUNC_cipher_update_fn ascon80pq_update;
 static OSSL_FUNC_cipher_final_fn ascon_final;
 static OSSL_FUNC_cipher_dupctx_fn ascon_dupctx;
 static OSSL_FUNC_cipher_freectx_fn ascon_freectx;
-static OSSL_FUNC_cipher_get_params_fn ascon_get_params;
+static OSSL_FUNC_cipher_get_params_fn ascon128_get_params;
+static OSSL_FUNC_cipher_get_params_fn ascon128a_get_params;
+static OSSL_FUNC_cipher_get_params_fn ascon80pq_get_params;
 static OSSL_FUNC_cipher_gettable_params_fn ascon_gettable_params;
 static OSSL_FUNC_cipher_set_ctx_params_fn ascon_set_ctx_params;
 static OSSL_FUNC_cipher_get_ctx_params_fn ascon_get_ctx_params;
@@ -110,6 +117,7 @@ static OSSL_FUNC_cipher_gettable_ctx_params_fn ascon_gettable_ctx_params;
 /*
  * The context used throughout all these functions.
  */
+
 struct ascon_ctx_st
 {
     struct provider_ctx_st *provctx;
@@ -119,6 +127,7 @@ struct ascon_ctx_st
     ascon_state_t s;
     uint64_t K0;
     uint64_t K1;
+    uint64_t K2; //only used in ascon80pq
     size_t ivl;
     size_t tagl;
     unsigned char *tag;
@@ -133,7 +142,7 @@ static void *ascon_newctx(void *vprovctx)
     {
         memset(ctx, 0, sizeof(*ctx));
         ctx->provctx = vprovctx;
-        ctx->keyl = CRYPTO_KEYBYTES;
+        ctx->keyl = ASCON_128_KEYBYTES;
         // ascon
         ctx->ivl = CRYPTO_NPUBBYTES;
         ctx->tagl = CRYPTO_ABYTES;
@@ -142,10 +151,26 @@ static void *ascon_newctx(void *vprovctx)
     return ctx;
 }
 
+static void *ascon80pq_newctx(void *vprovctx)
+{
+    struct ascon_ctx_st *ctx = malloc(sizeof(*ctx));
+    if (ctx != NULL)
+    {
+        memset(ctx, 0, sizeof(*ctx));
+        ctx->provctx = vprovctx;
+        ctx->keyl = ASCON_80PQ_KEYBYTES;
+        // ascon
+        ctx->ivl = CRYPTO_NPUBBYTES;
+        ctx->tagl = CRYPTO_ABYTES;
+        ctx->tag = malloc(ctx->tagl);
+    }
+    return ctx;
+}
+
+
 static void ascon_cleanctx(void *vctx)
 {
     struct ascon_ctx_st *ctx = vctx;
-    printf("clean ascon ctx\n");
     if (ctx == NULL)
         return;
 
@@ -161,7 +186,6 @@ static void ascon_cleanctx(void *vctx)
 
 static void *ascon_dupctx(void *vctx)
 {
-    printf("dup ascon ctx\n");
     struct ascon_ctx_st *src = vctx;
     struct ascon_ctx_st *dst = NULL;
 
@@ -186,7 +210,6 @@ static void *ascon_dupctx(void *vctx)
 static void ascon_freectx(void *vctx)
 {
     struct ascon_ctx_st *ctx = vctx;
-    printf("free ascon ctx\n");
     ctx->provctx = NULL;
     ascon_cleanctx(ctx);
     free(ctx);
@@ -200,7 +223,6 @@ static int ascon_encrypt_init(void *vctx,
                               const OSSL_PARAM params[])
 {
     struct ascon_ctx_st *ctx = vctx;
-    printf(" ascon encrypt init\n");
     ctx->enc = 1;
     if (key != NULL)
     {
@@ -246,6 +268,61 @@ static int ascon_encrypt_init(void *vctx,
     return 1;
 }
 
+static int ascon80pq_encrypt_init(void *vctx,
+                              const unsigned char *key,
+                              size_t keyl,
+                              const unsigned char *iv,
+                              size_t ivl,
+                              const OSSL_PARAM params[])
+{
+    struct ascon_ctx_st *ctx = vctx;
+    ctx->enc = 1;
+    if (key != NULL)
+    {
+        if (keyl == (size_t)-1 || keyl == 0)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_NO_KEYLEN_SET);
+            return 0;
+        }
+    }
+
+    // ascon
+    if (key != NULL && iv != NULL)
+    {
+        if (keyl == (size_t)-1 || keyl == 0)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_NO_KEYLEN_SET);
+            return 0;
+        }
+        if (ivl != ctx->ivl)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_INCORRECT_IVLEN);
+            return 0;
+        }
+
+        /* load key and nonce */
+        ctx->K0 = LOADBYTES(key + 0, 4) >> 32;
+        ctx->K1 = LOADBYTES(key + 4, 8);
+        ctx->K2 = LOADBYTES(key + 12, 8);
+        const uint64_t N0 = LOADBYTES(iv, 8);
+        const uint64_t N1 = LOADBYTES(iv + 8, 8);
+
+        /* initialize */
+        ctx->s.x[0] = ASCON_80PQ_IV | ctx->K0;
+        ctx->s.x[1] = ctx->K1;
+        ctx->s.x[2] = ctx->K2;
+        ctx->s.x[3] = N0;
+        ctx->s.x[4] = N1;
+        printstate("init 1st key xor", &ctx->s);
+        P12(&ctx->s);
+        ctx->s.x[2] ^= ctx->K0;
+        ctx->s.x[3] ^= ctx->K1;
+        ctx->s.x[4] ^= ctx->K2;
+        printstate("init 2nd key xor", &ctx->s);
+    }
+    return 1;
+}
+
 static int ascon_decrypt_init(void *vctx,
                               const unsigned char *key,
                               size_t keyl,
@@ -256,7 +333,6 @@ static int ascon_decrypt_init(void *vctx,
     struct ascon_ctx_st *ctx = vctx;
     size_t i;
     ctx->enc = 0;
-    printf(" ascon decrypt init\n");
     if (key != NULL && iv != NULL)
     {
         if (keyl == (size_t)-1 || keyl == 0)
@@ -298,6 +374,64 @@ static int ascon_decrypt_init(void *vctx,
         P12(&ctx->s);
         ctx->s.x[3] ^= ctx->K0;
         ctx->s.x[4] ^= ctx->K1;
+        printstate("init 2nd key xor", &ctx->s);
+    }
+    return 1;
+}
+
+static int ascon80pq_decrypt_init(void *vctx,
+                              const unsigned char *key,
+                              size_t keyl,
+                              const unsigned char *iv,
+                              size_t ivl,
+                              const OSSL_PARAM params[])
+{
+    struct ascon_ctx_st *ctx = vctx;
+    size_t i;
+    ctx->enc = 0;
+    if (key != NULL && iv != NULL)
+    {
+        if (keyl == (size_t)-1 || keyl == 0)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_NO_KEYLEN_SET);
+            return 0;
+        }
+    }
+
+    // ascon
+
+    if (key != NULL && iv != NULL)
+    {
+        if (keyl == (size_t)-1 || keyl == 0)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_NO_KEYLEN_SET);
+            return 0;
+        }
+        if (ivl != ctx->ivl)
+        {
+            ERR_raise(ERR_HANDLE(ctx), ASCON_INCORRECT_IVLEN);
+            return 0;
+        }
+
+        /* load key and nonce */
+
+        ctx->K0 = LOADBYTES(key + 0, 4) >> 32;
+        ctx->K1 = LOADBYTES(key + 4, 8);
+        ctx->K2 = LOADBYTES(key + 12, 8);
+        const uint64_t N0 = LOADBYTES(iv, 8);
+        const uint64_t N1 = LOADBYTES(iv + 8, 8);
+
+        /* initialize */
+        ctx->s.x[0] = ASCON_80PQ_IV | ctx->K0;
+        ctx->s.x[1] = ctx->K1;
+        ctx->s.x[2] = ctx->K2;
+        ctx->s.x[3] = N0;
+        ctx->s.x[4] = N1;
+        printstate("init 1st key xor", &ctx->s);
+        P12(&ctx->s);
+        ctx->s.x[2] ^= ctx->K0;
+        ctx->s.x[3] ^= ctx->K1;
+        ctx->s.x[4] ^= ctx->K2;
         printstate("init 2nd key xor", &ctx->s);
     }
     return 1;
@@ -391,7 +525,7 @@ static int ascon128a_update(void *vctx,
     {
 
         // decryption
-        while (inl >= ASCON_128_RATE)
+        while (inl >= ASCON_128A_RATE)
         {
             uint64_t c0 = LOADBYTES(in, 8);
             uint64_t c1 = LOADBYTES(in + 8, 8);
@@ -430,12 +564,13 @@ static int ascon128a_update(void *vctx,
     }
 
     /* finalize */
-    ctx->s.x[1] ^= ctx->K0;
-    ctx->s.x[2] ^= ctx->K1;
+    ctx->s.x[1] ^= ctx->K0 << 32 | ctx->K1 >> 32;
+    ctx->s.x[2] ^= ctx->K1 << 32 | ctx->K2 >> 32;
+    ctx->s.x[3] ^= ctx->K2 << 32;
     printstate("final 1st key xor", &ctx->s);
     P12(&ctx->s);
-    ctx->s.x[3] ^= ctx->K0;
-    ctx->s.x[4] ^= ctx->K1;
+    ctx->s.x[3] ^= ctx->K1;
+    ctx->s.x[4] ^= ctx->K2;
     printstate("final 2nd key xor", &ctx->s);
 
     if (ctx->enc)
@@ -555,10 +690,116 @@ static int ascon128_update(void *vctx,
     return 1;
 }
 
+static int ascon80pq_update(void *vctx,
+                           unsigned char *out, size_t *outl, size_t outsz,
+                           const unsigned char *in, size_t inl)
+{
+    struct ascon_ctx_st *ctx = vctx;
+
+    if (out == NULL && in == NULL)
+    {
+        ERR_raise(ERR_HANDLE(ctx), ASCON_NO_DATA);
+    }
+    *outl = 0;
+    unsigned char *originalOut = out;
+
+    // ascon
+    /* set ciphertext size */
+    unsigned long long clen = inl + CRYPTO_ABYTES;
+
+    // check for AD
+    if (out == NULL && inl > 0)
+    {
+        /* full associated data blocks */
+        while (inl >= ASCON_128_RATE)
+        {
+            ctx->s.x[0] ^= LOADBYTES(in, 8);
+            printstate("absorb adata", &ctx->s);
+            P6(&ctx->s);
+            in += ASCON_128_RATE;
+            inl -= ASCON_128_RATE;
+        }
+        /* final associated data block */
+        ctx->s.x[0] ^= LOADBYTES(in, inl);
+        ctx->s.x[0] ^= PAD(inl);
+        printstate("pad adata", &s);
+        P6(&ctx->s);
+        return 1;
+    }
+
+    /* domain separation */
+    ctx->s.x[4] ^= 1;
+    printstate("domain separation", &ctx->s);
+
+    if (ctx->enc)
+    {
+        /* full plaintext blocks */
+        while (inl >= ASCON_128_RATE)
+        {
+            ctx->s.x[0] ^= LOADBYTES(in, 8);
+            STOREBYTES(out, ctx->s.x[0], 8);
+            printstate("absorb plaintext", &ctx->s);
+            P6(&ctx->s);
+            in += ASCON_128_RATE;
+            out += ASCON_128_RATE;
+            inl -= ASCON_128_RATE;
+        }
+        /* final plaintext block */
+        ctx->s.x[0] ^= LOADBYTES(in, inl);
+        STOREBYTES(out, ctx->s.x[0], inl);
+        ctx->s.x[0] ^= PAD(inl);
+        out += inl;
+        printstate("pad plaintext", &ctx->s);
+    }
+    else
+    {
+
+        // decryption
+        while (inl >= ASCON_128_RATE)
+        {
+            uint64_t c0 = LOADBYTES(in, 8);
+            STOREBYTES(out, ctx->s.x[0] ^ c0, 8);
+            ctx->s.x[0] = c0;
+            printstate("insert ciphertext", &ctx->s);
+            P6(&ctx->s);
+            in += ASCON_128_RATE;
+            out += ASCON_128_RATE;
+            inl -= ASCON_128_RATE;
+        }
+        /* final ciphertext block */
+        uint64_t c0 = LOADBYTES(in, inl);
+        STOREBYTES(out, ctx->s.x[0] ^ c0, inl);
+        ctx->s.x[0] = CLEARBYTES(ctx->s.x[0], inl);
+        ctx->s.x[0] |= c0;
+        ctx->s.x[0] ^= PAD(inl);
+        out += inl;
+        printstate("pad ciphertext", &ctx->s);
+    }
+
+    /* finalize */
+    ctx->s.x[1] ^= ctx->K0;
+    ctx->s.x[2] ^= ctx->K1;
+    printstate("final 1st key xor", &ctx->s);
+    P12(&ctx->s);
+    ctx->s.x[3] ^= ctx->K0;
+    ctx->s.x[4] ^= ctx->K1;
+    printstate("final 2nd key xor", &ctx->s);
+
+    if (ctx->enc)
+    {
+        // set tag
+        STOREBYTES(ctx->tag, ctx->s.x[3], 8);
+        STOREBYTES(ctx->tag + 8, ctx->s.x[4], 8);
+    }
+
+    *outl = clen - CRYPTO_ABYTES;
+    return 1;
+}
+
+
 static int ascon_final(void *vctx,
                        unsigned char *out, size_t *outl, size_t outsz)
 {
-    printf(" ascon finalize \n");
     struct ascon_ctx_st *ctx = vctx;
     *outl = 0;
 
@@ -577,12 +818,10 @@ static int ascon_final(void *vctx,
 
         if (result == 0)
         {
-            printf("Tag verify success \n");
             return 1;
         }
         else
         {
-            printf("Tag verify fail\n");
             return -1;
         }
     }
@@ -604,7 +843,7 @@ static const OSSL_PARAM *ascon_gettable_params(void *provctx)
     return table;
 }
 
-static int ascon_get_params(OSSL_PARAM params[])
+static int ascon128_get_params(OSSL_PARAM params[])
 {
     OSSL_PARAM *p;
     int ok = 1;
@@ -613,10 +852,10 @@ static int ascon_get_params(OSSL_PARAM params[])
         switch (ascon_params_parse(p->key))
         {
         case V_PARAM_blocksize:
-            ok &= provnum_set_size_t(p, 1) >= 0;
+            ok &= provnum_set_size_t(p, ASCON_128_RATE) >= 0;
             break;
         case V_PARAM_keylen:
-            ok &= provnum_set_size_t(p, CRYPTO_KEYBYTES) >= 0;
+            ok &= provnum_set_size_t(p, ASCON_128_KEYBYTES) >= 0;
             break;
         case V_PARAM_ivlen:
             ok &= provnum_set_size_t(p, CRYPTO_NPUBBYTES) >= 0;
@@ -630,6 +869,61 @@ static int ascon_get_params(OSSL_PARAM params[])
         }
     return ok;
 }
+
+static int ascon128a_get_params(OSSL_PARAM params[])
+{
+    OSSL_PARAM *p;
+    int ok = 1;
+
+    for (p = params; p->key != NULL; p++)
+        switch (ascon_params_parse(p->key))
+        {
+        case V_PARAM_blocksize:
+            ok &= provnum_set_size_t(p, ASCON_128A_RATE) >= 0;
+            break;
+        case V_PARAM_keylen:
+            ok &= provnum_set_size_t(p, ASCON_128_KEYBYTES) >= 0;
+            break;
+        case V_PARAM_ivlen:
+            ok &= provnum_set_size_t(p, CRYPTO_NPUBBYTES) >= 0;
+            break;
+        case V_PARAM_aead:
+            ok &= provnum_set_size_t(p, 1) >= 0;
+            break;
+        case V_PARAM_taglen:
+            ok &= provnum_set_size_t(p, CRYPTO_ABYTES) >= 0;
+            break;
+        }
+    return ok;
+}
+
+static int ascon80pq_get_params(OSSL_PARAM params[])
+{
+    OSSL_PARAM *p;
+    int ok = 1;
+
+    for (p = params; p->key != NULL; p++)
+        switch (ascon_params_parse(p->key))
+        {
+        case V_PARAM_blocksize:
+            ok &= provnum_set_size_t(p, ASCON_128_RATE) >= 0;
+            break;
+        case V_PARAM_keylen:
+            ok &= provnum_set_size_t(p, ASCON_80PQ_KEYBYTES) >= 0;
+            break;
+        case V_PARAM_ivlen:
+            ok &= provnum_set_size_t(p, CRYPTO_NPUBBYTES) >= 0;
+            break;
+        case V_PARAM_aead:
+            ok &= provnum_set_size_t(p, 1) >= 0;
+            break;
+        case V_PARAM_taglen:
+            ok &= provnum_set_size_t(p, CRYPTO_ABYTES) >= 0;
+            break;
+        }
+    return ok;
+}
+
 
 static const OSSL_PARAM *ascon_gettable_ctx_params(void *cctx, void *provctx)
 {
@@ -728,14 +1022,14 @@ typedef void (*funcptr_t)(void);
 
 /* The Ascon80pq dispatch table */
 static const OSSL_DISPATCH ascon80pq_functions[] = {
-    {OSSL_FUNC_CIPHER_NEWCTX, (funcptr_t)ascon_newctx},
-    {OSSL_FUNC_CIPHER_ENCRYPT_INIT, (funcptr_t)ascon_encrypt_init},
-    {OSSL_FUNC_CIPHER_DECRYPT_INIT, (funcptr_t)ascon_decrypt_init},
-    {OSSL_FUNC_CIPHER_UPDATE, (funcptr_t)ascon_update},
+    {OSSL_FUNC_CIPHER_NEWCTX, (funcptr_t)ascon80pq_newctx},
+    {OSSL_FUNC_CIPHER_ENCRYPT_INIT, (funcptr_t)ascon80pq_encrypt_init},
+    {OSSL_FUNC_CIPHER_DECRYPT_INIT, (funcptr_t)ascon80pq_decrypt_init},
+    {OSSL_FUNC_CIPHER_UPDATE, (funcptr_t)ascon80pq_update},
     {OSSL_FUNC_CIPHER_FINAL, (funcptr_t)ascon_final},
     {OSSL_FUNC_CIPHER_DUPCTX, (funcptr_t)ascon_dupctx},
     {OSSL_FUNC_CIPHER_FREECTX, (funcptr_t)ascon_freectx},
-    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon_get_params},
+    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon80pq_get_params},
     {OSSL_FUNC_CIPHER_GETTABLE_PARAMS, (funcptr_t)ascon_gettable_params},
     {OSSL_FUNC_CIPHER_GET_CTX_PARAMS, (funcptr_t)ascon_get_ctx_params},
     {OSSL_FUNC_CIPHER_GETTABLE_CTX_PARAMS,
@@ -754,7 +1048,7 @@ static const OSSL_DISPATCH ascon128_functions[] = {
     {OSSL_FUNC_CIPHER_FINAL, (funcptr_t)ascon_final},
     {OSSL_FUNC_CIPHER_DUPCTX, (funcptr_t)ascon_dupctx},
     {OSSL_FUNC_CIPHER_FREECTX, (funcptr_t)ascon_freectx},
-    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon_get_params},
+    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon128_get_params},
     {OSSL_FUNC_CIPHER_GETTABLE_PARAMS, (funcptr_t)ascon_gettable_params},
     {OSSL_FUNC_CIPHER_GET_CTX_PARAMS, (funcptr_t)ascon_get_ctx_params},
     {OSSL_FUNC_CIPHER_GETTABLE_CTX_PARAMS,
@@ -773,7 +1067,7 @@ static const OSSL_DISPATCH ascon128a_functions[] = {
     {OSSL_FUNC_CIPHER_FINAL, (funcptr_t)ascon_final},
     {OSSL_FUNC_CIPHER_DUPCTX, (funcptr_t)ascon_dupctx},
     {OSSL_FUNC_CIPHER_FREECTX, (funcptr_t)ascon_freectx},
-    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon_get_params},
+    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon128a_get_params},
     {OSSL_FUNC_CIPHER_GETTABLE_PARAMS, (funcptr_t)ascon_gettable_params},
     {OSSL_FUNC_CIPHER_GET_CTX_PARAMS, (funcptr_t)ascon_get_ctx_params},
     {OSSL_FUNC_CIPHER_GETTABLE_CTX_PARAMS,
@@ -787,12 +1081,12 @@ static const OSSL_DISPATCH ascon128a_functions[] = {
 static const OSSL_ALGORITHM ascon_ciphers[] = {
     // { "ASCON-128:1.3.6.1.4.1.5168.4711.22087.1", "x.author='" AUTHOR "'",
     // vigenere_functions },
-    {"ASCON-80pq", "x.author='" AUTHOR "'",
+    {"ASCON-80PQ", "x.author='" AUTHOR "'",
      ascon128_functions},
     {"ASCON-128", "x.author='" AUTHOR "'",
      ascon128_functions},
-    {"ASCON-128a", "x.author='" AUTHOR "'",
-     ascon128_functions},
+    {"ASCON-128A", "x.author='" AUTHOR "'",
+     ascon128a_functions},
     {NULL, NULL, NULL}};
 
 /* The function that returns the appropriate algorithm table per operation */

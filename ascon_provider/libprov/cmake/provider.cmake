@@ -202,6 +202,7 @@ macro(build_provider provider sources libraries)
     VERSION="${CMAKE_PROJECT_VERSION}"
     BUILDTYPE="${CMAKE_BUILD_TYPE}"
     )
+  target_compile_options(${provider} PRIVATE -O2 -fomit-frame-pointer -march=native -mtune=native)
   target_include_directories(${provider} PRIVATE ${OPENSSL_INCLUDE_DIR})
   target_link_libraries(${provider} PRIVATE ${libraries})
 endmacro()
