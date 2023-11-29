@@ -259,8 +259,8 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 static void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquitto_message *message, const mosquitto_property *properties)
 {
 	// Uncommet this to record the latency time
-	// struct timeval receive_time;
-	// gettimeofday(&receive_time, NULL);
+	struct timeval receive_time;
+	gettimeofday(&receive_time, NULL);
 
 	struct timeval end_time, start_time;
 	long time_taken;
@@ -321,6 +321,10 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	int timestamp = cJSON_GetObjectItem(message_as_json, "t")->valueint;
 
 	int time_micro = cJSON_GetObjectItem(message_as_json, "t2")->valuedouble;
+
+	int pub_timestamp = cJSON_GetObjectItem(message_as_json, "l1")->valueint;
+
+	int pub_time_micro = cJSON_GetObjectItem(message_as_json, "l2")->valuedouble;
 
 	char *signature_algorithm = cJSON_GetObjectItem(message_as_json, "a")->valuestring;
 
@@ -451,6 +455,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		// Calculate and print the time taken for message delivery
 		long time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - ((long) timestamp * 1000000 + (long) time_micro);
 		printf("Total time result: %ld micro seconds.\n", time_taken);
+
+		long latency = (receive_time.tv_sec * 1000000 + receive_time.tv_usec) - ((long) pub_timestamp * 1000000 + (long) pub_time_micro);
+		printf("Latency time result: %ld micro seconds.\n", latency);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
 		printf("---------------------------------------------------------\n");

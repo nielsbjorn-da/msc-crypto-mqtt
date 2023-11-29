@@ -567,9 +567,15 @@ int main(int argc, char *argv[])
   cJSON_AddStringToObject(root, "s", encoded_sig);
   cJSON_AddStringToObject(root, "pk", b64_encoded_pk);
 
+  //char *jsonString = cJSON_PrintUnformatted(root);
+  //size_t allocatedSize = strlen(jsonString) + 1;
+
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  cJSON_AddNumberToObject(root, "l1", end_time.tv_sec);
+  cJSON_AddNumberToObject(root, "l2", end_time.tv_usec);
   char *jsonString = cJSON_PrintUnformatted(root);
   size_t allocatedSize = strlen(jsonString) + 1;
-
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
 
   mosquitto_destroy(mosq);
@@ -577,8 +583,6 @@ int main(int argc, char *argv[])
   free(jsonString);
   free(b64_encoded_pk);
   free(encoded_sig);
-  gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
   printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
 
