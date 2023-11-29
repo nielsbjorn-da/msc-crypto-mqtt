@@ -147,7 +147,7 @@ struct vigenere_ctx_st {
 static void *vigenere_newctx(void *vprovctx)
 {
     struct vigenere_ctx_st *ctx = malloc(sizeof(*ctx));
-
+    printf("New ascon ctx\n");
     if (ctx != NULL) {
         memset(ctx, 0, sizeof(*ctx));
         ctx->provctx = vprovctx;
@@ -164,7 +164,7 @@ static void *vigenere_newctx(void *vprovctx)
 static void vigenere_cleanctx(void *vctx)
 {
     struct vigenere_ctx_st *ctx = vctx;
-
+    printf("clean ascon ctx\n");
     if (ctx == NULL)
         return;
     free(ctx->key);
@@ -184,6 +184,7 @@ static void vigenere_cleanctx(void *vctx)
 
 static void *vigenere_dupctx(void *vctx)
 {
+    printf("dup ascon ctx\n");
     struct vigenere_ctx_st *src = vctx;
     struct vigenere_ctx_st *dst = NULL;
 
@@ -219,7 +220,7 @@ static void *vigenere_dupctx(void *vctx)
 static void vigenere_freectx(void *vctx)
 {
     struct vigenere_ctx_st *ctx = vctx;
-
+    printf("free ascon ctx\n");
     ctx->provctx = NULL;
     vigenere_cleanctx(ctx);
     free(ctx);
@@ -233,7 +234,7 @@ static int vigenere_encrypt_init(void *vctx,
                                  const OSSL_PARAM params[])
 {
     struct vigenere_ctx_st *ctx = vctx;
-    
+    printf(" ascon encrypt init\n");
     ctx->enc = 1;
     if (key != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
@@ -290,7 +291,7 @@ static int vigenere_decrypt_init(void *vctx,
     struct vigenere_ctx_st *ctx = vctx;
     size_t i;
     ctx->enc = 0;
-
+    printf(" ascon decrypt init\n");
     if (key != NULL && iv != NULL) {
         if (keyl == (size_t)-1 || keyl == 0) {
             ERR_raise(ERR_HANDLE(ctx), VIGENERE_NO_KEYLEN_SET);
@@ -344,6 +345,7 @@ static int vigenere_update(void *vctx,
                            const unsigned char *in, size_t inl)
 {
     struct vigenere_ctx_st *ctx = vctx;
+    printf(" ascon update\n");
     //assert(outsz >= inl);
     //assert(out != NULL);
     //assert(outl != NULL);
@@ -367,6 +369,7 @@ static int vigenere_update(void *vctx,
 
     // check for AD
     if (out == NULL && inl > 0) {
+        printf("associated data \n");
       /* full associated data blocks */
         while (inl >= ASCON_128_RATE) {
             ctx->s.x[0] ^= LOADBYTES(in, 8);
@@ -449,6 +452,7 @@ static int vigenere_update(void *vctx,
 static int vigenere_final(void *vctx,
                           unsigned char *out, size_t *outl, size_t outsz)
 {
+    printf(" ascon finalize \n");
     struct vigenere_ctx_st *ctx = vctx;
     *outl = 0;
     ctx->ongoing = 0;
@@ -465,8 +469,10 @@ static int vigenere_final(void *vctx,
         result = (((result - 1) >> 8) & 1) - 1;
         
         if (result == 0) {
+            printf("Tag verify success \n");
             return 1;
         } else {
+            printf("Tag verify fail\n");
             return -1;
         }
     }
@@ -608,7 +614,8 @@ static int vigenere_set_ctx_params(void *vctx, const OSSL_PARAM params[])
             if (p->data_size != ctx->tagl) {
                 ERR_raise(ERR_HANDLE(ctx), VIGENERE_INCORRECT_TAGLEN);
             }
-            ctx->tag = p->data;
+            memcpy(ctx->tag, p->data, ctx->tagl);
+            //ctx->tag = p->data;
 
             //ok &= provnum_set_size_t(p, 1) >= 0;
             

@@ -47,7 +47,7 @@ int main() {
   if ((encryption_ctx = EVP_CIPHER_CTX_new()) == NULL)
       printf("error asdas\n");
  
-  const EVP_CIPHER *cipher = EVP_CIPHER_fetch(NULL, "ascon128", NULL);
+  const EVP_CIPHER *cipher = EVP_CIPHER_fetch(NULL, "ASCON-128", NULL);
   if (cipher == NULL) {
       fprintf(stderr, "cipher not available in the provider\n");
   } 
