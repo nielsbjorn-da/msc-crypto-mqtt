@@ -6,5 +6,5 @@ C_DEFINES = -DAUTHOR="\"@simon, @niels\"" -DBUILDTYPE=\"\" -DVERSION=\"1.0\" -Da
 
 C_INCLUDES = -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon80pq -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128 -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/ascon128a -I/home/niels/Documents/msc-crypto-mqtt/ascon_provider/libprov/include
 
-C_FLAGS = -fPIC -std=gnu99
+C_FLAGS = -fPIC -O2 -fomit-frame-pointer -march=native -mtune=native -std=gnu99
 
