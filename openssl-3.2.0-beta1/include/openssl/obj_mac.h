@@ -5274,9 +5274,17 @@
 #define LN_aes_128_cbc_hmac_sha256              "aes-128-cbc-hmac-sha256"
 #define NID_aes_128_cbc_hmac_sha256             948
 
+#define SN_ascon_80PQ                            "ASCON-80PQ"
+#define LN_ascon_80PQ                            "ascon-80PQ"
+#define NID_ascon_80PQ                           1320
+
 #define SN_ascon_128                            "ASCON-128"
 #define LN_ascon_128                            "ascon-128"
-#define NID_ascon_128                           1320
+#define NID_ascon_128                           1321
+
+#define SN_ascon_128A                            "ASCON-128A"
+#define LN_ascon_128A                            "ascon-128A"
+#define NID_ascon_128A                           1322
 
 #define SN_aes_192_cbc_hmac_sha256              "AES-192-CBC-HMAC-SHA256"
 #define LN_aes_192_cbc_hmac_sha256              "aes-192-cbc-hmac-sha256"

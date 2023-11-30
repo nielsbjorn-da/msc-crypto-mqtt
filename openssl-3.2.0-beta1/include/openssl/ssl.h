@@ -149,7 +149,9 @@ extern "C" {
 # define SSL_TXT_ARIA256         "ARIA256"
 # define SSL_TXT_GOST2012_GOST8912_GOST8912 "GOST2012-GOST8912-GOST8912"
 # define SSL_TXT_CBC             "CBC"
+# define SSL_TXT_ASCON80PQ        "ASCON80PQ"
 # define SSL_TXT_ASCON128        "ASCON128"
+# define SSL_TXT_ASCON128A        "ASCON128A"
 
 # define SSL_TXT_MD5             "MD5"
 # define SSL_TXT_SHA1            "SHA1"

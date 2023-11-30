@@ -7169,8 +7169,11 @@ const EVP_CIPHER *ssl_evp_cipher_fetch(OSSL_LIB_CTX *libctx,
      */
     ERR_set_mark();
     if (nid == 1320) {
-        printf("loading ascon in fetch\n");
+        ciph = EVP_CIPHER_fetch(libctx, "ASCON-80PQ", properties);
+    } else if (nid == 1321){
         ciph = EVP_CIPHER_fetch(libctx, "ASCON-128", properties);
+    } else if (nid == 1322){
+        ciph = EVP_CIPHER_fetch(libctx, "ASCON-128A", properties);
     } else {
         ciph = EVP_CIPHER_fetch(libctx, OBJ_nid2sn(nid), properties);
     }
