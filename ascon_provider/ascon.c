@@ -253,7 +253,7 @@ static int ascon_encrypt_init(void *vctx,
         const uint64_t N1 = LOADBYTES(iv + 8, 8);
 
         /* initialize */
-        ctx->s.x[0] = ASCON_128A_IV;
+        ctx->s.x[0] = ASCON_128_IV;
         ctx->s.x[1] = ctx->K0;
         ctx->s.x[2] = ctx->K1;
         ctx->s.x[3] = N0;
@@ -452,7 +452,6 @@ static int ascon128a_update(void *vctx,
     // ascon
     /* set ciphertext size */
     unsigned long long clen = inl + CRYPTO_ABYTES;
-    printf("\nascon128a update\n");
     // check for AD
     if (out == NULL && inl > 0)
     {
@@ -482,14 +481,12 @@ static int ascon128a_update(void *vctx,
         P8(&ctx->s);
         return 1;
     }
-    printf("\nascon128a ad update\n");
     /* domain separation */
     ctx->s.x[4] ^= 1;
     printstate("domain separation", &ctx->s);
 
     if (ctx->enc)
     {
-        printf("\nascon128a enc update\n");
         /* full plaintext blocks */
         while (inl >= ASCON_128A_RATE)
         {
@@ -523,7 +520,6 @@ static int ascon128a_update(void *vctx,
     }
     else
     {
-        printf("\nascon128a dec update\n");
         // decryption
         while (inl >= ASCON_128A_RATE)
         {
@@ -562,7 +558,6 @@ static int ascon128a_update(void *vctx,
         out += inl;
         printstate("pad ciphertext", &ctx->s);
     }
-    printf("\nascon128a finalize update\n");
     /* finalize */
     ctx->s.x[2] ^= ctx->K0;
     ctx->s.x[3] ^= ctx->K1;
@@ -574,14 +569,12 @@ static int ascon128a_update(void *vctx,
 
     if (ctx->enc)
     {
-        printf("\nascon128a tag update\n");
         // set tag
         STOREBYTES(ctx->tag, ctx->s.x[3], 8);
         STOREBYTES(ctx->tag + 8, ctx->s.x[4], 8);
     }
 
     *outl = clen - CRYPTO_ABYTES;
-    printf("\nascon128a update return\n");
     return 1;
 }
 
@@ -803,7 +796,6 @@ static int ascon_final(void *vctx,
 {
     struct ascon_ctx_st *ctx = vctx;
     *outl = 0;
-    printf("\nascon final\n");
     if (!ctx->enc)
     {
         uint8_t t[16];
@@ -819,13 +811,10 @@ static int ascon_final(void *vctx,
 
         if (result == 0)
         {
-            printf("\nascon128 tag verify success\n");
             return 1;
         }
         else
         {
-
-            printf("\nascon128 tag verify fail\n");
             return -1;
         }
     }
@@ -1051,7 +1040,7 @@ static const OSSL_DISPATCH ascon128_functions[] = {
     {OSSL_FUNC_CIPHER_FINAL, (funcptr_t)ascon_final},
     {OSSL_FUNC_CIPHER_DUPCTX, (funcptr_t)ascon_dupctx},
     {OSSL_FUNC_CIPHER_FREECTX, (funcptr_t)ascon_freectx},
-    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon128_get_params},
+    {OSSL_FUNC_CIPHER_GET_PARAMS, (funcptr_t)ascon128a_get_params},
     {OSSL_FUNC_CIPHER_GETTABLE_PARAMS, (funcptr_t)ascon_gettable_params},
     {OSSL_FUNC_CIPHER_GET_CTX_PARAMS, (funcptr_t)ascon_get_ctx_params},
     {OSSL_FUNC_CIPHER_GETTABLE_CTX_PARAMS,
@@ -1085,7 +1074,7 @@ static const OSSL_ALGORITHM ascon_ciphers[] = {
     // { "ASCON-128:1.3.6.1.4.1.5168.4711.22087.1", "x.author='" AUTHOR "'",
     // vigenere_functions },
     {"ASCON-80PQ", "x.author='" AUTHOR "'",
-     ascon128_functions},
+     ascon80pq_functions},
     {"ASCON-128", "x.author='" AUTHOR "'",
      ascon128_functions},
     {"ASCON-128A", "x.author='" AUTHOR "'",
