@@ -146,7 +146,7 @@ static void *ascon_newctx(void *vprovctx)
         // ascon
         ctx->ivl = CRYPTO_NPUBBYTES;
         ctx->tagl = CRYPTO_ABYTES;
-        ctx->tag = malloc(ctx->tagl);
+        ctx->tag = malloc(ctx->tagl +10);
     }
     return ctx;
 }
@@ -162,7 +162,7 @@ static void *ascon80pq_newctx(void *vprovctx)
         // ascon
         ctx->ivl = CRYPTO_NPUBBYTES;
         ctx->tagl = CRYPTO_ABYTES;
-        ctx->tag = malloc(ctx->tagl);
+        ctx->tag = malloc(ctx->tagl +10);
     }
     return ctx;
 }
@@ -174,11 +174,13 @@ static void ascon_cleanctx(void *vctx)
         return;
 
     ctx->enc = 0;
-
     // ascon
     ctx->ivl = 0;
     ctx->tagl = 0;
+
+    if (ctx->tag != NULL) {
     free(ctx->tag);
+    }
     ctx->K0 = 0;
     ctx->K1 = 0;
 }
@@ -196,7 +198,6 @@ static void *ascon_dupctx(void *vctx)
     dst->keyl = src->keyl;
 
     dst->enc = src->enc;
-
     // ascon
     dst->s = src->s;
     dst->K0 = src->K0;
@@ -448,7 +449,6 @@ static int ascon128a_update(void *vctx,
     }
     *outl = 0;
     unsigned char *originalOut = out;
-
     // ascon
     /* set ciphertext size */
     unsigned long long clen = inl + CRYPTO_ABYTES;
@@ -583,7 +583,6 @@ static int ascon128_update(void *vctx,
                            const unsigned char *in, size_t inl)
 {
     struct ascon_ctx_st *ctx = vctx;
-
     if (out == NULL && in == NULL)
     {
         ERR_raise(ERR_HANDLE(ctx), ASCON_NO_DATA);
@@ -689,7 +688,6 @@ static int ascon80pq_update(void *vctx,
                             const unsigned char *in, size_t inl)
 {
     struct ascon_ctx_st *ctx = vctx;
-
     if (out == NULL && in == NULL)
     {
         ERR_raise(ERR_HANDLE(ctx), ASCON_NO_DATA);
@@ -955,7 +953,6 @@ static int ascon_get_ctx_params(void *vctx, OSSL_PARAM params[])
             case V_PARAM_tag:
                 unsigned char *temp_array = p->data;
                 p->data = ctx->tag;
-
                 for (size_t i = 0; i < CRYPTO_ABYTES; i++)
                 {
                     temp_array[i] = ctx->tag[i];
