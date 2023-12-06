@@ -4,6 +4,7 @@
 // Dilithium import
 #include "dilithium_and_falcon/dilithium/dilithium-master/ref/randombytes.h"
 #include "dilithium_and_falcon/dilithium/dilithium-master/ref/sign.h"
+#include "dilithium_and_falcon/dilithium/dilithium-master/ref/api.h"
 
 // Falcon import
 #include "dilithium_and_falcon/falcon/Falcon-impl-20211101/falcon.h"
@@ -32,11 +33,15 @@
 #include "libb64/include/b64/cdecode.h"
 
 // dilithium variables
-uint8_t dilithium_pub_pk[CRYPTO_PUBLICKEYBYTES];
-uint8_t dilithium_pub_sk[CRYPTO_SECRETKEYBYTES];
-uint8_t dilithium_signature[CRYPTO_BYTES];
+uint8_t *dilithium_pub_pk;
+uint8_t *dilithium_pub_sk;
+uint8_t *dilithium_signature;
 static bool dilithium = true;
-//
+static int dilithium_version;
+size_t dilithium_pk_len;
+size_t dilithium_sk_len;
+size_t dilithium_sig_len;
+
 // Falcon struct
 typedef struct
 {
@@ -170,8 +175,21 @@ int my_publish(struct mosquitto *mosq, int *mid, const char *topic, int payloadl
 int dilithium_sign_message(uint8_t *signature, const char *message, int message_length)
 {
   size_t sig_length;
-
-  int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
+  int ret = 1;
+  //ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
+  if (dilithium_version == 2) {
+    ret = pqcrystals_dilithium2_ref_signature(signature, &sig_length,
+                                        message, message_length,
+                                        dilithium_pub_sk);
+  } else if (dilithium_version == 3) {
+    ret = pqcrystals_dilithium3_ref_signature(signature, &sig_length,
+                                        message, message_length,
+                                        dilithium_pub_sk);
+  } else if (dilithium_version == 5) {
+    ret = pqcrystals_dilithium5_ref_signature(signature, &sig_length,
+                                        message, message_length,
+                                        dilithium_pub_sk);
+  }
 
   if (ret)
   {
@@ -327,8 +345,7 @@ int main(int argc, char *argv[])
 {
   // Measure total time of application
   struct timeval total_timestamp;
-
-
+  
   FalconContext *fc = malloc(sizeof(FalconContext));
   size_t sig_length;
   char current_time_str[20]; // Adjust the size based on your maximum expected time value
@@ -341,25 +358,9 @@ int main(int argc, char *argv[])
   struct timeval start_time;
   long time_taken;
 
+  
   // Measure time for initialization
   gettimeofday(&start_time, NULL);
-  if (dilithium)
-  {
-    crypto_sign_keypair(dilithium_pub_pk, dilithium_pub_sk); // gen keys
-    int i;
-  }
-  else
-  {
-    if (fc == NULL)
-    {
-      fprintf(stderr, "Memory allocation for Falcon failed\n");
-      exit(EXIT_FAILURE);
-    }
-    initialize_falcon_struct(fc);
-  }
-  gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Initialization time: %ld micro seconds.\n", time_taken);
 
   mosquitto_lib_init();
 
@@ -443,6 +444,62 @@ int main(int argc, char *argv[])
     goto cleanup;
   }
 
+  char *signature_algorithm = cfg.message;
+  if (strcmp(signature_algorithm, "d2") == 0) {
+    printf("dilithium 2\n");
+    dilithium_version = 2;
+    dilithium_pk_len = pqcrystals_dilithium2_PUBLICKEYBYTES;
+    dilithium_sk_len = pqcrystals_dilithium2_SECRETKEYBYTES;
+    dilithium_sig_len = pqcrystals_dilithium2_BYTES;
+  } else if (strcmp(signature_algorithm, "d3") == 0) {
+    printf("dilithium 3\n");
+    dilithium_version = 3;
+    dilithium_pk_len = pqcrystals_dilithium3_PUBLICKEYBYTES;
+    dilithium_sk_len = pqcrystals_dilithium3_SECRETKEYBYTES;
+    dilithium_sig_len = pqcrystals_dilithium3_BYTES;
+  } else if (strcmp(signature_algorithm, "d5") == 0) {
+    printf("dilithium 5\n");
+    dilithium_version = 5;
+    dilithium_pk_len = pqcrystals_dilithium5_PUBLICKEYBYTES;
+    dilithium_sk_len = pqcrystals_dilithium5_SECRETKEYBYTES;
+    dilithium_sig_len = pqcrystals_dilithium5_BYTES;
+
+  } else if (strcmp(signature_algorithm, "f512") == 0) {
+    printf("falcon-512\n");
+    dilithium = false;
+  } else if (strcmp(signature_algorithm, "f1024") == 0) {
+    printf("falcon-1024\n");
+    dilithium = false;
+    logn = 10;
+    pk_len = FALCON_PUBKEY_SIZE(10);
+    len = FALCON_TMPSIZE_KEYGEN(10);
+  } 
+
+  //key gen
+  if (dilithium) {
+    dilithium_pub_pk = malloc(dilithium_pk_len); 
+    dilithium_pub_sk = malloc(dilithium_sk_len);
+    dilithium_signature = malloc(dilithium_sig_len);
+    if (dilithium_version == 2) {
+      pqcrystals_dilithium2_ref_keypair(dilithium_pub_pk, dilithium_pub_sk);
+    } else if (dilithium_version == 3) {
+      pqcrystals_dilithium3_ref_keypair(dilithium_pub_pk, dilithium_pub_sk);
+    } else if (dilithium_version == 5) {
+      pqcrystals_dilithium5_ref_keypair(dilithium_pub_pk, dilithium_pub_sk);
+    }
+  } else {
+    if (fc == NULL)
+    {
+      fprintf(stderr, "Memory allocation for Falcon failed\n");
+      exit(EXIT_FAILURE);
+    }
+    initialize_falcon_struct(fc);
+  }
+
+  gettimeofday(&end_time, NULL);
+  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  printf("Initialization time: %ld micro seconds.\n", time_taken);
+
   gettimeofday(&total_timestamp, NULL);
   // #####################################################################################
   //  Creating the message to sign
@@ -453,7 +510,7 @@ int main(int argc, char *argv[])
   snprintf(current_time_str, sizeof(current_time_str), "%d", total_timestamp.tv_sec);
 
   message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(current_time_str) + strlen(clientID);
-  char concatenated_message_to_sign[10000 + 1]; // +1 for the null terminator
+  char concatenated_message_to_sign[50 + 1]; // +1 for the null terminator
   concatenated_message_to_sign[0] = '\0';
 
   strcat(concatenated_message_to_sign, cfg.message);
@@ -471,7 +528,14 @@ int main(int argc, char *argv[])
   gettimeofday(&start_time, NULL);
   if (dilithium)
   {
-    sig_scheme = CRYPTO_ALGNAME;
+    if (dilithium_version == 2) {
+      sig_scheme = "Dilithium2";
+    } else if (dilithium_version == 3) {
+      sig_scheme = "Dilithium3";
+    } else if (dilithium_version == 5) {
+      sig_scheme = "Dilithium5";
+    }
+    
     dilithium_sign_message(dilithium_signature, concatenated_message_to_sign, message_len);
   }
   else
@@ -502,28 +566,28 @@ int main(int argc, char *argv[])
   {
     gettimeofday(&start_time, NULL);
     // signature
-    encoded_sig = encode(dilithium_signature, CRYPTO_BYTES);
+    encoded_sig = encode(dilithium_signature, dilithium_sig_len);
     gettimeofday(&end_time, NULL);
     time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
     printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
     // public key
     gettimeofday(&start_time, NULL);
-    b64_encoded_pk = encode(dilithium_pub_pk, CRYPTO_PUBLICKEYBYTES);
+    b64_encoded_pk = encode(dilithium_pub_pk, dilithium_pk_len);
 
     gettimeofday(&end_time, NULL);
     time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
     printf("Encode PK %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
 
-    if (strcmp(CRYPTO_ALGNAME, "Dilithium2") == 0)
+    if (dilithium_version == 2)
     {
       alg_id = "D2";
     }
-    else if (strcmp(CRYPTO_ALGNAME, "Dilithium3") == 0)
+    else if (dilithium_version == 3)
     {
       alg_id = "D3";
     }
-    else if (strcmp(CRYPTO_ALGNAME, "Dilithium5") == 0)
+    else if (dilithium_version == 5)
     {
       alg_id = "D5";
     }
@@ -583,6 +647,11 @@ int main(int argc, char *argv[])
   free(jsonString);
   free(b64_encoded_pk);
   free(encoded_sig);
+  if (dilithium) {
+    free(dilithium_pub_pk);
+    free(dilithium_pub_sk);
+    free(dilithium_signature);
+  }
 
   printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
 

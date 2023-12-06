@@ -20,6 +20,7 @@ Contributors:
 
 // Dilithium import
 #include "dilithium_and_falcon/dilithium/dilithium-master/ref/sign.h"
+#include "dilithium_and_falcon/dilithium/dilithium-master/ref/api.h"
 
 // Falcon import
 #include "dilithium_and_falcon/falcon/Falcon-impl-20211101/falcon.h"
@@ -149,6 +150,11 @@ bool connack_received = false;
 // Time variables
 clock_t start, end;
 
+// Dilithium variables
+int dilithium_version;
+size_t dilithium_pk_len;
+size_t dilithium_sig_len;
+
 #ifndef WIN32
 static void my_signal_handler(int signum)
 {
@@ -235,9 +241,16 @@ char *decode(const char *input, size_t size)
 
 int verify_dilithium_signature(uint8_t *signature, const char *message, size_t message_length, uint8_t *public_key)
 {
-	size_t sig_length = CRYPTO_BYTES;
+	size_t sig_length = dilithium_sig_len;
 
-	int ret = crypto_sign_verify(signature, sig_length, message, message_length, public_key);
+	int ret;
+	if (dilithium_version == 2) {
+		ret = pqcrystals_dilithium2_ref_verify(signature, sig_length, message, message_length, public_key);
+	} else if (dilithium_version == 3) {
+		ret = pqcrystals_dilithium3_ref_verify(signature, sig_length, message, message_length, public_key);
+	} else if (dilithium_version == 5) {
+		ret = pqcrystals_dilithium5_ref_verify(signature, sig_length, message, message_length, public_key);
+	}
 
 	if (ret)
 	{
@@ -384,14 +397,31 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	char *version = "";
 	if (strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0)
 	{
+		if (strcmp(signature_algorithm, "D2") == 0) {
+			dilithium_version = 2;
+			dilithium_pk_len = pqcrystals_dilithium2_PUBLICKEYBYTES;
+			dilithium_sig_len = pqcrystals_dilithium2_BYTES;
+			version = "Dilithium2";
+		} else if (strcmp(signature_algorithm, "D3") == 0) {
+			dilithium_version = 3;
+			dilithium_pk_len = pqcrystals_dilithium3_PUBLICKEYBYTES;
+			dilithium_sig_len = pqcrystals_dilithium3_BYTES;
+			version = "Dilithium3";
+		} else if (strcmp(signature_algorithm, "D5") == 0) {
+			dilithium_version = 5;
+			dilithium_pk_len = pqcrystals_dilithium5_PUBLICKEYBYTES;
+			dilithium_sig_len = pqcrystals_dilithium5_BYTES;
+			version = "Dilithium5";
+		}
+
 		gettimeofday(&start_time, NULL);
-		char *dilithium_decode_sig = decode(encoded_signature, CRYPTO_BYTES);
+		char *dilithium_decode_sig = decode(encoded_signature, dilithium_sig_len);
 		gettimeofday(&end_time, NULL);
 		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		printf("Decode sig Dilithium execution time: %ld micro seconds.\n", time_taken);
 
 		gettimeofday(&start_time, NULL);
-		char *dilithium_decode_pk = decode(encoded_publisher_pk, CRYPTO_PUBLICKEYBYTES);
+		char *dilithium_decode_pk = decode(encoded_publisher_pk, dilithium_pk_len);
 		gettimeofday(&end_time, NULL);
 		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		printf("Decode PK Dilithium execution time: %ld micro seconds.\n", time_taken);
@@ -402,7 +432,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
-		version = CRYPTO_ALGNAME;
 		gettimeofday(&end_time, NULL);
 		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		printf("Verification Dilithium execution time: %ld micro seconds.\n", time_taken);
