@@ -466,14 +466,18 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 			dilithium_version = 2;
 			dilithium_pk_len = pqcrystals_dilithium2_PUBLICKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium2_BYTES;
+			version = "Dilithium2";
 		} else if (strcmp(signature_algorithm, "D3") == 0) {
 			dilithium_version = 3;
 			dilithium_pk_len = pqcrystals_dilithium3_PUBLICKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium3_BYTES;
+			version = "Dilithium3";
 		} else if (strcmp(signature_algorithm, "D5") == 0) {
 			dilithium_version = 5;
 			dilithium_pk_len = pqcrystals_dilithium5_PUBLICKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium5_BYTES;
+			version = "Dilithium5";
+
 		}
 		dilithium_broker_pk = malloc(dilithium_pk_len);
 		gettimeofday(&start_time, NULL);
@@ -486,7 +490,6 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		load_broker_pk(signature_algorithm);
 
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_broker_pk);
-		version = "Dilithium";
 
 		gettimeofday(&end_time, NULL);
 		veri_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);

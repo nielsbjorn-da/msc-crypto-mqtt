@@ -276,7 +276,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	gettimeofday(&receive_time, NULL);
 
 	struct timeval end_time, start_time;
-	long time_taken;
+	long cjson_time_taken;
 
 	int i;
 	bool res;
@@ -346,8 +346,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	char *encoded_publisher_pk = cJSON_GetObjectItem(message_as_json, "pk")->valuestring;
 	
 	gettimeofday(&end_time, NULL);
-	time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-	printf("Extracting payload from cJSON execution time: %ld micro seconds.\n", time_taken);
+	cjson_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	// #####################################################################################
 	//  Creating the message that were signed
 	// #####################################################################################
@@ -386,8 +385,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	free(current_time_str);
 	
 	gettimeofday(&end_time, NULL);
-	time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-	printf("Generating concat message execution time: %ld micro seconds.\n", time_taken);
+	long concat_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	
 	// #####################################################################################
 	//  Run the verifications algorithms
@@ -395,6 +393,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 	
 	int verify = 1;
 	char *version = "";
+	long decode_sig_time_taken;
+	long decode_pk_time_taken;
+	long verify_time_taken;
 	if (strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0)
 	{
 		if (strcmp(signature_algorithm, "D2") == 0) {
@@ -417,14 +418,12 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		gettimeofday(&start_time, NULL);
 		char *dilithium_decode_sig = decode(encoded_signature, dilithium_sig_len);
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Decode sig Dilithium execution time: %ld micro seconds.\n", time_taken);
+		decode_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
 		gettimeofday(&start_time, NULL);
 		char *dilithium_decode_pk = decode(encoded_publisher_pk, dilithium_pk_len);
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Decode PK Dilithium execution time: %ld micro seconds.\n", time_taken);
+		decode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		
 		gettimeofday(&start_time, NULL);
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
@@ -433,8 +432,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		free(dilithium_decode_sig);
 		free(dilithium_decode_pk);
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Verification Dilithium execution time: %ld micro seconds.\n", time_taken);
+		verify_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	}
 	else
 	{
@@ -446,15 +444,14 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
 		char *falcon_decode_sig = decode(encoded_signature, sig_len);
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Decode sig Falcon execution time: %ld micro seconds.\n", time_taken);
+		decode_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	
 		gettimeofday(&start_time, NULL);
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		char *falcon_decode_pk = decode(encoded_publisher_pk, pk_len);
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Decode PK Falcon execution time: %ld micro seconds.\n", time_taken);
+		decode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+		
 
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
@@ -473,23 +470,23 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		version = "Falcon-1024";
 		if (logn == 9) version = "Falcon-512";
 		gettimeofday(&end_time, NULL);
-		time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-		printf("Verification Falcon execution time: %ld micro seconds.\n", time_taken);
+		verify_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	}
 	if (!verify)
 	{
 		// Record the end time
 		gettimeofday(&end_time, NULL);
-
 		// Calculate and print the time taken for message delivery
-		long time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - ((long) timestamp * 1000000 + (long) time_micro);
-		printf("Total time result: %ld micro seconds.\n", time_taken);
-
+		long total_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - ((long) timestamp * 1000000 + (long) time_micro);
 		long latency = (receive_time.tv_sec * 1000000 + receive_time.tv_usec) - ((long) pub_timestamp * 1000000 + (long) pub_time_micro);
-		
-		printf("Latency time result: %ld micro seconds.\n", latency);
 
-		printf("%s signature verification success with result %d...\n", version, verify);
+		printf("%s Extracting payload from cJSON execution time: %ld micro seconds.\n", version, cjson_time_taken);
+		printf("%s Generating concat message execution time: %ld micro seconds.\n", version, concat_time_taken);
+		printf("%s Decode sig execution time: %ld micro seconds.\n", version, decode_sig_time_taken);
+		printf("%s Decode PK execution time: %ld micro seconds.\n", version, decode_pk_time_taken);
+		printf("%s Verification execution time: %ld micro seconds.\n", version, verify_time_taken);
+		printf("%s Total time result: %ld micro seconds.\n", version, total_time_taken);
+		printf("%s Latency time result: %ld micro seconds.\n", version, latency);
 		printf("---------------------------------------------------------\n");
 	}
 	cJSON_Delete(message_as_json);

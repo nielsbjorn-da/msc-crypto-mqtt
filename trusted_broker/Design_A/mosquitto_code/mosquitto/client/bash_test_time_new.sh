@@ -10,24 +10,25 @@ fi
 rounds=500
 signature_algorithms=("D2" "F512" "D3" "F1024" "D5")
 
-if [ "$design_b" = true ]; then
-    ./../src/mosquitto_b &
-    mosquitto_broker_pid=$!
-else 
-    ./../src/mosquitto &
-    mosquitto_broker_pid=$!
-fi
+#if [ "$design_b" = true ]; then
+ #   ./../src/mosquitto_b &
+  #  mosquitto_broker_pid=$!
+#else 
+#    ./../src/mosquitto &
+#    mosquitto_broker_pid=$!
+#fi
 
 sleep 1
  #Start subscriber and capture its output in time_results.txt
 #./client_own_subscriber -t "TestTopic" -p 1884 -h 192.168.50.157 >> time_results_subscriber.txt &
 if [ "$design_b" = true ]; then
-    ./client_own_subscriber_b -t "test/topic" &
+    ./client_own_subscriber_b -t "test/topic" -p 1884 -h 192.168.50.157 &
     # Store subscriber's process ID
     subscriber_pid=$!
 else 
-    ./client_own_subscriber -t "test/topic" &
-    # Store subscriber's process ID
+    ./client_own_subscriber -t "test/topic" -p 1884 -h 192.168.50.157 &
+    #./client_own_subscriber -t "test/topic"
+# Store subscriber's process ID
     subscriber_pid=$!
 fi
 
@@ -48,10 +49,11 @@ do
         # Start publisher for this round
         #./client_own_test -t "TestTopic" -m "$message" -p 1884 -h 192.168.50.157 >> time_results_publisher.txt
         if [ "$design_b" = true ]; then
-            ./client_own_test_b -t "test/topic" -m $sig_alg
+            ./client_own_test_b -t "test/topic" -m $sig_alg -p 1884 -h 192.168.50.157
         else
-            ./client_own_test -t "test/topic" -m $sig_alg
-        fi
+            ./client_own_test -t "test/topic" -m $sig_alg -p 1884 -h 192.168.50.157
+           # ./client_own_test -t "test/topic" -m $sig_alg
+	 fi
         # Add separator to indicate start of a new round in both files
         echo "---------------------------------------------------------" #>> time_results_publisher.txt
 
@@ -61,6 +63,6 @@ do
 done
 # Terminate the subscriber after rounds finish
 kill $subscriber_pid
-kill $mosquitto_broker_pid
+#kill $mosquitto_broker_pid
 
 echo "Measurement completed. Results are stored in time_results.txt"

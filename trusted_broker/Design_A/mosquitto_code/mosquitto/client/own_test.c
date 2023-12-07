@@ -497,8 +497,8 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Initialization time: %ld micro seconds.\n", time_taken);
+  long init_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
 
   gettimeofday(&total_timestamp, NULL);
   // #####################################################################################
@@ -518,8 +518,8 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, current_time_str);
   strcat(concatenated_message_to_sign, clientID);
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Generating message concat execution time: %ld micro seconds.\n", time_taken);
+  long concat_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
 
   // #####################################################################################
   //  Run the signing algorithms
@@ -539,30 +539,29 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Signing message %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+  long sign_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
   // #####################################################################################
   //  Create cJSON
   // #####################################################################################
   char *encoded_sig;
   char *b64_encoded_pk;
+  long encode_sig_time_taken;
+  long encode_pk_time_taken;
   if (dilithium)
   {
     gettimeofday(&start_time, NULL);
     // signature
     encoded_sig = encode(dilithium_signature, dilithium_sig_len);
     gettimeofday(&end_time, NULL);
-    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-    printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+    encode_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
     // public key
     gettimeofday(&start_time, NULL);
     b64_encoded_pk = encode(dilithium_pub_pk, dilithium_pk_len);
 
     gettimeofday(&end_time, NULL);
-    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-    printf("Encode PK %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+    encode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
   }
   else
   {
@@ -570,15 +569,14 @@ int main(int argc, char *argv[])
     // signature
     encoded_sig = encode(fc->sig, fc->sig_len);
     gettimeofday(&end_time, NULL);
-    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-    printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+    encode_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
     // public key
     gettimeofday(&start_time, NULL);
     b64_encoded_pk = encode(fc->pk, FALCON_PUBKEY_SIZE(fc->logn));
     gettimeofday(&end_time, NULL);
-    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-    printf("Encode PK %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+    encode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
   }
   
   gettimeofday(&start_time, NULL);
@@ -598,8 +596,8 @@ int main(int argc, char *argv[])
 
   
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
+  long cjson_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+  
   
   //latency timestamp
   cJSON_AddNumberToObject(root, "l1", end_time.tv_sec);
@@ -607,6 +605,14 @@ int main(int argc, char *argv[])
   jsonString = cJSON_PrintUnformatted(root);
   allocatedSize = strlen(jsonString) + 1;
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
+
+  printf("%s Initialization time: %ld micro seconds.\n", sig_scheme, init_time_taken);
+  printf("%s Generating message concat execution time: %ld micro seconds.\n", sig_scheme, concat_time_taken);
+  printf("%s Signing message execution time: %ld micro seconds.\n", sig_scheme, sign_time_taken);
+  printf("%s Encode signature execution time: %ld micro seconds.\n", sig_scheme, encode_sig_time_taken);
+  printf("%s Encode PK execution time: %ld micro seconds.\n", sig_scheme, encode_pk_time_taken);
+  printf("%s Generating cJSON execution time: %ld micro seconds.\n", sig_scheme, cjson_time_taken);
+  printf("---------------------------------------------------------\n");
 
   mosquitto_destroy(mosq);
   cJSON_Delete(root);

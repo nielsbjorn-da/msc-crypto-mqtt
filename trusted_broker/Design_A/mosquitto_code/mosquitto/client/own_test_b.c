@@ -647,6 +647,7 @@ int main(int argc, char *argv[])
   printf("%s Signing message  execution time: %ld micro seconds.\n", sig_scheme, sign_time_taken);
   printf("%s Encode signature execution time: %ld micro seconds.\n", sig_scheme, enc_sig_time_taken);
   printf("%s Generating cJSON execution time: %ld micro seconds.\n", sig_scheme, gen_cjson_time_taken);
+  printf("---------------------------------------------------------\n");
 
 
   cJSON_Delete(root);
