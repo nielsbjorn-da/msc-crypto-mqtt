@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef DILITHIUM_CONFIG_H
+#define DILITHIUM_CONFIG_H
 
 //#define DILITHIUM_MODE 2
 //#define DILITHIUM_USE_AES

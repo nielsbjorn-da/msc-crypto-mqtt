@@ -486,6 +486,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		printf("Total time result: %ld micro seconds.\n", time_taken);
 
 		long latency = (receive_time.tv_sec * 1000000 + receive_time.tv_usec) - ((long) pub_timestamp * 1000000 + (long) pub_time_micro);
+		
 		printf("Latency time result: %ld micro seconds.\n", latency);
 
 		printf("%s signature verification success with result %d...\n", version, verify);
