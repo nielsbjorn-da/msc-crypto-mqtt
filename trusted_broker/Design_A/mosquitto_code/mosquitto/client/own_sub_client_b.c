@@ -506,6 +506,8 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		if (strcmp(signature_algorithm, "F512") == 0)
 		{
 			logn = 9;
+		} else {
+			logn = 10;
 		}
 		version = "Falcon-1024";
 		if (logn == 9)

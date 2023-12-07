@@ -794,6 +794,8 @@ int handle__publish(struct mosquitto *context)
 
 	char *encoded_signature = cJSON_GetObjectItem(message_as_json, "s")->valuestring;
 
+	
+	char *version = "";
 	size_t sig_len;
 	logn = 9;
 	dilithium = strcmp(signature_algorithm, "D2") == 0 || strcmp(signature_algorithm, "D3") == 0 || strcmp(signature_algorithm, "D5") == 0;
@@ -803,23 +805,28 @@ int handle__publish(struct mosquitto *context)
 			dilithium_pk_len = pqcrystals_dilithium2_PUBLICKEYBYTES;
 			dilithium_sk_len = pqcrystals_dilithium2_SECRETKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium2_BYTES;
+			version = "Dilithium2";
 		} else if (strcmp(signature_algorithm, "D3") == 0) {
 			dilithium_version = 3;
 			dilithium_pk_len = pqcrystals_dilithium3_PUBLICKEYBYTES;
 			dilithium_sk_len = pqcrystals_dilithium3_SECRETKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium3_BYTES;
+			version = "Dilithium3";
 		} else if (strcmp(signature_algorithm, "D5") == 0) {
 			dilithium_version = 5;
 			dilithium_pk_len = pqcrystals_dilithium5_PUBLICKEYBYTES;
 			dilithium_sk_len = pqcrystals_dilithium5_SECRETKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium5_BYTES;
+			version = "Dilithium5";
 		}
 		dilithium_broker_sk = malloc(dilithium_sk_len);
 		dilithium_broker_pk = malloc(dilithium_broker_pk);
 		sig_len = dilithium_sig_len;
 	} else {
+		version = "Falcon-512";
 		if (strcmp(signature_algorithm, "F1024") == 0) {		
 			logn = 10;
+			version = "Falcon-1024";
 		}
 		initialize_falcon_struct(fc);
 		
@@ -837,7 +844,6 @@ int handle__publish(struct mosquitto *context)
 	//verify and make new signature and json message
 	char *encoded_broker_sig;
 	int verify = 1;
-	char *version = "";
 	load_broker_key("sk");
 	if (dilithium) {
 		uint8_t publisher_pk[dilithium_pk_len];
@@ -848,7 +854,6 @@ int handle__publish(struct mosquitto *context)
 		uint8_t broker_signature[dilithium_sig_len];
     	dilithium_sign_message(broker_signature, message_to_verify, message_len);
 		encoded_broker_sig = encode(broker_signature, dilithium_sig_len);
-		version = "Dilithium";
 	} else {
 		//  Falcon variables
 		uint8_t *tmp;
@@ -878,7 +883,6 @@ int handle__publish(struct mosquitto *context)
 		
 		encoded_broker_sig = encode(fc->sig, sig_len);
 
-		version = "Falcon";
 		xfree(tmp);
 	}
 	if (!verify)
