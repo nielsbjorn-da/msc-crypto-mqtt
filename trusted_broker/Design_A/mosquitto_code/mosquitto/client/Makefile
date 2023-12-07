@@ -7,14 +7,14 @@ SHARED_DEP:=../lib/libmosquitto.so.${SOVERSION}
 endif
 
 ifeq ($(WITH_SHARED_LIBRARIES),yes)
-ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr client_own_test client_own_subscriber
+ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr client_own_test client_own_subscriber client_own_test_b client_own_subscriber_b
 else
 ifeq ($(WITH_STATIC_LIBRARIES),yes)
 ALL_DEPS:= static_pub static_sub static_rr
 endif
 endif
 
-ABSO_PATH:= /home/niels/Documents/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
+ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/
 
 DILITHIUM_RELA_PATH:= dilithium_and_falcon/dilithium/dilithium-master/ref
 
@@ -71,6 +71,12 @@ client_own_test : client_own_test.o pub_shared.o client_shared.o client_props.o 
 client_own_subscriber : client_own_subscriber.o sub_client_output.o client_shared.o client_props.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
 	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
 
+client_own_test_b : client_own_test_b.o pub_shared.o client_shared.o client_props.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
+	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
+
+client_own_subscriber_b : client_own_subscriber_b.o sub_client_output.o client_shared.o client_props.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
+	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
+
 pub_client.o : pub_client.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@ 
 
@@ -96,6 +102,12 @@ client_own_test.o : own_test.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 client_own_subscriber.o : own_sub_client.c ${SHARED_DEP}
+	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
+
+client_own_test_b.o : own_test_b.c ${SHARED_DEP}
+	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
+
+client_own_subscriber_b.o : own_sub_client_b.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 # The "testing" target is intended to make it easy to compile a quick client

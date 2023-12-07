@@ -2,7 +2,33 @@ include ../config.mk
 
 .PHONY: all install uninstall clean reallyclean
 
-all : mosquitto
+all : mosquitto mosquitto_b
+
+ABSO_PATH:= /home/simon/msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto
+
+DILITHIUM_RELA_PATH:= /client/dilithium_and_falcon/dilithium/dilithium-master/ref
+
+FALCON_RELA_PATH:= /src/Falcon-impl-20211101/
+
+DILITHIUM_DEPS:= ${ABSO_PATH}${DILITHIUM_RELA_PATH}/randombytes.c \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_aes256ctr_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium2_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium3_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_dilithium5_ref.so \
+${ABSO_PATH}${DILITHIUM_RELA_PATH}/libpqcrystals_fips202_ref.so 
+
+FALCON_DEPS:= ${ABSO_PATH}${FALCON_RELA_PATH}codec.o \
+${ABSO_PATH}${FALCON_RELA_PATH}common.o \
+${ABSO_PATH}${FALCON_RELA_PATH}falcon.o \
+${ABSO_PATH}${FALCON_RELA_PATH}fft.o \
+${ABSO_PATH}${FALCON_RELA_PATH}fpr.o \
+${ABSO_PATH}${FALCON_RELA_PATH}keygen.o \
+${ABSO_PATH}${FALCON_RELA_PATH}rng.o \
+${ABSO_PATH}${FALCON_RELA_PATH}shake.o \
+${ABSO_PATH}${FALCON_RELA_PATH}sign.o \
+${ABSO_PATH}${FALCON_RELA_PATH}vrfy.o
+
+LIBB64_DEPS:= ${ABSO_PATH}/client/libb64/src/cencode.o ${ABSO_PATH}/client/libb64/src/cdecode.o
 
 OBJS=	mosquitto.o \
 		alias_mosq.o \
@@ -19,7 +45,6 @@ OBJS=	mosquitto.o \
 		handle_disconnect.o \
 		handle_ping.o \
 		handle_pubackcomp.o \
-		handle_publish.o \
 		handle_pubrec.o \
 		handle_pubrel.o \
 		handle_suback.o \
@@ -81,7 +106,10 @@ OBJS=	mosquitto.o \
 		will_mosq.o \
 		xtreport.o
 
-mosquitto : ${OBJS}
+mosquitto_b : ${OBJS} handle_publish_b.o ${DILITHIUM_DEPS} ${LIBB64_DEPS} ${FALCON_DEPS}
+	${CROSS_COMPILE}${CC} ${BROKER_LDFLAGS} $^ -o $@ $(BROKER_LDADD) -lcjson
+
+mosquitto : ${OBJS} handle_publish.o
 	${CROSS_COMPILE}${CC} ${BROKER_LDFLAGS} $^ -o $@ $(BROKER_LDADD)
 
 mosquitto.o : mosquitto.c mosquitto_broker_internal.h
@@ -130,6 +158,9 @@ handle_pubackcomp.o : ../lib/handle_pubackcomp.c ../lib/read_handle.h
 	${CROSS_COMPILE}${CC} $(BROKER_CPPFLAGS) $(BROKER_CFLAGS) -c $< -o $@
 
 handle_publish.o : handle_publish.c mosquitto_broker_internal.h
+	${CROSS_COMPILE}${CC} $(BROKER_CPPFLAGS) $(BROKER_CFLAGS) -c $< -o $@
+
+handle_publish_b.o : handle_publish_b.c mosquitto_broker_internal.h
 	${CROSS_COMPILE}${CC} $(BROKER_CPPFLAGS) $(BROKER_CFLAGS) -c $< -o $@
 
 handle_pubrec.o : ../lib/handle_pubrec.c ../lib/read_handle.h
