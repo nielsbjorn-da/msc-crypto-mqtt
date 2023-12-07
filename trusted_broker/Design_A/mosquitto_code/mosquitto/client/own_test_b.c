@@ -315,20 +315,6 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->sig_len = 0;
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
-
-  // printf("Start key gen\n");
-  /*if (falcon_keygen_make(&fc->rng, fc->logn,
-                         fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
-                         fc->pk, FALCON_PUBKEY_SIZE(fc->logn),
-                         fc->tmp, fc->tmp_len) != 0)
-  {
-    fprintf(stderr, "Key generation failed\n");
-    exit(EXIT_FAILURE);
-  }*/
-  // printf("end key gen\n");
-
-  // int r = falcon_get_logn(fc->pk, pk_len);
-  // printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
 }
 
 /*
@@ -336,24 +322,20 @@ void initialize_falcon_struct(FalconContext *fc)
 */
 int falcon_sign_message(FalconContext *fc, char *payload, int payload_len)
 {
-  // printf("start sign: %s \n", payload);
   fc->sig_len = FALCON_SIG_PADDED_SIZE(fc->logn);
   int result = falcon_sign_dyn(&fc->rng,
                                fc->sig, &fc->sig_len, FALCON_SIG_PADDED,
                                fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
                                payload, payload_len, fc->tmp, fc->tmp_len);
-  // printf("end sign with result: %d\n", result);
   return result;
 }
 
 int falcon_verify_message(FalconContext *fc, char *payload, int payload_len)
 {
-  // printf("start verify\n");
   int result = falcon_verify(
       fc->sig, fc->sig_len, FALCON_SIG_PADDED,
       fc->pk, pk_len,
       payload, payload_len, fc->tmp, fc->tmp_len);
-  // printf("end verify with result: %d\n", result);
   return result;
 }
 
@@ -411,10 +393,6 @@ char *encode(uint8_t *input, size_t input_size)
 
   /* we want to print the encoded data, so null-terminate it: */
   *c = 0;
-
-  // printf("test:");
-  // printf("input: %u, %u, %u, output: %s", input[0], input[1], input[2], output);
-  // printf("\n");
   return output;
 }
 
@@ -432,14 +410,14 @@ int main(int argc, char *argv[])
   struct timeval start_time;
   long time_taken;
   char *sig_scheme;
+  long init_time_taken;
 
   // Measure time for initialization
   gettimeofday(&start_time, NULL);
 
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
-  printf("Initialization time: %ld micro seconds.\n", time_taken);
-
+  init_time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
+  
   struct mosquitto *mosq = NULL;
   int rc;
 
@@ -563,13 +541,11 @@ int main(int argc, char *argv[])
     dilithium_signature = malloc(dilithium_sig_len);
     load_client_key(dilithium_pub_sk, clientID, "sk");
   } else {
-    // printf("Signature algorithm: Falcon\n");
     if (fc == NULL)
     {
       fprintf(stderr, "Memory allocation for Falcon failed\n");
       exit(EXIT_FAILURE);
     }
-    // printf("initialzing Falcon \n");
     initialize_falcon_struct(fc);
     load_client_key(fc->sk, clientID, "sk");
   }
@@ -595,8 +571,8 @@ int main(int argc, char *argv[])
   strcat(concatenated_message_to_sign, clientID);
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Generating message concat execution time: %ld micro seconds.\n", time_taken);
+  long gen_msg_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
   // #####################################################################################
   //  Run the signing algorithms
   // #####################################################################################
@@ -616,8 +592,8 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Signing message %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+  long sign_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
 
   // #####################################################################################
   //  Create cJSON
@@ -638,8 +614,8 @@ int main(int argc, char *argv[])
   }
 
   gettimeofday(&end_time, NULL);
-  time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
-  printf("Encode signature %s execution time: %ld micro seconds.\n", sig_scheme, time_taken);
+  long enc_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+
 
   gettimeofday(&start_time, NULL);
 
@@ -655,16 +631,23 @@ int main(int argc, char *argv[])
 
   char *jsonString = cJSON_PrintUnformatted(root);
   size_t allocatedSize = strlen(jsonString) + 1;
-  //printf(jsonString);
   gettimeofday(&end_time, NULL);
-  time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
-  printf("Generating cJSON execution time: %ld micro seconds.\n", time_taken);
+  long gen_cjson_time_taken = ((end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec));
+
 
   cJSON_AddNumberToObject(root, "l1", end_time.tv_sec);
   cJSON_AddNumberToObject(root, "l2", end_time.tv_usec);
   jsonString = cJSON_PrintUnformatted(root);
   allocatedSize = strlen(jsonString) + 1;
   rc = my_publish(mosq, &mid_sent, cfg.topic, allocatedSize, jsonString, cfg.qos, cfg.retain);
+
+  // Prints to log data about the publisher
+  printf("%s Initialization time: %ld micro seconds.\n", sig_scheme, init_time_taken);
+  printf("%s Generating message concat execution time: %ld micro seconds.\n", sig_scheme, gen_msg_time_taken);
+  printf("%s Signing message  execution time: %ld micro seconds.\n", sig_scheme, sign_time_taken);
+  printf("%s Encode signature execution time: %ld micro seconds.\n", sig_scheme, enc_sig_time_taken);
+  printf("%s Generating cJSON execution time: %ld micro seconds.\n", sig_scheme, gen_cjson_time_taken);
+
 
   cJSON_Delete(root);
   free(jsonString);
