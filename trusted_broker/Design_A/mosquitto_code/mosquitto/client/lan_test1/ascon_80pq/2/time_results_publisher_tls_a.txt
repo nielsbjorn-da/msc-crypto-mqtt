@@ -1,0 +1,1400 @@
+Falcon-512 Initialization time: 1158692 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13909 micro seconds.
+Falcon-512 Encode signature execution time: 8 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040747 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 13401 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 194 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1112440 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13858 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040118 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 3184 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1145710 micro seconds.
+Falcon-512 Generating message concat execution time: 14 micro seconds.
+Falcon-512 Signing message execution time: 13949 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 22 micro seconds.
+Falcon-512 Generating cJSON execution time: 72 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1043438 micro seconds.
+Dilithium2 Generating message concat execution time: 10 micro seconds.
+Dilithium2 Signing message execution time: 3073 micro seconds.
+Dilithium2 Encode signature execution time: 17 micro seconds.
+Dilithium2 Encode PK execution time: 9 micro seconds.
+Dilithium2 Generating cJSON execution time: 73 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1015402 micro seconds.
+Dilithium2 Generating message concat execution time: 15 micro seconds.
+Dilithium2 Signing message execution time: 4291 micro seconds.
+Dilithium2 Encode signature execution time: 34 micro seconds.
+Dilithium2 Encode PK execution time: 17 micro seconds.
+Dilithium2 Generating cJSON execution time: 122 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1106475 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 27807 micro seconds.
+Falcon-512 Encode signature execution time: 13 micro seconds.
+Falcon-512 Encode PK execution time: 23 micro seconds.
+Falcon-512 Generating cJSON execution time: 104 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1114148 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 20852 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 20 micro seconds.
+Falcon-512 Generating cJSON execution time: 79 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039256 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 11371 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 216 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1121755 micro seconds.
+Falcon-512 Generating message concat execution time: 14 micro seconds.
+Falcon-512 Signing message execution time: 27762 micro seconds.
+Falcon-512 Encode signature execution time: 13 micro seconds.
+Falcon-512 Encode PK execution time: 26 micro seconds.
+Falcon-512 Generating cJSON execution time: 107 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040119 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2619 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1151770 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13884 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1038367 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 2499 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 187 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039343 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 2701 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 178 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1131067 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13873 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035957 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 9001 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1204940 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13935 micro seconds.
+Falcon-512 Encode signature execution time: 8 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035602 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 8873 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1137328 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13914 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035407 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2325 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113918 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13850 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1118694 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13963 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1033820 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 6225 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 187 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035794 micro seconds.
+Dilithium2 Generating message concat execution time: 24 micro seconds.
+Dilithium2 Signing message execution time: 2328 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 196 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1130191 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13872 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1108060 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13894 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040394 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 13081 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1128269 micro seconds.
+Falcon-512 Generating message concat execution time: 15 micro seconds.
+Falcon-512 Signing message execution time: 27794 micro seconds.
+Falcon-512 Encode signature execution time: 11 micro seconds.
+Falcon-512 Encode PK execution time: 25 micro seconds.
+Falcon-512 Generating cJSON execution time: 104 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034069 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 2438 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040042 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 4966 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 194 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1131981 micro seconds.
+Falcon-512 Generating message concat execution time: 14 micro seconds.
+Falcon-512 Signing message execution time: 27878 micro seconds.
+Falcon-512 Encode signature execution time: 13 micro seconds.
+Falcon-512 Encode PK execution time: 25 micro seconds.
+Falcon-512 Generating cJSON execution time: 95 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1151253 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13860 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034576 micro seconds.
+Dilithium2 Generating message concat execution time: 24 micro seconds.
+Dilithium2 Signing message execution time: 4544 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1111913 micro seconds.
+Falcon-512 Generating message concat execution time: 14 micro seconds.
+Falcon-512 Signing message execution time: 13894 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037697 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 11143 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036356 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 3524 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1143624 micro seconds.
+Falcon-512 Generating message concat execution time: 25 micro seconds.
+Falcon-512 Signing message execution time: 14068 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113297 micro seconds.
+Falcon-512 Generating message concat execution time: 12 micro seconds.
+Falcon-512 Signing message execution time: 22733 micro seconds.
+Falcon-512 Encode signature execution time: 8 micro seconds.
+Falcon-512 Encode PK execution time: 21 micro seconds.
+Falcon-512 Generating cJSON execution time: 90 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039998 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4044 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1033812 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 6640 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1114095 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13900 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1133189 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13937 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 18 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036132 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 10267 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036645 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4632 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113011 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13907 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034212 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 3530 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1158844 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13906 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1148831 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13931 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037756 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 6828 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036503 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 11696 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 197 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1129797 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13922 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1118553 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 13960 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039310 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 4407 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036915 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 5615 micro seconds.
+Dilithium2 Encode signature execution time: 46 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 182 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1112256 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13898 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039502 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 3472 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1170919 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13930 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1151868 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13922 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1032825 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2617 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1111736 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13910 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035368 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 2658 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036170 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2608 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 187 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1149940 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13896 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1109851 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13908 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040801 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 2594 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035963 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 3901 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1162204 micro seconds.
+Falcon-512 Generating message concat execution time: 16 micro seconds.
+Falcon-512 Signing message execution time: 17584 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040243 micro seconds.
+Dilithium2 Generating message concat execution time: 16 micro seconds.
+Dilithium2 Signing message execution time: 4449 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1163919 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13899 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040612 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 5358 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1130247 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13957 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040372 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 8520 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1120968 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13908 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1143379 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13925 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040326 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 6648 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 233 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1146414 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13875 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036082 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 10688 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035962 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 6719 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 194 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1110689 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13897 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040369 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 3510 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1169411 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 23570 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037675 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 3527 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1163293 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13892 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035170 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 2709 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1176914 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13867 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1152194 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13937 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1044313 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 5300 micro seconds.
+Dilithium2 Encode signature execution time: 53 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 202 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035829 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2605 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1143644 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13893 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1112699 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13914 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040322 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 5124 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1107638 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13877 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040267 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 3765 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1130515 micro seconds.
+Falcon-512 Generating message concat execution time: 16 micro seconds.
+Falcon-512 Signing message execution time: 27736 micro seconds.
+Falcon-512 Encode signature execution time: 14 micro seconds.
+Falcon-512 Encode PK execution time: 26 micro seconds.
+Falcon-512 Generating cJSON execution time: 109 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036739 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 4623 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039678 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 3113 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1120936 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13928 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040147 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 4727 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1109977 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13891 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113826 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13875 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034863 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 3256 micro seconds.
+Dilithium2 Encode signature execution time: 47 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035918 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 5741 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1136056 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13922 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037276 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 2608 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113853 micro seconds.
+Falcon-512 Generating message concat execution time: 16 micro seconds.
+Falcon-512 Signing message execution time: 31163 micro seconds.
+Falcon-512 Encode signature execution time: 12 micro seconds.
+Falcon-512 Encode PK execution time: 28 micro seconds.
+Falcon-512 Generating cJSON execution time: 120 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034244 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 6578 micro seconds.
+Dilithium2 Encode signature execution time: 53 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 196 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1119117 micro seconds.
+Falcon-512 Generating message concat execution time: 15 micro seconds.
+Falcon-512 Signing message execution time: 27830 micro seconds.
+Falcon-512 Encode signature execution time: 13 micro seconds.
+Falcon-512 Encode PK execution time: 25 micro seconds.
+Falcon-512 Generating cJSON execution time: 107 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036672 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 7599 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1119080 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13866 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1150094 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13903 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 64 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035029 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 3223 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036261 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4884 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1127369 micro seconds.
+Falcon-512 Generating message concat execution time: 12 micro seconds.
+Falcon-512 Signing message execution time: 22776 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 20 micro seconds.
+Falcon-512 Generating cJSON execution time: 91 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040148 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4445 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1127963 micro seconds.
+Falcon-512 Generating message concat execution time: 7 micro seconds.
+Falcon-512 Signing message execution time: 13951 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1117532 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13932 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040453 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 4906 micro seconds.
+Dilithium2 Encode signature execution time: 53 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039663 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 4625 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 186 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1116826 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13946 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037192 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 2605 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1120828 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 25048 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 23 micro seconds.
+Falcon-512 Generating cJSON execution time: 94 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036377 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 21583 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1141874 micro seconds.
+Falcon-512 Generating message concat execution time: 15 micro seconds.
+Falcon-512 Signing message execution time: 25052 micro seconds.
+Falcon-512 Encode signature execution time: 10 micro seconds.
+Falcon-512 Encode PK execution time: 24 micro seconds.
+Falcon-512 Generating cJSON execution time: 97 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1167516 micro seconds.
+Falcon-512 Generating message concat execution time: 17 micro seconds.
+Falcon-512 Signing message execution time: 15268 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035142 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 8046 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035059 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2619 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1135526 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13889 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040597 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2291 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 320 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1146129 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13911 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036036 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 13269 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1110057 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13942 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036205 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 11557 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 187 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1113404 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13940 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1189968 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13892 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035554 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 14442 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1167576 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13964 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039546 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4585 micro seconds.
+Dilithium2 Encode signature execution time: 53 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1134320 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13920 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 55 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040655 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 11788 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 194 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1172710 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13860 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040614 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 7147 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035445 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 4635 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1111091 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13926 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1111783 micro seconds.
+Falcon-512 Generating message concat execution time: 21 micro seconds.
+Falcon-512 Signing message execution time: 28420 micro seconds.
+Falcon-512 Encode signature execution time: 12 micro seconds.
+Falcon-512 Encode PK execution time: 38 micro seconds.
+Falcon-512 Generating cJSON execution time: 117 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039726 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 6625 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 222 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039041 micro seconds.
+Dilithium2 Generating message concat execution time: 16 micro seconds.
+Dilithium2 Signing message execution time: 6601 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1114353 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13949 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1124194 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 20880 micro seconds.
+Falcon-512 Encode signature execution time: 8 micro seconds.
+Falcon-512 Encode PK execution time: 20 micro seconds.
+Falcon-512 Generating cJSON execution time: 85 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034408 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4819 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1165229 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13922 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036685 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 12004 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1041020 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2581 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1195649 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13885 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 62 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040274 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 7390 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1106611 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13929 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 62 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1143090 micro seconds.
+Falcon-512 Generating message concat execution time: 12 micro seconds.
+Falcon-512 Signing message execution time: 22762 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 21 micro seconds.
+Falcon-512 Generating cJSON execution time: 87 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034930 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 7415 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 195 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040783 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2667 micro seconds.
+Dilithium2 Encode signature execution time: 47 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1224625 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13901 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1118476 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13923 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039902 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2326 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 183 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1158044 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 13949 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039827 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 2601 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 193 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035192 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 3646 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1150976 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13913 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1033842 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 6513 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1133954 micro seconds.
+Falcon-512 Generating message concat execution time: 23 micro seconds.
+Falcon-512 Signing message execution time: 15200 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1116665 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 22750 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 22 micro seconds.
+Falcon-512 Generating cJSON execution time: 88 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035218 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 13144 micro seconds.
+Dilithium2 Encode signature execution time: 47 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 189 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039527 micro seconds.
+Dilithium2 Generating message concat execution time: 17 micro seconds.
+Dilithium2 Signing message execution time: 2664 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 194 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1149472 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13937 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040451 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 5743 micro seconds.
+Dilithium2 Encode signature execution time: 53 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 240 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1189697 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13870 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1130394 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13883 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034909 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 6460 micro seconds.
+Dilithium2 Encode signature execution time: 47 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1110476 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13900 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034682 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 8307 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1130867 micro seconds.
+Falcon-512 Generating message concat execution time: 11 micro seconds.
+Falcon-512 Signing message execution time: 20877 micro seconds.
+Falcon-512 Encode signature execution time: 10 micro seconds.
+Falcon-512 Encode PK execution time: 20 micro seconds.
+Falcon-512 Generating cJSON execution time: 79 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040357 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2632 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1111363 micro seconds.
+Falcon-512 Generating message concat execution time: 13 micro seconds.
+Falcon-512 Signing message execution time: 22899 micro seconds.
+Falcon-512 Encode signature execution time: 9 micro seconds.
+Falcon-512 Encode PK execution time: 22 micro seconds.
+Falcon-512 Generating cJSON execution time: 89 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034036 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2598 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 187 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1147224 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 14045 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1037520 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 7379 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 283 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040137 micro seconds.
+Dilithium2 Generating message concat execution time: 20 micro seconds.
+Dilithium2 Signing message execution time: 12690 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1126110 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13913 micro seconds.
+Falcon-512 Encode signature execution time: 8 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1141576 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13890 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036251 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2620 micro seconds.
+Dilithium2 Encode signature execution time: 48 micro seconds.
+Dilithium2 Encode PK execution time: 27 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1112746 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13923 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1035931 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 2335 micro seconds.
+Dilithium2 Encode signature execution time: 49 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 191 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1123904 micro seconds.
+Falcon-512 Generating message concat execution time: 10 micro seconds.
+Falcon-512 Signing message execution time: 13992 micro seconds.
+Falcon-512 Encode signature execution time: 5 micro seconds.
+Falcon-512 Encode PK execution time: 12 micro seconds.
+Falcon-512 Generating cJSON execution time: 57 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1036364 micro seconds.
+Dilithium2 Generating message concat execution time: 23 micro seconds.
+Dilithium2 Signing message execution time: 8989 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1039523 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 15619 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 26 micro seconds.
+Dilithium2 Generating cJSON execution time: 175 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1138901 micro seconds.
+Falcon-512 Generating message concat execution time: 15 micro seconds.
+Falcon-512 Signing message execution time: 26912 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 59 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1034283 micro seconds.
+Dilithium2 Generating message concat execution time: 19 micro seconds.
+Dilithium2 Signing message execution time: 2628 micro seconds.
+Dilithium2 Encode signature execution time: 51 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 192 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1127878 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13926 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 15 micro seconds.
+Falcon-512 Generating cJSON execution time: 60 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040553 micro seconds.
+Dilithium2 Generating message concat execution time: 21 micro seconds.
+Dilithium2 Signing message execution time: 5370 micro seconds.
+Dilithium2 Encode signature execution time: 50 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 188 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1119158 micro seconds.
+Falcon-512 Generating message concat execution time: 9 micro seconds.
+Falcon-512 Signing message execution time: 13836 micro seconds.
+Falcon-512 Encode signature execution time: 6 micro seconds.
+Falcon-512 Encode PK execution time: 14 micro seconds.
+Falcon-512 Generating cJSON execution time: 56 micro seconds.
+---------------------------------------------------------
+Dilithium2 Initialization time: 1040058 micro seconds.
+Dilithium2 Generating message concat execution time: 22 micro seconds.
+Dilithium2 Signing message execution time: 4765 micro seconds.
+Dilithium2 Encode signature execution time: 52 micro seconds.
+Dilithium2 Encode PK execution time: 25 micro seconds.
+Dilithium2 Generating cJSON execution time: 190 micro seconds.
+---------------------------------------------------------
+Falcon-512 Initialization time: 1152887 micro seconds.
+Falcon-512 Generating message concat execution time: 8 micro seconds.
+Falcon-512 Signing message execution time: 13897 micro seconds.
+Falcon-512 Encode signature execution time: 7 micro seconds.
+Falcon-512 Encode PK execution time: 13 micro seconds.
+Falcon-512 Generating cJSON execution time: 58 micro seconds.
+---------------------------------------------------------

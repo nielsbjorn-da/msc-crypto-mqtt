@@ -1,0 +1,1701 @@
+Current signature algorithm: rsa7680
+round 1
+Groups = X448
+Connect time: 659230 microseconds.
+Groups = p256_kyber768
+Connect time: 713116 microseconds.
+Groups = X25519
+Connect time: 745106 microseconds.
+Groups = kyber768
+Connect time: 749201 microseconds.
+Groups = p384_kyber768
+Connect time: 760223 microseconds.
+Groups = x448_kyber768
+Connect time: 741454 microseconds.
+Groups = x25519_kyber768
+Connect time: 752418 microseconds.
+Groups = secp256r1
+Connect time: 753314 microseconds.
+round 2
+Groups = X25519
+Connect time: 738290 microseconds.
+Groups = kyber768
+Connect time: 748360 microseconds.
+Groups = X448
+Connect time: 738992 microseconds.
+Groups = secp256r1
+Connect time: 740483 microseconds.
+Groups = p384_kyber768
+Connect time: 761916 microseconds.
+Groups = x448_kyber768
+Connect time: 746909 microseconds.
+Groups = x25519_kyber768
+Connect time: 747891 microseconds.
+Groups = p256_kyber768
+Connect time: 749212 microseconds.
+round 3
+Groups = X448
+Connect time: 746102 microseconds.
+Groups = p384_kyber768
+Connect time: 723227 microseconds.
+Groups = p256_kyber768
+Connect time: 734968 microseconds.
+Groups = secp256r1
+Connect time: 725899 microseconds.
+Groups = X25519
+Connect time: 727104 microseconds.
+Groups = x448_kyber768
+Connect time: 678446 microseconds.
+Groups = x25519_kyber768
+Connect time: 757614 microseconds.
+Groups = kyber768
+Connect time: 748855 microseconds.
+round 4
+Groups = x448_kyber768
+Connect time: 755296 microseconds.
+Groups = p256_kyber768
+Connect time: 754812 microseconds.
+Groups = secp256r1
+Connect time: 756079 microseconds.
+Groups = kyber768
+Connect time: 745715 microseconds.
+Groups = X25519
+Connect time: 746728 microseconds.
+Groups = x25519_kyber768
+Connect time: 748093 microseconds.
+Groups = p384_kyber768
+Connect time: 759430 microseconds.
+Groups = X448
+Connect time: 750502 microseconds.
+round 5
+Groups = X25519
+Connect time: 747417 microseconds.
+Groups = p384_kyber768
+Connect time: 758513 microseconds.
+Groups = kyber768
+Connect time: 749548 microseconds.
+Groups = p256_kyber768
+Connect time: 759413 microseconds.
+Groups = x448_kyber768
+Connect time: 751317 microseconds.
+Groups = X448
+Connect time: 751881 microseconds.
+Groups = secp256r1
+Connect time: 753232 microseconds.
+Groups = x25519_kyber768
+Connect time: 754047 microseconds.
+round 6
+Groups = secp256r1
+Connect time: 750117 microseconds.
+Groups = x448_kyber768
+Connect time: 751310 microseconds.
+Groups = X25519
+Connect time: 752588 microseconds.
+Groups = kyber768
+Connect time: 743765 microseconds.
+Groups = x25519_kyber768
+Connect time: 744557 microseconds.
+Groups = X448
+Connect time: 754512 microseconds.
+Groups = p384_kyber768
+Connect time: 756162 microseconds.
+Groups = p256_kyber768
+Connect time: 757234 microseconds.
+round 7
+Groups = kyber768
+Connect time: 751962 microseconds.
+Groups = x25519_kyber768
+Connect time: 763015 microseconds.
+Groups = X448
+Connect time: 754321 microseconds.
+Groups = x448_kyber768
+Connect time: 745522 microseconds.
+Groups = p256_kyber768
+Connect time: 746593 microseconds.
+Groups = secp256r1
+Connect time: 747483 microseconds.
+Groups = p384_kyber768
+Connect time: 758282 microseconds.
+Groups = X25519
+Connect time: 739051 microseconds.
+round 8
+Groups = kyber768
+Connect time: 745207 microseconds.
+Groups = p384_kyber768
+Connect time: 764860 microseconds.
+Groups = p256_kyber768
+Connect time: 761558 microseconds.
+Groups = x25519_kyber768
+Connect time: 745428 microseconds.
+Groups = x448_kyber768
+Connect time: 745869 microseconds.
+Groups = X448
+Connect time: 746965 microseconds.
+Groups = X25519
+Connect time: 748356 microseconds.
+Groups = secp256r1
+Connect time: 739260 microseconds.
+round 9
+Groups = secp256r1
+Connect time: 745738 microseconds.
+Groups = x25519_kyber768
+Connect time: 746380 microseconds.
+Groups = p384_kyber768
+Connect time: 767110 microseconds.
+Groups = x448_kyber768
+Connect time: 748252 microseconds.
+Groups = X448
+Connect time: 739344 microseconds.
+Groups = p256_kyber768
+Connect time: 750814 microseconds.
+Groups = X25519
+Connect time: 750877 microseconds.
+Groups = kyber768
+Connect time: 750494 microseconds.
+round 10
+Groups = X448
+Connect time: 755570 microseconds.
+Groups = p256_kyber768
+Connect time: 754924 microseconds.
+Groups = kyber768
+Connect time: 754983 microseconds.
+Groups = X25519
+Connect time: 746223 microseconds.
+Groups = p384_kyber768
+Connect time: 757024 microseconds.
+Groups = x448_kyber768
+Connect time: 748327 microseconds.
+Groups = secp256r1
+Connect time: 739374 microseconds.
+Groups = x25519_kyber768
+Connect time: 749211 microseconds.
+round 11
+Groups = X448
+Connect time: 745636 microseconds.
+Groups = kyber768
+Connect time: 745587 microseconds.
+Groups = secp256r1
+Connect time: 745264 microseconds.
+Groups = x448_kyber768
+Connect time: 755011 microseconds.
+Groups = x25519_kyber768
+Connect time: 746249 microseconds.
+Groups = X25519
+Connect time: 747594 microseconds.
+Groups = p256_kyber768
+Connect time: 710047 microseconds.
+Groups = p384_kyber768
+Connect time: 759998 microseconds.
+round 12
+Groups = kyber768
+Connect time: 754833 microseconds.
+Groups = x448_kyber768
+Connect time: 753388 microseconds.
+Groups = X25519
+Connect time: 752407 microseconds.
+Groups = x25519_kyber768
+Connect time: 761212 microseconds.
+Groups = p256_kyber768
+Connect time: 742853 microseconds.
+Groups = X448
+Connect time: 753894 microseconds.
+Groups = secp256r1
+Connect time: 745035 microseconds.
+Groups = p384_kyber768
+Connect time: 766217 microseconds.
+round 13
+Groups = x448_kyber768
+Connect time: 742862 microseconds.
+Groups = X25519
+Connect time: 754062 microseconds.
+Groups = secp256r1
+Connect time: 750911 microseconds.
+Groups = kyber768
+Connect time: 753717 microseconds.
+Groups = p384_kyber768
+Connect time: 764612 microseconds.
+Groups = x25519_kyber768
+Connect time: 755758 microseconds.
+Groups = X448
+Connect time: 746628 microseconds.
+Groups = p256_kyber768
+Connect time: 758039 microseconds.
+round 14
+Groups = p256_kyber768
+Connect time: 750139 microseconds.
+Groups = p384_kyber768
+Connect time: 718793 microseconds.
+Groups = x25519_kyber768
+Connect time: 742744 microseconds.
+Groups = kyber768
+Connect time: 743708 microseconds.
+Groups = x448_kyber768
+Connect time: 754554 microseconds.
+Groups = X448
+Connect time: 746082 microseconds.
+Groups = secp256r1
+Connect time: 744687 microseconds.
+Groups = X25519
+Connect time: 745529 microseconds.
+round 15
+Groups = X448
+Connect time: 742361 microseconds.
+Groups = x448_kyber768
+Connect time: 753223 microseconds.
+Groups = kyber768
+Connect time: 744308 microseconds.
+Groups = p384_kyber768
+Connect time: 765432 microseconds.
+Groups = x25519_kyber768
+Connect time: 746446 microseconds.
+Groups = X25519
+Connect time: 747574 microseconds.
+Groups = p256_kyber768
+Connect time: 748475 microseconds.
+Groups = secp256r1
+Connect time: 749714 microseconds.
+round 16
+Groups = p256_kyber768
+Connect time: 756004 microseconds.
+Groups = x25519_kyber768
+Connect time: 746458 microseconds.
+Groups = X25519
+Connect time: 747181 microseconds.
+Groups = kyber768
+Connect time: 748099 microseconds.
+Groups = X448
+Connect time: 749354 microseconds.
+Groups = x448_kyber768
+Connect time: 749040 microseconds.
+Groups = secp256r1
+Connect time: 740539 microseconds.
+Groups = p384_kyber768
+Connect time: 761650 microseconds.
+round 17
+Groups = kyber768
+Connect time: 746401 microseconds.
+Groups = p384_kyber768
+Connect time: 755532 microseconds.
+Groups = p256_kyber768
+Connect time: 745370 microseconds.
+Groups = X25519
+Connect time: 744288 microseconds.
+Groups = x448_kyber768
+Connect time: 744372 microseconds.
+Groups = X448
+Connect time: 746142 microseconds.
+Groups = x25519_kyber768
+Connect time: 744690 microseconds.
+Groups = secp256r1
+Connect time: 769668 microseconds.
+round 18
+Groups = p256_kyber768
+Connect time: 761573 microseconds.
+Groups = X448
+Connect time: 752312 microseconds.
+Groups = secp256r1
+Connect time: 747121 microseconds.
+Groups = X25519
+Connect time: 748635 microseconds.
+Groups = kyber768
+Connect time: 748450 microseconds.
+Groups = p384_kyber768
+Connect time: 759396 microseconds.
+Groups = x448_kyber768
+Connect time: 750424 microseconds.
+Groups = x25519_kyber768
+Connect time: 751572 microseconds.
+round 19
+Groups = X448
+Connect time: 745947 microseconds.
+Groups = x25519_kyber768
+Connect time: 746747 microseconds.
+Groups = X25519
+Connect time: 747320 microseconds.
+Groups = kyber768
+Connect time: 758703 microseconds.
+Groups = p256_kyber768
+Connect time: 758362 microseconds.
+Groups = p384_kyber768
+Connect time: 759122 microseconds.
+Groups = secp256r1
+Connect time: 749765 microseconds.
+Groups = x448_kyber768
+Connect time: 750370 microseconds.
+round 20
+Groups = x448_kyber768
+Connect time: 756495 microseconds.
+Groups = p256_kyber768
+Connect time: 757569 microseconds.
+Groups = X25519
+Connect time: 745998 microseconds.
+Groups = kyber768
+Connect time: 746544 microseconds.
+Groups = X448
+Connect time: 746084 microseconds.
+Groups = p384_kyber768
+Connect time: 766590 microseconds.
+Groups = x25519_kyber768
+Connect time: 747132 microseconds.
+Groups = secp256r1
+Connect time: 747461 microseconds.
+round 21
+Groups = x25519_kyber768
+Connect time: 753587 microseconds.
+Groups = X448
+Connect time: 753170 microseconds.
+Groups = p384_kyber768
+Connect time: 764191 microseconds.
+Groups = X25519
+Connect time: 754938 microseconds.
+Groups = x448_kyber768
+Connect time: 756260 microseconds.
+Groups = kyber768
+Connect time: 755135 microseconds.
+Groups = secp256r1
+Connect time: 755132 microseconds.
+Groups = p256_kyber768
+Connect time: 755488 microseconds.
+round 22
+Groups = X25519
+Connect time: 750868 microseconds.
+Groups = kyber768
+Connect time: 751884 microseconds.
+Groups = p384_kyber768
+Connect time: 761743 microseconds.
+Groups = secp256r1
+Connect time: 751308 microseconds.
+Groups = X448
+Connect time: 751612 microseconds.
+Groups = x25519_kyber768
+Connect time: 751834 microseconds.
+Groups = x448_kyber768
+Connect time: 752460 microseconds.
+Groups = p256_kyber768
+Connect time: 752840 microseconds.
+round 23
+Groups = kyber768
+Connect time: 748777 microseconds.
+Groups = p256_kyber768
+Connect time: 759700 microseconds.
+Groups = X25519
+Connect time: 749793 microseconds.
+Groups = p384_kyber768
+Connect time: 759179 microseconds.
+Groups = x448_kyber768
+Connect time: 759350 microseconds.
+Groups = secp256r1
+Connect time: 748995 microseconds.
+Groups = X448
+Connect time: 748348 microseconds.
+Groups = x25519_kyber768
+Connect time: 748401 microseconds.
+round 24
+Groups = x448_kyber768
+Connect time: 754019 microseconds.
+Groups = p384_kyber768
+Connect time: 718914 microseconds.
+Groups = kyber768
+Connect time: 773677 microseconds.
+Groups = secp256r1
+Connect time: 747167 microseconds.
+Groups = X448
+Connect time: 758877 microseconds.
+Groups = x25519_kyber768
+Connect time: 759569 microseconds.
+Groups = X25519
+Connect time: 750563 microseconds.
+Groups = p256_kyber768
+Connect time: 751211 microseconds.
+round 25
+Groups = X25519
+Connect time: 755741 microseconds.
+Groups = p384_kyber768
+Connect time: 765326 microseconds.
+Groups = X448
+Connect time: 756327 microseconds.
+Groups = kyber768
+Connect time: 757205 microseconds.
+Groups = x448_kyber768
+Connect time: 708448 microseconds.
+Groups = x25519_kyber768
+Connect time: 745849 microseconds.
+Groups = secp256r1
+Connect time: 756413 microseconds.
+Groups = p256_kyber768
+Connect time: 766865 microseconds.
+round 26
+Groups = X25519
+Connect time: 751453 microseconds.
+Groups = secp256r1
+Connect time: 752519 microseconds.
+Groups = p256_kyber768
+Connect time: 752967 microseconds.
+Groups = p384_kyber768
+Connect time: 763721 microseconds.
+Groups = kyber768
+Connect time: 753071 microseconds.
+Groups = x448_kyber768
+Connect time: 752243 microseconds.
+Groups = x25519_kyber768
+Connect time: 751663 microseconds.
+Groups = X448
+Connect time: 762261 microseconds.
+round 27
+Groups = x448_kyber768
+Connect time: 746516 microseconds.
+Groups = X448
+Connect time: 757146 microseconds.
+Groups = secp256r1
+Connect time: 757717 microseconds.
+Groups = kyber768
+Connect time: 757990 microseconds.
+Groups = X25519
+Connect time: 758026 microseconds.
+Groups = p256_kyber768
+Connect time: 758587 microseconds.
+Groups = p384_kyber768
+Connect time: 759316 microseconds.
+Groups = x25519_kyber768
+Connect time: 760155 microseconds.
+round 28
+Groups = p256_kyber768
+Connect time: 756010 microseconds.
+Groups = kyber768
+Connect time: 756308 microseconds.
+Groups = X25519
+Connect time: 755663 microseconds.
+Groups = secp256r1
+Connect time: 742322 microseconds.
+Groups = p384_kyber768
+Connect time: 706589 microseconds.
+Groups = x448_kyber768
+Connect time: 756487 microseconds.
+Groups = x25519_kyber768
+Connect time: 766914 microseconds.
+Groups = X448
+Connect time: 723498 microseconds.
+round 29
+Groups = x448_kyber768
+Connect time: 741784 microseconds.
+Groups = secp256r1
+Connect time: 742260 microseconds.
+Groups = kyber768
+Connect time: 719251 microseconds.
+Groups = X448
+Connect time: 732760 microseconds.
+Groups = x25519_kyber768
+Connect time: 735496 microseconds.
+Groups = p256_kyber768
+Connect time: 747574 microseconds.
+Groups = p384_kyber768
+Connect time: 710097 microseconds.
+Groups = X25519
+Connect time: 731545 microseconds.
+round 30
+Groups = X448
+Connect time: 750101 microseconds.
+Groups = x25519_kyber768
+Connect time: 740395 microseconds.
+Groups = kyber768
+Connect time: 741115 microseconds.
+Groups = p384_kyber768
+Connect time: 761787 microseconds.
+Groups = p256_kyber768
+Connect time: 742170 microseconds.
+Groups = x448_kyber768
+Connect time: 700473 microseconds.
+Groups = secp256r1
+Connect time: 721836 microseconds.
+Groups = X25519
+Connect time: 734865 microseconds.
+round 31
+Groups = x448_kyber768
+Connect time: 689032 microseconds.
+Groups = p384_kyber768
+Connect time: 721919 microseconds.
+Groups = X25519
+Connect time: 702541 microseconds.
+Groups = p256_kyber768
+Connect time: 649997 microseconds.
+Groups = secp256r1
+Connect time: 748928 microseconds.
+Groups = x25519_kyber768
+Connect time: 750333 microseconds.
+Groups = X448
+Connect time: 760976 microseconds.
+Groups = kyber768
+Connect time: 751784 microseconds.
+round 32
+Groups = secp256r1
+Connect time: 755662 microseconds.
+Groups = p256_kyber768
+Connect time: 756307 microseconds.
+Groups = X448
+Connect time: 757344 microseconds.
+Groups = X25519
+Connect time: 757820 microseconds.
+Groups = x448_kyber768
+Connect time: 756749 microseconds.
+Groups = p384_kyber768
+Connect time: 757776 microseconds.
+Groups = x25519_kyber768
+Connect time: 758022 microseconds.
+Groups = kyber768
+Connect time: 756892 microseconds.
+round 33
+Groups = x25519_kyber768
+Connect time: 752181 microseconds.
+Groups = X448
+Connect time: 750706 microseconds.
+Groups = X25519
+Connect time: 751518 microseconds.
+Groups = secp256r1
+Connect time: 752597 microseconds.
+Groups = p384_kyber768
+Connect time: 762729 microseconds.
+Groups = kyber768
+Connect time: 752892 microseconds.
+Groups = p256_kyber768
+Connect time: 763579 microseconds.
+Groups = x448_kyber768
+Connect time: 764193 microseconds.
+round 34
+Groups = x25519_kyber768
+Connect time: 758017 microseconds.
+Groups = X25519
+Connect time: 756865 microseconds.
+Groups = p384_kyber768
+Connect time: 755600 microseconds.
+Groups = x448_kyber768
+Connect time: 754168 microseconds.
+Groups = X448
+Connect time: 754075 microseconds.
+Groups = secp256r1
+Connect time: 753215 microseconds.
+Groups = kyber768
+Connect time: 753825 microseconds.
+Groups = p256_kyber768
+Connect time: 744339 microseconds.
+round 35
+Groups = p384_kyber768
+Connect time: 748239 microseconds.
+Groups = secp256r1
+Connect time: 748712 microseconds.
+Groups = X448
+Connect time: 749410 microseconds.
+Groups = x448_kyber768
+Connect time: 758261 microseconds.
+Groups = X25519
+Connect time: 746894 microseconds.
+Groups = kyber768
+Connect time: 756061 microseconds.
+Groups = p256_kyber768
+Connect time: 744609 microseconds.
+Groups = x25519_kyber768
+Connect time: 755473 microseconds.
+round 36
+Groups = X448
+Connect time: 740858 microseconds.
+Groups = p256_kyber768
+Connect time: 740711 microseconds.
+Groups = kyber768
+Connect time: 702317 microseconds.
+Groups = x25519_kyber768
+Connect time: 749819 microseconds.
+Groups = x448_kyber768
+Connect time: 740115 microseconds.
+Groups = p384_kyber768
+Connect time: 750803 microseconds.
+Groups = X25519
+Connect time: 751267 microseconds.
+Groups = secp256r1
+Connect time: 749878 microseconds.
+round 37
+Groups = X448
+Connect time: 692431 microseconds.
+Groups = kyber768
+Connect time: 738526 microseconds.
+Groups = secp256r1
+Connect time: 749306 microseconds.
+Groups = p256_kyber768
+Connect time: 757452 microseconds.
+Groups = x25519_kyber768
+Connect time: 698773 microseconds.
+Groups = p384_kyber768
+Connect time: 715153 microseconds.
+Groups = X25519
+Connect time: 726903 microseconds.
+Groups = x448_kyber768
+Connect time: 739679 microseconds.
+round 38
+Groups = X448
+Connect time: 746228 microseconds.
+Groups = secp256r1
+Connect time: 694796 microseconds.
+Groups = X25519
+Connect time: 695548 microseconds.
+Groups = p384_kyber768
+Connect time: 749252 microseconds.
+Groups = x448_kyber768
+Connect time: 741654 microseconds.
+Groups = x25519_kyber768
+Connect time: 742148 microseconds.
+Groups = kyber768
+Connect time: 656243 microseconds.
+Groups = p256_kyber768
+Connect time: 720870 microseconds.
+round 39
+Groups = kyber768
+Connect time: 748194 microseconds.
+Groups = X448
+Connect time: 748865 microseconds.
+Groups = secp256r1
+Connect time: 749085 microseconds.
+Groups = p384_kyber768
+Connect time: 758774 microseconds.
+Groups = p256_kyber768
+Connect time: 748996 microseconds.
+Groups = X25519
+Connect time: 739191 microseconds.
+Groups = x448_kyber768
+Connect time: 749586 microseconds.
+Groups = x25519_kyber768
+Connect time: 749062 microseconds.
+round 40
+Groups = p384_kyber768
+Connect time: 753935 microseconds.
+Groups = x25519_kyber768
+Connect time: 753080 microseconds.
+Groups = x448_kyber768
+Connect time: 742063 microseconds.
+Groups = secp256r1
+Connect time: 740870 microseconds.
+Groups = X25519
+Connect time: 750271 microseconds.
+Groups = X448
+Connect time: 748496 microseconds.
+Groups = kyber768
+Connect time: 739009 microseconds.
+Groups = p256_kyber768
+Connect time: 748805 microseconds.
+round 41
+Groups = x448_kyber768
+Connect time: 743697 microseconds.
+Groups = x25519_kyber768
+Connect time: 699493 microseconds.
+Groups = kyber768
+Connect time: 741144 microseconds.
+Groups = X448
+Connect time: 738018 microseconds.
+Groups = p384_kyber768
+Connect time: 756254 microseconds.
+Groups = X25519
+Connect time: 745872 microseconds.
+Groups = secp256r1
+Connect time: 746173 microseconds.
+Groups = p256_kyber768
+Connect time: 755103 microseconds.
+round 42
+Groups = kyber768
+Connect time: 740243 microseconds.
+Groups = X25519
+Connect time: 740232 microseconds.
+Groups = secp256r1
+Connect time: 739067 microseconds.
+Groups = X448
+Connect time: 699540 microseconds.
+Groups = x448_kyber768
+Connect time: 748035 microseconds.
+Groups = x25519_kyber768
+Connect time: 747822 microseconds.
+Groups = p384_kyber768
+Connect time: 757025 microseconds.
+Groups = p256_kyber768
+Connect time: 746814 microseconds.
+round 43
+Groups = p256_kyber768
+Connect time: 751174 microseconds.
+Groups = p384_kyber768
+Connect time: 760055 microseconds.
+Groups = kyber768
+Connect time: 740681 microseconds.
+Groups = X448
+Connect time: 750576 microseconds.
+Groups = x448_kyber768
+Connect time: 710818 microseconds.
+Groups = x25519_kyber768
+Connect time: 708633 microseconds.
+Groups = X25519
+Connect time: 677329 microseconds.
+Groups = secp256r1
+Connect time: 732676 microseconds.
+round 44
+Groups = kyber768
+Connect time: 717315 microseconds.
+Groups = x25519_kyber768
+Connect time: 711315 microseconds.
+Groups = p384_kyber768
+Connect time: 731216 microseconds.
+Groups = X448
+Connect time: 704120 microseconds.
+Groups = x448_kyber768
+Connect time: 706972 microseconds.
+Groups = X25519
+Connect time: 686345 microseconds.
+Groups = p256_kyber768
+Connect time: 736381 microseconds.
+Groups = secp256r1
+Connect time: 729980 microseconds.
+round 45
+Groups = X448
+Connect time: 738173 microseconds.
+Groups = p256_kyber768
+Connect time: 697433 microseconds.
+Groups = secp256r1
+Connect time: 752453 microseconds.
+Groups = x448_kyber768
+Connect time: 753389 microseconds.
+Groups = X25519
+Connect time: 744771 microseconds.
+Groups = kyber768
+Connect time: 746167 microseconds.
+Groups = x25519_kyber768
+Connect time: 746117 microseconds.
+Groups = p384_kyber768
+Connect time: 766761 microseconds.
+round 46
+Groups = X25519
+Connect time: 747139 microseconds.
+Groups = p256_kyber768
+Connect time: 763275 microseconds.
+Groups = secp256r1
+Connect time: 704753 microseconds.
+Groups = p384_kyber768
+Connect time: 765270 microseconds.
+Groups = kyber768
+Connect time: 743591 microseconds.
+Groups = X448
+Connect time: 763780 microseconds.
+Groups = x25519_kyber768
+Connect time: 753582 microseconds.
+Groups = x448_kyber768
+Connect time: 754177 microseconds.
+round 47
+Groups = secp256r1
+Connect time: 748750 microseconds.
+Groups = x448_kyber768
+Connect time: 748117 microseconds.
+Groups = X25519
+Connect time: 748103 microseconds.
+Groups = p384_kyber768
+Connect time: 758274 microseconds.
+Groups = p256_kyber768
+Connect time: 748203 microseconds.
+Groups = kyber768
+Connect time: 747342 microseconds.
+Groups = X448
+Connect time: 747407 microseconds.
+Groups = x25519_kyber768
+Connect time: 705466 microseconds.
+round 48
+Groups = x25519_kyber768
+Connect time: 742162 microseconds.
+Groups = X25519
+Connect time: 751463 microseconds.
+Groups = secp256r1
+Connect time: 749765 microseconds.
+Groups = p384_kyber768
+Connect time: 715257 microseconds.
+Groups = X448
+Connect time: 729788 microseconds.
+Groups = kyber768
+Connect time: 705647 microseconds.
+Groups = x448_kyber768
+Connect time: 729104 microseconds.
+Groups = p256_kyber768
+Connect time: 729149 microseconds.
+round 49
+Groups = X25519
+Connect time: 739149 microseconds.
+Groups = kyber768
+Connect time: 751282 microseconds.
+Groups = x25519_kyber768
+Connect time: 752295 microseconds.
+Groups = p256_kyber768
+Connect time: 742340 microseconds.
+Groups = secp256r1
+Connect time: 687148 microseconds.
+Groups = x448_kyber768
+Connect time: 736453 microseconds.
+Groups = p384_kyber768
+Connect time: 767401 microseconds.
+Groups = X448
+Connect time: 747201 microseconds.
+round 50
+Groups = p256_kyber768
+Connect time: 752659 microseconds.
+Groups = kyber768
+Connect time: 742078 microseconds.
+Groups = X448
+Connect time: 703253 microseconds.
+Groups = x25519_kyber768
+Connect time: 699466 microseconds.
+Groups = X25519
+Connect time: 700603 microseconds.
+Groups = p384_kyber768
+Connect time: 714638 microseconds.
+Groups = x448_kyber768
+Connect time: 732399 microseconds.
+Groups = secp256r1
+Connect time: 733914 microseconds.
+round 51
+Groups = secp256r1
+Connect time: 723656 microseconds.
+Groups = X448
+Connect time: 693313 microseconds.
+Groups = x25519_kyber768
+Connect time: 742534 microseconds.
+Groups = p256_kyber768
+Connect time: 753562 microseconds.
+Groups = x448_kyber768
+Connect time: 753151 microseconds.
+Groups = p384_kyber768
+Connect time: 689475 microseconds.
+Groups = kyber768
+Connect time: 744973 microseconds.
+Groups = X25519
+Connect time: 765840 microseconds.
+round 52
+Groups = X25519
+Connect time: 750063 microseconds.
+Groups = p256_kyber768
+Connect time: 740911 microseconds.
+Groups = kyber768
+Connect time: 697278 microseconds.
+Groups = secp256r1
+Connect time: 729591 microseconds.
+Groups = p384_kyber768
+Connect time: 762265 microseconds.
+Groups = x448_kyber768
+Connect time: 741959 microseconds.
+Groups = x25519_kyber768
+Connect time: 742400 microseconds.
+Groups = X448
+Connect time: 742030 microseconds.
+round 53
+Groups = p384_kyber768
+Connect time: 757362 microseconds.
+Groups = x25519_kyber768
+Connect time: 756759 microseconds.
+Groups = p256_kyber768
+Connect time: 757225 microseconds.
+Groups = X25519
+Connect time: 747110 microseconds.
+Groups = X448
+Connect time: 747420 microseconds.
+Groups = kyber768
+Connect time: 714329 microseconds.
+Groups = x448_kyber768
+Connect time: 756900 microseconds.
+Groups = secp256r1
+Connect time: 755805 microseconds.
+round 54
+Groups = X448
+Connect time: 750022 microseconds.
+Groups = p256_kyber768
+Connect time: 750099 microseconds.
+Groups = p384_kyber768
+Connect time: 760689 microseconds.
+Groups = X25519
+Connect time: 739816 microseconds.
+Groups = x25519_kyber768
+Connect time: 749635 microseconds.
+Groups = x448_kyber768
+Connect time: 748638 microseconds.
+Groups = kyber768
+Connect time: 748034 microseconds.
+Groups = secp256r1
+Connect time: 748602 microseconds.
+round 55
+Groups = secp256r1
+Connect time: 751462 microseconds.
+Groups = X448
+Connect time: 771713 microseconds.
+Groups = x25519_kyber768
+Connect time: 751869 microseconds.
+Groups = p256_kyber768
+Connect time: 751112 microseconds.
+Groups = x448_kyber768
+Connect time: 751098 microseconds.
+Groups = kyber768
+Connect time: 741796 microseconds.
+Groups = p384_kyber768
+Connect time: 761379 microseconds.
+Groups = X25519
+Connect time: 751831 microseconds.
+round 56
+Groups = X448
+Connect time: 751168 microseconds.
+Groups = secp256r1
+Connect time: 751162 microseconds.
+Groups = x25519_kyber768
+Connect time: 751527 microseconds.
+Groups = x448_kyber768
+Connect time: 751709 microseconds.
+Groups = kyber768
+Connect time: 751501 microseconds.
+Groups = p256_kyber768
+Connect time: 751674 microseconds.
+Groups = p384_kyber768
+Connect time: 761893 microseconds.
+Groups = X25519
+Connect time: 751874 microseconds.
+round 57
+Groups = x25519_kyber768
+Connect time: 754822 microseconds.
+Groups = X448
+Connect time: 745044 microseconds.
+Groups = p384_kyber768
+Connect time: 762680 microseconds.
+Groups = p256_kyber768
+Connect time: 752663 microseconds.
+Groups = X25519
+Connect time: 711244 microseconds.
+Groups = kyber768
+Connect time: 772862 microseconds.
+Groups = x448_kyber768
+Connect time: 753235 microseconds.
+Groups = secp256r1
+Connect time: 753263 microseconds.
+round 58
+Groups = X25519
+Connect time: 757960 microseconds.
+Groups = X448
+Connect time: 746021 microseconds.
+Groups = p256_kyber768
+Connect time: 754852 microseconds.
+Groups = x25519_kyber768
+Connect time: 752469 microseconds.
+Groups = x448_kyber768
+Connect time: 751236 microseconds.
+Groups = secp256r1
+Connect time: 751176 microseconds.
+Groups = p384_kyber768
+Connect time: 761168 microseconds.
+Groups = kyber768
+Connect time: 748692 microseconds.
+round 59
+Groups = x25519_kyber768
+Connect time: 752694 microseconds.
+Groups = p384_kyber768
+Connect time: 760586 microseconds.
+Groups = secp256r1
+Connect time: 759323 microseconds.
+Groups = p256_kyber768
+Connect time: 759176 microseconds.
+Groups = X25519
+Connect time: 759072 microseconds.
+Groups = X448
+Connect time: 748837 microseconds.
+Groups = kyber768
+Connect time: 759236 microseconds.
+Groups = x448_kyber768
+Connect time: 758245 microseconds.
+round 60
+Groups = p384_kyber768
+Connect time: 751566 microseconds.
+Groups = X25519
+Connect time: 740329 microseconds.
+Groups = p256_kyber768
+Connect time: 748577 microseconds.
+Groups = secp256r1
+Connect time: 747904 microseconds.
+Groups = x448_kyber768
+Connect time: 736401 microseconds.
+Groups = x25519_kyber768
+Connect time: 744735 microseconds.
+Groups = kyber768
+Connect time: 745039 microseconds.
+Groups = X448
+Connect time: 700144 microseconds.
+round 61
+Groups = X25519
+Connect time: 748857 microseconds.
+Groups = kyber768
+Connect time: 746961 microseconds.
+Groups = p384_kyber768
+Connect time: 710334 microseconds.
+Groups = x25519_kyber768
+Connect time: 746985 microseconds.
+Groups = p256_kyber768
+Connect time: 745650 microseconds.
+Groups = X448
+Connect time: 744004 microseconds.
+Groups = x448_kyber768
+Connect time: 723463 microseconds.
+Groups = secp256r1
+Connect time: 741165 microseconds.
+round 62
+Groups = x25519_kyber768
+Connect time: 736336 microseconds.
+Groups = X448
+Connect time: 723276 microseconds.
+Groups = x448_kyber768
+Connect time: 736493 microseconds.
+Groups = p256_kyber768
+Connect time: 725354 microseconds.
+Groups = kyber768
+Connect time: 734812 microseconds.
+Groups = secp256r1
+Connect time: 724921 microseconds.
+Groups = X25519
+Connect time: 764586 microseconds.
+Groups = p384_kyber768
+Connect time: 764363 microseconds.
+round 63
+Groups = kyber768
+Connect time: 746439 microseconds.
+Groups = x448_kyber768
+Connect time: 746719 microseconds.
+Groups = secp256r1
+Connect time: 726534 microseconds.
+Groups = X25519
+Connect time: 686176 microseconds.
+Groups = p256_kyber768
+Connect time: 732505 microseconds.
+Groups = p384_kyber768
+Connect time: 754438 microseconds.
+Groups = X448
+Connect time: 742148 microseconds.
+Groups = x25519_kyber768
+Connect time: 697948 microseconds.
+round 64
+Groups = p256_kyber768
+Connect time: 695801 microseconds.
+Groups = X25519
+Connect time: 735668 microseconds.
+Groups = kyber768
+Connect time: 744982 microseconds.
+Groups = p384_kyber768
+Connect time: 753301 microseconds.
+Groups = secp256r1
+Connect time: 751679 microseconds.
+Groups = x25519_kyber768
+Connect time: 739736 microseconds.
+Groups = X448
+Connect time: 742754 microseconds.
+Groups = x448_kyber768
+Connect time: 731679 microseconds.
+round 65
+Groups = X448
+Connect time: 705855 microseconds.
+Groups = p384_kyber768
+Connect time: 714902 microseconds.
+Groups = x448_kyber768
+Connect time: 706213 microseconds.
+Groups = X25519
+Connect time: 695469 microseconds.
+Groups = secp256r1
+Connect time: 700668 microseconds.
+Groups = kyber768
+Connect time: 745512 microseconds.
+Groups = p256_kyber768
+Connect time: 755423 microseconds.
+Groups = x25519_kyber768
+Connect time: 764847 microseconds.
+round 66
+Groups = X25519
+Connect time: 759251 microseconds.
+Groups = kyber768
+Connect time: 759286 microseconds.
+Groups = p384_kyber768
+Connect time: 767019 microseconds.
+Groups = secp256r1
+Connect time: 705056 microseconds.
+Groups = x25519_kyber768
+Connect time: 688665 microseconds.
+Groups = X448
+Connect time: 727165 microseconds.
+Groups = p256_kyber768
+Connect time: 758097 microseconds.
+Groups = x448_kyber768
+Connect time: 737655 microseconds.
+round 67
+Groups = p256_kyber768
+Connect time: 691969 microseconds.
+Groups = x448_kyber768
+Connect time: 705539 microseconds.
+Groups = X448
+Connect time: 708021 microseconds.
+Groups = X25519
+Connect time: 708879 microseconds.
+Groups = secp256r1
+Connect time: 700391 microseconds.
+Groups = x25519_kyber768
+Connect time: 720813 microseconds.
+Groups = kyber768
+Connect time: 733346 microseconds.
+Groups = p384_kyber768
+Connect time: 687143 microseconds.
+round 68
+Groups = secp256r1
+Connect time: 740780 microseconds.
+Groups = x448_kyber768
+Connect time: 703593 microseconds.
+Groups = X448
+Connect time: 741131 microseconds.
+Groups = X25519
+Connect time: 730810 microseconds.
+Groups = p256_kyber768
+Connect time: 738585 microseconds.
+Groups = kyber768
+Connect time: 747818 microseconds.
+Groups = x25519_kyber768
+Connect time: 736109 microseconds.
+Groups = p384_kyber768
+Connect time: 706397 microseconds.
+round 69
+Groups = X448
+Connect time: 746115 microseconds.
+Groups = X25519
+Connect time: 734268 microseconds.
+Groups = p256_kyber768
+Connect time: 742368 microseconds.
+Groups = p384_kyber768
+Connect time: 750334 microseconds.
+Groups = x448_kyber768
+Connect time: 740374 microseconds.
+Groups = x25519_kyber768
+Connect time: 739891 microseconds.
+Groups = kyber768
+Connect time: 739522 microseconds.
+Groups = secp256r1
+Connect time: 739497 microseconds.
+round 70
+Groups = x25519_kyber768
+Connect time: 733474 microseconds.
+Groups = X25519
+Connect time: 741365 microseconds.
+Groups = X448
+Connect time: 740334 microseconds.
+Groups = kyber768
+Connect time: 739423 microseconds.
+Groups = p256_kyber768
+Connect time: 737696 microseconds.
+Groups = x448_kyber768
+Connect time: 755886 microseconds.
+Groups = p384_kyber768
+Connect time: 754778 microseconds.
+Groups = secp256r1
+Connect time: 752310 microseconds.
+round 71
+Groups = kyber768
+Connect time: 736199 microseconds.
+Groups = p256_kyber768
+Connect time: 745592 microseconds.
+Groups = secp256r1
+Connect time: 754240 microseconds.
+Groups = p384_kyber768
+Connect time: 754162 microseconds.
+Groups = x25519_kyber768
+Connect time: 733403 microseconds.
+Groups = X25519
+Connect time: 732078 microseconds.
+Groups = x448_kyber768
+Connect time: 741186 microseconds.
+Groups = X448
+Connect time: 741120 microseconds.
+round 72
+Groups = x25519_kyber768
+Connect time: 743788 microseconds.
+Groups = secp256r1
+Connect time: 742854 microseconds.
+Groups = X448
+Connect time: 741755 microseconds.
+Groups = X25519
+Connect time: 740735 microseconds.
+Groups = kyber768
+Connect time: 748791 microseconds.
+Groups = p256_kyber768
+Connect time: 748167 microseconds.
+Groups = x448_kyber768
+Connect time: 747367 microseconds.
+Groups = p384_kyber768
+Connect time: 756754 microseconds.
+round 73
+Groups = X25519
+Connect time: 740625 microseconds.
+Groups = x448_kyber768
+Connect time: 740351 microseconds.
+Groups = p384_kyber768
+Connect time: 760385 microseconds.
+Groups = x25519_kyber768
+Connect time: 738939 microseconds.
+Groups = p256_kyber768
+Connect time: 736744 microseconds.
+Groups = X448
+Connect time: 746196 microseconds.
+Groups = secp256r1
+Connect time: 745329 microseconds.
+Groups = kyber768
+Connect time: 744793 microseconds.
+round 74
+Groups = p256_kyber768
+Connect time: 748620 microseconds.
+Groups = secp256r1
+Connect time: 752903 microseconds.
+Groups = X448
+Connect time: 748396 microseconds.
+Groups = x448_kyber768
+Connect time: 745476 microseconds.
+Groups = x25519_kyber768
+Connect time: 745364 microseconds.
+Groups = p384_kyber768
+Connect time: 754490 microseconds.
+Groups = X25519
+Connect time: 741998 microseconds.
+Groups = kyber768
+Connect time: 698708 microseconds.
+round 75
+Groups = kyber768
+Connect time: 745619 microseconds.
+Groups = x448_kyber768
+Connect time: 746117 microseconds.
+Groups = X448
+Connect time: 745580 microseconds.
+Groups = p384_kyber768
+Connect time: 755543 microseconds.
+Groups = X25519
+Connect time: 743407 microseconds.
+Groups = secp256r1
+Connect time: 742640 microseconds.
+Groups = x25519_kyber768
+Connect time: 698326 microseconds.
+Groups = p256_kyber768
+Connect time: 752021 microseconds.
+round 76
+Groups = secp256r1
+Connect time: 746016 microseconds.
+Groups = X25519
+Connect time: 754696 microseconds.
+Groups = x25519_kyber768
+Connect time: 742444 microseconds.
+Groups = kyber768
+Connect time: 741633 microseconds.
+Groups = x448_kyber768
+Connect time: 751058 microseconds.
+Groups = p256_kyber768
+Connect time: 750124 microseconds.
+Groups = X448
+Connect time: 749571 microseconds.
+Groups = p384_kyber768
+Connect time: 759924 microseconds.
+round 77
+Groups = p256_kyber768
+Connect time: 753547 microseconds.
+Groups = secp256r1
+Connect time: 743086 microseconds.
+Groups = X25519
+Connect time: 742677 microseconds.
+Groups = x448_kyber768
+Connect time: 751095 microseconds.
+Groups = X448
+Connect time: 750328 microseconds.
+Groups = kyber768
+Connect time: 749402 microseconds.
+Groups = p384_kyber768
+Connect time: 758755 microseconds.
+Groups = x25519_kyber768
+Connect time: 747919 microseconds.
+round 78
+Groups = X25519
+Connect time: 761699 microseconds.
+Groups = kyber768
+Connect time: 751070 microseconds.
+Groups = x448_kyber768
+Connect time: 750644 microseconds.
+Groups = x25519_kyber768
+Connect time: 750228 microseconds.
+Groups = secp256r1
+Connect time: 750379 microseconds.
+Groups = p256_kyber768
+Connect time: 750014 microseconds.
+Groups = X448
+Connect time: 749696 microseconds.
+Groups = p384_kyber768
+Connect time: 759247 microseconds.
+round 79
+Groups = x448_kyber768
+Connect time: 753597 microseconds.
+Groups = X448
+Connect time: 753388 microseconds.
+Groups = kyber768
+Connect time: 752885 microseconds.
+Groups = secp256r1
+Connect time: 752980 microseconds.
+Groups = x25519_kyber768
+Connect time: 752317 microseconds.
+Groups = p384_kyber768
+Connect time: 751809 microseconds.
+Groups = X25519
+Connect time: 751529 microseconds.
+Groups = p256_kyber768
+Connect time: 707973 microseconds.
+round 80
+Groups = secp256r1
+Connect time: 753473 microseconds.
+Groups = p384_kyber768
+Connect time: 751600 microseconds.
+Groups = x25519_kyber768
+Connect time: 750790 microseconds.
+Groups = X448
+Connect time: 760152 microseconds.
+Groups = X25519
+Connect time: 739519 microseconds.
+Groups = kyber768
+Connect time: 738521 microseconds.
+Groups = p256_kyber768
+Connect time: 747834 microseconds.
+Groups = x448_kyber768
+Connect time: 746802 microseconds.
+round 81
+Groups = kyber768
+Connect time: 750688 microseconds.
+Groups = x25519_kyber768
+Connect time: 750108 microseconds.
+Groups = X25519
+Connect time: 759209 microseconds.
+Groups = secp256r1
+Connect time: 749367 microseconds.
+Groups = x448_kyber768
+Connect time: 749224 microseconds.
+Groups = p384_kyber768
+Connect time: 717739 microseconds.
+Groups = p256_kyber768
+Connect time: 756411 microseconds.
+Groups = X448
+Connect time: 755776 microseconds.
+round 82
+Groups = x448_kyber768
+Connect time: 749560 microseconds.
+Groups = X448
+Connect time: 749302 microseconds.
+Groups = secp256r1
+Connect time: 749585 microseconds.
+Groups = p384_kyber768
+Connect time: 759465 microseconds.
+Groups = p256_kyber768
+Connect time: 748181 microseconds.
+Groups = x25519_kyber768
+Connect time: 747729 microseconds.
+Groups = X25519
+Connect time: 745533 microseconds.
+Groups = kyber768
+Connect time: 753764 microseconds.
+round 83
+Groups = kyber768
+Connect time: 746714 microseconds.
+Groups = x25519_kyber768
+Connect time: 746549 microseconds.
+Groups = secp256r1
+Connect time: 756334 microseconds.
+Groups = p256_kyber768
+Connect time: 755525 microseconds.
+Groups = x448_kyber768
+Connect time: 753446 microseconds.
+Groups = p384_kyber768
+Connect time: 716527 microseconds.
+Groups = X448
+Connect time: 750713 microseconds.
+Groups = X25519
+Connect time: 748927 microseconds.
+round 84
+Groups = X25519
+Connect time: 752208 microseconds.
+Groups = X448
+Connect time: 750483 microseconds.
+Groups = x25519_kyber768
+Connect time: 749996 microseconds.
+Groups = p384_kyber768
+Connect time: 768259 microseconds.
+Groups = x448_kyber768
+Connect time: 754648 microseconds.
+Groups = secp256r1
+Connect time: 752879 microseconds.
+Groups = p256_kyber768
+Connect time: 762482 microseconds.
+Groups = kyber768
+Connect time: 750158 microseconds.
+round 85
+Groups = p384_kyber768
+Connect time: 764037 microseconds.
+Groups = kyber768
+Connect time: 753621 microseconds.
+Groups = X25519
+Connect time: 752974 microseconds.
+Groups = X448
+Connect time: 752694 microseconds.
+Groups = x448_kyber768
+Connect time: 711009 microseconds.
+Groups = x25519_kyber768
+Connect time: 751974 microseconds.
+Groups = secp256r1
+Connect time: 747799 microseconds.
+Groups = p256_kyber768
+Connect time: 755735 microseconds.
+round 86
+Groups = p256_kyber768
+Connect time: 749514 microseconds.
+Groups = X448
+Connect time: 749346 microseconds.
+Groups = x25519_kyber768
+Connect time: 747745 microseconds.
+Groups = kyber768
+Connect time: 755297 microseconds.
+Groups = X25519
+Connect time: 705529 microseconds.
+Groups = secp256r1
+Connect time: 753539 microseconds.
+Groups = x448_kyber768
+Connect time: 752919 microseconds.
+Groups = p384_kyber768
+Connect time: 741760 microseconds.
+round 87
+Groups = kyber768
+Connect time: 735361 microseconds.
+Groups = X25519
+Connect time: 744034 microseconds.
+Groups = x25519_kyber768
+Connect time: 743547 microseconds.
+Groups = x448_kyber768
+Connect time: 741141 microseconds.
+Groups = X448
+Connect time: 740611 microseconds.
+Groups = p256_kyber768
+Connect time: 739387 microseconds.
+Groups = secp256r1
+Connect time: 759209 microseconds.
+Groups = p384_kyber768
+Connect time: 714443 microseconds.
+round 88
+Groups = secp256r1
+Connect time: 686125 microseconds.
+Groups = p256_kyber768
+Connect time: 746787 microseconds.
+Groups = x25519_kyber768
+Connect time: 704529 microseconds.
+Groups = X448
+Connect time: 722145 microseconds.
+Groups = x448_kyber768
+Connect time: 754433 microseconds.
+Groups = p384_kyber768
+Connect time: 753389 microseconds.
+Groups = X25519
+Connect time: 731820 microseconds.
+Groups = kyber768
+Connect time: 696630 microseconds.
+round 89
+Groups = p384_kyber768
+Connect time: 709260 microseconds.
+Groups = X448
+Connect time: 676148 microseconds.
+Groups = x25519_kyber768
+Connect time: 739681 microseconds.
+Groups = p256_kyber768
+Connect time: 748713 microseconds.
+Groups = X25519
+Connect time: 736093 microseconds.
+Groups = secp256r1
+Connect time: 735567 microseconds.
+Groups = kyber768
+Connect time: 733580 microseconds.
+Groups = x448_kyber768
+Connect time: 743283 microseconds.
+round 90
+Groups = x448_kyber768
+Connect time: 701920 microseconds.
+Groups = kyber768
+Connect time: 735570 microseconds.
+Groups = X448
+Connect time: 733432 microseconds.
+Groups = x25519_kyber768
+Connect time: 743108 microseconds.
+Groups = p384_kyber768
+Connect time: 752540 microseconds.
+Groups = p256_kyber768
+Connect time: 742020 microseconds.
+Groups = secp256r1
+Connect time: 741270 microseconds.
+Groups = X25519
+Connect time: 739383 microseconds.
+round 91
+Groups = p384_kyber768
+Connect time: 751955 microseconds.
+Groups = X25519
+Connect time: 741135 microseconds.
+Groups = x448_kyber768
+Connect time: 741090 microseconds.
+Groups = secp256r1
+Connect time: 750683 microseconds.
+Groups = X448
+Connect time: 739297 microseconds.
+Groups = p256_kyber768
+Connect time: 737370 microseconds.
+Groups = kyber768
+Connect time: 735863 microseconds.
+Groups = x25519_kyber768
+Connect time: 736284 microseconds.
+round 92
+Groups = X25519
+Connect time: 737184 microseconds.
+Groups = x25519_kyber768
+Connect time: 735192 microseconds.
+Groups = secp256r1
+Connect time: 745188 microseconds.
+Groups = kyber768
+Connect time: 742413 microseconds.
+Groups = X448
+Connect time: 740370 microseconds.
+Groups = p384_kyber768
+Connect time: 768895 microseconds.
+Groups = x448_kyber768
+Connect time: 701352 microseconds.
+Groups = p256_kyber768
+Connect time: 716383 microseconds.
+round 93
+Groups = p256_kyber768
+Connect time: 751641 microseconds.
+Groups = X448
+Connect time: 750183 microseconds.
+Groups = x448_kyber768
+Connect time: 749543 microseconds.
+Groups = secp256r1
+Connect time: 748593 microseconds.
+Groups = kyber768
+Connect time: 747961 microseconds.
+Groups = p384_kyber768
+Connect time: 765292 microseconds.
+Groups = x25519_kyber768
+Connect time: 744887 microseconds.
+Groups = X25519
+Connect time: 743632 microseconds.
+round 94
+Groups = secp256r1
+Connect time: 745724 microseconds.
+Groups = x448_kyber768
+Connect time: 754083 microseconds.
+Groups = p384_kyber768
+Connect time: 763229 microseconds.
+Groups = p256_kyber768
+Connect time: 707351 microseconds.
+Groups = x25519_kyber768
+Connect time: 751402 microseconds.
+Groups = kyber768
+Connect time: 750520 microseconds.
+Groups = X25519
+Connect time: 759658 microseconds.
+Groups = X448
+Connect time: 748230 microseconds.
+round 95
+Groups = x448_kyber768
+Connect time: 761581 microseconds.
+Groups = p384_kyber768
+Connect time: 758943 microseconds.
+Groups = p256_kyber768
+Connect time: 758139 microseconds.
+Groups = X448
+Connect time: 756061 microseconds.
+Groups = kyber768
+Connect time: 754651 microseconds.
+Groups = secp256r1
+Connect time: 743997 microseconds.
+Groups = X25519
+Connect time: 752704 microseconds.
+Groups = x25519_kyber768
+Connect time: 751876 microseconds.
+round 96
+Groups = X25519
+Connect time: 754682 microseconds.
+Groups = x25519_kyber768
+Connect time: 705149 microseconds.
+Groups = p256_kyber768
+Connect time: 752954 microseconds.
+Groups = x448_kyber768
+Connect time: 741784 microseconds.
+Groups = X448
+Connect time: 751111 microseconds.
+Groups = kyber768
+Connect time: 748941 microseconds.
+Groups = secp256r1
+Connect time: 737240 microseconds.
+Groups = p384_kyber768
+Connect time: 744544 microseconds.
+round 97
+Groups = p256_kyber768
+Connect time: 736255 microseconds.
+Groups = x448_kyber768
+Connect time: 734856 microseconds.
+Groups = kyber768
+Connect time: 733587 microseconds.
+Groups = X25519
+Connect time: 732492 microseconds.
+Groups = p384_kyber768
+Connect time: 688934 microseconds.
+Groups = secp256r1
+Connect time: 730044 microseconds.
+Groups = X448
+Connect time: 718968 microseconds.
+Groups = x25519_kyber768
+Connect time: 712839 microseconds.
+round 98
+Groups = p384_kyber768
+Connect time: 733069 microseconds.
+Groups = X448
+Connect time: 712818 microseconds.
+Groups = secp256r1
+Connect time: 745474 microseconds.
+Groups = kyber768
+Connect time: 685146 microseconds.
+Groups = x25519_kyber768
+Connect time: 698870 microseconds.
+Groups = x448_kyber768
+Connect time: 749059 microseconds.
+Groups = p256_kyber768
+Connect time: 758070 microseconds.
+Groups = X25519
+Connect time: 726728 microseconds.
+round 99
+Groups = X25519
+Connect time: 739848 microseconds.
+Groups = kyber768
+Connect time: 748887 microseconds.
+Groups = x25519_kyber768
+Connect time: 699858 microseconds.
+Groups = secp256r1
+Connect time: 743715 microseconds.
+Groups = x448_kyber768
+Connect time: 751864 microseconds.
+Groups = p384_kyber768
+Connect time: 761234 microseconds.
+Groups = X448
+Connect time: 749936 microseconds.
+Groups = p256_kyber768
+Connect time: 749166 microseconds.
+round 100
+Groups = secp256r1
+Connect time: 752094 microseconds.
+Groups = X448
+Connect time: 751300 microseconds.
+Groups = X25519
+Connect time: 740059 microseconds.
+Groups = kyber768
+Connect time: 738334 microseconds.
+Groups = p384_kyber768
+Connect time: 747529 microseconds.
+Groups = x25519_kyber768
+Connect time: 736686 microseconds.
+Groups = x448_kyber768
+Connect time: 755292 microseconds.
+Groups = p256_kyber768
+Connect time: 737182 microseconds.

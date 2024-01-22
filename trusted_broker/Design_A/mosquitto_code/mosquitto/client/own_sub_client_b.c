@@ -298,7 +298,7 @@ char *decode(const char *input, size_t size)
 int verify_dilithium_signature(uint8_t *signature, const char *message, size_t message_length, uint8_t *public_key)
 {
 	int ret = 1;
-	//int ret = crypto_sign_verify(signature, dilithium_sig_len, message, message_length, public_key);
+	//ret = crypto_sign_verify(signature, dilithium_sig_len, message, message_length, public_key);
 	if (dilithium_version == 2) {
 		ret = pqcrystals_dilithium2_ref_verify(signature, dilithium_sig_len,
 											message, message_length,
@@ -486,8 +486,9 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		gettimeofday(&end_time, NULL);
 		dec_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
-		gettimeofday(&start_time, NULL);
+
 		load_broker_pk(signature_algorithm);
+		gettimeofday(&start_time, NULL);
 
 		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_broker_pk);
 
@@ -516,7 +517,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		dec_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		
 
-		gettimeofday(&start_time, NULL);
+		
 		size_t pk_len = FALCON_PUBKEY_SIZE(logn);
 		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
 		uint8_t *tmp;
@@ -529,14 +530,16 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		tmp_len = len;
 
 		load_broker_pk("falcon");
+		gettimeofday(&start_time, NULL);
 
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_broker_pk, pk_len, tmp, tmp_len);
 
-		free(falcon_decode_sig);
+
 
 		gettimeofday(&end_time, NULL);
 		veri_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+		free(falcon_decode_sig);
 		
 	}
 	if (!verify)
@@ -712,7 +715,7 @@ int main(int argc, char *argv[])
 	}
 
 	char clientID[23] = "subscriber_client";
-	g_mosq = mosquitto_new(clientID, cfg.clean_session, &cfg);
+	g_mosq = mosquitto_new(cfg.id, cfg.clean_session, &cfg);
 	if (!g_mosq)
 	{
 		switch (errno)

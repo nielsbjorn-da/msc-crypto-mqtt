@@ -242,8 +242,9 @@ char *decode(const char *input, size_t size)
 int verify_dilithium_signature(uint8_t *signature, const char *message, size_t message_length, uint8_t *public_key)
 {
 	size_t sig_length = dilithium_sig_len;
-
 	int ret;
+	//ret = crypto_sign_verify(signature, sig_length, message, message_length, public_key);
+
 	if (dilithium_version == 2) {
 		ret = pqcrystals_dilithium2_ref_verify(signature, sig_length, message, message_length, public_key);
 	} else if (dilithium_version == 3) {
@@ -266,6 +267,10 @@ int falcon_verify_message(uint8_t *sig, size_t sig_len, char *payload, int paylo
 		sig, sig_len, FALCON_SIG_PADDED,
 		pk, pk_len,
 		payload, payload_len, tmp, tmp_len);
+	if (result)
+	{
+		printf("Falcon verification failed\n");
+	}
 	return result;
 }
 
@@ -403,7 +408,7 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 			dilithium_pk_len = pqcrystals_dilithium2_PUBLICKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium2_BYTES;
 			version = "Dilithium2";
-		} else if (strcmp(signature_algorithm, "D3") == 0) {
+		}else if (strcmp(signature_algorithm, "D3") == 0) {
 			dilithium_version = 3;
 			dilithium_pk_len = pqcrystals_dilithium3_PUBLICKEYBYTES;
 			dilithium_sig_len = pqcrystals_dilithium3_BYTES;
@@ -417,28 +422,53 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 
 		gettimeofday(&start_time, NULL);
 		char *dilithium_decode_sig = decode(encoded_signature, dilithium_sig_len);
+		uint8_t dilithium_sig[dilithium_sig_len];
+		for (size_t i = 0; i < dilithium_sig_len; i++)
+		{
+			/* code */
+			dilithium_sig[i] = (uint8_t) dilithium_decode_sig[i];
+		}
+		
+		//memcpy(dilithium_sig, dilithium_decode_sig, dilithium_sig_len); 
+
 		gettimeofday(&end_time, NULL);
 		decode_sig_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 
 		gettimeofday(&start_time, NULL);
 		char *dilithium_decode_pk = decode(encoded_publisher_pk, dilithium_pk_len);
+		uint8_t dilithium_pk[dilithium_pk_len];
+		//memcpy(dilithium_pk, dilithium_decode_pk, dilithium_pk_len); 
+		for (size_t i = 0; i < dilithium_pk_len; i++)
+		{
+			/* code */
+			dilithium_pk[i] = (uint8_t) dilithium_decode_pk[i];
+		}
 		gettimeofday(&end_time, NULL);
 		decode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		
 		gettimeofday(&start_time, NULL);
-		verify = verify_dilithium_signature(dilithium_decode_sig, concatenated_message_to_verify, message_len, dilithium_decode_pk);
+		verify = verify_dilithium_signature(dilithium_sig, concatenated_message_to_verify, message_len, dilithium_pk);
 		
 
-		free(dilithium_decode_sig);
-		free(dilithium_decode_pk);
 		gettimeofday(&end_time, NULL);
 		verify_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+		free(dilithium_decode_sig);
+		free(dilithium_decode_pk);
 	}
 	else
 	{
 		//  Falcon variables
 		unsigned logn = 9;
 		if (strcmp(signature_algorithm, "F1024") == 0) logn = 10;
+		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
+		uint8_t *tmp;
+		size_t tmp_len;
+		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));
+		len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(logn));
+		len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(logn));
+		len = maxsz(len, FALCON_TMPSIZE_VERIFY(logn));
+		tmp = xmalloc(len);
+		tmp_len = len;
 
 		gettimeofday(&start_time, NULL);
 		size_t sig_len = FALCON_SIG_PADDED_SIZE(logn);
@@ -453,24 +483,16 @@ static void my_message_callback(struct mosquitto *mosq, void *obj, const struct 
 		decode_pk_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		
 
-		size_t len = FALCON_TMPSIZE_KEYGEN(logn);
-		uint8_t *tmp;
-		size_t tmp_len;
-		len = maxsz(len, FALCON_TMPSIZE_SIGNDYN(logn));
-		len = maxsz(len, FALCON_TMPSIZE_SIGNTREE(logn));
-		len = maxsz(len, FALCON_TMPSIZE_EXPANDPRIV(logn));
-		len = maxsz(len, FALCON_TMPSIZE_VERIFY(logn));
-		tmp = xmalloc(len);
-		tmp_len = len;
+		gettimeofday(&start_time, NULL);
 		verify = falcon_verify_message(falcon_decode_sig, sig_len, concatenated_message_to_verify,
 									   message_len, falcon_decode_pk, pk_len, tmp, tmp_len);
 
+		gettimeofday(&end_time, NULL);
+		verify_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 		free(falcon_decode_sig);
 		free(falcon_decode_pk);
 		version = "Falcon-1024";
 		if (logn == 9) version = "Falcon-512";
-		gettimeofday(&end_time, NULL);
-		verify_time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
 	}
 	if (!verify)
 	{
@@ -645,7 +667,7 @@ int main(int argc, char *argv[])
 
 	char clientID[23] = "subscriber_client";
 	//printf("Ready to connect\n");
-	g_mosq = mosquitto_new(clientID, cfg.clean_session, &cfg);
+	g_mosq = mosquitto_new(cfg.id, cfg.clean_session, &cfg);
 	if (!g_mosq)
 	{
 		switch (errno)

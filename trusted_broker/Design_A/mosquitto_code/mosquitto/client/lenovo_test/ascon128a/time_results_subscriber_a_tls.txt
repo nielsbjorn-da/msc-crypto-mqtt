@@ -1,0 +1,2401 @@
+
+Dilithium2 Extracting payload from cJSON execution time: 111 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 28 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 607 micro seconds.
+Dilithium2 Total time result: 4035 micro seconds.
+Dilithium2 Latency time result: 2407 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 58 micro seconds.
+Falcon-512 Generating concat message execution time: 11 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 157 micro seconds.
+Falcon-512 Total time result: 16104 micro seconds.
+Falcon-512 Latency time result: 1781 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 145 micro seconds.
+Falcon-512 Total time result: 15704 micro seconds.
+Falcon-512 Latency time result: 1407 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 4281 micro seconds.
+Dilithium2 Latency time result: 2409 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 15890 micro seconds.
+Falcon-512 Latency time result: 1515 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 524 micro seconds.
+Dilithium2 Total time result: 8113 micro seconds.
+Dilithium2 Latency time result: 2340 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 588 micro seconds.
+Dilithium2 Total time result: 4509 micro seconds.
+Dilithium2 Latency time result: 2031 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 51 micro seconds.
+Falcon-512 Generating concat message execution time: 11 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 130 micro seconds.
+Falcon-512 Total time result: 15870 micro seconds.
+Falcon-512 Latency time result: 1563 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 144 micro seconds.
+Falcon-512 Total time result: 15613 micro seconds.
+Falcon-512 Latency time result: 1337 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 523 micro seconds.
+Dilithium2 Total time result: 3805 micro seconds.
+Dilithium2 Latency time result: 2302 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 15938 micro seconds.
+Falcon-512 Latency time result: 1644 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 5967 micro seconds.
+Dilithium2 Latency time result: 2474 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 83 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 47 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 4878 micro seconds.
+Dilithium2 Latency time result: 2273 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 15772 micro seconds.
+Falcon-512 Latency time result: 1457 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 3983 micro seconds.
+Dilithium2 Latency time result: 2160 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 16322 micro seconds.
+Falcon-512 Latency time result: 1819 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 54 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 6087 micro seconds.
+Dilithium2 Latency time result: 2185 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 15805 micro seconds.
+Falcon-512 Latency time result: 1448 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 142 micro seconds.
+Falcon-512 Total time result: 15792 micro seconds.
+Falcon-512 Latency time result: 1422 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 6264 micro seconds.
+Dilithium2 Latency time result: 2370 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4112 micro seconds.
+Dilithium2 Latency time result: 2332 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 15847 micro seconds.
+Falcon-512 Latency time result: 1511 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 15840 micro seconds.
+Falcon-512 Latency time result: 1583 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 3745 micro seconds.
+Dilithium2 Latency time result: 2203 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 133 micro seconds.
+Falcon-512 Total time result: 15733 micro seconds.
+Falcon-512 Latency time result: 1437 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 545 micro seconds.
+Dilithium2 Total time result: 4016 micro seconds.
+Dilithium2 Latency time result: 2485 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 4158 micro seconds.
+Dilithium2 Latency time result: 2176 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 15926 micro seconds.
+Falcon-512 Latency time result: 1566 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 5816 micro seconds.
+Dilithium2 Latency time result: 2478 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 62 micro seconds.
+Falcon-512 Generating concat message execution time: 11 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 144 micro seconds.
+Falcon-512 Total time result: 16361 micro seconds.
+Falcon-512 Latency time result: 2022 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4188 micro seconds.
+Dilithium2 Latency time result: 2311 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15879 micro seconds.
+Falcon-512 Latency time result: 1586 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 4581 micro seconds.
+Dilithium2 Latency time result: 2309 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 16285 micro seconds.
+Falcon-512 Latency time result: 2007 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 4389 micro seconds.
+Dilithium2 Latency time result: 2109 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 60 micro seconds.
+Falcon-512 Generating concat message execution time: 11 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 16111 micro seconds.
+Falcon-512 Latency time result: 1801 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 3901 micro seconds.
+Dilithium2 Latency time result: 2364 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 59 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 139 micro seconds.
+Falcon-512 Total time result: 16634 micro seconds.
+Falcon-512 Latency time result: 2281 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 94 micro seconds.
+Dilithium2 Generating concat message execution time: 13 micro seconds.
+Dilithium2 Decode sig execution time: 31 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 565 micro seconds.
+Dilithium2 Total time result: 5904 micro seconds.
+Dilithium2 Latency time result: 2340 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 130 micro seconds.
+Falcon-512 Total time result: 15723 micro seconds.
+Falcon-512 Latency time result: 1409 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 131 micro seconds.
+Dilithium2 Generating concat message execution time: 19 micro seconds.
+Dilithium2 Decode sig execution time: 28 micro seconds.
+Dilithium2 Decode PK execution time: 17 micro seconds.
+Dilithium2 Verification execution time: 554 micro seconds.
+Dilithium2 Total time result: 5931 micro seconds.
+Dilithium2 Latency time result: 3095 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 206 micro seconds.
+Falcon-512 Total time result: 15989 micro seconds.
+Falcon-512 Latency time result: 1580 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 519 micro seconds.
+Dilithium2 Total time result: 6181 micro seconds.
+Dilithium2 Latency time result: 2226 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15949 micro seconds.
+Falcon-512 Latency time result: 1648 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 3873 micro seconds.
+Dilithium2 Latency time result: 2369 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 213 micro seconds.
+Falcon-512 Total time result: 15909 micro seconds.
+Falcon-512 Latency time result: 1502 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 519 micro seconds.
+Dilithium2 Total time result: 4148 micro seconds.
+Dilithium2 Latency time result: 2115 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 129 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 15791 micro seconds.
+Falcon-512 Latency time result: 1387 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 16154 micro seconds.
+Falcon-512 Latency time result: 1857 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 16 micro seconds.
+Dilithium2 Verification execution time: 550 micro seconds.
+Dilithium2 Total time result: 5061 micro seconds.
+Dilithium2 Latency time result: 2436 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 51 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 15883 micro seconds.
+Falcon-512 Latency time result: 1580 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 5871 micro seconds.
+Dilithium2 Latency time result: 2366 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 519 micro seconds.
+Dilithium2 Total time result: 3688 micro seconds.
+Dilithium2 Latency time result: 2168 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 135 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 15915 micro seconds.
+Falcon-512 Latency time result: 1494 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 5031 micro seconds.
+Dilithium2 Latency time result: 2168 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 6 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 15787 micro seconds.
+Falcon-512 Latency time result: 1480 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 539 micro seconds.
+Dilithium2 Total time result: 5159 micro seconds.
+Dilithium2 Latency time result: 2484 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15853 micro seconds.
+Falcon-512 Latency time result: 1538 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4245 micro seconds.
+Dilithium2 Latency time result: 2406 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 57 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 155 micro seconds.
+Falcon-512 Total time result: 15882 micro seconds.
+Falcon-512 Latency time result: 1484 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 3691 micro seconds.
+Dilithium2 Latency time result: 1894 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 223 micro seconds.
+Falcon-512 Total time result: 15998 micro seconds.
+Falcon-512 Latency time result: 1595 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 222 micro seconds.
+Falcon-512 Total time result: 15965 micro seconds.
+Falcon-512 Latency time result: 1539 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 85 micro seconds.
+Dilithium2 Generating concat message execution time: 6 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 4918 micro seconds.
+Dilithium2 Latency time result: 2508 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 4274 micro seconds.
+Dilithium2 Latency time result: 2193 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 203 micro seconds.
+Falcon-512 Total time result: 16058 micro seconds.
+Falcon-512 Latency time result: 1633 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 220 micro seconds.
+Falcon-512 Total time result: 16173 micro seconds.
+Falcon-512 Latency time result: 1576 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 4765 micro seconds.
+Dilithium2 Latency time result: 1906 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 210 micro seconds.
+Falcon-512 Total time result: 16049 micro seconds.
+Falcon-512 Latency time result: 1620 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 6842 micro seconds.
+Dilithium2 Latency time result: 2258 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 130 micro seconds.
+Falcon-512 Total time result: 15792 micro seconds.
+Falcon-512 Latency time result: 1505 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 548 micro seconds.
+Dilithium2 Total time result: 5403 micro seconds.
+Dilithium2 Latency time result: 2451 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 224 micro seconds.
+Falcon-512 Total time result: 15963 micro seconds.
+Falcon-512 Latency time result: 1558 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 4598 micro seconds.
+Dilithium2 Latency time result: 2524 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4443 micro seconds.
+Dilithium2 Latency time result: 2157 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 191 micro seconds.
+Falcon-512 Total time result: 15759 micro seconds.
+Falcon-512 Latency time result: 1365 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 535 micro seconds.
+Dilithium2 Total time result: 6188 micro seconds.
+Dilithium2 Latency time result: 2370 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 16044 micro seconds.
+Falcon-512 Latency time result: 1733 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 61 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 15678 micro seconds.
+Falcon-512 Latency time result: 1341 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 4327 micro seconds.
+Dilithium2 Latency time result: 2229 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 188 micro seconds.
+Falcon-512 Total time result: 15895 micro seconds.
+Falcon-512 Latency time result: 1524 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 523 micro seconds.
+Dilithium2 Total time result: 5627 micro seconds.
+Dilithium2 Latency time result: 2202 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 582 micro seconds.
+Dilithium2 Total time result: 4774 micro seconds.
+Dilithium2 Latency time result: 2335 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 62 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 133 micro seconds.
+Falcon-512 Total time result: 16313 micro seconds.
+Falcon-512 Latency time result: 1997 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4499 micro seconds.
+Dilithium2 Latency time result: 2418 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 62 micro seconds.
+Falcon-512 Generating concat message execution time: 12 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 16236 micro seconds.
+Falcon-512 Latency time result: 1856 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 169 micro seconds.
+Falcon-512 Total time result: 15869 micro seconds.
+Falcon-512 Latency time result: 1541 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 14 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4916 micro seconds.
+Dilithium2 Latency time result: 2008 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15885 micro seconds.
+Falcon-512 Latency time result: 1513 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4012 micro seconds.
+Dilithium2 Latency time result: 2236 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 148 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 3670 micro seconds.
+Dilithium2 Latency time result: 2085 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 15898 micro seconds.
+Falcon-512 Latency time result: 1526 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 517 micro seconds.
+Dilithium2 Total time result: 4473 micro seconds.
+Dilithium2 Latency time result: 2458 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 59 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 158 micro seconds.
+Falcon-512 Total time result: 15915 micro seconds.
+Falcon-512 Latency time result: 1530 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 4498 micro seconds.
+Dilithium2 Latency time result: 2376 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 132 micro seconds.
+Falcon-512 Total time result: 15918 micro seconds.
+Falcon-512 Latency time result: 1604 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 196 micro seconds.
+Falcon-512 Total time result: 15799 micro seconds.
+Falcon-512 Latency time result: 1442 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 3857 micro seconds.
+Dilithium2 Latency time result: 2330 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 189 micro seconds.
+Falcon-512 Total time result: 15860 micro seconds.
+Falcon-512 Latency time result: 1552 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 5 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 4857 micro seconds.
+Dilithium2 Latency time result: 2527 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 105 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 16017 micro seconds.
+Falcon-512 Latency time result: 1612 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 6013 micro seconds.
+Dilithium2 Latency time result: 2628 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 5096 micro seconds.
+Dilithium2 Latency time result: 2394 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 206 micro seconds.
+Falcon-512 Total time result: 15900 micro seconds.
+Falcon-512 Latency time result: 1535 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 15795 micro seconds.
+Falcon-512 Latency time result: 1507 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 6 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4033 micro seconds.
+Dilithium2 Latency time result: 2500 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 4268 micro seconds.
+Dilithium2 Latency time result: 2485 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 192 micro seconds.
+Falcon-512 Total time result: 15950 micro seconds.
+Falcon-512 Latency time result: 1567 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 201 micro seconds.
+Falcon-512 Total time result: 15806 micro seconds.
+Falcon-512 Latency time result: 1458 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 4202 micro seconds.
+Dilithium2 Latency time result: 2395 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 80 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15884 micro seconds.
+Falcon-512 Latency time result: 1552 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 28 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4073 micro seconds.
+Dilithium2 Latency time result: 2295 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4706 micro seconds.
+Dilithium2 Latency time result: 2301 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15900 micro seconds.
+Falcon-512 Latency time result: 1578 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 227 micro seconds.
+Falcon-512 Total time result: 15921 micro seconds.
+Falcon-512 Latency time result: 1535 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 85 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 7038 micro seconds.
+Dilithium2 Latency time result: 2289 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 5621 micro seconds.
+Dilithium2 Latency time result: 2189 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 144 micro seconds.
+Falcon-512 Total time result: 16048 micro seconds.
+Falcon-512 Latency time result: 1662 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 139 micro seconds.
+Falcon-512 Total time result: 15690 micro seconds.
+Falcon-512 Latency time result: 1419 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 569 micro seconds.
+Dilithium2 Total time result: 4927 micro seconds.
+Dilithium2 Latency time result: 2567 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 180 micro seconds.
+Falcon-512 Total time result: 16020 micro seconds.
+Falcon-512 Latency time result: 1652 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 6617 micro seconds.
+Dilithium2 Latency time result: 2170 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 97 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 5023 micro seconds.
+Dilithium2 Latency time result: 2026 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 220 micro seconds.
+Falcon-512 Total time result: 16050 micro seconds.
+Falcon-512 Latency time result: 1608 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 143 micro seconds.
+Falcon-512 Total time result: 15714 micro seconds.
+Falcon-512 Latency time result: 1378 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 4070 micro seconds.
+Dilithium2 Latency time result: 2293 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 216 micro seconds.
+Falcon-512 Total time result: 15859 micro seconds.
+Falcon-512 Latency time result: 1487 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 3704 micro seconds.
+Dilithium2 Latency time result: 2180 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 3885 micro seconds.
+Dilithium2 Latency time result: 2349 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 211 micro seconds.
+Falcon-512 Total time result: 15910 micro seconds.
+Falcon-512 Latency time result: 1514 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 84 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 16100 micro seconds.
+Falcon-512 Latency time result: 1785 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 6927 micro seconds.
+Dilithium2 Latency time result: 2154 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 235 micro seconds.
+Falcon-512 Total time result: 16143 micro seconds.
+Falcon-512 Latency time result: 1707 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 5747 micro seconds.
+Dilithium2 Latency time result: 2216 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 83 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 5624 micro seconds.
+Dilithium2 Latency time result: 2253 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 242 micro seconds.
+Falcon-512 Total time result: 16201 micro seconds.
+Falcon-512 Latency time result: 1773 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 3714 micro seconds.
+Dilithium2 Latency time result: 2187 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15765 micro seconds.
+Falcon-512 Latency time result: 1440 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 4041 micro seconds.
+Dilithium2 Latency time result: 2269 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 35 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 15720 micro seconds.
+Falcon-512 Latency time result: 1356 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 7416 micro seconds.
+Dilithium2 Latency time result: 2165 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 211 micro seconds.
+Falcon-512 Total time result: 15738 micro seconds.
+Falcon-512 Latency time result: 1332 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 4754 micro seconds.
+Dilithium2 Latency time result: 2421 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15826 micro seconds.
+Falcon-512 Latency time result: 1576 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 184 micro seconds.
+Falcon-512 Total time result: 15907 micro seconds.
+Falcon-512 Latency time result: 1552 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 3771 micro seconds.
+Dilithium2 Latency time result: 2241 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 95 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4134 micro seconds.
+Dilithium2 Latency time result: 2345 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 107 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 38 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 16116 micro seconds.
+Falcon-512 Latency time result: 1671 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 537 micro seconds.
+Dilithium2 Total time result: 4068 micro seconds.
+Dilithium2 Latency time result: 2542 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 16061 micro seconds.
+Falcon-512 Latency time result: 1708 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 114 micro seconds.
+Dilithium2 Generating concat message execution time: 13 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 5449 micro seconds.
+Dilithium2 Latency time result: 2467 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 184 micro seconds.
+Falcon-512 Total time result: 15875 micro seconds.
+Falcon-512 Latency time result: 1515 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 3893 micro seconds.
+Dilithium2 Latency time result: 2288 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 216 micro seconds.
+Falcon-512 Total time result: 15878 micro seconds.
+Falcon-512 Latency time result: 1499 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 84 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 237 micro seconds.
+Falcon-512 Total time result: 16057 micro seconds.
+Falcon-512 Latency time result: 1630 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 4626 micro seconds.
+Dilithium2 Latency time result: 2422 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 632 micro seconds.
+Dilithium2 Total time result: 4053 micro seconds.
+Dilithium2 Latency time result: 2440 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 184 micro seconds.
+Falcon-512 Total time result: 15835 micro seconds.
+Falcon-512 Latency time result: 1476 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 3855 micro seconds.
+Dilithium2 Latency time result: 2334 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 16116 micro seconds.
+Falcon-512 Latency time result: 1846 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4061 micro seconds.
+Dilithium2 Latency time result: 2281 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 211 micro seconds.
+Falcon-512 Total time result: 15958 micro seconds.
+Falcon-512 Latency time result: 1538 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 142 micro seconds.
+Falcon-512 Total time result: 15911 micro seconds.
+Falcon-512 Latency time result: 1607 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 6660 micro seconds.
+Dilithium2 Latency time result: 2376 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 147 micro seconds.
+Falcon-512 Total time result: 16110 micro seconds.
+Falcon-512 Latency time result: 1757 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 28 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 5481 micro seconds.
+Dilithium2 Latency time result: 1967 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 105 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 16003 micro seconds.
+Falcon-512 Latency time result: 1586 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 3758 micro seconds.
+Dilithium2 Latency time result: 2235 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 28 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 3753 micro seconds.
+Dilithium2 Latency time result: 2233 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 133 micro seconds.
+Falcon-512 Total time result: 15763 micro seconds.
+Falcon-512 Latency time result: 1498 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 61 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 143 micro seconds.
+Falcon-512 Total time result: 16139 micro seconds.
+Falcon-512 Latency time result: 1874 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 4807 micro seconds.
+Dilithium2 Latency time result: 2371 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 10 micro seconds.
+Falcon-512 Verification execution time: 160 micro seconds.
+Falcon-512 Total time result: 15922 micro seconds.
+Falcon-512 Latency time result: 1515 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 98 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4085 micro seconds.
+Dilithium2 Latency time result: 2011 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 135 micro seconds.
+Falcon-512 Total time result: 16068 micro seconds.
+Falcon-512 Latency time result: 1739 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 98 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 523 micro seconds.
+Dilithium2 Total time result: 5251 micro seconds.
+Dilithium2 Latency time result: 2310 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 132 micro seconds.
+Falcon-512 Total time result: 15803 micro seconds.
+Falcon-512 Latency time result: 1533 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 4976 micro seconds.
+Dilithium2 Latency time result: 2055 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 178 micro seconds.
+Falcon-512 Total time result: 15637 micro seconds.
+Falcon-512 Latency time result: 1305 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 8169 micro seconds.
+Dilithium2 Latency time result: 2050 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 518 micro seconds.
+Dilithium2 Total time result: 4709 micro seconds.
+Dilithium2 Latency time result: 2288 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 34 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 133 micro seconds.
+Falcon-512 Total time result: 15908 micro seconds.
+Falcon-512 Latency time result: 1487 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 4077 micro seconds.
+Dilithium2 Latency time result: 2263 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 130 micro seconds.
+Falcon-512 Total time result: 16075 micro seconds.
+Falcon-512 Latency time result: 1770 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 553 micro seconds.
+Dilithium2 Total time result: 4678 micro seconds.
+Dilithium2 Latency time result: 2308 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 58 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 131 micro seconds.
+Falcon-512 Total time result: 15561 micro seconds.
+Falcon-512 Latency time result: 1274 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 15938 micro seconds.
+Falcon-512 Latency time result: 1619 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 557 micro seconds.
+Dilithium2 Total time result: 3869 micro seconds.
+Dilithium2 Latency time result: 2321 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 130 micro seconds.
+Falcon-512 Total time result: 16105 micro seconds.
+Falcon-512 Latency time result: 1795 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 96 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 3902 micro seconds.
+Dilithium2 Latency time result: 2075 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 63 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 129 micro seconds.
+Falcon-512 Total time result: 16288 micro seconds.
+Falcon-512 Latency time result: 1959 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 519 micro seconds.
+Dilithium2 Total time result: 4261 micro seconds.
+Dilithium2 Latency time result: 2510 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 715 micro seconds.
+Dilithium2 Total time result: 4127 micro seconds.
+Dilithium2 Latency time result: 2181 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 132 micro seconds.
+Falcon-512 Total time result: 15682 micro seconds.
+Falcon-512 Latency time result: 1355 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 4027 micro seconds.
+Dilithium2 Latency time result: 2209 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15757 micro seconds.
+Falcon-512 Latency time result: 1469 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 226 micro seconds.
+Falcon-512 Total time result: 15832 micro seconds.
+Falcon-512 Latency time result: 1430 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 3623 micro seconds.
+Dilithium2 Latency time result: 2092 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 6 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 6657 micro seconds.
+Dilithium2 Latency time result: 2516 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 210 micro seconds.
+Falcon-512 Total time result: 15865 micro seconds.
+Falcon-512 Latency time result: 1488 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 518 micro seconds.
+Dilithium2 Total time result: 5062 micro seconds.
+Dilithium2 Latency time result: 2460 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 190 micro seconds.
+Falcon-512 Total time result: 15853 micro seconds.
+Falcon-512 Latency time result: 1476 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 219 micro seconds.
+Falcon-512 Total time result: 15858 micro seconds.
+Falcon-512 Latency time result: 1432 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4221 micro seconds.
+Dilithium2 Latency time result: 2136 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 5183 micro seconds.
+Dilithium2 Latency time result: 2284 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 60 micro seconds.
+Falcon-512 Verification execution time: 163 micro seconds.
+Falcon-512 Total time result: 15894 micro seconds.
+Falcon-512 Latency time result: 1565 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 3800 micro seconds.
+Dilithium2 Latency time result: 2286 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 216 micro seconds.
+Falcon-512 Total time result: 15592 micro seconds.
+Falcon-512 Latency time result: 1263 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 94 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 4935 micro seconds.
+Dilithium2 Latency time result: 2201 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 218 micro seconds.
+Falcon-512 Total time result: 15790 micro seconds.
+Falcon-512 Latency time result: 1361 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 6 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 525 micro seconds.
+Dilithium2 Total time result: 4661 micro seconds.
+Dilithium2 Latency time result: 2545 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 197 micro seconds.
+Falcon-512 Total time result: 15821 micro seconds.
+Falcon-512 Latency time result: 1472 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 6 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 532 micro seconds.
+Dilithium2 Total time result: 4364 micro seconds.
+Dilithium2 Latency time result: 2586 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 217 micro seconds.
+Falcon-512 Total time result: 15992 micro seconds.
+Falcon-512 Latency time result: 1519 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 81 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 141 micro seconds.
+Falcon-512 Total time result: 15426 micro seconds.
+Falcon-512 Latency time result: 1095 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 3867 micro seconds.
+Dilithium2 Latency time result: 2350 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 94 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 610 micro seconds.
+Dilithium2 Total time result: 10444 micro seconds.
+Dilithium2 Latency time result: 3053 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 110 micro seconds.
+Falcon-512 Generating concat message execution time: 36 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 15840 micro seconds.
+Falcon-512 Latency time result: 1460 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 196 micro seconds.
+Falcon-512 Total time result: 15789 micro seconds.
+Falcon-512 Latency time result: 1458 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 83 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 523 micro seconds.
+Dilithium2 Total time result: 4396 micro seconds.
+Dilithium2 Latency time result: 2339 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 216 micro seconds.
+Falcon-512 Total time result: 15758 micro seconds.
+Falcon-512 Latency time result: 1366 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 518 micro seconds.
+Dilithium2 Total time result: 4130 micro seconds.
+Dilithium2 Latency time result: 2376 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 216 micro seconds.
+Falcon-512 Total time result: 16036 micro seconds.
+Falcon-512 Latency time result: 1589 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 527 micro seconds.
+Dilithium2 Total time result: 4028 micro seconds.
+Dilithium2 Latency time result: 2263 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 84 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 146 micro seconds.
+Falcon-512 Total time result: 15983 micro seconds.
+Falcon-512 Latency time result: 1652 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 544 micro seconds.
+Dilithium2 Total time result: 3996 micro seconds.
+Dilithium2 Latency time result: 2457 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 523 micro seconds.
+Dilithium2 Total time result: 4183 micro seconds.
+Dilithium2 Latency time result: 2112 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 81 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 15895 micro seconds.
+Falcon-512 Latency time result: 1513 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 5743 micro seconds.
+Dilithium2 Latency time result: 2459 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 16092 micro seconds.
+Falcon-512 Latency time result: 1739 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 140 micro seconds.
+Falcon-512 Total time result: 15864 micro seconds.
+Falcon-512 Latency time result: 1568 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 3689 micro seconds.
+Dilithium2 Latency time result: 2156 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 134 micro seconds.
+Falcon-512 Total time result: 16120 micro seconds.
+Falcon-512 Latency time result: 1845 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 100 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 3484 micro seconds.
+Dilithium2 Latency time result: 1946 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 219 micro seconds.
+Falcon-512 Total time result: 15971 micro seconds.
+Falcon-512 Latency time result: 1523 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 549 micro seconds.
+Dilithium2 Total time result: 4419 micro seconds.
+Dilithium2 Latency time result: 2307 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 94 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 3772 micro seconds.
+Dilithium2 Latency time result: 2230 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 60 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 162 micro seconds.
+Falcon-512 Total time result: 15978 micro seconds.
+Falcon-512 Latency time result: 1622 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4072 micro seconds.
+Dilithium2 Latency time result: 2283 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 60 micro seconds.
+Falcon-512 Verification execution time: 154 micro seconds.
+Falcon-512 Total time result: 15905 micro seconds.
+Falcon-512 Latency time result: 1495 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 83 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 522 micro seconds.
+Dilithium2 Total time result: 3609 micro seconds.
+Dilithium2 Latency time result: 2104 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 15979 micro seconds.
+Falcon-512 Latency time result: 1651 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 51 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 204 micro seconds.
+Falcon-512 Total time result: 16005 micro seconds.
+Falcon-512 Latency time result: 1648 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 6620 micro seconds.
+Dilithium2 Latency time result: 2166 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 189 micro seconds.
+Falcon-512 Total time result: 15905 micro seconds.
+Falcon-512 Latency time result: 1571 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4132 micro seconds.
+Dilithium2 Latency time result: 2355 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 59 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 75 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 132 micro seconds.
+Falcon-512 Total time result: 15561 micro seconds.
+Falcon-512 Latency time result: 1201 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 4395 micro seconds.
+Dilithium2 Latency time result: 2406 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 8059 micro seconds.
+Dilithium2 Latency time result: 2415 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 210 micro seconds.
+Falcon-512 Total time result: 15657 micro seconds.
+Falcon-512 Latency time result: 1280 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 5 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 545 micro seconds.
+Dilithium2 Total time result: 4505 micro seconds.
+Dilithium2 Latency time result: 2561 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 55 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 185 micro seconds.
+Falcon-512 Total time result: 15914 micro seconds.
+Falcon-512 Latency time result: 1562 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 528 micro seconds.
+Dilithium2 Total time result: 4875 micro seconds.
+Dilithium2 Latency time result: 2253 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 56 micro seconds.
+Falcon-512 Verification execution time: 156 micro seconds.
+Falcon-512 Total time result: 15951 micro seconds.
+Falcon-512 Latency time result: 1604 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 62 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 178 micro seconds.
+Falcon-512 Total time result: 16038 micro seconds.
+Falcon-512 Latency time result: 1620 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 85 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 519 micro seconds.
+Dilithium2 Total time result: 3982 micro seconds.
+Dilithium2 Latency time result: 2227 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 62 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 16118 micro seconds.
+Falcon-512 Latency time result: 1824 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 3792 micro seconds.
+Dilithium2 Latency time result: 2262 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 516 micro seconds.
+Dilithium2 Total time result: 5258 micro seconds.
+Dilithium2 Latency time result: 2299 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 56 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 132 micro seconds.
+Falcon-512 Total time result: 15980 micro seconds.
+Falcon-512 Latency time result: 1613 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 185 micro seconds.
+Falcon-512 Total time result: 15605 micro seconds.
+Falcon-512 Latency time result: 1257 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 91 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4784 micro seconds.
+Dilithium2 Latency time result: 2270 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 535 micro seconds.
+Dilithium2 Total time result: 5577 micro seconds.
+Dilithium2 Latency time result: 2349 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 105 micro seconds.
+Falcon-512 Generating concat message execution time: 11 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 163 micro seconds.
+Falcon-512 Total time result: 15844 micro seconds.
+Falcon-512 Latency time result: 1445 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 3758 micro seconds.
+Dilithium2 Latency time result: 2244 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 206 micro seconds.
+Falcon-512 Total time result: 15919 micro seconds.
+Falcon-512 Latency time result: 1590 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 6 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 138 micro seconds.
+Falcon-512 Total time result: 15872 micro seconds.
+Falcon-512 Latency time result: 1511 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 71 micro seconds.
+Dilithium2 Decode PK execution time: 15 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4202 micro seconds.
+Dilithium2 Latency time result: 2373 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 208 micro seconds.
+Falcon-512 Total time result: 15866 micro seconds.
+Falcon-512 Latency time result: 1491 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 3867 micro seconds.
+Dilithium2 Latency time result: 2361 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 549 micro seconds.
+Dilithium2 Total time result: 5850 micro seconds.
+Dilithium2 Latency time result: 2361 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 211 micro seconds.
+Falcon-512 Total time result: 15922 micro seconds.
+Falcon-512 Latency time result: 1555 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 538 micro seconds.
+Dilithium2 Total time result: 4475 micro seconds.
+Dilithium2 Latency time result: 2371 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 220 micro seconds.
+Falcon-512 Total time result: 16004 micro seconds.
+Falcon-512 Latency time result: 1582 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 10 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 145 micro seconds.
+Falcon-512 Total time result: 15955 micro seconds.
+Falcon-512 Latency time result: 1606 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 4168 micro seconds.
+Dilithium2 Latency time result: 2386 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 107 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 163 micro seconds.
+Falcon-512 Total time result: 15784 micro seconds.
+Falcon-512 Latency time result: 1416 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 92 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 536 micro seconds.
+Dilithium2 Total time result: 3677 micro seconds.
+Dilithium2 Latency time result: 2147 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 204 micro seconds.
+Falcon-512 Total time result: 15849 micro seconds.
+Falcon-512 Latency time result: 1466 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 531 micro seconds.
+Dilithium2 Total time result: 4290 micro seconds.
+Dilithium2 Latency time result: 2450 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 90 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 27 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 533 micro seconds.
+Dilithium2 Total time result: 4738 micro seconds.
+Dilithium2 Latency time result: 2376 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 51 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 137 micro seconds.
+Falcon-512 Total time result: 15688 micro seconds.
+Falcon-512 Latency time result: 1409 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 52 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 202 micro seconds.
+Falcon-512 Total time result: 16039 micro seconds.
+Falcon-512 Latency time result: 1562 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 93 micro seconds.
+Dilithium2 Generating concat message execution time: 12 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 529 micro seconds.
+Dilithium2 Total time result: 3579 micro seconds.
+Dilithium2 Latency time result: 1960 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 9 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 198 micro seconds.
+Falcon-512 Total time result: 15664 micro seconds.
+Falcon-512 Latency time result: 1278 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 86 micro seconds.
+Dilithium2 Generating concat message execution time: 11 micro seconds.
+Dilithium2 Decode sig execution time: 24 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 4123 micro seconds.
+Dilithium2 Latency time result: 2354 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 51 micro seconds.
+Falcon-512 Generating concat message execution time: 62 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 9 micro seconds.
+Falcon-512 Verification execution time: 196 micro seconds.
+Falcon-512 Total time result: 16063 micro seconds.
+Falcon-512 Latency time result: 1579 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 89 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 535 micro seconds.
+Dilithium2 Total time result: 5846 micro seconds.
+Dilithium2 Latency time result: 2512 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 85 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 13 micro seconds.
+Dilithium2 Verification execution time: 521 micro seconds.
+Dilithium2 Total time result: 7331 micro seconds.
+Dilithium2 Latency time result: 2259 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15764 micro seconds.
+Falcon-512 Latency time result: 1431 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 82 micro seconds.
+Dilithium2 Generating concat message execution time: 7 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 520 micro seconds.
+Dilithium2 Total time result: 4347 micro seconds.
+Dilithium2 Latency time result: 2154 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 54 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 136 micro seconds.
+Falcon-512 Total time result: 15896 micro seconds.
+Falcon-512 Latency time result: 1545 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 9 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 235 micro seconds.
+Falcon-512 Total time result: 15643 micro seconds.
+Falcon-512 Latency time result: 1269 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 88 micro seconds.
+Dilithium2 Generating concat message execution time: 10 micro seconds.
+Dilithium2 Decode sig execution time: 26 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 530 micro seconds.
+Dilithium2 Total time result: 4056 micro seconds.
+Dilithium2 Latency time result: 1990 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 7 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 219 micro seconds.
+Falcon-512 Total time result: 15898 micro seconds.
+Falcon-512 Latency time result: 1514 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 84 micro seconds.
+Dilithium2 Generating concat message execution time: 8 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 526 micro seconds.
+Dilithium2 Total time result: 5947 micro seconds.
+Dilithium2 Latency time result: 2424 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 57 micro seconds.
+Falcon-512 Generating concat message execution time: 8 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 221 micro seconds.
+Falcon-512 Total time result: 15944 micro seconds.
+Falcon-512 Latency time result: 1557 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 9 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 534 micro seconds.
+Dilithium2 Total time result: 4913 micro seconds.
+Dilithium2 Latency time result: 2384 micro seconds.
+---------------------------------------------------------
+Falcon-512 Extracting payload from cJSON execution time: 53 micro seconds.
+Falcon-512 Generating concat message execution time: 7 micro seconds.
+Falcon-512 Decode sig execution time: 8 micro seconds.
+Falcon-512 Decode PK execution time: 8 micro seconds.
+Falcon-512 Verification execution time: 133 micro seconds.
+Falcon-512 Total time result: 15970 micro seconds.
+Falcon-512 Latency time result: 1679 micro seconds.
+---------------------------------------------------------
+Dilithium2 Extracting payload from cJSON execution time: 87 micro seconds.
+Dilithium2 Generating concat message execution time: 5 micro seconds.
+Dilithium2 Decode sig execution time: 25 micro seconds.
+Dilithium2 Decode PK execution time: 14 micro seconds.
+Dilithium2 Verification execution time: 537 micro seconds.
+Dilithium2 Total time result: 4209 micro seconds.
+Dilithium2 Latency time result: 2692 micro seconds.
+---------------------------------------------------------

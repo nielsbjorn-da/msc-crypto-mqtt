@@ -79,6 +79,7 @@ static int publish_count = 0;
 static bool ready_for_repeat = false;
 static volatile int status = STATUS_CONNECTING;
 static int connack_result = 0;
+struct timeval connect_start_time;
 
 int load_client_key(uint8_t *key_array, char *client_id, char *key_type)
 {
@@ -220,7 +221,10 @@ void my_connect_callback(struct mosquitto *mosq, void *obj, int result, int flag
   UNUSED(properties);
   */
   connack_result = result;
-  printf("in connect callback");
+  struct timeval connect_end_time;
+  gettimeofday(&connect_end_time, NULL);
+  long connect_time = (connect_end_time.tv_sec * 1000000 + connect_end_time.tv_usec) - (connect_start_time.tv_sec * 1000000 + connect_start_time.tv_usec);
+  printf("Connect time: %ld microseconds\n", connect_time);
 }
 
 int my_publish(struct mosquitto *mosq, int *mid, const char *topic, int payloadlen, void *payload, int qos, bool retain)
@@ -245,7 +249,7 @@ int dilithium_sign_message(uint8_t *signature, const char *message, int message_
   size_t sig_length;
   int ret = 1;
   
-  //int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
+  //ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_pub_sk);
   if (dilithium_version == 2) {
     ret = pqcrystals_dilithium2_ref_signature(signature, &sig_length,
                                         message, message_length,
@@ -315,6 +319,17 @@ void initialize_falcon_struct(FalconContext *fc)
   fc->sig_len = 0;
   fc->sigct = xmalloc(FALCON_SIG_CT_SIZE(fc->logn));
   fc->sigct_len = 0;
+
+  int keygen = falcon_keygen_make(&fc->rng, fc->logn,
+                                  fc->sk, FALCON_PRIVKEY_SIZE(fc->logn),
+                                  fc->pk, FALCON_PUBKEY_SIZE(fc->logn),
+                                  fc->tmp, fc->tmp_len);
+
+  if (keygen != 0)
+  {
+    fprintf(stderr, "Key generation failed\n");
+    exit(EXIT_FAILURE);
+  }
 }
 
 /*
@@ -395,6 +410,65 @@ char *encode(uint8_t *input, size_t input_size)
   *c = 0;
   return output;
 }
+
+void test_dilithium()
+{
+  size_t MLEN = 59;
+  size_t NTESTS = 100;
+  size_t i, j;
+  int ret;
+  size_t mlen, smlen;
+  uint8_t b;
+  uint8_t m[MLEN + CRYPTO_BYTES];
+  uint8_t m2[MLEN + CRYPTO_BYTES];
+  char* sm;
+  sm = malloc(MLEN + CRYPTO_BYTES);
+  char *pk;
+  pk = malloc(CRYPTO_PUBLICKEYBYTES);
+  char *sk = malloc(CRYPTO_SECRETKEYBYTES);
+
+  struct timeval start_time, end_time;
+  long long average = 0;
+  long long avg2 = 0;
+  for(i = 0; i < NTESTS; ++i) {
+    randombytes(m, MLEN);
+
+    crypto_sign_keypair(pk, sk);
+    gettimeofday(&start_time, NULL);
+    crypto_sign_signature(sm, &smlen, m, MLEN, sk);
+    //dilithium_sign_message2(sm, m, MLEN, sk);
+    gettimeofday(&end_time, NULL);
+    long time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    average += time_taken;
+    //printf("Signing message execution time: %ld micro seconds.\n",time_taken);
+
+
+    gettimeofday(&start_time, NULL);
+    //ret = crypto_sign_open(m2, &mlen, sm, smlen, pk);
+    
+    ret = crypto_sign_verify(sm, smlen, m2, mlen, pk);
+
+    gettimeofday(&end_time, NULL);
+    time_taken = (end_time.tv_sec * 1000000 + end_time.tv_usec) - (start_time.tv_sec * 1000000 + start_time.tv_usec);
+    avg2 += time_taken;
+    //printf("Verify message execution time: %ld micro seconds.\n",time_taken);
+    ret = 0;
+    if(ret) {
+      fprintf(stderr, "Verification failed\n");
+      return -1;
+    }
+  }
+
+  /*printf("CRYPTO_PUBLICKEYBYTES = %d\n", CRYPTO_PUBLICKEYBYTES);
+  printf("CRYPTO_SECRETKEYBYTES = %d\n", CRYPTO_SECRETKEYBYTES);
+  printf("CRYPTO_BYTES = %d\n", CRYPTO_BYTES);
+  average /= NTESTS;
+  avg2 /= NTESTS;
+  printf("Average sign: %lld\n", average);
+
+  printf("Average verify: %lld\n", avg2);*/
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -495,13 +569,17 @@ int main(int argc, char *argv[])
   {
     goto cleanup;
   }
-
+  gettimeofday(&connect_start_time, NULL);
   rc = client_connect(mosq, &cfg);
   if (rc)
   {
     printf("RC client connect");
     goto cleanup;
   }
+
+  mosquitto_loop_start(mosq);
+  sleep(1);
+  mosquitto_loop_stop(mosq, true);
 
   // setup algorithm params for chosen algo
   char *alg_id = cfg.message;
@@ -525,8 +603,12 @@ int main(int argc, char *argv[])
     dilithium_sig_len = pqcrystals_dilithium5_BYTES;
 
   } else if (strcmp(alg_id, "F512") == 0) {
+    
     sig_scheme = "Falcon-512";
     dilithium = false;
+    logn = 9;
+    pk_len = FALCON_PUBKEY_SIZE(9);
+    len = FALCON_TMPSIZE_KEYGEN(9);
   } else if (strcmp(alg_id, "F1024") == 0) {
     sig_scheme = "Falcon-1024";
     dilithium = false;
@@ -550,11 +632,13 @@ int main(int argc, char *argv[])
     load_client_key(fc->sk, clientID, "sk");
   }
 
+  test_dilithium();
+
    gettimeofday(&total_timestamp, NULL);
   // #####################################################################################
   //  Creating the message to sign
   // #####################################################################################
-
+  
 
   // timestamp
   gettimeofday(&start_time, NULL);
@@ -562,7 +646,7 @@ int main(int argc, char *argv[])
   snprintf(current_time_str, sizeof(current_time_str), "%d", total_timestamp.tv_sec);
 
   message_len = strlen(cfg.message) + strlen(cfg.topic) + strlen(current_time_str) + strlen(clientID);
-  char concatenated_message_to_sign[100 + 1]; 
+  char concatenated_message_to_sign[50 + 1]; 
   concatenated_message_to_sign[0] = '\0';
 
   strcat(concatenated_message_to_sign, cfg.message);
