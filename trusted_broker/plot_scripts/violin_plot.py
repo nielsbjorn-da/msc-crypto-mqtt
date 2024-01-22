@@ -5,7 +5,7 @@ import seaborn as sns
 import pandas as pd
 
 path_design_a = '../Design_A/mosquitto_code/mosquitto/client/test_results/Iteration_1/'
-path_design_b = '../Design_B/mosquitto_code/mosquitto/client/test_results/Iteration_1/' 
+path_design_b = '../Design_A/mosquitto_code/mosquitto/client/test_results/Iteration_1/' 
 
 
 def convert_sym_to_name(sym):
@@ -38,7 +38,7 @@ design_b = [
     path_design_b + "time_results_subscriber_f1024.txt"
 ]
 
-element_number = 350
+element_number = 150
 upper_bound = 90000
 
 
@@ -116,6 +116,7 @@ for i in data_b:
     print(len(data_b[i]))
     new_data_b[i] = temp
 
+print(new_data_b)
 # Convert the dictionary to a DataFrame
 df_a = pd.DataFrame(new_data_a)
 df_b = pd.DataFrame(new_data_b)

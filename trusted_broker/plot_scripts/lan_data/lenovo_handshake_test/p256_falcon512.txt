@@ -1,0 +1,1101 @@
+Current signature algorithm: p256_falcon512
+round 1
+Groups = x25519_kyber512
+Connect time: 61959 microseconds.
+Groups = X25519
+Connect time: 65387 microseconds.
+Groups = p256_kyber512
+Connect time: 80023 microseconds.
+Groups = kyber512
+Connect time: 73520 microseconds.
+Groups = secp256r1
+Connect time: 62611 microseconds.
+round 2
+Groups = kyber512
+Connect time: 73359 microseconds.
+Groups = X25519
+Connect time: 66092 microseconds.
+Groups = x25519_kyber512
+Connect time: 64317 microseconds.
+Groups = secp256r1
+Connect time: 74938 microseconds.
+Groups = p256_kyber512
+Connect time: 68298 microseconds.
+round 3
+Groups = secp256r1
+Connect time: 74488 microseconds.
+Groups = x25519_kyber512
+Connect time: 68651 microseconds.
+Groups = X25519
+Connect time: 75562 microseconds.
+Groups = p256_kyber512
+Connect time: 53727 microseconds.
+Groups = kyber512
+Connect time: 77180 microseconds.
+round 4
+Groups = kyber512
+Connect time: 45201 microseconds.
+Groups = X25519
+Connect time: 59650 microseconds.
+Groups = secp256r1
+Connect time: 65522 microseconds.
+Groups = p256_kyber512
+Connect time: 82887 microseconds.
+Groups = x25519_kyber512
+Connect time: 64403 microseconds.
+round 5
+Groups = x25519_kyber512
+Connect time: 53934 microseconds.
+Groups = X25519
+Connect time: 63220 microseconds.
+Groups = p256_kyber512
+Connect time: 70530 microseconds.
+Groups = kyber512
+Connect time: 68279 microseconds.
+Groups = secp256r1
+Connect time: 78064 microseconds.
+round 6
+Groups = secp256r1
+Connect time: 81957 microseconds.
+Groups = x25519_kyber512
+Connect time: 74631 microseconds.
+Groups = kyber512
+Connect time: 74545 microseconds.
+Groups = p256_kyber512
+Connect time: 69436 microseconds.
+Groups = X25519
+Connect time: 72545 microseconds.
+round 7
+Groups = p256_kyber512
+Connect time: 52967 microseconds.
+Groups = x25519_kyber512
+Connect time: 78902 microseconds.
+Groups = secp256r1
+Connect time: 66522 microseconds.
+Groups = kyber512
+Connect time: 105872 microseconds.
+Groups = X25519
+Connect time: 67066 microseconds.
+round 8
+Groups = X25519
+Connect time: 69070 microseconds.
+Groups = p256_kyber512
+Connect time: 86266 microseconds.
+Groups = secp256r1
+Connect time: 82722 microseconds.
+Groups = kyber512
+Connect time: 68093 microseconds.
+Groups = x25519_kyber512
+Connect time: 78290 microseconds.
+round 9
+Groups = p256_kyber512
+Connect time: 69561 microseconds.
+Groups = kyber512
+Connect time: 57794 microseconds.
+Groups = x25519_kyber512
+Connect time: 44691 microseconds.
+Groups = secp256r1
+Connect time: 75590 microseconds.
+Groups = X25519
+Connect time: 76792 microseconds.
+round 10
+Groups = kyber512
+Connect time: 68370 microseconds.
+Groups = p256_kyber512
+Connect time: 82535 microseconds.
+Groups = secp256r1
+Connect time: 44816 microseconds.
+Groups = x25519_kyber512
+Connect time: 77495 microseconds.
+Groups = X25519
+Connect time: 80749 microseconds.
+round 11
+Groups = kyber512
+Connect time: 67269 microseconds.
+Groups = x25519_kyber512
+Connect time: 75001 microseconds.
+Groups = p256_kyber512
+Connect time: 80581 microseconds.
+Groups = secp256r1
+Connect time: 75447 microseconds.
+Groups = X25519
+Connect time: 67253 microseconds.
+round 12
+Groups = X25519
+Connect time: 67081 microseconds.
+Groups = p256_kyber512
+Connect time: 48179 microseconds.
+Groups = x25519_kyber512
+Connect time: 71930 microseconds.
+Groups = secp256r1
+Connect time: 73520 microseconds.
+Groups = kyber512
+Connect time: 60131 microseconds.
+round 13
+Groups = secp256r1
+Connect time: 63146 microseconds.
+Groups = p256_kyber512
+Connect time: 79694 microseconds.
+Groups = kyber512
+Connect time: 70020 microseconds.
+Groups = x25519_kyber512
+Connect time: 57426 microseconds.
+Groups = X25519
+Connect time: 63389 microseconds.
+round 14
+Groups = secp256r1
+Connect time: 49542 microseconds.
+Groups = X25519
+Connect time: 71039 microseconds.
+Groups = p256_kyber512
+Connect time: 81845 microseconds.
+Groups = x25519_kyber512
+Connect time: 60128 microseconds.
+Groups = kyber512
+Connect time: 67931 microseconds.
+round 15
+Groups = kyber512
+Connect time: 63539 microseconds.
+Groups = X25519
+Connect time: 67238 microseconds.
+Groups = x25519_kyber512
+Connect time: 67973 microseconds.
+Groups = p256_kyber512
+Connect time: 84401 microseconds.
+Groups = secp256r1
+Connect time: 65383 microseconds.
+round 16
+Groups = x25519_kyber512
+Connect time: 71555 microseconds.
+Groups = secp256r1
+Connect time: 69228 microseconds.
+Groups = kyber512
+Connect time: 77502 microseconds.
+Groups = X25519
+Connect time: 67228 microseconds.
+Groups = p256_kyber512
+Connect time: 74794 microseconds.
+round 17
+Groups = x25519_kyber512
+Connect time: 73105 microseconds.
+Groups = X25519
+Connect time: 69341 microseconds.
+Groups = p256_kyber512
+Connect time: 72812 microseconds.
+Groups = secp256r1
+Connect time: 74422 microseconds.
+Groups = kyber512
+Connect time: 43482 microseconds.
+round 18
+Groups = p256_kyber512
+Connect time: 72809 microseconds.
+Groups = x25519_kyber512
+Connect time: 80317 microseconds.
+Groups = secp256r1
+Connect time: 76110 microseconds.
+Groups = X25519
+Connect time: 60695 microseconds.
+Groups = kyber512
+Connect time: 61293 microseconds.
+round 19
+Groups = X25519
+Connect time: 73080 microseconds.
+Groups = secp256r1
+Connect time: 74516 microseconds.
+Groups = p256_kyber512
+Connect time: 94260 microseconds.
+Groups = x25519_kyber512
+Connect time: 75649 microseconds.
+Groups = kyber512
+Connect time: 66916 microseconds.
+round 20
+Groups = X25519
+Connect time: 63323 microseconds.
+Groups = p256_kyber512
+Connect time: 77815 microseconds.
+Groups = secp256r1
+Connect time: 60743 microseconds.
+Groups = kyber512
+Connect time: 44408 microseconds.
+Groups = x25519_kyber512
+Connect time: 69248 microseconds.
+round 21
+Groups = x25519_kyber512
+Connect time: 64808 microseconds.
+Groups = kyber512
+Connect time: 69777 microseconds.
+Groups = secp256r1
+Connect time: 63044 microseconds.
+Groups = X25519
+Connect time: 73460 microseconds.
+Groups = p256_kyber512
+Connect time: 87247 microseconds.
+round 22
+Groups = X25519
+Connect time: 95509 microseconds.
+Groups = p256_kyber512
+Connect time: 87187 microseconds.
+Groups = secp256r1
+Connect time: 58169 microseconds.
+Groups = kyber512
+Connect time: 75852 microseconds.
+Groups = x25519_kyber512
+Connect time: 73587 microseconds.
+round 23
+Groups = X25519
+Connect time: 50996 microseconds.
+Groups = secp256r1
+Connect time: 115812 microseconds.
+Groups = kyber512
+Connect time: 45778 microseconds.
+Groups = p256_kyber512
+Connect time: 67712 microseconds.
+Groups = x25519_kyber512
+Connect time: 81753 microseconds.
+round 24
+Groups = X25519
+Connect time: 49919 microseconds.
+Groups = kyber512
+Connect time: 78921 microseconds.
+Groups = secp256r1
+Connect time: 67877 microseconds.
+Groups = x25519_kyber512
+Connect time: 69705 microseconds.
+Groups = p256_kyber512
+Connect time: 79620 microseconds.
+round 25
+Groups = p256_kyber512
+Connect time: 79121 microseconds.
+Groups = secp256r1
+Connect time: 70965 microseconds.
+Groups = kyber512
+Connect time: 73733 microseconds.
+Groups = X25519
+Connect time: 73367 microseconds.
+Groups = x25519_kyber512
+Connect time: 77092 microseconds.
+round 26
+Groups = kyber512
+Connect time: 51454 microseconds.
+Groups = secp256r1
+Connect time: 44031 microseconds.
+Groups = p256_kyber512
+Connect time: 72555 microseconds.
+Groups = x25519_kyber512
+Connect time: 64558 microseconds.
+Groups = X25519
+Connect time: 60396 microseconds.
+round 27
+Groups = secp256r1
+Connect time: 73441 microseconds.
+Groups = kyber512
+Connect time: 77285 microseconds.
+Groups = p256_kyber512
+Connect time: 80232 microseconds.
+Groups = X25519
+Connect time: 76914 microseconds.
+Groups = x25519_kyber512
+Connect time: 61845 microseconds.
+round 28
+Groups = secp256r1
+Connect time: 72715 microseconds.
+Groups = p256_kyber512
+Connect time: 79572 microseconds.
+Groups = X25519
+Connect time: 67649 microseconds.
+Groups = x25519_kyber512
+Connect time: 75932 microseconds.
+Groups = kyber512
+Connect time: 72776 microseconds.
+round 29
+Groups = X25519
+Connect time: 51534 microseconds.
+Groups = x25519_kyber512
+Connect time: 62263 microseconds.
+Groups = p256_kyber512
+Connect time: 67759 microseconds.
+Groups = kyber512
+Connect time: 74094 microseconds.
+Groups = secp256r1
+Connect time: 78500 microseconds.
+round 30
+Groups = secp256r1
+Connect time: 49438 microseconds.
+Groups = x25519_kyber512
+Connect time: 77210 microseconds.
+Groups = p256_kyber512
+Connect time: 80888 microseconds.
+Groups = kyber512
+Connect time: 76257 microseconds.
+Groups = X25519
+Connect time: 55329 microseconds.
+round 31
+Groups = x25519_kyber512
+Connect time: 82701 microseconds.
+Groups = kyber512
+Connect time: 105742 microseconds.
+Groups = secp256r1
+Connect time: 58777 microseconds.
+Groups = p256_kyber512
+Connect time: 74076 microseconds.
+Groups = X25519
+Connect time: 73305 microseconds.
+round 32
+Groups = kyber512
+Connect time: 68542 microseconds.
+Groups = X25519
+Connect time: 59647 microseconds.
+Groups = secp256r1
+Connect time: 68818 microseconds.
+Groups = p256_kyber512
+Connect time: 63474 microseconds.
+Groups = x25519_kyber512
+Connect time: 79160 microseconds.
+round 33
+Groups = secp256r1
+Connect time: 68372 microseconds.
+Groups = kyber512
+Connect time: 80196 microseconds.
+Groups = p256_kyber512
+Connect time: 73706 microseconds.
+Groups = x25519_kyber512
+Connect time: 54178 microseconds.
+Groups = X25519
+Connect time: 116141 microseconds.
+round 34
+Groups = p256_kyber512
+Connect time: 73963 microseconds.
+Groups = kyber512
+Connect time: 59777 microseconds.
+Groups = secp256r1
+Connect time: 65798 microseconds.
+Groups = X25519
+Connect time: 65955 microseconds.
+Groups = x25519_kyber512
+Connect time: 80236 microseconds.
+round 35
+Groups = X25519
+Connect time: 67463 microseconds.
+Groups = x25519_kyber512
+Connect time: 102353 microseconds.
+Groups = secp256r1
+Connect time: 75707 microseconds.
+Groups = p256_kyber512
+Connect time: 79655 microseconds.
+Groups = kyber512
+Connect time: 68782 microseconds.
+round 36
+Groups = kyber512
+Connect time: 74013 microseconds.
+Groups = X25519
+Connect time: 68686 microseconds.
+Groups = x25519_kyber512
+Connect time: 95196 microseconds.
+Groups = p256_kyber512
+Connect time: 70281 microseconds.
+Groups = secp256r1
+Connect time: 78477 microseconds.
+round 37
+Groups = kyber512
+Connect time: 73667 microseconds.
+Groups = secp256r1
+Connect time: 76790 microseconds.
+Groups = X25519
+Connect time: 45892 microseconds.
+Groups = x25519_kyber512
+Connect time: 73819 microseconds.
+Groups = p256_kyber512
+Connect time: 61483 microseconds.
+round 38
+Groups = kyber512
+Connect time: 74344 microseconds.
+Groups = X25519
+Connect time: 106402 microseconds.
+Groups = p256_kyber512
+Connect time: 77811 microseconds.
+Groups = x25519_kyber512
+Connect time: 55117 microseconds.
+Groups = secp256r1
+Connect time: 73312 microseconds.
+round 39
+Groups = p256_kyber512
+Connect time: 71411 microseconds.
+Groups = secp256r1
+Connect time: 44462 microseconds.
+Groups = kyber512
+Connect time: 67926 microseconds.
+Groups = x25519_kyber512
+Connect time: 67087 microseconds.
+Groups = X25519
+Connect time: 74011 microseconds.
+round 40
+Groups = X25519
+Connect time: 68525 microseconds.
+Groups = x25519_kyber512
+Connect time: 116692 microseconds.
+Groups = secp256r1
+Connect time: 73901 microseconds.
+Groups = kyber512
+Connect time: 69147 microseconds.
+Groups = p256_kyber512
+Connect time: 74046 microseconds.
+round 41
+Groups = X25519
+Connect time: 67409 microseconds.
+Groups = kyber512
+Connect time: 71995 microseconds.
+Groups = secp256r1
+Connect time: 72498 microseconds.
+Groups = x25519_kyber512
+Connect time: 72937 microseconds.
+Groups = p256_kyber512
+Connect time: 87393 microseconds.
+round 42
+Groups = secp256r1
+Connect time: 80882 microseconds.
+Groups = p256_kyber512
+Connect time: 83800 microseconds.
+Groups = x25519_kyber512
+Connect time: 59995 microseconds.
+Groups = X25519
+Connect time: 78396 microseconds.
+Groups = kyber512
+Connect time: 59592 microseconds.
+round 43
+Groups = secp256r1
+Connect time: 70383 microseconds.
+Groups = x25519_kyber512
+Connect time: 60062 microseconds.
+Groups = X25519
+Connect time: 64694 microseconds.
+Groups = p256_kyber512
+Connect time: 74616 microseconds.
+Groups = kyber512
+Connect time: 75120 microseconds.
+round 44
+Groups = x25519_kyber512
+Connect time: 70831 microseconds.
+Groups = kyber512
+Connect time: 79573 microseconds.
+Groups = secp256r1
+Connect time: 60980 microseconds.
+Groups = X25519
+Connect time: 68326 microseconds.
+Groups = p256_kyber512
+Connect time: 79853 microseconds.
+round 45
+Groups = p256_kyber512
+Connect time: 54674 microseconds.
+Groups = kyber512
+Connect time: 66849 microseconds.
+Groups = secp256r1
+Connect time: 62319 microseconds.
+Groups = X25519
+Connect time: 64368 microseconds.
+Groups = x25519_kyber512
+Connect time: 61253 microseconds.
+round 46
+Groups = X25519
+Connect time: 51556 microseconds.
+Groups = x25519_kyber512
+Connect time: 78318 microseconds.
+Groups = p256_kyber512
+Connect time: 54051 microseconds.
+Groups = kyber512
+Connect time: 79344 microseconds.
+Groups = secp256r1
+Connect time: 77744 microseconds.
+round 47
+Groups = x25519_kyber512
+Connect time: 73386 microseconds.
+Groups = secp256r1
+Connect time: 78171 microseconds.
+Groups = p256_kyber512
+Connect time: 77871 microseconds.
+Groups = X25519
+Connect time: 116907 microseconds.
+Groups = kyber512
+Connect time: 58615 microseconds.
+round 48
+Groups = p256_kyber512
+Connect time: 68301 microseconds.
+Groups = secp256r1
+Connect time: 74966 microseconds.
+Groups = X25519
+Connect time: 73310 microseconds.
+Groups = x25519_kyber512
+Connect time: 47492 microseconds.
+Groups = kyber512
+Connect time: 66427 microseconds.
+round 49
+Groups = secp256r1
+Connect time: 73881 microseconds.
+Groups = X25519
+Connect time: 45146 microseconds.
+Groups = x25519_kyber512
+Connect time: 55857 microseconds.
+Groups = p256_kyber512
+Connect time: 82429 microseconds.
+Groups = kyber512
+Connect time: 77773 microseconds.
+round 50
+Groups = p256_kyber512
+Connect time: 93946 microseconds.
+Groups = X25519
+Connect time: 113800 microseconds.
+Groups = kyber512
+Connect time: 62193 microseconds.
+Groups = secp256r1
+Connect time: 77590 microseconds.
+Groups = x25519_kyber512
+Connect time: 64026 microseconds.
+round 51
+Groups = x25519_kyber512
+Connect time: 57031 microseconds.
+Groups = secp256r1
+Connect time: 104191 microseconds.
+Groups = kyber512
+Connect time: 79361 microseconds.
+Groups = p256_kyber512
+Connect time: 74471 microseconds.
+Groups = X25519
+Connect time: 58846 microseconds.
+round 52
+Groups = kyber512
+Connect time: 73759 microseconds.
+Groups = p256_kyber512
+Connect time: 49603 microseconds.
+Groups = secp256r1
+Connect time: 78508 microseconds.
+Groups = x25519_kyber512
+Connect time: 69500 microseconds.
+Groups = X25519
+Connect time: 126087 microseconds.
+round 53
+Groups = kyber512
+Connect time: 49269 microseconds.
+Groups = X25519
+Connect time: 78892 microseconds.
+Groups = secp256r1
+Connect time: 68130 microseconds.
+Groups = x25519_kyber512
+Connect time: 69212 microseconds.
+Groups = p256_kyber512
+Connect time: 80139 microseconds.
+round 54
+Groups = kyber512
+Connect time: 68510 microseconds.
+Groups = secp256r1
+Connect time: 128677 microseconds.
+Groups = X25519
+Connect time: 60536 microseconds.
+Groups = p256_kyber512
+Connect time: 64978 microseconds.
+Groups = x25519_kyber512
+Connect time: 55494 microseconds.
+round 55
+Groups = X25519
+Connect time: 44765 microseconds.
+Groups = x25519_kyber512
+Connect time: 76986 microseconds.
+Groups = secp256r1
+Connect time: 74261 microseconds.
+Groups = p256_kyber512
+Connect time: 70394 microseconds.
+Groups = kyber512
+Connect time: 68574 microseconds.
+round 56
+Groups = X25519
+Connect time: 64546 microseconds.
+Groups = x25519_kyber512
+Connect time: 76969 microseconds.
+Groups = secp256r1
+Connect time: 68946 microseconds.
+Groups = kyber512
+Connect time: 75027 microseconds.
+Groups = p256_kyber512
+Connect time: 78522 microseconds.
+round 57
+Groups = x25519_kyber512
+Connect time: 51057 microseconds.
+Groups = secp256r1
+Connect time: 66643 microseconds.
+Groups = X25519
+Connect time: 56846 microseconds.
+Groups = kyber512
+Connect time: 71697 microseconds.
+Groups = p256_kyber512
+Connect time: 48102 microseconds.
+round 58
+Groups = secp256r1
+Connect time: 71581 microseconds.
+Groups = X25519
+Connect time: 79887 microseconds.
+Groups = x25519_kyber512
+Connect time: 60604 microseconds.
+Groups = p256_kyber512
+Connect time: 83463 microseconds.
+Groups = kyber512
+Connect time: 72196 microseconds.
+round 59
+Groups = kyber512
+Connect time: 50460 microseconds.
+Groups = x25519_kyber512
+Connect time: 69512 microseconds.
+Groups = p256_kyber512
+Connect time: 77674 microseconds.
+Groups = X25519
+Connect time: 62790 microseconds.
+Groups = secp256r1
+Connect time: 73728 microseconds.
+round 60
+Groups = x25519_kyber512
+Connect time: 80619 microseconds.
+Groups = p256_kyber512
+Connect time: 83321 microseconds.
+Groups = kyber512
+Connect time: 71746 microseconds.
+Groups = X25519
+Connect time: 44633 microseconds.
+Groups = secp256r1
+Connect time: 57086 microseconds.
+round 61
+Groups = kyber512
+Connect time: 55566 microseconds.
+Groups = p256_kyber512
+Connect time: 71519 microseconds.
+Groups = X25519
+Connect time: 67399 microseconds.
+Groups = x25519_kyber512
+Connect time: 74931 microseconds.
+Groups = secp256r1
+Connect time: 57691 microseconds.
+round 62
+Groups = secp256r1
+Connect time: 48557 microseconds.
+Groups = X25519
+Connect time: 67276 microseconds.
+Groups = kyber512
+Connect time: 80268 microseconds.
+Groups = p256_kyber512
+Connect time: 84685 microseconds.
+Groups = x25519_kyber512
+Connect time: 73535 microseconds.
+round 63
+Groups = secp256r1
+Connect time: 50332 microseconds.
+Groups = kyber512
+Connect time: 75560 microseconds.
+Groups = X25519
+Connect time: 76485 microseconds.
+Groups = p256_kyber512
+Connect time: 73751 microseconds.
+Groups = x25519_kyber512
+Connect time: 82382 microseconds.
+round 64
+Groups = x25519_kyber512
+Connect time: 50739 microseconds.
+Groups = secp256r1
+Connect time: 81094 microseconds.
+Groups = kyber512
+Connect time: 86895 microseconds.
+Groups = p256_kyber512
+Connect time: 85618 microseconds.
+Groups = X25519
+Connect time: 63357 microseconds.
+round 65
+Groups = X25519
+Connect time: 65437 microseconds.
+Groups = secp256r1
+Connect time: 48622 microseconds.
+Groups = x25519_kyber512
+Connect time: 76348 microseconds.
+Groups = p256_kyber512
+Connect time: 69084 microseconds.
+Groups = kyber512
+Connect time: 112225 microseconds.
+round 66
+Groups = secp256r1
+Connect time: 68334 microseconds.
+Groups = p256_kyber512
+Connect time: 86572 microseconds.
+Groups = X25519
+Connect time: 76733 microseconds.
+Groups = kyber512
+Connect time: 68362 microseconds.
+Groups = x25519_kyber512
+Connect time: 83642 microseconds.
+round 67
+Groups = X25519
+Connect time: 78015 microseconds.
+Groups = kyber512
+Connect time: 58966 microseconds.
+Groups = secp256r1
+Connect time: 73601 microseconds.
+Groups = x25519_kyber512
+Connect time: 75303 microseconds.
+Groups = p256_kyber512
+Connect time: 85048 microseconds.
+round 68
+Groups = X25519
+Connect time: 44819 microseconds.
+Groups = kyber512
+Connect time: 116737 microseconds.
+Groups = x25519_kyber512
+Connect time: 75861 microseconds.
+Groups = p256_kyber512
+Connect time: 66503 microseconds.
+Groups = secp256r1
+Connect time: 58391 microseconds.
+round 69
+Groups = x25519_kyber512
+Connect time: 76911 microseconds.
+Groups = X25519
+Connect time: 60485 microseconds.
+Groups = p256_kyber512
+Connect time: 77862 microseconds.
+Groups = secp256r1
+Connect time: 121226 microseconds.
+Groups = kyber512
+Connect time: 68588 microseconds.
+round 70
+Groups = X25519
+Connect time: 74288 microseconds.
+Groups = p256_kyber512
+Connect time: 64025 microseconds.
+Groups = x25519_kyber512
+Connect time: 60647 microseconds.
+Groups = secp256r1
+Connect time: 67568 microseconds.
+Groups = kyber512
+Connect time: 44065 microseconds.
+round 71
+Groups = X25519
+Connect time: 68162 microseconds.
+Groups = x25519_kyber512
+Connect time: 80595 microseconds.
+Groups = secp256r1
+Connect time: 60234 microseconds.
+Groups = kyber512
+Connect time: 67645 microseconds.
+Groups = p256_kyber512
+Connect time: 82786 microseconds.
+round 72
+Groups = p256_kyber512
+Connect time: 73793 microseconds.
+Groups = x25519_kyber512
+Connect time: 70265 microseconds.
+Groups = X25519
+Connect time: 73188 microseconds.
+Groups = kyber512
+Connect time: 68250 microseconds.
+Groups = secp256r1
+Connect time: 71760 microseconds.
+round 73
+Groups = X25519
+Connect time: 48258 microseconds.
+Groups = x25519_kyber512
+Connect time: 75155 microseconds.
+Groups = p256_kyber512
+Connect time: 132541 microseconds.
+Groups = kyber512
+Connect time: 81566 microseconds.
+Groups = secp256r1
+Connect time: 68620 microseconds.
+round 74
+Groups = kyber512
+Connect time: 66690 microseconds.
+Groups = x25519_kyber512
+Connect time: 63370 microseconds.
+Groups = X25519
+Connect time: 72455 microseconds.
+Groups = secp256r1
+Connect time: 78352 microseconds.
+Groups = p256_kyber512
+Connect time: 78241 microseconds.
+round 75
+Groups = X25519
+Connect time: 73238 microseconds.
+Groups = p256_kyber512
+Connect time: 72532 microseconds.
+Groups = kyber512
+Connect time: 80268 microseconds.
+Groups = x25519_kyber512
+Connect time: 75298 microseconds.
+Groups = secp256r1
+Connect time: 73677 microseconds.
+round 76
+Groups = secp256r1
+Connect time: 49804 microseconds.
+Groups = x25519_kyber512
+Connect time: 75547 microseconds.
+Groups = X25519
+Connect time: 72843 microseconds.
+Groups = p256_kyber512
+Connect time: 69197 microseconds.
+Groups = kyber512
+Connect time: 103643 microseconds.
+round 77
+Groups = p256_kyber512
+Connect time: 71060 microseconds.
+Groups = kyber512
+Connect time: 67853 microseconds.
+Groups = secp256r1
+Connect time: 73828 microseconds.
+Groups = x25519_kyber512
+Connect time: 69743 microseconds.
+Groups = X25519
+Connect time: 120460 microseconds.
+round 78
+Groups = X25519
+Connect time: 79020 microseconds.
+Groups = kyber512
+Connect time: 77118 microseconds.
+Groups = secp256r1
+Connect time: 61064 microseconds.
+Groups = p256_kyber512
+Connect time: 65458 microseconds.
+Groups = x25519_kyber512
+Connect time: 61729 microseconds.
+round 79
+Groups = X25519
+Connect time: 73288 microseconds.
+Groups = kyber512
+Connect time: 118235 microseconds.
+Groups = x25519_kyber512
+Connect time: 59092 microseconds.
+Groups = secp256r1
+Connect time: 84882 microseconds.
+Groups = p256_kyber512
+Connect time: 76076 microseconds.
+round 80
+Groups = x25519_kyber512
+Connect time: 50773 microseconds.
+Groups = kyber512
+Connect time: 62976 microseconds.
+Groups = X25519
+Connect time: 66827 microseconds.
+Groups = secp256r1
+Connect time: 58752 microseconds.
+Groups = p256_kyber512
+Connect time: 49653 microseconds.
+round 81
+Groups = x25519_kyber512
+Connect time: 51398 microseconds.
+Groups = X25519
+Connect time: 61203 microseconds.
+Groups = kyber512
+Connect time: 112414 microseconds.
+Groups = secp256r1
+Connect time: 74441 microseconds.
+Groups = p256_kyber512
+Connect time: 71316 microseconds.
+round 82
+Groups = secp256r1
+Connect time: 74898 microseconds.
+Groups = p256_kyber512
+Connect time: 129154 microseconds.
+Groups = X25519
+Connect time: 73980 microseconds.
+Groups = kyber512
+Connect time: 67378 microseconds.
+Groups = x25519_kyber512
+Connect time: 76449 microseconds.
+round 83
+Groups = secp256r1
+Connect time: 52608 microseconds.
+Groups = p256_kyber512
+Connect time: 78131 microseconds.
+Groups = kyber512
+Connect time: 73549 microseconds.
+Groups = x25519_kyber512
+Connect time: 69760 microseconds.
+Groups = X25519
+Connect time: 45054 microseconds.
+round 84
+Groups = X25519
+Connect time: 52817 microseconds.
+Groups = kyber512
+Connect time: 119679 microseconds.
+Groups = secp256r1
+Connect time: 58390 microseconds.
+Groups = p256_kyber512
+Connect time: 79788 microseconds.
+Groups = x25519_kyber512
+Connect time: 87107 microseconds.
+round 85
+Groups = kyber512
+Connect time: 99106 microseconds.
+Groups = X25519
+Connect time: 73301 microseconds.
+Groups = x25519_kyber512
+Connect time: 56169 microseconds.
+Groups = secp256r1
+Connect time: 59393 microseconds.
+Groups = p256_kyber512
+Connect time: 81377 microseconds.
+round 86
+Groups = x25519_kyber512
+Connect time: 76789 microseconds.
+Groups = secp256r1
+Connect time: 65806 microseconds.
+Groups = p256_kyber512
+Connect time: 73733 microseconds.
+Groups = kyber512
+Connect time: 54413 microseconds.
+Groups = X25519
+Connect time: 52107 microseconds.
+round 87
+Groups = kyber512
+Connect time: 69214 microseconds.
+Groups = p256_kyber512
+Connect time: 73174 microseconds.
+Groups = x25519_kyber512
+Connect time: 59279 microseconds.
+Groups = X25519
+Connect time: 77891 microseconds.
+Groups = secp256r1
+Connect time: 68053 microseconds.
+round 88
+Groups = x25519_kyber512
+Connect time: 76157 microseconds.
+Groups = X25519
+Connect time: 66751 microseconds.
+Groups = secp256r1
+Connect time: 73082 microseconds.
+Groups = p256_kyber512
+Connect time: 108367 microseconds.
+Groups = kyber512
+Connect time: 78154 microseconds.
+round 89
+Groups = kyber512
+Connect time: 74089 microseconds.
+Groups = p256_kyber512
+Connect time: 81245 microseconds.
+Groups = secp256r1
+Connect time: 130416 microseconds.
+Groups = X25519
+Connect time: 64361 microseconds.
+Groups = x25519_kyber512
+Connect time: 79566 microseconds.
+round 90
+Groups = kyber512
+Connect time: 67744 microseconds.
+Groups = x25519_kyber512
+Connect time: 60988 microseconds.
+Groups = p256_kyber512
+Connect time: 76147 microseconds.
+Groups = X25519
+Connect time: 67426 microseconds.
+Groups = secp256r1
+Connect time: 74609 microseconds.
+round 91
+Groups = x25519_kyber512
+Connect time: 65629 microseconds.
+Groups = p256_kyber512
+Connect time: 132336 microseconds.
+Groups = secp256r1
+Connect time: 80804 microseconds.
+Groups = kyber512
+Connect time: 62921 microseconds.
+Groups = X25519
+Connect time: 76810 microseconds.
+round 92
+Groups = p256_kyber512
+Connect time: 52738 microseconds.
+Groups = x25519_kyber512
+Connect time: 46152 microseconds.
+Groups = X25519
+Connect time: 77541 microseconds.
+Groups = secp256r1
+Connect time: 60501 microseconds.
+Groups = kyber512
+Connect time: 59791 microseconds.
+round 93
+Groups = X25519
+Connect time: 72913 microseconds.
+Groups = p256_kyber512
+Connect time: 76488 microseconds.
+Groups = secp256r1
+Connect time: 65404 microseconds.
+Groups = x25519_kyber512
+Connect time: 68684 microseconds.
+Groups = kyber512
+Connect time: 67450 microseconds.
+round 94
+Groups = secp256r1
+Connect time: 68281 microseconds.
+Groups = p256_kyber512
+Connect time: 82377 microseconds.
+Groups = X25519
+Connect time: 116365 microseconds.
+Groups = x25519_kyber512
+Connect time: 77826 microseconds.
+Groups = kyber512
+Connect time: 81340 microseconds.
+round 95
+Groups = kyber512
+Connect time: 45080 microseconds.
+Groups = p256_kyber512
+Connect time: 62637 microseconds.
+Groups = X25519
+Connect time: 63174 microseconds.
+Groups = secp256r1
+Connect time: 99045 microseconds.
+Groups = x25519_kyber512
+Connect time: 69576 microseconds.
+round 96
+Groups = p256_kyber512
+Connect time: 78228 microseconds.
+Groups = kyber512
+Connect time: 63921 microseconds.
+Groups = x25519_kyber512
+Connect time: 60124 microseconds.
+Groups = X25519
+Connect time: 72521 microseconds.
+Groups = secp256r1
+Connect time: 74296 microseconds.
+round 97
+Groups = X25519
+Connect time: 74319 microseconds.
+Groups = p256_kyber512
+Connect time: 73889 microseconds.
+Groups = kyber512
+Connect time: 75892 microseconds.
+Groups = secp256r1
+Connect time: 77382 microseconds.
+Groups = x25519_kyber512
+Connect time: 75926 microseconds.
+round 98
+Groups = X25519
+Connect time: 73362 microseconds.
+Groups = secp256r1
+Connect time: 73586 microseconds.
+Groups = kyber512
+Connect time: 58357 microseconds.
+Groups = p256_kyber512
+Connect time: 81357 microseconds.
+Groups = x25519_kyber512
+Connect time: 67536 microseconds.
+round 99
+Groups = secp256r1
+Connect time: 47149 microseconds.
+Groups = x25519_kyber512
+Connect time: 58447 microseconds.
+Groups = kyber512
+Connect time: 73576 microseconds.
+Groups = p256_kyber512
+Connect time: 59654 microseconds.
+Groups = X25519
+Connect time: 73210 microseconds.
+round 100
+Groups = X25519
+Connect time: 65561 microseconds.
+Groups = p256_kyber512
+Connect time: 123052 microseconds.
+Groups = x25519_kyber512
+Connect time: 54537 microseconds.
+Groups = kyber512
+Connect time: 44239 microseconds.
+Groups = secp256r1
+Connect time: 58324 microseconds.

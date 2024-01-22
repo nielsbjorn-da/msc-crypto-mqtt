@@ -21,6 +21,7 @@ Contributors:
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/time.h>
 
 #include "mosquitto_broker_internal.h"
 #include "alias_mosq.h"
@@ -33,9 +34,9 @@ Contributors:
 #include "sys_tree.h"
 #include "util_mosq.h"
 //
-#include "../client/dilithium_and_falcon/dilithium/dilithium-master/ref/sign.h"
-#include "../client/dilithium_and_falcon/dilithium/dilithium-master/ref/randombytes.h"
-#include "../client/dilithium_and_falcon/dilithium/dilithium-master/ref/api.h"
+//#include "../client/dilithium_and_falcon/dilithium/dilithium-master/avx2/sign.h"
+#include "../client/dilithium_and_falcon/dilithium/dilithium-master/avx2/randombytes.h"
+#include "../client/dilithium_and_falcon/dilithium/dilithium-master/avx2/api.h"
 #include "Falcon-impl-20211101/falcon.h"
 #include "../client/libb64/include/b64/cdecode.h"
 #include "../client/libb64/include/b64/cencode.h"
@@ -218,7 +219,7 @@ void falcon_keygen(FalconContext *fc)
   int r = falcon_get_logn(fc->pk, pk_len);
   //printf("Security of public key is %d, corresponding to %4u bytes security\n", r, 1u << r);
 }
-
+/*
 int generate_and_save_broker_keys(char *signature_scheme)
 {	
 
@@ -313,7 +314,7 @@ int generate_and_save_broker_keys(char *signature_scheme)
 	}
     return 0;
 }
-
+*/
 int load_broker_key(char *key_type)
 {
 	
@@ -423,17 +424,17 @@ int dilithium_sign_message(uint8_t *signature, const char *message, int message_
 	size_t sig_length;
 	int ret = 1;
 
-	//int ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_broker_sk);
+	//ret = crypto_sign_signature(signature, &sig_length, message, message_length, dilithium_broker_sk);
 	if (dilithium_version == 2) {
-		ret = pqcrystals_dilithium2_ref_signature(signature, &sig_length,
+		ret = pqcrystals_dilithium2_avx2_signature(signature, &sig_length,
 											message, message_length,
 											dilithium_broker_sk);
 	} else if (dilithium_version == 3) {
-		ret = pqcrystals_dilithium3_ref_signature(signature, &sig_length,
+		ret = pqcrystals_dilithium3_avx2_signature(signature, &sig_length,
 											message, message_length,
 											dilithium_broker_sk);
 	} else if (dilithium_version == 5) {
-		ret = pqcrystals_dilithium5_ref_signature(signature, &sig_length,
+		ret = pqcrystals_dilithium5_avx2_signature(signature, &sig_length,
 											message, message_length,
 											dilithium_broker_sk);
 	}
@@ -449,17 +450,17 @@ int verify_dilithium_signature(uint8_t *signature, const char *message, size_t m
 {
 	
 	int ret = 1;
-	//int ret = crypto_sign_verify(signature, dilithium_sig_len, message, message_length, public_key);
+	//ret = crypto_sign_verify(signature, dilithium_sig_len, message, message_length, public_key);
 	if (dilithium_version == 2) {
-		ret = pqcrystals_dilithium2_ref_verify(signature, dilithium_sig_len,
+		ret = pqcrystals_dilithium2_avx2_verify(signature, dilithium_sig_len,
 											message, message_length,
 											public_key);
 	} else if (dilithium_version == 3) {
-		ret = pqcrystals_dilithium3_ref_verify(signature, dilithium_sig_len,
+		ret = pqcrystals_dilithium3_avx2_verify(signature, dilithium_sig_len,
 											message, message_length,
 											public_key);
 	} else if (dilithium_version == 5) {
-		ret = pqcrystals_dilithium5_ref_verify(signature, dilithium_sig_len,
+		ret = pqcrystals_dilithium5_avx2_verify(signature, dilithium_sig_len,
 											message, message_length,
 											public_key);
 	}
@@ -844,6 +845,9 @@ int handle__publish(struct mosquitto *context)
 	//verify and make new signature and json message
 	char *encoded_broker_sig;
 	int verify = 1;
+	
+	struct timeval start, end;
+	gettimeofday(&start, NULL);
 	load_broker_key("sk");
 	if (dilithium) {
 		uint8_t publisher_pk[dilithium_pk_len];
@@ -853,6 +857,7 @@ int handle__publish(struct mosquitto *context)
 
 		uint8_t broker_signature[dilithium_sig_len];
     	dilithium_sign_message(broker_signature, message_to_verify, message_len);
+
 		encoded_broker_sig = encode(broker_signature, dilithium_sig_len);
 	} else {
 		//  Falcon variables
@@ -871,23 +876,24 @@ int handle__publish(struct mosquitto *context)
 		
 		verify = falcon_verify_message(decoded_signature, sig_len, message_to_verify,
 									   message_len, publisher_pk, pk_len, tmp, tmp_len);
-		
+
     	if (falcon_sign_message(fc, message_to_verify, message_len) != 0)
 		{
 			fprintf(stderr, "Signing message for Falcon failed\n");
 			exit(EXIT_FAILURE);
 		}
-		load_broker_key("pk");
-		falcon_verify_message(fc->sig, sig_len, message_to_verify,
-									   message_len, fc->pk, pk_len, tmp, tmp_len);
-		
+
 		encoded_broker_sig = encode(fc->sig, sig_len);
 
 		xfree(tmp);
 	}
+	gettimeofday(&end, NULL);
+	long time_taken = (end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec);
+	printf("%s sign and verify time: %ld\n", version, time_taken);
 	if (!verify)
 	{
 		printf("Publisher %s signature verification success with result %d...\n", version, verify);
+
 	} else {
 		printf("Publisher %s signature verification failed. Stopping relay of message \n", version);
 		return -1;
@@ -901,6 +907,8 @@ int handle__publish(struct mosquitto *context)
 
 	char *jsonString = cJSON_PrintUnformatted(message_as_json);
     size_t allocatedSize = strlen(jsonString) + 1;
+	
+	printf("Json size: %d\n", allocatedSize);
 	msg->payloadlen = allocatedSize;
 
 	msg->payload = mosquitto__malloc(msg->payloadlen+1);

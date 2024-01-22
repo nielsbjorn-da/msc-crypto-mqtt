@@ -1,0 +1,901 @@
+Current signature algorithm: p521_dilithium5
+round 1
+Groups = secp521r1
+Connect time: 203421 microseconds.
+Groups = x448
+Connect time: 145768 microseconds.
+Groups = p521_kyber1024
+Connect time: 180204 microseconds.
+Groups = kyber1024
+Connect time: 130444 microseconds.
+round 2
+Groups = p521_kyber1024
+Connect time: 194517 microseconds.
+Groups = x448
+Connect time: 164985 microseconds.
+Groups = secp521r1
+Connect time: 173746 microseconds.
+Groups = kyber1024
+Connect time: 115405 microseconds.
+round 3
+Groups = x448
+Connect time: 119592 microseconds.
+Groups = secp521r1
+Connect time: 166128 microseconds.
+Groups = kyber1024
+Connect time: 129985 microseconds.
+Groups = p521_kyber1024
+Connect time: 161924 microseconds.
+round 4
+Groups = p521_kyber1024
+Connect time: 151864 microseconds.
+Groups = x448
+Connect time: 108411 microseconds.
+Groups = kyber1024
+Connect time: 96141 microseconds.
+Groups = secp521r1
+Connect time: 172091 microseconds.
+round 5
+Groups = p521_kyber1024
+Connect time: 168802 microseconds.
+Groups = secp521r1
+Connect time: 158657 microseconds.
+Groups = x448
+Connect time: 160015 microseconds.
+Groups = kyber1024
+Connect time: 138857 microseconds.
+round 6
+Groups = p521_kyber1024
+Connect time: 155130 microseconds.
+Groups = kyber1024
+Connect time: 134741 microseconds.
+Groups = x448
+Connect time: 98092 microseconds.
+Groups = secp521r1
+Connect time: 164152 microseconds.
+round 7
+Groups = kyber1024
+Connect time: 135216 microseconds.
+Groups = p521_kyber1024
+Connect time: 169400 microseconds.
+Groups = x448
+Connect time: 156414 microseconds.
+Groups = secp521r1
+Connect time: 171916 microseconds.
+round 8
+Groups = kyber1024
+Connect time: 97112 microseconds.
+Groups = x448
+Connect time: 142532 microseconds.
+Groups = p521_kyber1024
+Connect time: 196027 microseconds.
+Groups = secp521r1
+Connect time: 172189 microseconds.
+round 9
+Groups = x448
+Connect time: 137291 microseconds.
+Groups = kyber1024
+Connect time: 129172 microseconds.
+Groups = p521_kyber1024
+Connect time: 182007 microseconds.
+Groups = secp521r1
+Connect time: 184249 microseconds.
+round 10
+Groups = secp521r1
+Connect time: 148990 microseconds.
+Groups = kyber1024
+Connect time: 113401 microseconds.
+Groups = x448
+Connect time: 116745 microseconds.
+Groups = p521_kyber1024
+Connect time: 177069 microseconds.
+round 11
+Groups = x448
+Connect time: 131846 microseconds.
+Groups = kyber1024
+Connect time: 166868 microseconds.
+Groups = secp521r1
+Connect time: 148925 microseconds.
+Groups = p521_kyber1024
+Connect time: 190172 microseconds.
+round 12
+Groups = kyber1024
+Connect time: 135692 microseconds.
+Groups = secp521r1
+Connect time: 160694 microseconds.
+Groups = p521_kyber1024
+Connect time: 173131 microseconds.
+Groups = x448
+Connect time: 118513 microseconds.
+round 13
+Groups = kyber1024
+Connect time: 139270 microseconds.
+Groups = p521_kyber1024
+Connect time: 167257 microseconds.
+Groups = x448
+Connect time: 142277 microseconds.
+Groups = secp521r1
+Connect time: 159487 microseconds.
+round 14
+Groups = x448
+Connect time: 202420 microseconds.
+Groups = secp521r1
+Connect time: 168382 microseconds.
+Groups = kyber1024
+Connect time: 121263 microseconds.
+Groups = p521_kyber1024
+Connect time: 192921 microseconds.
+round 15
+Groups = kyber1024
+Connect time: 96620 microseconds.
+Groups = secp521r1
+Connect time: 152626 microseconds.
+Groups = p521_kyber1024
+Connect time: 167390 microseconds.
+Groups = x448
+Connect time: 163810 microseconds.
+round 16
+Groups = x448
+Connect time: 192617 microseconds.
+Groups = kyber1024
+Connect time: 106512 microseconds.
+Groups = p521_kyber1024
+Connect time: 180269 microseconds.
+Groups = secp521r1
+Connect time: 149316 microseconds.
+round 17
+Groups = kyber1024
+Connect time: 129233 microseconds.
+Groups = p521_kyber1024
+Connect time: 161066 microseconds.
+Groups = x448
+Connect time: 146348 microseconds.
+Groups = secp521r1
+Connect time: 157093 microseconds.
+round 18
+Groups = x448
+Connect time: 143375 microseconds.
+Groups = p521_kyber1024
+Connect time: 169489 microseconds.
+Groups = kyber1024
+Connect time: 98806 microseconds.
+Groups = secp521r1
+Connect time: 187564 microseconds.
+round 19
+Groups = p521_kyber1024
+Connect time: 173654 microseconds.
+Groups = secp521r1
+Connect time: 163524 microseconds.
+Groups = x448
+Connect time: 149117 microseconds.
+Groups = kyber1024
+Connect time: 142357 microseconds.
+round 20
+Groups = kyber1024
+Connect time: 152786 microseconds.
+Groups = p521_kyber1024
+Connect time: 192691 microseconds.
+Groups = secp521r1
+Connect time: 184598 microseconds.
+Groups = x448
+Connect time: 119462 microseconds.
+round 21
+Groups = secp521r1
+Connect time: 149002 microseconds.
+Groups = p521_kyber1024
+Connect time: 174277 microseconds.
+Groups = kyber1024
+Connect time: 134085 microseconds.
+Groups = x448
+Connect time: 134995 microseconds.
+round 22
+Groups = kyber1024
+Connect time: 96450 microseconds.
+Groups = x448
+Connect time: 116075 microseconds.
+Groups = secp521r1
+Connect time: 147429 microseconds.
+Groups = p521_kyber1024
+Connect time: 175629 microseconds.
+round 23
+Groups = secp521r1
+Connect time: 176414 microseconds.
+Groups = x448
+Connect time: 116965 microseconds.
+Groups = p521_kyber1024
+Connect time: 159208 microseconds.
+Groups = kyber1024
+Connect time: 142497 microseconds.
+round 24
+Groups = p521_kyber1024
+Connect time: 226324 microseconds.
+Groups = x448
+Connect time: 129298 microseconds.
+Groups = secp521r1
+Connect time: 166670 microseconds.
+Groups = kyber1024
+Connect time: 114748 microseconds.
+round 25
+Groups = p521_kyber1024
+Connect time: 177832 microseconds.
+Groups = secp521r1
+Connect time: 169901 microseconds.
+Groups = kyber1024
+Connect time: 98857 microseconds.
+Groups = x448
+Connect time: 141594 microseconds.
+round 26
+Groups = kyber1024
+Connect time: 135253 microseconds.
+Groups = secp521r1
+Connect time: 191776 microseconds.
+Groups = p521_kyber1024
+Connect time: 183671 microseconds.
+Groups = x448
+Connect time: 130334 microseconds.
+round 27
+Groups = x448
+Connect time: 134679 microseconds.
+Groups = p521_kyber1024
+Connect time: 195590 microseconds.
+Groups = secp521r1
+Connect time: 183948 microseconds.
+Groups = kyber1024
+Connect time: 122109 microseconds.
+round 28
+Groups = secp521r1
+Connect time: 157918 microseconds.
+Groups = kyber1024
+Connect time: 148160 microseconds.
+Groups = x448
+Connect time: 156510 microseconds.
+Groups = p521_kyber1024
+Connect time: 207344 microseconds.
+round 29
+Groups = kyber1024
+Connect time: 97003 microseconds.
+Groups = secp521r1
+Connect time: 168186 microseconds.
+Groups = p521_kyber1024
+Connect time: 200999 microseconds.
+Groups = x448
+Connect time: 152711 microseconds.
+round 30
+Groups = p521_kyber1024
+Connect time: 154988 microseconds.
+Groups = kyber1024
+Connect time: 141150 microseconds.
+Groups = x448
+Connect time: 153367 microseconds.
+Groups = secp521r1
+Connect time: 152595 microseconds.
+round 31
+Groups = x448
+Connect time: 112696 microseconds.
+Groups = secp521r1
+Connect time: 191871 microseconds.
+Groups = p521_kyber1024
+Connect time: 179959 microseconds.
+Groups = kyber1024
+Connect time: 120201 microseconds.
+round 32
+Groups = secp521r1
+Connect time: 146741 microseconds.
+Groups = x448
+Connect time: 185997 microseconds.
+Groups = kyber1024
+Connect time: 96413 microseconds.
+Groups = p521_kyber1024
+Connect time: 166350 microseconds.
+round 33
+Groups = secp521r1
+Connect time: 181547 microseconds.
+Groups = x448
+Connect time: 136112 microseconds.
+Groups = kyber1024
+Connect time: 164060 microseconds.
+Groups = p521_kyber1024
+Connect time: 177333 microseconds.
+round 34
+Groups = secp521r1
+Connect time: 143437 microseconds.
+Groups = x448
+Connect time: 123318 microseconds.
+Groups = kyber1024
+Connect time: 156491 microseconds.
+Groups = p521_kyber1024
+Connect time: 177646 microseconds.
+round 35
+Groups = kyber1024
+Connect time: 123347 microseconds.
+Groups = p521_kyber1024
+Connect time: 201582 microseconds.
+Groups = secp521r1
+Connect time: 203148 microseconds.
+Groups = x448
+Connect time: 125225 microseconds.
+round 36
+Groups = p521_kyber1024
+Connect time: 150101 microseconds.
+Groups = x448
+Connect time: 153868 microseconds.
+Groups = secp521r1
+Connect time: 150508 microseconds.
+Groups = kyber1024
+Connect time: 142053 microseconds.
+round 37
+Groups = kyber1024
+Connect time: 102108 microseconds.
+Groups = p521_kyber1024
+Connect time: 172836 microseconds.
+Groups = secp521r1
+Connect time: 164042 microseconds.
+Groups = x448
+Connect time: 128950 microseconds.
+round 38
+Groups = x448
+Connect time: 146659 microseconds.
+Groups = p521_kyber1024
+Connect time: 165767 microseconds.
+Groups = secp521r1
+Connect time: 149376 microseconds.
+Groups = kyber1024
+Connect time: 148711 microseconds.
+round 39
+Groups = p521_kyber1024
+Connect time: 222151 microseconds.
+Groups = kyber1024
+Connect time: 135179 microseconds.
+Groups = x448
+Connect time: 105918 microseconds.
+Groups = secp521r1
+Connect time: 192625 microseconds.
+round 40
+Groups = kyber1024
+Connect time: 145428 microseconds.
+Groups = p521_kyber1024
+Connect time: 190048 microseconds.
+Groups = x448
+Connect time: 121973 microseconds.
+Groups = secp521r1
+Connect time: 193152 microseconds.
+round 41
+Groups = x448
+Connect time: 131213 microseconds.
+Groups = kyber1024
+Connect time: 138939 microseconds.
+Groups = p521_kyber1024
+Connect time: 177652 microseconds.
+Groups = secp521r1
+Connect time: 158962 microseconds.
+round 42
+Groups = x448
+Connect time: 107324 microseconds.
+Groups = p521_kyber1024
+Connect time: 161096 microseconds.
+Groups = kyber1024
+Connect time: 153466 microseconds.
+Groups = secp521r1
+Connect time: 173922 microseconds.
+round 43
+Groups = x448
+Connect time: 99765 microseconds.
+Groups = secp521r1
+Connect time: 185950 microseconds.
+Groups = kyber1024
+Connect time: 146023 microseconds.
+Groups = p521_kyber1024
+Connect time: 205097 microseconds.
+round 44
+Groups = kyber1024
+Connect time: 123840 microseconds.
+Groups = p521_kyber1024
+Connect time: 166390 microseconds.
+Groups = x448
+Connect time: 152174 microseconds.
+Groups = secp521r1
+Connect time: 220719 microseconds.
+round 45
+Groups = secp521r1
+Connect time: 143936 microseconds.
+Groups = x448
+Connect time: 222478 microseconds.
+Groups = p521_kyber1024
+Connect time: 199782 microseconds.
+Groups = kyber1024
+Connect time: 156248 microseconds.
+round 46
+Groups = kyber1024
+Connect time: 101119 microseconds.
+Groups = x448
+Connect time: 121642 microseconds.
+Groups = secp521r1
+Connect time: 139813 microseconds.
+Groups = p521_kyber1024
+Connect time: 168038 microseconds.
+round 47
+Groups = x448
+Connect time: 105688 microseconds.
+Groups = p521_kyber1024
+Connect time: 194614 microseconds.
+Groups = kyber1024
+Connect time: 128741 microseconds.
+Groups = secp521r1
+Connect time: 220481 microseconds.
+round 48
+Groups = x448
+Connect time: 118711 microseconds.
+Groups = p521_kyber1024
+Connect time: 167690 microseconds.
+Groups = kyber1024
+Connect time: 198742 microseconds.
+Groups = secp521r1
+Connect time: 171765 microseconds.
+round 49
+Groups = kyber1024
+Connect time: 115975 microseconds.
+Groups = x448
+Connect time: 103011 microseconds.
+Groups = p521_kyber1024
+Connect time: 174366 microseconds.
+Groups = secp521r1
+Connect time: 151298 microseconds.
+round 50
+Groups = secp521r1
+Connect time: 181586 microseconds.
+Groups = x448
+Connect time: 150345 microseconds.
+Groups = p521_kyber1024
+Connect time: 165011 microseconds.
+Groups = kyber1024
+Connect time: 137632 microseconds.
+round 51
+Groups = x448
+Connect time: 131085 microseconds.
+Groups = secp521r1
+Connect time: 185795 microseconds.
+Groups = kyber1024
+Connect time: 113632 microseconds.
+Groups = p521_kyber1024
+Connect time: 179039 microseconds.
+round 52
+Groups = kyber1024
+Connect time: 117223 microseconds.
+Groups = x448
+Connect time: 156916 microseconds.
+Groups = secp521r1
+Connect time: 198540 microseconds.
+Groups = p521_kyber1024
+Connect time: 177510 microseconds.
+round 53
+Groups = secp521r1
+Connect time: 151413 microseconds.
+Groups = p521_kyber1024
+Connect time: 222219 microseconds.
+Groups = kyber1024
+Connect time: 101195 microseconds.
+Groups = x448
+Connect time: 188825 microseconds.
+round 54
+Groups = secp521r1
+Connect time: 167858 microseconds.
+Groups = p521_kyber1024
+Connect time: 220785 microseconds.
+Groups = kyber1024
+Connect time: 191087 microseconds.
+Groups = x448
+Connect time: 114345 microseconds.
+round 55
+Groups = x448
+Connect time: 124857 microseconds.
+Groups = secp521r1
+Connect time: 192359 microseconds.
+Groups = p521_kyber1024
+Connect time: 160817 microseconds.
+Groups = kyber1024
+Connect time: 196249 microseconds.
+round 56
+Groups = kyber1024
+Connect time: 104154 microseconds.
+Groups = x448
+Connect time: 131668 microseconds.
+Groups = secp521r1
+Connect time: 153742 microseconds.
+Groups = p521_kyber1024
+Connect time: 171090 microseconds.
+round 57
+Groups = kyber1024
+Connect time: 96553 microseconds.
+Groups = p521_kyber1024
+Connect time: 174433 microseconds.
+Groups = secp521r1
+Connect time: 172231 microseconds.
+Groups = x448
+Connect time: 111753 microseconds.
+round 58
+Groups = x448
+Connect time: 127292 microseconds.
+Groups = secp521r1
+Connect time: 182233 microseconds.
+Groups = kyber1024
+Connect time: 109706 microseconds.
+Groups = p521_kyber1024
+Connect time: 173600 microseconds.
+round 59
+Groups = secp521r1
+Connect time: 173021 microseconds.
+Groups = kyber1024
+Connect time: 143835 microseconds.
+Groups = x448
+Connect time: 153909 microseconds.
+Groups = p521_kyber1024
+Connect time: 183909 microseconds.
+round 60
+Groups = secp521r1
+Connect time: 151705 microseconds.
+Groups = kyber1024
+Connect time: 126934 microseconds.
+Groups = x448
+Connect time: 100181 microseconds.
+Groups = p521_kyber1024
+Connect time: 196235 microseconds.
+round 61
+Groups = p521_kyber1024
+Connect time: 179227 microseconds.
+Groups = secp521r1
+Connect time: 165910 microseconds.
+Groups = kyber1024
+Connect time: 150690 microseconds.
+Groups = x448
+Connect time: 124441 microseconds.
+round 62
+Groups = x448
+Connect time: 181883 microseconds.
+Groups = kyber1024
+Connect time: 130883 microseconds.
+Groups = p521_kyber1024
+Connect time: 197244 microseconds.
+Groups = secp521r1
+Connect time: 201186 microseconds.
+round 63
+Groups = p521_kyber1024
+Connect time: 192628 microseconds.
+Groups = x448
+Connect time: 139140 microseconds.
+Groups = kyber1024
+Connect time: 180985 microseconds.
+Groups = secp521r1
+Connect time: 152976 microseconds.
+round 64
+Groups = kyber1024
+Connect time: 112040 microseconds.
+Groups = p521_kyber1024
+Connect time: 167664 microseconds.
+Groups = secp521r1
+Connect time: 235899 microseconds.
+Groups = x448
+Connect time: 123212 microseconds.
+round 65
+Groups = x448
+Connect time: 154130 microseconds.
+Groups = secp521r1
+Connect time: 148478 microseconds.
+Groups = kyber1024
+Connect time: 114288 microseconds.
+Groups = p521_kyber1024
+Connect time: 175389 microseconds.
+round 66
+Groups = p521_kyber1024
+Connect time: 154088 microseconds.
+Groups = x448
+Connect time: 157180 microseconds.
+Groups = kyber1024
+Connect time: 116928 microseconds.
+Groups = secp521r1
+Connect time: 179952 microseconds.
+round 67
+Groups = kyber1024
+Connect time: 131115 microseconds.
+Groups = p521_kyber1024
+Connect time: 164488 microseconds.
+Groups = x448
+Connect time: 98803 microseconds.
+Groups = secp521r1
+Connect time: 197438 microseconds.
+round 68
+Groups = x448
+Connect time: 137418 microseconds.
+Groups = kyber1024
+Connect time: 141103 microseconds.
+Groups = secp521r1
+Connect time: 184488 microseconds.
+Groups = p521_kyber1024
+Connect time: 182286 microseconds.
+round 69
+Groups = kyber1024
+Connect time: 173671 microseconds.
+Groups = secp521r1
+Connect time: 175322 microseconds.
+Groups = x448
+Connect time: 146361 microseconds.
+Groups = p521_kyber1024
+Connect time: 199858 microseconds.
+round 70
+Groups = secp521r1
+Connect time: 144692 microseconds.
+Groups = kyber1024
+Connect time: 142377 microseconds.
+Groups = x448
+Connect time: 147992 microseconds.
+Groups = p521_kyber1024
+Connect time: 160148 microseconds.
+round 71
+Groups = x448
+Connect time: 101619 microseconds.
+Groups = p521_kyber1024
+Connect time: 172882 microseconds.
+Groups = kyber1024
+Connect time: 110983 microseconds.
+Groups = secp521r1
+Connect time: 172798 microseconds.
+round 72
+Groups = secp521r1
+Connect time: 171910 microseconds.
+Groups = p521_kyber1024
+Connect time: 203711 microseconds.
+Groups = kyber1024
+Connect time: 146102 microseconds.
+Groups = x448
+Connect time: 128103 microseconds.
+round 73
+Groups = kyber1024
+Connect time: 129785 microseconds.
+Groups = p521_kyber1024
+Connect time: 195096 microseconds.
+Groups = secp521r1
+Connect time: 162302 microseconds.
+Groups = x448
+Connect time: 134164 microseconds.
+round 74
+Groups = p521_kyber1024
+Connect time: 180717 microseconds.
+Groups = kyber1024
+Connect time: 143278 microseconds.
+Groups = secp521r1
+Connect time: 170892 microseconds.
+Groups = x448
+Connect time: 130242 microseconds.
+round 75
+Groups = p521_kyber1024
+Connect time: 182883 microseconds.
+Groups = secp521r1
+Connect time: 184723 microseconds.
+Groups = x448
+Connect time: 113627 microseconds.
+Groups = kyber1024
+Connect time: 128711 microseconds.
+round 76
+Groups = p521_kyber1024
+Connect time: 210529 microseconds.
+Groups = kyber1024
+Connect time: 155705 microseconds.
+Groups = x448
+Connect time: 138460 microseconds.
+Groups = secp521r1
+Connect time: 163282 microseconds.
+round 77
+Groups = x448
+Connect time: 139879 microseconds.
+Groups = secp521r1
+Connect time: 198294 microseconds.
+Groups = p521_kyber1024
+Connect time: 182730 microseconds.
+Groups = kyber1024
+Connect time: 114521 microseconds.
+round 78
+Groups = p521_kyber1024
+Connect time: 149586 microseconds.
+Groups = kyber1024
+Connect time: 201777 microseconds.
+Groups = secp521r1
+Connect time: 170533 microseconds.
+Groups = x448
+Connect time: 150180 microseconds.
+round 79
+Groups = x448
+Connect time: 148514 microseconds.
+Groups = p521_kyber1024
+Connect time: 195257 microseconds.
+Groups = secp521r1
+Connect time: 236100 microseconds.
+Groups = kyber1024
+Connect time: 116382 microseconds.
+round 80
+Groups = x448
+Connect time: 131387 microseconds.
+Groups = kyber1024
+Connect time: 98674 microseconds.
+Groups = p521_kyber1024
+Connect time: 162844 microseconds.
+Groups = secp521r1
+Connect time: 169337 microseconds.
+round 81
+Groups = kyber1024
+Connect time: 132607 microseconds.
+Groups = secp521r1
+Connect time: 173744 microseconds.
+Groups = p521_kyber1024
+Connect time: 174443 microseconds.
+Groups = x448
+Connect time: 153071 microseconds.
+round 82
+Groups = x448
+Connect time: 141761 microseconds.
+Groups = p521_kyber1024
+Connect time: 207217 microseconds.
+Groups = kyber1024
+Connect time: 174882 microseconds.
+Groups = secp521r1
+Connect time: 198615 microseconds.
+round 83
+Groups = kyber1024
+Connect time: 197570 microseconds.
+Groups = secp521r1
+Connect time: 188135 microseconds.
+Groups = x448
+Connect time: 133246 microseconds.
+Groups = p521_kyber1024
+Connect time: 146031 microseconds.
+round 84
+Groups = secp521r1
+Connect time: 169401 microseconds.
+Groups = kyber1024
+Connect time: 112332 microseconds.
+Groups = x448
+Connect time: 115497 microseconds.
+Groups = p521_kyber1024
+Connect time: 226782 microseconds.
+round 85
+Groups = p521_kyber1024
+Connect time: 172249 microseconds.
+Groups = secp521r1
+Connect time: 169599 microseconds.
+Groups = kyber1024
+Connect time: 151695 microseconds.
+Groups = x448
+Connect time: 106233 microseconds.
+round 86
+Groups = kyber1024
+Connect time: 157045 microseconds.
+Groups = secp521r1
+Connect time: 207111 microseconds.
+Groups = x448
+Connect time: 114053 microseconds.
+Groups = p521_kyber1024
+Connect time: 188892 microseconds.
+round 87
+Groups = secp521r1
+Connect time: 171714 microseconds.
+Groups = p521_kyber1024
+Connect time: 147701 microseconds.
+Groups = kyber1024
+Connect time: 129825 microseconds.
+Groups = x448
+Connect time: 143883 microseconds.
+round 88
+Groups = secp521r1
+Connect time: 161593 microseconds.
+Groups = kyber1024
+Connect time: 114986 microseconds.
+Groups = p521_kyber1024
+Connect time: 220526 microseconds.
+Groups = x448
+Connect time: 119525 microseconds.
+round 89
+Groups = p521_kyber1024
+Connect time: 167108 microseconds.
+Groups = secp521r1
+Connect time: 159975 microseconds.
+Groups = x448
+Connect time: 130458 microseconds.
+Groups = kyber1024
+Connect time: 118576 microseconds.
+round 90
+Groups = p521_kyber1024
+Connect time: 232354 microseconds.
+Groups = secp521r1
+Connect time: 174851 microseconds.
+Groups = kyber1024
+Connect time: 114430 microseconds.
+Groups = x448
+Connect time: 145089 microseconds.
+round 91
+Groups = x448
+Connect time: 134440 microseconds.
+Groups = secp521r1
+Connect time: 143012 microseconds.
+Groups = kyber1024
+Connect time: 115720 microseconds.
+Groups = p521_kyber1024
+Connect time: 171006 microseconds.
+round 92
+Groups = kyber1024
+Connect time: 137801 microseconds.
+Groups = secp521r1
+Connect time: 164903 microseconds.
+Groups = p521_kyber1024
+Connect time: 188066 microseconds.
+Groups = x448
+Connect time: 118490 microseconds.
+round 93
+Groups = x448
+Connect time: 114217 microseconds.
+Groups = p521_kyber1024
+Connect time: 179415 microseconds.
+Groups = kyber1024
+Connect time: 154769 microseconds.
+Groups = secp521r1
+Connect time: 159566 microseconds.
+round 94
+Groups = x448
+Connect time: 186389 microseconds.
+Groups = p521_kyber1024
+Connect time: 164884 microseconds.
+Groups = kyber1024
+Connect time: 172769 microseconds.
+Groups = secp521r1
+Connect time: 167341 microseconds.
+round 95
+Groups = p521_kyber1024
+Connect time: 183845 microseconds.
+Groups = kyber1024
+Connect time: 130339 microseconds.
+Groups = secp521r1
+Connect time: 156753 microseconds.
+Groups = x448
+Connect time: 114949 microseconds.
+round 96
+Groups = p521_kyber1024
+Connect time: 190341 microseconds.
+Groups = secp521r1
+Connect time: 161821 microseconds.
+Groups = x448
+Connect time: 133078 microseconds.
+Groups = kyber1024
+Connect time: 121651 microseconds.
+round 97
+Groups = secp521r1
+Connect time: 170537 microseconds.
+Groups = p521_kyber1024
+Connect time: 166599 microseconds.
+Groups = kyber1024
+Connect time: 173883 microseconds.
+Groups = x448
+Connect time: 122185 microseconds.
+round 98
+Groups = kyber1024
+Connect time: 147884 microseconds.
+Groups = x448
+Connect time: 150200 microseconds.
+Groups = secp521r1
+Connect time: 165096 microseconds.
+Groups = p521_kyber1024
+Connect time: 193413 microseconds.
+round 99
+Groups = x448
+Connect time: 115059 microseconds.
+Groups = secp521r1
+Connect time: 158682 microseconds.
+Groups = kyber1024
+Connect time: 152505 microseconds.
+Groups = p521_kyber1024
+Connect time: 155578 microseconds.
+round 100
+Groups = x448
+Connect time: 104572 microseconds.
+Groups = p521_kyber1024
+Connect time: 180758 microseconds.
+Groups = kyber1024
+Connect time: 176732 microseconds.
+Groups = secp521r1
+Connect time: 174881 microseconds.
