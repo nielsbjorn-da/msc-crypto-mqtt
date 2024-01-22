@@ -4,14 +4,29 @@ Candidate project: Simon and Niels, Advisor: Diego
 # MQTT architecture designs:
 <ol> 
  <li>Trusted broker
-<ol>
-      <li>Design A</li>
-      <li>Design B</li>
+     <ol>
+      <li>Unmodified broker
+      <ol>
+       <li>Publisher:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_test`
+       <li>Subscriber:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_subscriber`
+       <li>Broker:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/src/mosquitto`
+       </ol>
+      </li>
+      <li>Modified broker
+      <ol>
+       <li>Publisher:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_test_b`
+       <li>Subscriber:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/client/client_own_subscriber_b`
+       <li>Broker:</li>
+       `msc-crypto-mqtt/trusted_broker/Design_A/mosquitto_code/mosquitto/src/mosquitto_b`
+       </ol>
+      </li>
     </ol>
 </li>
-  <li>Semi-honest broker / trusted-but-curious</li>
-  <li>Malicious broker </li></ol>
-
 
 # Project installation guide:
 ## Download repository from Git:  
